@@ -14,7 +14,7 @@ Update:
 
 Dependencies for fellow archers:
 
-* vim:			pacman -S 	vim vim-colorsamplerpack ctags
+* vim:			pacman -S 	vim vim-colorsamplerpack vimpager ctags
 * xmonad:		pacman -S 	xmonad xmonad-contrib xmobar
 
 * misc cli:		pacman -S 	openssh sudo tmux cmus sshfs
