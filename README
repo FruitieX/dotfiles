@@ -1,6 +1,17 @@
 FruitieX' Linux dotfiles
 ------------------------
 
+Install:
+--------
+1: Run ./firstrun.sh
+2: Run ./symlink.sh
+3: Enjoy!
+
+Update:
+-------
+1: git pull
+2: Run ./symlink.sh
+
 Dependencies for fellow archers:
 
 * vim:			pacman -S 	vim vim-colorsamplerpack ctags
