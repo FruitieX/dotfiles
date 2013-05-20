@@ -11,12 +11,14 @@ done
 # pentadactyl does not like unix dot notation :p
 if [ ! -f "$HOME/_pentadactylrc" ];
 then
+	echo "_pentadactylrc => $HOME/_pentadactylrc"
 	ln -sr "_pentadactylrc" "$HOME/_pentadactylrc"
 fi
 
 # custom oh-my-zsh theme
 if [ ! -f "$HOME/.oh-my-zsh/themes/powerline.zsh-theme" ];
 then
+	echo "powerline.zsh-theme => $HOME/.oh-my-zsh/themes/powerline.zsh-theme"
 	ln -sr "powerline.zsh-theme" "$HOME/.oh-my-zsh/themes/powerline.zsh-theme"
 fi
 
