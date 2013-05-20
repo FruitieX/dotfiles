@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
 
-for FILE in $(find -maxdepth 1 -type f | grep -v "symlink.sh"); do
-	FILE=$(basename $FILE)
-	if [ ! -f "$HOME/$FILE" ];
+for FILE in .[^.git]*; do
+	if [ ! -f "$HOME/$FILE" ] && [ ! -d "$HOME/$FILE" ];
 	then
 		echo "$FILE => $HOME/$FILE"
 		ln -sr $FILE $HOME/$FILE
