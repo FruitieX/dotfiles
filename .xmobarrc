@@ -1,0 +1,17 @@
+Config { font = "xft:Menlo for Powerline:pixelsize=14:bold"
+	   , bgColor = "#303030"
+	   , fgColor = "#a1a1a1"
+	   , position = Top
+	   , lowerOnStart = True
+	   , commands = [ Run Weather "EFHF" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+					, Run Network "eth0" ["-L","0","-H","32","-S","True","-t","<dev>: <rx> <tx>"] 10
+					, Run Cpu ["-L","3","-H","50","--high","red","-t","cpu: <total>%"] 10
+					, Run Memory ["-H","80","-h","red","-t","ram: <usedratio>%"] 10
+					, Run Battery ["-L","10","-H","50","-l","red","--normal","lightblue","-t", "bat: <left>%"] 10
+					, Run Date "%d.%m.%Y %H:%M:%S" "date" 10
+					, Run StdinReader
+					]
+	   , sepChar = "%"
+	   , alignSep = "}{"
+	   , template = "%StdinReader% }{ %battery% <fc=#585858>|</fc> %cpu% <fc=#585858>|</fc> %memory% <fc=#585858>|</fc> %eth0% <fc=#585858>|</fc> %EFHF% <fc=#585858>|</fc> <fc=#ffffff>%date%</fc>"
+	   }
