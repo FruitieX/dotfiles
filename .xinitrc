@@ -20,7 +20,7 @@ urxvt -title tmux -e tmux &
 firefox &
 xchat &
 numlockx &
-#synergys -c ~/.synergy.conf
+synergys -c ~/.synergy.conf
 
 #xrandr --output LVDS1 --set "scaling mode" Full &
 
