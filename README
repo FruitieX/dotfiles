@@ -17,7 +17,7 @@ Dependencies for fellow archers:
 * vim:			pacman -S 	vim vim-colorsamplerpack vimpager ctags
 * xmonad:		pacman -S 	xmonad xmonad-contrib xmobar
 
-* misc cli:		pacman -S 	openssh sudo tmux cmus sshfs
+* misc cli:		pacman -S 	openssh sudo tmux cmus sshfs ntp
 * misc X11:		pacman -S 	xorg-server xorg-xset xorg-xsetroot xorg-xmodmap
 							xorg-xinit rxvt-unicode numlockx redshift feh
 							firefox xchat synergy 
