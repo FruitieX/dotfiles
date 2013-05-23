@@ -21,4 +21,5 @@ Dependencies for fellow archers:
 * misc X11:		pacman -S 	xorg-server xorg-xset xorg-xsetroot xorg-xmodmap
 							xorg-xinit rxvt-unicode numlockx redshift feh
 							firefox xchat synergy slim archlinux-themes-slim
+							dmenu
 
