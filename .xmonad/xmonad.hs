@@ -148,7 +148,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
     [ ((modMask,               xK_Return), safeSpawn (XMonad.terminal conf) []) 
     , ((modMask .|. shiftMask, xK_p     ), safeSpawn "gmrun" [])
-    , ((modMask,               xK_p     ), spawn "exe=`dmenu_path_c | yeganesh` && eval \"exec $exe\"") 
+    , ((modMask,               xK_p     ), spawn "dmenu_run -fn \"-*-terminus-*-*-*-*-18-*-*-*-*-*-*-*\"") 
     , ((modMask .|. shiftMask, xK_c		), kill)
 
     -- multimedia
