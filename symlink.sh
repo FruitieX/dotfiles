@@ -22,4 +22,11 @@ then
 	ln -sr "powerline.zsh-theme" "$HOME/.oh-my-zsh/themes/powerline.zsh-theme"
 fi
 
+# ~/bin
+if [ ! -d "$HOME/bin" ];
+then
+	echo "bin/ => $HOME/bin"
+	ln -sr "bin" "$HOME/bin"
+fi
+
 echo "done!"
