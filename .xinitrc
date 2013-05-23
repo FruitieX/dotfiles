@@ -14,8 +14,8 @@ nvidia-settings -l &
 xsetroot -cursor_name left_ptr &
 
 # autostart
-/home/rasse/dev/sh/wallpaper.sh &
-/home/rasse/dev/sh/steam.sh &
+~/bin/wallpaper.sh &
+~/bin/steam.sh &
 urxvt -title tmux -e tmux &
 firefox &
 xchat &
@@ -24,7 +24,6 @@ synergys -c ~/.synergy.conf
 
 #xrandr --output LVDS1 --set "scaling mode" Full &
 
-#/home/rasse/dev/sh/startwm
 exec xmonad
 
 # SLiM session selector
