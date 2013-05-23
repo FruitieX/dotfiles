@@ -3,7 +3,7 @@ FruitieX' Linux dotfiles
 
 Install:
 --------
-1: Run ./firstrun.sh
+1: Run ./firstrun.sh (only if you don't have oh-my-zsh yet)
 2: Run ./symlink.sh
 3: Enjoy!
 
