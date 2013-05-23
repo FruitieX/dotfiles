@@ -25,8 +25,15 @@ fi
 # ~/bin
 if [ ! -d "$HOME/bin" ];
 then
-	echo "bin/ => $HOME/bin"
-	ln -sr "bin" "$HOME/bin"
+	mkdir ~/bin
 fi
+
+for FILE in bin/*; do
+	if [ ! -f "$HOME/$FILE" ] && [ ! -d "$HOME/$FILE" ];
+	then
+		echo "$FILE => $HOME/$FILE"
+		ln -sr "$FILE" "$HOME/$FILE"
+	fi
+done
 
 echo "done!"
