@@ -2,6 +2,10 @@
 
 # e.g. stlarch lives here
 xset +fp /usr/share/fonts/local/
+
+# disable turning screen off automatically
+xset dpms force off
+
 xset m 1 1 &
 #xflux -l 0
 redshift -l 0:0 &
