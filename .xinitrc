@@ -4,7 +4,7 @@
 xset +fp /usr/share/fonts/local/
 
 # disable turning screen off automatically
-xset dpms force off
+xset -dpms
 
 xset m 1 1 &
 #xflux -l 0
