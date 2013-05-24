@@ -13,9 +13,14 @@ colorscheme jellybeans
 "colorscheme two2tango
 
 " Powerline stuff
-set rtp+=~/src/powerline/powerline/bindings/vim
+"set rtp+=~/src/powerline/powerline/bindings/vim
+"let g:Powerline_symbols = 'fancy'
 set laststatus=2
 set noshowmode
+
+" ctrlp stuff
+let g:ctrlp_max_height = 30
+set wildignore+=*.pyc
 
 "if ! has('gui_running')
 "    set ttimeoutlen=10
@@ -38,6 +43,10 @@ set noshowmode
 "this rule really applys to everything.
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
+
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertLeave * match ExtraWhitespace /\s\+$/
+
 "use :set list! to toggle visible whitespace on/off
 set listchars=tab:>-,trail:.,extends:>
 
@@ -45,6 +54,9 @@ set listchars=tab:>-,trail:.,extends:>
 set number
 " Enable syntax highlighting
 syntax enable
+
+set colorcolumn=80 " show column at 80
+highlight ColorColumn ctermbg=234 " in a subtle color pls
 
 " Show matching braces
 set showmatch
@@ -84,6 +96,8 @@ map <F9> :buffer 9<CR>
 map <F10> :buffer 10<CR>
 map <F11> :buffer 11<CR>
 map <F12> :buffers<CR>
+
+set tabpagemax=15
 
 """"""""""""""""""""""""""""""""
 " Behaviour
@@ -135,6 +149,10 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 
+" easier moving of code blocks
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
+
 " Default to autoindenting of C like languages
 set noautoindent smartindent
 
@@ -182,3 +200,5 @@ au Filetype html,xml,xsl source ~/.vim/plugin/closetag.vim
 " endfunction
 " 
 " inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+
+execute pathogen#infect()
