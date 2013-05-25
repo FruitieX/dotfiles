@@ -1,5 +1,7 @@
 " FruitieX' .vimrc v0.2
 
+execute pathogen#infect()
+
 """"""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""
@@ -193,8 +195,6 @@ au Filetype html,xml,xsl source ~/.vim/plugin/closetag.vim
 " endfunction
 "
 " inoremap <tab> <c-r>=Smart_TabComplete()<CR>
-
-execute pathogen#infect()
 
 " NERDCommenter needs this
 filetype plugin on
