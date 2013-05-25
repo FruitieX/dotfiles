@@ -20,27 +20,10 @@ set noshowmode
 
 " ctrlp stuff
 let g:ctrlp_max_height = 30
+let g:ctrlp_clear_cache_on_exit = 0
 set wildignore+=*.pyc
 
-"if ! has('gui_running')
-"    set ttimeoutlen=10
-"    augroup FastEscape
-"        autocmd!
-"        au InsertEnter * set timeoutlen=0
-"        au InsertLeave * set timeoutlen=1000
-"    augroup END
-"endif
-
-" Who doesn't work on dark terminals?!?
-"set background=dark
-
-" Make the completion menus readable
-"highlight Pmenu ctermfg=0 ctermbg=3
-"highlight PmenuSel ctermfg=0 ctermbg=7
-
-"flag problematic whitespace (trailing and spaces before tabs)
-"Note you get the same by doing let c_space_errors=1 but
-"this rule really applys to everything.
+" flag problematic whitespace
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
 
@@ -84,7 +67,13 @@ imap jj <Esc>
 " Bind ; to <C-]> (jump to definition), it's faster and C-] doesn't work oven PuTTY
 map ; <C-]>
 
+" Avoid :w, :q, :x
+map <C-s> :w<Enter>
+map <C-q> :q<Enter>
+map <C-x> :x<Enter>
+
 nmap <F8> :TagbarToggle<CR>
+set pastetoggle=<F2>
 
 set tabpagemax=15
 
@@ -93,6 +82,15 @@ inoremap <A-h> <C-o>h
 inoremap <A-j> <C-o>j
 inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
+
+" vim hard mode :-)
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+map <PageUp> <Nop>
+map <PageDown> <Nop>
 
 """"""""""""""""""""""""""""""""
 " Behaviour
@@ -155,7 +153,7 @@ set noautoindent smartindent
 "A-] - Open function defintion in a vertical split
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-set mouse=a "enable all mouse modes
+"set mouse=a "enable all mouse modes
 
 " Restore cursor position
 function! ResCur()
@@ -175,7 +173,7 @@ au Filetype html,xml,xsl source ~/.vim/plugin/closetag.vim
 " Autocomplete with tab, only characters precede cursor
 " function! Smart_TabComplete()
 "	let line = getline('.')							" current line
-" 
+"
 "	let substr = strpart(line, -1, col('.')+1)		" from the start of the current
 "													" line to one character right
 "													" of the cursor
@@ -193,10 +191,70 @@ au Filetype html,xml,xsl source ~/.vim/plugin/closetag.vim
 "	  return "\<C-X>\<C-O>"							" plugin matching
 "	endif
 " endfunction
-" 
+"
 " inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 execute pathogen#infect()
 
 " NERDCommenter needs this
 filetype plugin on
+
+" show typed commands in lower right corner
+set showcmd
+
+function! MoveToPrevTab()
+  "there is only one window
+  if tabpagenr('$') == 1 && winnr('$') == 1
+    return
+  endif
+  "preparing new window
+  let l:tab_nr = tabpagenr('$')
+  let l:cur_buf = bufnr('%')
+  if tabpagenr() != 1
+    close!
+    if l:tab_nr == tabpagenr('$')
+      tabprev
+    endif
+    sp
+  else
+    close!
+    exe "0tabnew"
+  endif
+  "opening current buffer in new window
+  exe "b".l:cur_buf
+endfunc
+
+function! MoveToNextTab()
+  "there is only one window
+  if tabpagenr('$') == 1 && winnr('$') == 1
+    return
+  endif
+  "preparing new window
+  let l:tab_nr = tabpagenr('$')
+  let l:cur_buf = bufnr('%')
+  if tabpagenr() < tab_nr
+    close!
+    if l:tab_nr == tabpagenr('$')
+      tabnext
+    endif
+    sp
+  else
+    close!
+    tabnew
+  endif
+  "opening current buffer in new window
+  exe "b".l:cur_buf
+endfunc
+
+let mapleader=","
+nmap <Leader>h <C-w>h
+nmap <Leader>j <C-w>j
+nmap <Leader>k <C-w>k
+nmap <Leader>l <C-w>l
+nmap <Leader><Leader>h :call MoveToPrevTab()<Enter>
+nmap <Leader><Leader>l :call MoveToNextTab()<Enter>
+" watch for changes to .vimrc and update if it's changed
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END

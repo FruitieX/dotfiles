@@ -1,0 +1,123 @@
+vim
+---
+
+* Mappings:
+<C+U> <C+D>	- page up/down
+<C+P>		- ctrlp menu
+<C+S>		- save
+<C+X>		- save & quit
+<C+Q>		- quit
+
+x X			- delete char at/before cursor
+xp			- swap next two chars around
+
+guu			- lowercase line
+gUU			- uppercase line
+
+gqap		- format paragraph
+
+,c<Space>	- toggle comment
+
+,hjkl		- move between splits
+,,h/l		- move buffer to prev/next tab
+
+q:			- "command history"
+q/			- "search editor"
+
+R			- enter replace mode
+C			- change to EOL
+D			- delete to EOL
+J			- join lines
+
+H M L		- jump to top/middle/bottom of page
+
+<C-X><C-L>	- line complete SUPER USEFUL
+/<C-R><C-W> - pull <cword> onto search/command line
+
+<C-A> <C-X>	- increment/decrement next number
+
+* Motions:
+%			- match brackets {}[]()
+* # g* g#	- find word under cursor (forwards/backwards)
+
+e			- jump to end of words (punctuation considered words)
+E			- jump to end of words (no punctuation)
+0			- (zero) start of line
+^			- first non-blank claracter of line
+G			- Go To command (prefix with number - 5G goes to line 5)
+
+f F			- find next/prev match of char
+t T			- to next/prev match of char
+/ ?			- to next match of string
+
+,,w ,,b		- easymotion on words
+,,f ,,F		- easymotion on chars
+
+{ }			- move between paragraphs
+
+'.			- jump to line with last modification
+`.			- jump to exact spot of last modification
+
+* Operators:
+
+* Misc:
+:42s/a/b/ic	- replace a with b on line 42, ignoring case, confirm each match
+:s/a\|b/c/g	- replace a and b with c
+qX...q		- record keystrokes ... into macro X
+@X			- execute macro X (these are registers, see below for modifying!)
+@@			- execute last macro
+
+:map X		- list mappings beginning with X
+
+:reg		- display all registers (* is paste register)
+"1p			- paste from register 1
+"1dd		- delete line and put it in register 1
+"1yy		- yank line into register 1
+
+:r			- read from file and insert at cursor
+:r!ls		- read output of ls
+:.!sh       - execute contents of current line in buffer and capture the output
+!sort       - selected lines piped to sort, thus sorting selection
+!grep word  - keep only lines containing 'word' in the selected range.
+
+EXTRA:
+------
+
+* Searching with regex:
+/^fred.*joe.*bill  : line beginning with fred, followed by joe then bill
+/^[A-J]            : line beginning A-J
+/^[A-J][a-z]\+\s   : line beginning A-J then one or more lowercase characters then space or tab
+/fred\_.\{-}joe    : fred then anything then joe (over multiple lines)
+/fred\_s\{-}joe    : fred then any whitespace (including newlines) then joe
+/fred\|joe         : fred OR joe
+
+* Substitution with regex:
+:%s/fred/joe/igc           : general substitute command
+:%s/\r//g                  : delete DOS Carriage Returns (^M)
+:'a,'bg/fred/s/dick/joe/gc : VERY USEFUL
+:s/\(.*\):\(.*\)/\2 : \1/  : reverse fields separated by :
+# non-greedy matching \{-}
+:%s/^.\{-}pdf/new.pdf/     : to first pdf)
+:s/fred/<c-r>a/g           : substitute "fred" with contents of register "a"
+:%s/^\(.*\)\n\1/\1$/       : delete duplicate lines
+:help /\{-}
+# multiple commands
+:%s/\f\+\.gif\>/\r&\r/g | v/\.gif$/d | %s/gif/jpg/
+:%s/suck\|buck/loopy/gc       : ORing
+:s/__date__/\=strftime("%c")/ : insert datestring
+
+* Global command:
+:g/one\|two/     : list lines containing "one" or "two"
+:g/^\s*$/d       : delete all blank lines
+:g/green/d       : delete all lines containing "green"
+:v/green/d       : delete all lines not containing "green"
+:g/one/,/two/d   : not line based
+:v/./.,/./-1join : compress empty lines
+
+
+
+TODO: registers, macros
+more: http://vim.wikia.com/wiki/Best_Vim_Tips
+
+zsh
+---
