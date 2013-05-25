@@ -1,3 +1,30 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/ctrlp.vim.git"]
+	path = .vim/bundle/ctrlp.vim.git
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/delimitMate.git"]
+	path = .vim/bundle/delimitMate.git
+	url = git://github.com/Raimondi/delimitMate.git
+[submodule ".vim/bundle/HTML-AutoCloseTag.git"]
+	path = .vim/bundle/HTML-AutoCloseTag.git
+	url = git://github.com/vim-scripts/HTML-AutoCloseTag.git
+[submodule ".vim/bundle/nerdcommenter.git"]
+	path = .vim/bundle/nerdcommenter.git
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundle/syntastic.git"]
+	path = .vim/bundle/syntastic.git
+	url = git://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
+[submodule ".vim/bundle/vim-easymotion.git"]
+	path = .vim/bundle/vim-easymotion.git
+	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule ".vim/bundle/vim-powerline.git"]
+	path = .vim/bundle/vim-powerline.git
+	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround
