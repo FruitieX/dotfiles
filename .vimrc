@@ -84,20 +84,15 @@ imap jj <Esc>
 " Bind ; to <C-]> (jump to definition), it's faster and C-] doesn't work oven PuTTY
 map ; <C-]>
 
-map <F1> :buffer 1<CR>
-map <F2> :buffer 2<CR>
-map <F3> :buffer 3<CR>
-map <F4> :buffer 4<CR>
-map <F5> :buffer 5<CR>
-map <F6> :buffer 6<CR>
-map <F7> :buffer 7<CR>
-map <F8> :buffer 8<CR>
-map <F9> :buffer 9<CR>
-map <F10> :buffer 10<CR>
-map <F11> :buffer 11<CR>
-map <F12> :buffers<CR>
+nmap <F8> :TagbarToggle<CR>
 
 set tabpagemax=15
+
+" allow moving around in insert mode
+inoremap <A-h> <C-o>h
+inoremap <A-j> <C-o>j
+inoremap <A-k> <C-o>k
+inoremap <A-l> <C-o>l
 
 """"""""""""""""""""""""""""""""
 " Behaviour
@@ -202,3 +197,6 @@ au Filetype html,xml,xsl source ~/.vim/plugin/closetag.vim
 " inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 execute pathogen#infect()
+
+" NERDCommenter needs this
+filetype plugin on
