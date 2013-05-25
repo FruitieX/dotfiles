@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/vim-misc.git"]
 	path = .vim/bundle/vim-misc.git
 	url = git://github.com/xolox/vim-misc.git
+[submodule ".vim/bundle/vim-fugitive.git"]
+	path = .vim/bundle/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
