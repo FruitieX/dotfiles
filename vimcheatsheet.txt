@@ -34,6 +34,10 @@ gqap		- format paragraph
 ,hjkl		- move between splits
 ,,h/l		- move buffer to prev/next tab
 
+,/			- :nohlsearch
+,df			- toggle diffing this buffer (with another)
+,rtw		- remove trailing whitespace
+
 q:			- "command history"
 q/			- "search editor"
 
@@ -74,6 +78,7 @@ t T			- to next/prev match of char
 * Misc:
 :42s/a/b/ic	- replace a with b on line 42, ignoring case, confirm each match
 :s/a\|b/c/g	- replace a and b with c
+:s!/usr/local/!/opt/alt/! - use ! as separator instead of /
 qX...q		- record keystrokes ... into macro X
 @X			- execute macro X (these are registers, see below for modifying!)
 @@			- execute last macro

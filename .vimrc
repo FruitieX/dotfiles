@@ -28,7 +28,6 @@ set wildignore+=*.pyc
 " flag problematic whitespace
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
-
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
@@ -52,8 +51,9 @@ set so=7
 " Always show current pos
 set ruler
 
-" Don't wrap lines, i hate that!
-set nowrap
+" Prettier line wrap
+"set nowrap
+set showbreak=↪
 
 " Make cursor more visible
 "set cursorline
@@ -205,20 +205,20 @@ set showcmd
 function! MoveToPrevTab()
   "there is only one window
   if tabpagenr('$') == 1 && winnr('$') == 1
-    return
+	return
   endif
   "preparing new window
   let l:tab_nr = tabpagenr('$')
   let l:cur_buf = bufnr('%')
   if tabpagenr() != 1
-    close!
-    if l:tab_nr == tabpagenr('$')
-      tabprev
-    endif
-    sp
+	close!
+	if l:tab_nr == tabpagenr('$')
+	  tabprev
+	endif
+	sp
   else
-    close!
-    exe "0tabnew"
+	close!
+	exe "0tabnew"
   endif
   "opening current buffer in new window
   exe "b".l:cur_buf
@@ -227,20 +227,20 @@ endfunc
 function! MoveToNextTab()
   "there is only one window
   if tabpagenr('$') == 1 && winnr('$') == 1
-    return
+	return
   endif
   "preparing new window
   let l:tab_nr = tabpagenr('$')
   let l:cur_buf = bufnr('%')
   if tabpagenr() < tab_nr
-    close!
-    if l:tab_nr == tabpagenr('$')
-      tabnext
-    endif
-    sp
+	close!
+	if l:tab_nr == tabpagenr('$')
+	  tabnext
+	endif
+	sp
   else
-    close!
-    tabnew
+	close!
+	tabnew
   endif
   "opening current buffer in new window
   exe "b".l:cur_buf
@@ -251,10 +251,22 @@ nmap <Leader>h <C-w>h
 nmap <Leader>j <C-w>j
 nmap <Leader>k <C-w>k
 nmap <Leader>l <C-w>l
-nmap <Leader><Leader>h :call MoveToPrevTab()<Enter>
-nmap <Leader><Leader>l :call MoveToNextTab()<Enter>
+nmap <silent> <Leader><Leader>h :call MoveToPrevTab()<Enter>
+nmap <silent> <Leader><Leader>l :call MoveToNextTab()<Enter>
+nnoremap <silent> <Leader>/ :nohlsearch<CR>
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+nnoremap <silent> <Leader>df :call DiffToggle()<CR>
+
+function! DiffToggle()
+	if &diff
+		diffoff
+	else
+		diffthis
+	endif
+:endfunction
+
 " watch for changes to .vimrc and update if it's changed
 augroup myvimrc
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+	au!
+	au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
