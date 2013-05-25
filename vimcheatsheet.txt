@@ -1,12 +1,25 @@
 vim
 ---
 
-* Mappings:
-<C+U> <C+D>	- page up/down
-<C+P>		- ctrlp menu
-<C+S>		- save
-<C+X>		- save & quit
-<C+Q>		- quit
+* Mappings / Plugins:
+<C-U> <C-D>	- page up/down
+<C-P>		- ctrlp menu
+<C-S>		- save
+<C-X>		- save & quit
+<C-Q>		- quit
+
+<F2>		- toggle paste mode
+<F8>		- tagbar
+
+ciw			- change whole (in) word
+ca{			- change around {}
+
+cs"'		- change surrounding " to '
+cs"<q a=b>	- change surrounding " to <q a=b></q>
+cst"		- change surrounding tags to "
+ds"			- delete surrounding "
+ysiw]		- surround word with []
+yss)		- surround line with ()
 
 x X			- delete char at/before cursor
 xp			- swap next two chars around
@@ -57,8 +70,6 @@ t T			- to next/prev match of char
 
 '.			- jump to line with last modification
 `.			- jump to exact spot of last modification
-
-* Operators:
 
 * Misc:
 :42s/a/b/ic	- replace a with b on line 42, ignoring case, confirm each match
@@ -114,10 +125,10 @@ EXTRA:
 :g/one/,/two/d   : not line based
 :v/./.,/./-1join : compress empty lines
 
-
-
-TODO: registers, macros
 more: http://vim.wikia.com/wiki/Best_Vim_Tips
 
-zsh
----
+readline
+--------
+<C-f> <C-b>		- move fwd/back a char
+<C-_>			- undo
+<A-f> <A-b>		- move fwd/back a word
