@@ -23,7 +23,10 @@ set noshowmode
 " ctrlp stuff
 let g:ctrlp_max_height = 30
 let g:ctrlp_clear_cache_on_exit = 0
-set wildignore+=*.pyc
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_lazy_update = 100
+set wildignore+=*.pyc,~/music*
 
 " flag problematic whitespace
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
@@ -169,8 +172,6 @@ augroup resCur
 	autocmd!
 	autocmd BufWinEnter * call ResCur()
 augroup END
-
-au Filetype html,xml,xsl source ~/.vim/plugin/closetag.vim
 
 " Autocomplete with tab, only characters precede cursor
 " function! Smart_TabComplete()
