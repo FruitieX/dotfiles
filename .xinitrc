@@ -1,11 +1,11 @@
 # [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # e.g. stlarch lives here
-xset +fp /usr/share/fonts/local/
+xset +fp /usr/share/fonts/local/ &
 
 # disable turning screen off automatically
-xset -dpms
-xset s off
+xset -dpms &
+xset s off &
 
 xset m 1 1 &
 #xflux -l 0
@@ -25,7 +25,7 @@ urxvt -title tmux -e tmux &
 firefox-nightly &
 xchat &
 numlockx &
-synergys -c ~/.synergy.conf
+synergys -c ~/.synergy.conf &
 
 #xrandr --output LVDS1 --set "scaling mode" Full &
 
