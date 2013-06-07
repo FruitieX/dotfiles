@@ -91,6 +91,8 @@ nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 nnoremap gr :grep -r <cword> *<CR>
 nnoremap gR :grep -r '\b<cword>\b' *<CR>
 
+nmap <Leader>t :NERDTree
+
 """"""""""""""""""""""""""""""""
 " Behaviour
 """"""""""""""""""""""""""""""""
