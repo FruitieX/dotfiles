@@ -37,3 +37,9 @@
 [submodule ".vim/bundle/snipmate.vim.git"]
 	path = .vim/bundle/snipmate.vim.git
 	url = git://github.com/msanders/snipmate.vim.git
+[submodule ".vim/bundle/minibufexpl.vim.git"]
+	path = .vim/bundle/minibufexpl.vim.git
+	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule ".vim/bundle/nerdtree.git"]
+	path = .vim/bundle/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git

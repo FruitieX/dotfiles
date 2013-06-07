@@ -88,6 +88,8 @@ nnoremap <silent> <Leader>/ :nohlsearch<CR>
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 
+nnoremap gr :grep -r <cword> *<CR>
+nnoremap gR :grep -r '\b<cword>\b' *<CR>
 
 """"""""""""""""""""""""""""""""
 " Behaviour

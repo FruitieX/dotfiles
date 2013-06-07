@@ -24,7 +24,7 @@ yss)		- surround line with ()
 x X			- delete char at/before cursor
 xp			- swap next two chars around
 
-guu			- lowercase line
+guU			- lowercase line
 gUU			- uppercase line
 
 gqap		- format paragraph
@@ -52,6 +52,9 @@ H M L		- jump to top/middle/bottom of page
 /<C-R><C-W> - pull <cword> onto search/command line
 
 <C-A> <C-X>	- increment/decrement next number
+
+gr			- grep for word in cwd
+gR			- grep for ' word ' in cwd
 
 * Motions:
 %			- match brackets {}[]()
