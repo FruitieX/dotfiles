@@ -55,6 +55,9 @@ H M L		- jump to top/middle/bottom of page
 
 gr			- grep for word in cwd
 gR			- grep for ' word ' in cwd
+,n			- jump to next match
+,N			- jump to previous match
+,c			- jump to current match
 
 ,t			- open NERDTree
 

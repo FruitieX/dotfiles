@@ -88,8 +88,12 @@ nnoremap <silent> <Leader>/ :nohlsearch<CR>
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 
-nnoremap gr :grep -r <cword> *<CR>
-nnoremap gR :grep -r '\b<cword>\b' *<CR>
+nnoremap gr :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
+nnoremap gR :execute "vimgrep / " . expand("<cword>") . " /gj **" <Bar> cw<CR>
+
+nnoremap <silent> <Leader>n :cn<Enter>
+nnoremap <silent> <Leader>N :cp<Enter>
+nnoremap <silent> <Leader>c :cc<Enter>
 
 nmap <silent> <Leader>t :NERDTree<Enter>
 
