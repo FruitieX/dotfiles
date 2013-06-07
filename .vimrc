@@ -1,4 +1,4 @@
-" FruitieX' .vimrc v0.2
+" FruitieX' .vimrc v0.3
 
 execute pathogen#infect()
 
@@ -8,25 +8,7 @@ execute pathogen#infect()
 
 "colorscheme desert "awesome color scheme
 set t_Co=256
-"set t_AB=^[[48;5;%dm
-"set t_AF=^[[38;5;%dm
-"colorscheme xoria256
 colorscheme jellybeans
-"colorscheme two2tango
-
-" Powerline stuff
-"set rtp+=~/src/powerline/powerline/bindings/vim
-"let g:Powerline_symbols = 'fancy'
-set laststatus=2
-set noshowmode
-
-" ctrlp stuff
-let g:ctrlp_max_height = 30
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_lazy_update = 100
-set wildignore+=*.pyc,~/music*
 
 " flag problematic whitespace
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
@@ -80,8 +62,6 @@ map <C-x> :x<Enter>
 nmap <F8> :TagbarToggle<CR>
 set pastetoggle=<F2>
 
-set tabpagemax=15
-
 " allow moving around in insert mode
 inoremap <A-h> <C-o>h
 inoremap <A-j> <C-o>j
@@ -96,6 +76,37 @@ map <Down> <Nop>
 
 map <PageUp> <Nop>
 map <PageDown> <Nop>
+
+let mapleader=","
+nmap <Leader>h <C-w>h
+nmap <Leader>j <C-w>j
+nmap <Leader>k <C-w>k
+nmap <Leader>l <C-w>l
+nmap <C-w><C-j> 5<C-w>+
+nmap <C-w><C-k> 5<C-w>-
+nmap <C-w><C-l> 5<C-w>>
+nmap <C-w><C-h> 5<C-w><
+nmap <silent> <Leader><Leader>h :call MoveToPrevTab()<Enter>
+nmap <silent> <Leader><Leader>l :call MoveToNextTab()<Enter>
+nnoremap <silent> <Leader>/ :nohlsearch<CR>
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+nnoremap <silent> <Leader>df :call DiffToggle()<CR>
+
+nnoremap gr :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
+nnoremap gR :execute "vimgrep / " . expand("<cword>") . " /gj **" <Bar> cw<CR>
+
+function! GREP( arg )
+	execute "vimgrep /" . expand( a:arg ) . "/gj **"
+	cwindow
+endfunction
+
+command! -nargs=* GREP call GREP( '<args>' )
+
+nnoremap <silent> <Leader>n :cn<Enter>
+nnoremap <silent> <Leader>N :cp<Enter>
+nnoremap <silent> <Leader>c :cc<Enter>
+
+nmap <silent> <Leader>t :NERDTree<Enter>
 
 """"""""""""""""""""""""""""""""
 " Behaviour
@@ -112,13 +123,13 @@ set encoding=utf8
 " Reload a file if it changes
 set autoread
 
-" Keep 50 lines of command line history
-set history=100
+" Keep 500 lines of command line history
+set history=500
 
 " Write persistent undo files
 set undofile
-set undolevels=500
-set undoreload=500
+set undolevels=1000
+set undoreload=1000
 
 " Allow switching buffers without writing to disk
 set hidden
@@ -139,7 +150,7 @@ set visualbell t_vb=
 set wildmode=longest,list,full
 set wildmenu
 " Ignore these files when completing names and in Explorer
-set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
+set wildignore+=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,~/music*,*~,*.swp
 
 " Indentation
 set noexpandtab
@@ -158,7 +169,6 @@ set noautoindent smartindent
 "A-] - Open function defintion in a vertical split
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-"set mouse=a "enable all mouse modes
 
 " Restore cursor position
 function! ResCur()
@@ -173,32 +183,8 @@ augroup resCur
 	autocmd BufWinEnter * call ResCur()
 augroup END
 
-" Autocomplete with tab, only characters precede cursor
-" function! Smart_TabComplete()
-"	let line = getline('.')							" current line
-"
-"	let substr = strpart(line, -1, col('.')+1)		" from the start of the current
-"													" line to one character right
-"													" of the cursor
-"	let substr = matchstr(substr, "[^ \t]*$")		" word till cursor
-"	if (strlen(substr)==0)							" nothing to match on empty string
-"	  return "\<tab>"
-"	endif
-"	let has_period = match(substr, '\.') != -1		" position of period, if any
-"	let has_slash = match(substr, '\/') != -1		" position of slash, if any
-"	if (!has_period && !has_slash)
-"	  return "\<C-X>\<C-P>"							" existing text matching
-"	elseif ( has_slash )
-"	  return "\<C-X>\<C-F>"							" file matching
-"	else
-"	  return "\<C-X>\<C-O>"							" plugin matching
-"	endif
-" endfunction
-"
-" inoremap <tab> <c-r>=Smart_TabComplete()<CR>
-
-" NERDCommenter needs this
-filetype plugin on
+" more tabs
+set tabpagemax=15
 
 " show typed commands in lower right corner
 set showcmd
@@ -247,17 +233,6 @@ function! MoveToNextTab()
   exe "b".l:cur_buf
 endfunc
 
-let mapleader=","
-nmap <Leader>h <C-w>h
-nmap <Leader>j <C-w>j
-nmap <Leader>k <C-w>k
-nmap <Leader>l <C-w>l
-nmap <silent> <Leader><Leader>h :call MoveToPrevTab()<Enter>
-nmap <silent> <Leader><Leader>l :call MoveToNextTab()<Enter>
-nnoremap <silent> <Leader>/ :nohlsearch<CR>
-nnoremap <Leader>rtw :%s/\s\+$//e<CR>
-nnoremap <silent> <Leader>df :call DiffToggle()<CR>
-
 function! DiffToggle()
 	if &diff
 		diffoff
@@ -271,3 +246,22 @@ augroup myvimrc
 	au!
 	au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
+
+
+""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""
+
+" powerline config
+set laststatus=2
+set noshowmode
+
+" ctrlp config
+let g:ctrlp_max_height = 30
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_lazy_update = 100
+
+" NERDCommenter needs this
+filetype plugin on

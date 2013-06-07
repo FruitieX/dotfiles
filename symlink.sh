@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+# TODO does this filter all files containing any of these chars??
 for FILE in .[^.git]*; do
 	if [ ! -f "$HOME/$FILE" ] && [ ! -d "$HOME/$FILE" ];
 	then
