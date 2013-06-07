@@ -32,6 +32,10 @@ gqap		- format paragraph
 ,c<Space>	- toggle comment
 
 ,hjkl		- move between splits
+<C-W><C-k>	- make hsplit smaller
+<C-W><C-j>	- make hsplit bigger
+<C-W><C-<>	- make vsplit smaller
+<C-W><C->>	- make vsplit bigger
 ,,h/l		- move buffer to prev/next tab
 
 ,/			- :nohlsearch

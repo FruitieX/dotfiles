@@ -82,6 +82,10 @@ nmap <Leader>h <C-w>h
 nmap <Leader>j <C-w>j
 nmap <Leader>k <C-w>k
 nmap <Leader>l <C-w>l
+nmap <C-w><C-j> 5<C-w>+
+nmap <C-w><C-k> 5<C-w>-
+nmap <C-w><C-l> 5<C-w>>
+nmap <C-w><C-h> 5<C-w><
 nmap <silent> <Leader><Leader>h :call MoveToPrevTab()<Enter>
 nmap <silent> <Leader><Leader>l :call MoveToNextTab()<Enter>
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
