@@ -1,4 +1,4 @@
-" FruitieX' .vimrc v0.2
+" FruitieX' .vimrc v0.3
 
 execute pathogen#infect()
 
@@ -8,19 +8,13 @@ execute pathogen#infect()
 
 "colorscheme desert "awesome color scheme
 set t_Co=256
-"set t_AB=^[[48;5;%dm
-"set t_AF=^[[38;5;%dm
-"colorscheme xoria256
 colorscheme jellybeans
-"colorscheme two2tango
 
-" Powerline stuff
-"set rtp+=~/src/powerline/powerline/bindings/vim
-"let g:Powerline_symbols = 'fancy'
+" powerline config
 set laststatus=2
 set noshowmode
 
-" ctrlp stuff
+" ctrlp config
 let g:ctrlp_max_height = 30
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_follow_symlinks = 1
