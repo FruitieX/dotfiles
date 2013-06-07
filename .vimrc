@@ -91,6 +91,13 @@ nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 nnoremap gr :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
 nnoremap gR :execute "vimgrep / " . expand("<cword>") . " /gj **" <Bar> cw<CR>
 
+function! GREP( arg )
+	execute "vimgrep /" . expand( a:arg ) . "/gj **"
+	cwindow
+endfunction
+
+command! -nargs=* GREP call GREP( '<args>' )
+
 nnoremap <silent> <Leader>n :cn<Enter>
 nnoremap <silent> <Leader>N :cp<Enter>
 nnoremap <silent> <Leader>c :cc<Enter>
