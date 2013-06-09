@@ -157,6 +157,7 @@ set noexpandtab
 set shiftwidth=4
 set tabstop=4
 set smarttab
+filetype plugin indent on
 
 " easier moving of code blocks
 vnoremap < <gv " better indentation
