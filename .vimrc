@@ -68,6 +68,9 @@ inoremap <A-j> <C-o>j
 inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
 
+map <C-j> <C-d>
+map <C-k> <C-u>
+
 " vim hard mode :-)
 map <Left> <Nop>
 map <Right> <Nop>
@@ -241,13 +244,6 @@ function! DiffToggle()
 		diffthis
 	endif
 :endfunction
-
-" watch for changes to .vimrc and update if it's changed
-augroup myvimrc
-	au!
-	au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-augroup END
-
 
 """"""""""""""""""""""""""""""""
 " Plugins
