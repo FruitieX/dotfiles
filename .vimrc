@@ -93,18 +93,18 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 let mapleader=","
 
 " split related binds
-nmap <Leader>h <C-w>h
-nmap <Leader>j <C-w>j
-nmap <Leader>k <C-w>k
-nmap <Leader>l <C-w>l
+nmap <Leader><Leader>h <C-w>h
+nmap <Leader><Leader>j <C-w>j
+nmap <Leader><Leader>k <C-w>k
+nmap <Leader><Leader>l <C-w>l
 nmap <C-w><C-j> 5<C-w>+
 nmap <C-w><C-k> 5<C-w>-
 nmap <C-w><C-l> 5<C-w>>
 nmap <C-w><C-h> 5<C-w><
 
 " move tab left/right
-nmap <silent> <Leader><Leader>h :call MoveToPrevTab()<Enter>
-nmap <silent> <Leader><Leader>l :call MoveToNextTab()<Enter>
+nmap <silent> <Leader>h :call MoveToPrevTab()<Enter>
+nmap <silent> <Leader>l :call MoveToNextTab()<Enter>
 " new tab
 nmap <silent> <Leader><Leader>t :tabnew<Enter>
 
