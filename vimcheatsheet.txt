@@ -3,10 +3,9 @@ vim
 
 * Mappings / Plugins:
 <C-k> <C-j>	- half page up/down
-<C-P>		- ctrlp menu
-<C-S>		- save
-<C-X>		- save & quit
-<C-Q>		- quit
+<C-p>		- ctrlp menu
+<C-s>		- save
+<C-q>		- quit
 
 <F2>		- toggle paste mode
 <F8>		- tagbar
@@ -32,10 +31,10 @@ gqap		- format paragraph
 ,c<Space>	- toggle comment
 
 ,hjkl		- move between splits
-<C-W><C-k>	- make hsplit smaller
-<C-W><C-j>	- make hsplit bigger
-<C-W><C-<>	- make vsplit smaller
-<C-W><C->>	- make vsplit bigger
+<C-w><C-k>	- make hsplit smaller
+<C-w><C-j>	- make hsplit bigger
+<C-w><C-<>	- make vsplit smaller
+<C-w><C->>	- make vsplit bigger
 ,,h/l		- move buffer to prev/next tab
 
 ,/			- :nohlsearch
