@@ -54,22 +54,26 @@ imap jj <Esc>
 " Bind ; to <C-]> (jump to definition), it's faster and C-] doesn't work oven PuTTY
 map ; <C-]>
 
-" Avoid :w, :q, :x
+" Avoid :w, :q
 map <C-s> :w<Enter>
 map <C-q> :q<Enter>
-map <C-x> :x<Enter>
 
 nmap <F8> :TagbarToggle<CR>
 set pastetoggle=<F2>
 
-" allow moving around in insert mode
+" allow moving around in insert mode TODO: this does not work
 inoremap <A-h> <C-o>h
 inoremap <A-j> <C-o>j
 inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
 
-map <C-j> <C-d>
-map <C-k> <C-u>
+" half page up/down with <C-j>, <C-k>
+noremap <C-j> <C-d>
+noremap <C-k> <C-u>
+
+" free these
+noremap <C-d> <Nop>
+noremap <C-u> <Nop>
 
 " vim hard mode :-)
 map <Left> <Nop>
@@ -80,7 +84,14 @@ map <Down> <Nop>
 map <PageUp> <Nop>
 map <PageDown> <Nop>
 
+"C-\ - Open function defintion in a new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+"A-] - Open function defintion in a vertical split
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+" leader keys
 let mapleader=","
+" split related binds
 nmap <Leader>h <C-w>h
 nmap <Leader>j <C-w>j
 nmap <Leader>k <C-w>k
@@ -91,10 +102,20 @@ nmap <C-w><C-l> 5<C-w>>
 nmap <C-w><C-h> 5<C-w><
 nmap <silent> <Leader><Leader>h :call MoveToPrevTab()<Enter>
 nmap <silent> <Leader><Leader>l :call MoveToNextTab()<Enter>
+" disable current search highlight
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
+" remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+" diff
 nnoremap <silent> <Leader>df :call DiffToggle()<CR>
+" move in quickfix window
+nnoremap <silent> <Leader>n :cn<Enter>
+nnoremap <silent> <Leader>N :cp<Enter>
+nnoremap <silent> <Leader>c :cc<Enter>
+" open NERDTree
+nmap <silent> <Leader>t :NERDTree<Enter>
 
+" quick grepping
 nnoremap gr :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
 nnoremap gR :execute "vimgrep / " . expand("<cword>") . " /gj **" <Bar> cw<CR>
 
@@ -105,11 +126,17 @@ endfunction
 
 command! -nargs=* GREP call GREP( '<args>' )
 
-nnoremap <silent> <Leader>n :cn<Enter>
-nnoremap <silent> <Leader>N :cp<Enter>
-nnoremap <silent> <Leader>c :cc<Enter>
+" line complete
+inoremap <C-l> <C-x><C-l>
 
-nmap <silent> <Leader>t :NERDTree<Enter>
+" increment/decrement
+nnoremap <C-i> <C-a>
+nnoremap <C-d> <C-x>
+
+" easier moving of code blocks
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
+
 
 """"""""""""""""""""""""""""""""
 " Behaviour
@@ -162,17 +189,8 @@ set tabstop=4
 set smarttab
 filetype plugin indent on
 
-" easier moving of code blocks
-vnoremap < <gv " better indentation
-vnoremap > >gv " better indentation
-
 " Default to autoindenting of C like languages
 set noautoindent smartindent
-
-"C-\ - Open function defintion in a new tab
-"A-] - Open function defintion in a vertical split
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Restore cursor position
 function! ResCur()

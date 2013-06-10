@@ -2,7 +2,7 @@ vim
 ---
 
 * Mappings / Plugins:
-<C-U> <C-D>	- page up/down
+<C-k> <C-j>	- half page up/down
 <C-P>		- ctrlp menu
 <C-S>		- save
 <C-X>		- save & quit
@@ -52,10 +52,10 @@ J			- join lines
 
 H M L		- jump to top/middle/bottom of page
 
-<C-X><C-L>	- line complete SUPER USEFUL
-/<C-R><C-W> - pull <cword> onto search/command line
+<C-l>		- line complete SUPER USEFUL
+/<C-r><C-w> - pull <cword> onto search/command line
 
-<C-A> <C-X>	- increment/decrement next number
+<C-i> <C-d>	- increment/decrement next number
 
 gr			- grep for word in cwd
 gR			- grep for ' word ' in cwd
