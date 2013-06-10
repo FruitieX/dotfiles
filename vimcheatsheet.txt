@@ -52,6 +52,8 @@ J			- join lines
 
 H M L		- jump to top/middle/bottom of page
 
+<C-r>#		- (insert mode) paste from register #
+
 <C-l>		- line complete SUPER USEFUL
 /<C-r><C-w> - pull <cword> onto search/command line
 
