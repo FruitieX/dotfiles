@@ -114,10 +114,6 @@ nnoremap <silent> <Leader>/ :nohlsearch<CR>
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 " diff
 nnoremap <silent> <Leader>df :call DiffToggle()<CR>
-" move in quickfix window
-nnoremap <silent> <Leader>n :cn<Enter>
-nnoremap <silent> <Leader>N :cp<Enter>
-nnoremap <silent> <Leader>c :cc<Enter>
 
 " open NERDTree
 nmap <silent> <Leader><Leader>T :NERDTree<Enter>
@@ -147,6 +143,11 @@ vnoremap > >gv " better indentation
 " omni complete for html tags
 inoremap <C-_> </<C-x><C-o>
 map <C-_> a<C-_><ESC>
+
+" move in quickfix window
+nnoremap <silent> <Leader><Leader>n :cn<Enter>
+nnoremap <silent> <Leader><Leader>N :cp<Enter>
+nnoremap <silent> <Leader><Leader>c :cc<Enter>
 
 
 """"""""""""""""""""""""""""""""
