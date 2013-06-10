@@ -103,8 +103,8 @@ nmap <C-w><C-l> 5<C-w>>
 nmap <C-w><C-h> 5<C-w><
 
 " move tab left/right
-nmap <silent> <Leader>h :call MoveToPrevTab()<Enter>
-nmap <silent> <Leader>l :call MoveToNextTab()<Enter>
+nmap <silent> <Leader>H :call MoveToPrevTab()<Enter>
+nmap <silent> <Leader>L :call MoveToNextTab()<Enter>
 " new tab
 nmap <silent> <Leader><Leader>t :tabnew<Enter>
 
