@@ -46,6 +46,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias sr="ssh rasse@fruitiex.org"
 alias vmx="startx -- -config xorg.vm"
+alias l="ll"
 
 export BROWSER="firefox"
 export EDITOR="vim"
