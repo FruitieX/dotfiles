@@ -20,6 +20,8 @@ ds"			- delete surrounding "
 ysiw]		- surround word with []
 yss)		- surround line with ()
 
+<C-_>		- close HTML tag
+
 x X			- delete char at/before cursor
 xp			- swap next two chars around
 

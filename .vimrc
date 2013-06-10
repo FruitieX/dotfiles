@@ -144,6 +144,10 @@ nnoremap <C-d> <C-x>
 vnoremap < <gv " better indentation
 vnoremap > >gv " better indentation
 
+" omni complete for html tags
+inoremap <C-_> </<C-x><C-o>
+map <C-_> a<C-_><ESC>
+
 
 """"""""""""""""""""""""""""""""
 " Behaviour
