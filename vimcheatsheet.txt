@@ -36,6 +36,7 @@ gqap		- format paragraph
 <C-w><C-<>	- make vsplit smaller
 <C-w><C->>	- make vsplit bigger
 ,,h/l		- move buffer to prev/next tab
+,,t			- new tab
 
 ,/			- :nohlsearch
 ,df			- toggle diffing this buffer (with another)
@@ -62,7 +63,7 @@ gR			- grep for ' word ' in cwd
 ,N			- jump to previous match
 ,c			- jump to current match
 
-,t			- open NERDTree
+,,t			- open NERDTree
 
 * Motions:
 %			- match brackets {}[]()
@@ -78,8 +79,10 @@ f F			- find next/prev match of char
 t T			- to next/prev match of char
 / ?			- to next match of string
 
-,,w ,,b		- easymotion on words
-,,f ,,F		- easymotion on chars
+,w ,b		- easymotion on words
+,e ,E		- easymotion on end of word
+,ge ,gE		- easymotion on end of word, backwards
+,f ,F		- easymotion on chars
 
 { }			- move between paragraphs
 

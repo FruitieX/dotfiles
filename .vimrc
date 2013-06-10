@@ -91,6 +91,7 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " leader keys
 let mapleader=","
+
 " split related binds
 nmap <Leader>h <C-w>h
 nmap <Leader>j <C-w>j
@@ -100,8 +101,13 @@ nmap <C-w><C-j> 5<C-w>+
 nmap <C-w><C-k> 5<C-w>-
 nmap <C-w><C-l> 5<C-w>>
 nmap <C-w><C-h> 5<C-w><
+
+" move tab left/right
 nmap <silent> <Leader><Leader>h :call MoveToPrevTab()<Enter>
 nmap <silent> <Leader><Leader>l :call MoveToNextTab()<Enter>
+" new tab
+nmap <silent> <Leader><Leader>t :tabnew<Enter>
+
 " disable current search highlight
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 " remove trailing whitespace
@@ -112,8 +118,9 @@ nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 nnoremap <silent> <Leader>n :cn<Enter>
 nnoremap <silent> <Leader>N :cp<Enter>
 nnoremap <silent> <Leader>c :cc<Enter>
+
 " open NERDTree
-nmap <silent> <Leader>t :NERDTree<Enter>
+nmap <silent> <Leader><Leader>T :NERDTree<Enter>
 
 " quick grepping
 nnoremap gr :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
@@ -280,3 +287,6 @@ let g:ctrlp_lazy_update = 100
 
 " NERDCommenter needs this
 filetype plugin on
+
+" easymotion config
+let g:EasyMotion_leader_key = '<Leader>'
