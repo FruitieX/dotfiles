@@ -67,6 +67,7 @@ manageHook' = composeAll [ isFullscreen             --> doFullFloat
 
                          , className =? "Chromium"					--> doShift "2:www"
                          , className =? "Firefox"					--> doShift "2:www"
+						 , className =? "luakit"					--> doShift "2:www"
 
                          , className =? "URxvt" <&&> title =? "irc"	--> doShift "3:irc"
                          , className =? "Xchat"						--> doShift "3:irc"
