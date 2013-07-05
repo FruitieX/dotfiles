@@ -69,6 +69,8 @@ gR			- grep for ' word ' in cwd
 
 ,,t			- open NERDTree
 
+<C-r>=2+2	- perform calculations!
+
 * Motions:
 %			- match brackets {}[]()
 * # g* g#	- find word under cursor (forwards/backwards)

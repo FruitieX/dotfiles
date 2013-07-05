@@ -22,7 +22,7 @@ xsetroot -cursor_name left_ptr &
 ~/bin/wallpaper.sh &
 ~/bin/steam.sh &
 urxvt -title tmux -e tmux &
-luakit &
+~/bin/luakit &
 xchat &
 numlockx &
 synergys -c ~/.synergy.conf &

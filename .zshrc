@@ -48,7 +48,7 @@ alias sr="ssh rasse@fruitiex.org"
 alias vmx="startx -- -config xorg.vm"
 alias l="ll"
 
-export BROWSER="firefox"
+export BROWSER="luakit"
 export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="vimpager"
