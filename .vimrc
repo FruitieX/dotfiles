@@ -1,6 +1,26 @@
 " FruitieX' .vimrc v0.3
 
+""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""
 execute pathogen#infect()
+
+" powerline config
+set laststatus=2
+set noshowmode
+
+" ctrlp config
+let g:ctrlp_max_height = 30
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_lazy_update = 100
+
+" NERDCommenter needs this
+filetype plugin on
+
+" easymotion config
+let g:EasyMotion_leader_key = '<Leader>'
 
 """"""""""""""""""""""""""""""""
 " Appearance
@@ -93,10 +113,10 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 let mapleader=","
 
 " split related binds
-nmap <Leader><Leader>h <C-w>h
-nmap <Leader><Leader>j <C-w>j
-nmap <Leader><Leader>k <C-w>k
-nmap <Leader><Leader>l <C-w>l
+nmap <Leader>h <C-w>h
+nmap <Leader>j <C-w>j
+nmap <Leader>k <C-w>k
+nmap <Leader>l <C-w>l
 nmap <C-w><C-j> 5<C-w>+
 nmap <C-w><C-k> 5<C-w>-
 nmap <C-w><C-l> 5<C-w>>
@@ -274,24 +294,3 @@ function! DiffToggle()
 		diffthis
 	endif
 :endfunction
-
-""""""""""""""""""""""""""""""""
-" Plugins
-""""""""""""""""""""""""""""""""
-
-" powerline config
-set laststatus=2
-set noshowmode
-
-" ctrlp config
-let g:ctrlp_max_height = 30
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_lazy_update = 100
-
-" NERDCommenter needs this
-filetype plugin on
-
-" easymotion config
-let g:EasyMotion_leader_key = '<Leader>'
