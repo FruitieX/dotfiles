@@ -25,7 +25,7 @@ assign [class="URxvt"] 1: main
 
 assign [class="Chromium"] 2: www
 assign [class="Firefox"] 2: www
-assign [class="dwb"] 2: www
+assign [class="Dwb"] 2: www
 assign [class="luakit"] 2: www
 
 assign [class="Xchat"] 3: irc
