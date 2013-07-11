@@ -59,7 +59,7 @@ H M L		- jump to top/middle/bottom of page
 <C-l>		- line complete SUPER USEFUL
 /<C-r><C-w> - pull <cword> onto search/command line
 
-<C-i> <C-d>	- increment/decrement next number
+<C-a>a <C-x>- increment/decrement next number
 
 gr			- grep for word in cwd
 gR			- grep for ' word ' in cwd

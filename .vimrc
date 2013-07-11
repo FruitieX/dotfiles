@@ -153,8 +153,8 @@ command! -nargs=* GREP call GREP( '<args>' )
 inoremap <C-l> <C-x><C-l>
 
 " increment/decrement
-nnoremap <C-i> <C-a>
-nnoremap <C-d> <C-x>
+"nnoremap <C-i> <C-a>
+"nnoremap <C-d> <C-x>
 
 " easier moving of code blocks
 vnoremap < <gv " better indentation
