@@ -154,6 +154,15 @@ bindsym $mod+r mode "resize"
 bindsym $mod+shift+period move workspace to output right
 bindsym $mod+shift+comma move workspace to output left
 
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 1+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 1-
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+bindsym XF86AudioPlay exec /usr/bin/cmus-remote --pause
+bindsym XF86AudioStop exec /usr/bin/cmus-remote --stop
+bindsym XF86AudioPrev exec /usr/bin/cmus-remote --prev
+bindsym XF86AudioNext exec /usr/bin/cmus-remote --next
+
 new_window pixel 5
 
 # colors				border	backgr.	text	indicator
