@@ -23,6 +23,13 @@ then
 	ln -sr "powerline.zsh-theme" "$HOME/.oh-my-zsh/themes/powerline.zsh-theme"
 fi
 
+# dwb config
+if [ ! -f "$HOME/.config/dwb" ];
+then
+	echo ".config/dwb => $HOME/.config/dwb"
+	ln -sr ".config/dwb" "$HOME/.config/dwb"
+fi
+
 # ~/bin
 if [ ! -d "$HOME/bin" ];
 then
