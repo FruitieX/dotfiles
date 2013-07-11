@@ -21,6 +21,31 @@ font -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 
+assign [class="URxvt"] 1: main
+
+assign [class="Chromium"] 2: www
+assign [class="Firefox"] 2: www
+assign [class="dwb"] 2: www
+assign [class="luakit"] 2: www
+
+assign [class="Xchat"] 3: irc
+
+assign [class="Gimp"] 4: gui
+assign [class="Vlc"] 4: gui
+assign [class="Evince"] 4: gui
+assign [class="Wireshark"] 4: gui
+assign [class="Mixxx"] 4: gui
+assign [class="Wine"] 4: gui
+assign [class="Radiant.x86"] 4: gui
+assign [class="Mumble"] 4: gui
+assign [class="Deluge"] 4: gui
+assign [title="Renoise (x86_64)"] 4: gui
+assign [title="LibreOffice"] 4: gui
+
+assign [class="Steam"] 5: games
+assign [title="Steam"] 5: games
+assign [title="Updating Steam..."] 5: games
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -77,7 +102,7 @@ bindsym $mod+o focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1: main
-bindsym $mod+2 workspace 2: web
+bindsym $mod+2 workspace 2: www
 bindsym $mod+3 workspace 3: irc
 bindsym $mod+4 workspace 4: gui
 bindsym $mod+5 workspace 5: games
@@ -89,7 +114,7 @@ bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1: main
-bindsym $mod+Shift+2 move container to workspace 2: web
+bindsym $mod+Shift+2 move container to workspace 2: www
 bindsym $mod+Shift+3 move container to workspace 3: irc
 bindsym $mod+Shift+4 move container to workspace 4: gui
 bindsym $mod+Shift+5 move container to workspace 5: games
