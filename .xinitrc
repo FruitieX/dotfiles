@@ -22,14 +22,15 @@ xsetroot -cursor_name left_ptr &
 ~/bin/wallpaper.sh &
 ~/bin/steam.sh &
 urxvt -title tmux -e tmux &
-luakit &
+dwb &
 xchat &
 numlockx &
 synergys -c ~/.synergy.conf &
 
 #xrandr --output LVDS1 --set "scaling mode" Full &
 
-exec xmonad
+#exec xmonad
+exec i3
 
 # SLiM session selector
 #DEFAULT_SESSION=/home/rasse/bin/startdwm
