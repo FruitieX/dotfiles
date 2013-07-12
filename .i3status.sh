@@ -3,11 +3,13 @@ echo '{ "version": 1 }'
 echo '['
 echo '[]'
 
-while :
+while :;
 do
-    #id=$(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}')
-    #name=$(xprop -id $id | awk '/_NET_WM_NAME/{$1=$2="";print}' | cut -d'"' -f2)
-	date=$(date)
-	echo ",[{\"name\":\"time\",\"full_text\":\"$(date)\"}]"
+
+	cpu=$(top -b -n 1  | awk -F'[:,]' '/^Cpu/{sub("\\..*","",$2); print $2}')
+	echo ",[\
+		{\"full_text\":\"$cpu\"},\
+		{\"full_text\":\"$(date '+%a %d.%m.%Y %H:%M:%S')\"},\
+	]"
 	sleep 1
 done

@@ -191,5 +191,5 @@ bar {
 	}
 
 	#status_command i3pystatus
-	status_command ~/.i3status
+	status_command i3status --config ~/.i3/i3status.conf
 }
