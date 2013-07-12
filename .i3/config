@@ -190,5 +190,6 @@ bar {
 		urgent_workspace		#A22F4C	#B52549	#FFFFFF
 	}
 
-	status_command ~/.i3status.sh
+	#status_command i3pystatus
+	status_command ~/.i3status
 }
