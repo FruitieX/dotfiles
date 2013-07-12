@@ -63,10 +63,10 @@ bindsym $mod+p exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left; exec killall -USR1 i3status
-bindsym $mod+j focus down; exec killall -USR1 i3status
-bindsym $mod+k focus up; exec killall -USR1 i3status
-bindsym $mod+l focus right; exec killall -USR1 i3status
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -163,13 +163,13 @@ bindsym XF86AudioStop exec /usr/bin/cmus-remote --stop
 bindsym XF86AudioPrev exec /usr/bin/cmus-remote --prev
 bindsym XF86AudioNext exec /usr/bin/cmus-remote --next
 
-new_window pixel 5
+new_window normal 5
 
 # colors				border	backgr.	text	indicator
-client.focused			#5AAE24	#599C2D	#333333 #9ED779
-client.focused_inactive	#C68A29	#B28233	#333333 #E3BD80
-client.unfocused		#244D82	#294A75	#333333 #7495C1
-client.urgent			#B52549	#A22F4C	#333333 #DA7B93
+client.focused			#5AAE24	#599C2D	#FFFFFF #9ED779
+client.focused_inactive	#C68A29	#B28233	#FFFFFF #E3BD80
+client.unfocused		#244D82	#294A75	#FFFFFF #7495C1
+client.urgent			#B52549	#A22F4C	#FFFFFF #DA7B93
 
 focus_follows_mouse no
 
