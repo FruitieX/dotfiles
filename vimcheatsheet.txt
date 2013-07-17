@@ -69,7 +69,7 @@ gR			- grep for ' word ' in cwd
 
 ,,t			- open NERDTree
 
-<C-r>=2+2	- perform calculations!
+<C-r>=2+2	- perform math/calculations!
 
 * Motions:
 %			- match brackets {}[]()
