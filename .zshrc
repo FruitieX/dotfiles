@@ -40,7 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ant archlinux history-substring-search rsync tmux nyan)
+plugins=(git ant archlinux history-substring-search rsync tmux nyan vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -64,6 +64,11 @@ stty ixoff -ixon
 bindkey -M menuselect 'h' vi-backward-char        # left
 bindkey -M menuselect 'k' vi-up-line-or-history   # up
 bindkey -M menuselect 'l' vi-forward-char         # right
-bindkey -M menuselect 'j' vi-down-line-or-history # bottom
-bindkey -v
-bindkey -M viins 'jj' vi-cmd-mode
+#bindkey -M menuselect 'j' vi-down-line-or-history # bottom, unfortunately the command below interferes with this
+bindkey -M viins 'jj' vi-cmd-mode # 'jj' takes you into cmd mode
+
+# make search up and down work, so partially type and hit up/down to find relevant stuff
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+bindkey -M vicmd 'k' up-line-or-search
+bindkey -M vicmd 'j' down-line-or-search
