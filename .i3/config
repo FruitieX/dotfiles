@@ -21,7 +21,7 @@ font -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 
-assign [class="URxvt"] 1: main
+assign [title="tmux"] 1: main
 
 assign [class="Chromium"] 2: www
 assign [class="Firefox"] 2: www
@@ -29,6 +29,7 @@ assign [class="Dwb"] 2: www
 assign [class="luakit"] 2: www
 
 assign [class="Xchat"] 3: irc
+assign [title="irc"] 3: irc
 
 assign [class="Gimp"] 4: gui
 assign [class="Vlc"] 4: gui

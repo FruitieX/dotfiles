@@ -8,10 +8,10 @@
 *urgentOnBell: true
 *borderless: 1
 
-*perl-ext-common:  	default,url-select
-*keysym.M-u:			perl:url-select:select_next
-*url-select.launcher:	/usr/bin/firefox
-*url-select.underline: true
+!*perl-ext-common:  	default,url-select
+!*keysym.M-u:			perl:url-select:select_next
+!*url-select.launcher:	/usr/bin/firefox
+!*url-select.underline: true
 *colorUL: #4682B4
 
 Xcursor.theme: Human
