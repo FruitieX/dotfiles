@@ -72,7 +72,7 @@ set showbreak=↪
 imap jj <Esc>
 
 " Bind ; to <C-]> (jump to definition), it's faster and C-] doesn't work oven PuTTY
-map ; <C-]>
+"map ; <C-]>
 
 " Avoid :w, :q
 map <C-s> :w<Enter>
@@ -223,6 +223,11 @@ filetype plugin indent on
 
 " Default to autoindenting of C like languages
 set noautoindent smartindent
+
+" Show relative numbers in command mode, absolute in insert mode
+set relativenumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 
 " Restore cursor position
 function! ResCur()
