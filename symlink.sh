@@ -4,7 +4,7 @@
 FILES=( bin .config .i3 .oh-my-zsh .synergy.conf .tmux.conf .urlview .vim* .weechat .Xdefaults .xinitrc .Xmodmap .zshrc )
 
 # cd to root of git repo
-cd $(dirname $0)
+cd "$(dirname $0)"
 CWD=$(pwd)
 
 # dry run mode enabled?
@@ -15,11 +15,9 @@ else
 fi
 
 echo "WARNING! this script will backup the following files and put symlinks in their place:"
-for FILE in $(find $FILES -type f); do
-	echo "$HOME/$FILE"
-done
+find "${FILES[@]}" -type f -printf "$HOME/%p\n"
 
-echo && echo "are you sure you want to continue? (y/n)"
+echo -e "\nare you sure you want to continue? (y/n)"
 read answer
 if [[ "$answer" != "y" ]]; then
 	echo "aborting."
@@ -27,12 +25,12 @@ if [[ "$answer" != "y" ]]; then
 fi
 
 # symlink files
-echo && echo "symlinking..."
+echo -e "\nsymlinking..."
 
-for FILE in $(find $FILES -type f); do
+find "${FILES[@]}" -type f -print0 | while read -d $'\0' FILE; do
 
 	# create parent directies if they do not exist
-	if [ ! -d $(dirname "$HOME/$FILE") ]; then
+	if [ ! -d "$(dirname "$HOME/$FILE")" ]; then
 		$DRYRUN mkdir -p $(dirname "$HOME/$FILE")
 	fi
 
