@@ -39,10 +39,10 @@ for FILE in $(find $FILES -type f); do
 	# if file is a symlink, remove it and later make a new symlink
 	if [ -L "$HOME/$FILE" ]; then
 		$DRYRUN rm "$HOME/$FILE"
-	# elif file already exists but is not backed up, make a backup
-	elif [ -f "$HOME/$FILE" -a ! -f "$HOME/$FILE.bak" ]; then
+	# elif file already exists, make a backup
+	elif [ -f "$HOME/$FILE" ]; then
+		$DRYRUN mv -f "$HOME/$FILE" "$HOME/$FILE.bak"
 		echo "backed up $HOME/$FILE => $HOME/$FILE.bak"
-		$DRYRUN mv "$HOME/$FILE" "$HOME/$FILE.bak"
 	fi
 
 	echo "$FILE => $HOME/$FILE"
