@@ -12,14 +12,23 @@ Update:
 1: git pull
 2: Run ./symlink.sh
 
-Dependencies for fellow archers:
+Dependencies for arch linux users:
+----------------------------------
+* for script:
+pacman -S git curl
 
-* vim:			pacman -S 	vim vim-colorsamplerpack vimpager ctags
-* xmonad:		pacman -S 	xmonad xmonad-contrib xmobar
+* vim:
+pacman -S gvim vim-colorsamplerpack vimpager ctags
 
-* misc cli:		pacman -S 	openssh sudo tmux cmus sshfs ntp terminus-font
-* misc X11:		pacman -S 	xorg-server xorg-xset xorg-xsetroot xorg-xmodmap
-							xorg-xinit rxvt-unicode numlockx redshift feh
-							firefox xchat synergy slim archlinux-themes-slim
-							dmenu
+* wm stuff:
+pacman -S i3 i3status dmenu
 
+* misc cli:
+pacman -S openssh sudo tmux cmus sshfs ntp terminus-font weechat
+
+* misc gui:
+pacman -S rxvt-unicode numlockx redshift feh dwb synergy
+
+* xorg:
+pacman -S xorg-server xorg-xset xorg-xsetroot xorg-xmodmap xorg-xinit slim \
+archlinux-themes-slim
