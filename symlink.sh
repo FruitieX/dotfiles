@@ -37,13 +37,15 @@ for FILE in $(find $FILES -type f); do
 		mkdir -p $(dirname "$HOME/$FILE")
 	fi
 
-	ln -fsr "$FILE" "$HOME/$FILE"
+	rm "$HOME/$FILE"
+	ln -sr "$FILE" "$HOME/$FILE"
 done
 
 # symlink dirs
 for DIR in $DIRS; do
 	"$DIR => $HOME/$DIR"
-	ln -fsr "$DIR" "$HOME/$DIR"
+	rm -r "$HOME/$DIR"
+	ln -sr "$DIR" "$HOME/$DIR"
 done
 
 echo "all done!"
