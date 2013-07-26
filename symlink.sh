@@ -18,19 +18,17 @@ echo "WARNING! this script will backup the following files and put symlinks in t
 for FILE in $(find $FILES -type f); do
 	echo "$HOME/$FILE"
 done
-echo
 
-echo "are you sure you want to continue? (y/n)"
+echo && echo "are you sure you want to continue? (y/n)"
 read answer
-
 if [[ "$answer" != "y" ]]; then
 	echo "aborting."
 	exit
 fi
 
+# symlink files
 echo && echo "symlinking..."
 
-# symlink files
 for FILE in $(find $FILES -type f); do
 
 	# create parent directies if they do not exist
