@@ -9,13 +9,13 @@ DIRS=( ".vim" ".i3" )
 cd $(dirname $0)
 CWD=$(pwd)
 
-echo "WARNING! this script will OVERWRITE the following files with symlinks:"
+echo "WARNING! this script will backup the following files and put symlinks in their place:"
 for FILE in $(find $FILES -type f); do
 	echo "$HOME/$FILE"
 done
 echo
 
-echo "WARNING! this script will OVERWRITE the following directories (INCLUDING contents!) with symlinks:"
+echo "WARNING! this script will backup the following directories and put symlinks in their place:"
 for DIR in $DIRS; do
 	echo "$HOME/$DIR"
 done
@@ -33,21 +33,38 @@ echo && echo "symlinking..."
 
 # symlink files
 for FILE in $(find $FILES -type f); do
-	echo "$FILE => $HOME/$FILE"
 
 	# create parent directies if they do not exist
 	if [ ! -d $(dirname "$HOME/$FILE") ]; then
 		mkdir -p $(dirname "$HOME/$FILE")
 	fi
 
-	rm "$HOME/$FILE" > /dev/null 2&>1
+	# if file is a symlink, remove it and later make a new symlink
+	if [ -L "$HOME/$FILE" ]; then
+		rm "$HOME/$FILE"
+	# elif file already exists but is not backed up, make a backup
+	elif [ -f "$HOME/$FILE" -a ! -f "$HOME/$FILE.bak" ]; then
+		echo "backed up $HOME/$FILE => $HOME/$FILE.bak"
+		mv "$HOME/$FILE" "$HOME/$FILE.bak"
+	fi
+
+	echo "$FILE => $HOME/$FILE"
 	ln -sr "$FILE" "$HOME/$FILE"
 done
 
 # symlink dirs
 for DIR in $DIRS; do
+
+	# if dir is a symlink, remove it and later make a new symlink
+	if [ -L "$HOME/$DIR" ]; then
+		rm -r "$HOME/$DIR"
+	# elif dir already exists but is not backed up, make a backup
+	elif [ -d "$HOME/$DIR" -a ! -d "$HOME/$DIR.bak" ]; then
+		echo "backed up $HOME/$DIR => $HOME/$DIR.bak"
+		mv "$HOME/$DIR" "$HOME/$DIR.bak"
+	fi
+
 	echo "$DIR => $HOME/$DIR"
-	rm -r "$HOME/$DIR" > /dev/null 2&>1
 	ln -sr "$DIR" "$HOME/$DIR"
 done
 

@@ -1,16 +1,19 @@
 FruitieX' Linux dotfiles
 ========================
+A git repository containing my configuration files for various programs. I've
+provided a few handy scripts if you want a set-up just like mine with minimal
+effort (no guarentees that they work though :-) and as usual: make backups and
+read through the scripts before you run them!)
 
 Install:
 --------
-1: Run ./firstrun.sh
-2: Run ./symlink.sh
-3: Enjoy!
+$ ./firstrun.sh
+$ ./symlink.sh
 
 Update:
 -------
-1: git pull
-2: Run ./symlink.sh
+$ git pull
+$ ./symlink.sh
 
 Dependencies for arch linux users:
 ----------------------------------
