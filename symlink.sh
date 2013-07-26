@@ -1,25 +1,23 @@
 #!/bin/zsh
 
-dosymlink()
-{
-	for FILE in $(find "$@"); do
-		echo "$FILE => $HOME/$FILE"
-		rm "$HOME/$FILE"
+# symlink individual files from this array
+FILES=( "bin" ".config" ".i3" ".oh-my-zsh" ".synergy.conf" ".tmux.conf" ".urlview" ".vimrc" ".weechat" ".Xdefaults" ".xinitrc" ".Xmodmap" ".zshrc" )
+# symlink entire directories from this array
+DIRS=( ".vim" )
 
-		# create parent directies if they do not exist
-		if [ ! -d $(dirname "$HOME/$FILE") ]; then
-			mkdir -p $(dirname "$HOME/$FILE")
-		fi
+# cd to root of git repo
+cd $(dirname $0)
+CWD=$(pwd)
 
-		ln -sr "$FILE" "$HOME/$FILE"
-	done
-}
-
-FILES=( ".config/dwb" ".oh-my-zsh/themes/powerline.zsh-theme" )
-
-echo "WARNING! this script will OVERWRITE the following files/directories with symlinks:"
-for FILE in $(find ${FILES[@]}); do
+echo "WARNING! this script will OVERWRITE the following files with symlinks:"
+for FILE in $(find $FILES -type f); do
 	echo "$HOME/$FILE"
+done
+echo
+
+echo "WARNING! this script will OVERWRITE the following directories (INCLUDING contents!) with symlinks:"
+for DIR in $DIRS; do
+	echo "$HOME/$DIR"
 done
 
 echo "are you sure you want to continue? (y/n)"
@@ -30,33 +28,22 @@ if [[ "$answer" != "y" ]]; then
 	exit
 fi
 
-# cd to root of git repo
-cd $(dirname $0)
-CWD=$(pwd)
-
-# create dirs
-if [ ! -d "$HOME/bin" ]; then
-	mkdir ~/bin
-fi
-if [ ! -d "$HOME/.config/dwb" ]; then
-	mkdir "$HOME/.config/dwb"
-fi
-
-# TODO does this filter all files containing any of these chars??
-for FILE in .[^.git]*; do
+# symlink files
+for FILE in $(find $FILES -type f); do
 	echo "$FILE => $HOME/$FILE"
-	rm "$HOME/$FILE"
-	ln -sr "$FILE" "$HOME/$FILE"
+
+	# create parent directies if they do not exist
+	if [ ! -d $(dirname "$HOME/$FILE") ]; then
+		mkdir -p $(dirname "$HOME/$FILE")
+	fi
+
+	ln -fsr "$FILE" "$HOME/$FILE"
 done
 
-# dwb config
-dosymlink .config/dwb/ ".oh-my-zsh/themes/powerline.zsh-theme"
-
-# ~/bin
-for FILE in bin/*; do
-	echo "$FILE => $HOME/$FILE"
-	rm "$HOME/$FILE"
-	ln -sr "$FILE" "$HOME/$FILE"
+# symlink dirs
+for DIR in $DIRS; do
+	"$DIR => $HOME/$DIR"
+	ln -fsr "$DIR" "$HOME/$DIR"
 done
 
 echo "all done!"
