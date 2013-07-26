@@ -1,47 +1,62 @@
 #!/bin/zsh
 
-# TODO does this filter all files containing any of these chars??
-for FILE in .[^.git]*; do
-	if [ ! -f "$HOME/$FILE" ] && [ ! -d "$HOME/$FILE" ];
-	then
+dosymlink()
+{
+	for FILE in $(find "$@"); do
 		echo "$FILE => $HOME/$FILE"
+		rm "$HOME/$FILE"
+
+		# create parent directies if they do not exist
+		if [ ! -d $(dirname "$HOME/$FILE") ]; then
+			mkdir -p $(dirname "$HOME/$FILE")
+		fi
+
 		ln -sr "$FILE" "$HOME/$FILE"
-	fi
+	done
+}
+
+FILES=( ".config/dwb" ".oh-my-zsh/themes/powerline.zsh-theme" )
+
+echo "WARNING! this script will OVERWRITE the following files/directories with symlinks:"
+for FILE in $(find ${FILES[@]}); do
+	echo "$HOME/$FILE"
 done
 
-# pentadactyl does not like unix dot notation :p
-if [ ! -f "$HOME/_pentadactylrc" ];
-then
-	echo "_pentadactylrc => $HOME/_pentadactylrc"
-	ln -sr "_pentadactylrc" "$HOME/_pentadactylrc"
+echo "are you sure you want to continue? (y/n)"
+read answer
+
+if [[ "$answer" != "y" ]]; then
+	echo "aborting."
+	exit
 fi
 
-# custom oh-my-zsh theme
-if [ ! -f "$HOME/.oh-my-zsh/themes/powerline.zsh-theme" ];
-then
-	echo "powerline.zsh-theme => $HOME/.oh-my-zsh/themes/powerline.zsh-theme"
-	ln -sr "powerline.zsh-theme" "$HOME/.oh-my-zsh/themes/powerline.zsh-theme"
-fi
+# cd to root of git repo
+cd $(dirname $0)
+CWD=$(pwd)
 
-# dwb config
-if [ ! -f "$HOME/.config/dwb" ];
-then
-	echo ".config/dwb => $HOME/.config/dwb"
-	ln -sr ".config/dwb" "$HOME/.config/dwb"
-fi
-
-# ~/bin
-if [ ! -d "$HOME/bin" ];
-then
+# create dirs
+if [ ! -d "$HOME/bin" ]; then
 	mkdir ~/bin
 fi
+if [ ! -d "$HOME/.config/dwb" ]; then
+	mkdir "$HOME/.config/dwb"
+fi
 
-for FILE in bin/*; do
-	if [ ! -f "$HOME/$FILE" ] && [ ! -d "$HOME/$FILE" ];
-	then
-		echo "$FILE => $HOME/$FILE"
-		ln -sr "$FILE" "$HOME/$FILE"
-	fi
+# TODO does this filter all files containing any of these chars??
+for FILE in .[^.git]*; do
+	echo "$FILE => $HOME/$FILE"
+	rm "$HOME/$FILE"
+	ln -sr "$FILE" "$HOME/$FILE"
 done
 
-echo "done!"
+# dwb config
+dosymlink .config/dwb/ ".oh-my-zsh/themes/powerline.zsh-theme"
+
+# ~/bin
+for FILE in bin/*; do
+	echo "$FILE => $HOME/$FILE"
+	rm "$HOME/$FILE"
+	ln -sr "$FILE" "$HOME/$FILE"
+done
+
+echo "all done!"
