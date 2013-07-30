@@ -185,6 +185,7 @@ set encoding=utf8
 
 " Reload a file if it changes
 set autoread
+autocmd BufEnter * silent! checktime
 
 " Keep 500 lines of command line history
 set history=500
