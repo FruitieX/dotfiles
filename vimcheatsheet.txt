@@ -10,6 +10,7 @@ vim
 <C-q>		- quit
 
 <F2>		- toggle paste mode
+<F5>		- reload file
 <F8>		- tagbar
 
 ciw			- change whole (in) word
@@ -117,6 +118,8 @@ qX...q		- record keystrokes ... into macro X
 :.!sh       - execute contents of current line in buffer and capture the output
 !sort       - selected lines piped to sort, thus sorting selection
 !grep word  - keep only lines containing 'word' in the selected range.
+
+:e(!)		- reload file (discard changes)
 
 ;			- repeat f motion
 

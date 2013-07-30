@@ -78,8 +78,9 @@ imap jj <Esc>
 map <C-s> :w<Enter>
 map <C-q> :q<Enter>
 
-nmap <F8> :TagbarToggle<CR>
 set pastetoggle=<F2>
+nmap <silent> <F5> :checktime<Enter>
+nmap <F8> :TagbarToggle<CR>
 
 " allow moving around in insert mode TODO: this does not work
 inoremap <A-h> <C-o>h
