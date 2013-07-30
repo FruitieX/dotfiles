@@ -63,7 +63,7 @@ prompt_context() {
   local user=`whoami`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$user@%m"
+    prompt_segment $PROMPT_HOST_COLOR_BG $PROMPT_HOST_COLOR_FG "%(!.%{%F{yellow}%}.) $user@%m"
   fi
 }
 
@@ -74,9 +74,9 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow black
+      prompt_segment $PROMPT_GIT_DIRTY_BG $PROMPT_GIT_DIRTY_FG
     else
-      prompt_segment green black
+      prompt_segment $PROMPT_GIT_BG $PROMPT_GIT_FG
     fi
 
     setopt promptsubst
@@ -131,7 +131,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue black '%~'
+  prompt_segment $PROMPT_CWD_COLOR_BG $PROMPT_CWD_COLOR_FG '%~'
 }
 
 # Status:

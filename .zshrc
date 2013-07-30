@@ -42,6 +42,19 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git ant archlinux history-substring-search rsync tmux nyan vi-mode)
 
+# colors
+PROMPT_HOST_COLOR_BG=148
+PROMPT_HOST_COLOR_FG=22
+PROMPT_CWD_COLOR_BG=240
+PROMPT_CWD_COLOR_FG=252
+PROMPT_GIT_BG=236
+PROMPT_GIT_FG=247
+PROMPT_GIT_DIRTY_BG=252
+PROMPT_GIT_DIRTY_FG=236
+
+if [ -f ~/.zshrc.local ]; then
+	source ~/.zshrc.local
+fi
 source $ZSH/oh-my-zsh.sh
 
 alias sr="ssh rasse@fruitiex.org"
