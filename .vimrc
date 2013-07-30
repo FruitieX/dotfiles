@@ -60,6 +60,11 @@ set ruler
 "set nowrap
 set showbreak=↪
 
+" Disable backup
+set nobackup
+set nowb
+set noswapfile
+
 " Make cursor more visible
 "set cursorline
 "set cursorcolumn
@@ -97,13 +102,18 @@ noremap <C-d> <Nop>
 noremap <C-u> <Nop>
 
 " vim hard mode :-)
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+" ok fine but DON'T USE THESE!
+"map <Left> <Nop>
+"map <Right> <Nop>
+"map <Up> <Nop>
+"map <Down> <Nop>
+"map <PageUp> <Nop>
+"map <PageDown> <Nop>
 
-map <PageUp> <Nop>
-map <PageDown> <Nop>
+" Treat long lines as break lines (useful when moving around in them)
+"map j gj
+"map k gk
+" TODO: this breaks vimpager :(
 
 "C-\ - Open function defintion in a new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -126,8 +136,18 @@ nmap <C-w><C-h> 5<C-w><
 " move tab left/right
 nmap <silent> <Leader>H :call MoveToPrevTab()<Enter>
 nmap <silent> <Leader>L :call MoveToNextTab()<Enter>
-" new tab
-nmap <silent> <Leader><Leader>t :tabnew<Enter>
+
+"nmap <silent> <Leader><Leader>t :tabnew<Enter>
+map <leader><leader>tn :tabnew<cr>
+map <leader><leader>to :tabonly<cr>
+map <leader><leader>tc :tabclose<cr>
+map <leader><leader>tm :tabmove
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader><leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " disable current search highlight
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
@@ -170,6 +190,41 @@ nnoremap <silent> <Leader><Leader>n :cn<Enter>
 nnoremap <silent> <Leader><Leader>N :cp<Enter>
 nnoremap <silent> <Leader><Leader>c :cc<Enter>
 
+" move lines up/down
+nmap <leader><C-j> mz:m+<cr>`z
+nmap <leader><C-k> mz:m-2<cr>`z
+vmap <leader><C-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <leader><C-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+function! CmdLine(str)
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunction
+
+function! VisualSelection(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
 """"""""""""""""""""""""""""""""
 " Behaviour
@@ -198,6 +253,10 @@ set undoreload=1000
 " Allow switching buffers without writing to disk
 set hidden
 
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
 " Smart case-sensitive search
 set ignorecase
 set smartcase
@@ -207,8 +266,13 @@ set hlsearch
 " Search as you type
 set incsearch
 
+" Don't redraw while executing macros
+set lazyredraw
+
 " Disable visual bell (removes delay also)
 set visualbell t_vb=
+
+set switchbuf=split
 
 " Better tab completion
 set wildmode=longest,list,full
@@ -224,7 +288,8 @@ set smarttab
 filetype plugin indent on
 
 " Default to autoindenting of C like languages
-set noautoindent smartindent
+set autoindent
+set smartindent
 
 " Show relative numbers in command mode, absolute in insert mode
 set relativenumber
@@ -243,6 +308,8 @@ augroup resCur
 	autocmd!
 	autocmd BufWinEnter * call ResCur()
 augroup END
+" Remember info about open buffers on close
+set viminfo^=%
 
 " more tabs
 set tabpagemax=15

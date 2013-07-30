@@ -27,6 +27,7 @@ yss)		- surround line with ()
 
 x X			- delete char at/before cursor
 xp			- swap next two chars around
+,<C-j> <C-k>- move line up/down
 
 guU			- lowercase line
 gUU			- uppercase line
@@ -41,7 +42,9 @@ gqap		- format paragraph
 <C-w><C-<>	- make vsplit smaller
 <C-w><C->>	- make vsplit bigger
 ,,h/l		- move buffer to prev/next tab
-,,t			- new tab
+,,tn		- new tab
+,,to		- close other tabs
+,,tc		- close tabs
 
 ,/			- :nohlsearch
 ,df			- toggle diffing this buffer (with another)
@@ -71,6 +74,7 @@ gR			- grep for ' word ' in cwd
 ,c			- jump to current match
 
 ,,t			- open NERDTree
+,cd			- cwd to path of current buffer
 
 <C-r>=2+2	- perform math/calculations!
 
@@ -104,6 +108,7 @@ t T			- to next/prev match of char
 :s!/usr/local/!/opt/alt/! - use ! as separator instead of /
 qX...q		- record keystrokes ... into macro X
 @X			- execute macro X (these are registers, see below for modifying!)
+			  (note you can make a recursive macro like this, runs until EOF)
 @@			- execute last macro
 
 :map X		- list mappings beginning with X
@@ -135,6 +140,7 @@ EXTRA:
 /fred\|joe         : fred OR joe
 
 * Substitution with regex:
+:s//blah/g				   : substitute last searched (in reg /) with blah
 :%s/fred/joe/igc           : general substitute command
 :%s/\r//g                  : delete DOS Carriage Returns (^M)
 :'a,'bg/fred/s/dick/joe/gc : VERY USEFUL
