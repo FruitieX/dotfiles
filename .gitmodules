@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/vim-pasta.git"]
 	path = .vim/bundle/vim-pasta.git
 	url = git://github.com/sickill/vim-pasta.git
+[submodule ".vim/bundle/vim-syntastic.git"]
+	path = .vim/bundle/vim-syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
