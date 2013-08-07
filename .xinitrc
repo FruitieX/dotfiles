@@ -30,7 +30,8 @@ synergys -c ~/.synergy.conf &
 #xrandr --output LVDS1 --set "scaling mode" Full &
 
 #exec xmonad
-exec i3
+exec ~/src/i3/i3
+#exec bspwm
 
 # SLiM session selector
 #DEFAULT_SESSION=/home/rasse/bin/startdwm
