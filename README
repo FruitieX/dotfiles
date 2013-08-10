@@ -5,6 +5,10 @@ provided a few handy scripts if you want a set-up just like mine with minimal
 effort (no guarentees that they work though :-) and as usual: make backups and
 read through the scripts before you run them!)
 
+Screenshot:
+-----------
+![Screenshot](/screenshot.png "Screenshot of config in action")
+
 Install:
 --------
 $ ./firstrun.sh
