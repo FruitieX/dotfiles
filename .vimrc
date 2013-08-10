@@ -22,6 +22,9 @@ filetype plugin on
 " easymotion config
 let g:EasyMotion_leader_key = '<Leader>'
 
+let g:easytags_on_cursorhold = 0
+let g:easytags_auto_highlight = 0
+
 """"""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""
