@@ -24,25 +24,19 @@ Update:
 Dependencies for arch linux users:
 ----------------------------------
 * for script:
-
 	pacman -S git curl
 
 * vim:
-
 	pacman -S gvim vim-colorsamplerpack vimpager ctags
 
 * wm stuff:
-
 	pacman -S i3 i3status dmenu i3lock
 
 * misc cli:
-
 	pacman -S openssh sudo tmux cmus sshfs ntp terminus-font weechat
 
 * misc gui:
-
 	pacman -S rxvt-unicode numlockx redshift feh dwb synergy
 
 * xorg:
-
 	pacman -S xorg-server xorg-xset xorg-xsetroot xorg-xmodmap xorg-xinit slim archlinux-themes-slim
