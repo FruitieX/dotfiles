@@ -7,23 +7,23 @@ xset +fp /usr/share/fonts/local/ &
 xset -dpms &
 xset s off &
 
-xset m 1 1 &
+#xset m 1 1 &
 #xflux -l 0
 #redshift -l 0:0 &
-VBoxClient-all &
+#VBoxClient-all &
 
 # configs
 #urxvtd &
 xmodmap .Xmodmap &
-nvidia-settings -l &
+#nvidia-settings -l &
 xsetroot -cursor_name left_ptr &
 
 # autostart
-~/bin/wallpaper.sh &
-~/bin/steam.sh &
+#~/bin/wallpaper.sh &
+#~/bin/steam.sh &
 urxvt -title tmux -e tmux &
 urxvt -title irc -e weechat-curses &
-dwb &
+#dwb &
 numlockx &
 synergys -c ~/.synergy.conf &
 
