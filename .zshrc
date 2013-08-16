@@ -61,6 +61,7 @@ alias sr="ssh rasse@fruitiex.org"
 alias vmx="startx -- -config xorg.vm"
 alias l="ll"
 alias netmenu="sudo netcfg-menu"
+alias gx="git annex"
 
 export BROWSER="luakit"
 export EDITOR="vim"

@@ -32,7 +32,7 @@ Dependencies for arch linux users:
 	pacman -S gvim vim-colorsamplerpack vimpager ctags
 
 * **wm stuff:**
-	pacman -S i3 i3status dmenu i3lock
+	pacman -S i3 i3status dmenu i3lock unclutter
 
 * **misc cli:**
 	pacman -S openssh sudo tmux cmus sshfs ntp terminus-font weechat

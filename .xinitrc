@@ -27,6 +27,7 @@ dwb &
 numlockx &
 synergys -c ~/.synergy.conf &
 
+unclutter -idle 3 &
 #xrandr --output LVDS1 --set "scaling mode" Full &
 
 #exec xmonad
