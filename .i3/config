@@ -155,8 +155,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+shift+period move workspace to output right
 bindsym $mod+shift+comma move workspace to output left
 
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 1+
-bindsym XF86AudioLowerVolume exec amixer -q set Master 1-
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -- +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -- -5%
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 bindsym XF86AudioPlay exec /usr/bin/cmus-remote --pause
