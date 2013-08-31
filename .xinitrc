@@ -12,6 +12,8 @@ xset m 1 1 &
 #xflux -l 0
 #redshift -l 0:0 &
 VBoxClient-all &
+start-pulseaudio-x11
+pasystray &
 
 # configs
 #urxvtd &
@@ -24,9 +26,12 @@ xsetroot -cursor_name left_ptr &
 ~/bin/steam.sh &
 urxvt -title tmux -e tmux &
 urxvt -title irc -e weechat-curses &
+cd ~/.config/dwb
 dwb &
+cd
 numlockx &
 synergys -c ~/.synergy.conf &
+dunst &
 
 unclutter -idle 3 &
 #xrandr --output LVDS1 --set "scaling mode" Full &
