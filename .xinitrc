@@ -9,6 +9,7 @@ xset -dpms &
 xset s off &
 
 xset m 1 1 &
+synclient PalmDetect=1 MaxSpeed=3 TouchpadOff=1 &
 #xflux -l 0
 #redshift -l 0:0 &
 VBoxClient-all &
