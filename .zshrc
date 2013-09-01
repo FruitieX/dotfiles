@@ -60,7 +60,7 @@ source $ZSH/oh-my-zsh.sh
 alias sr="ssh rasse@fruitiex.org"
 alias vmx="startx -- -config xorg.vm"
 alias l="ll"
-alias netmenu="sudo netcfg-menu"
+alias netmenu="sudo wifi-menu"
 alias gx="git annex"
 
 export BROWSER="luakit"

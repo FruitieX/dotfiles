@@ -1,13 +1,15 @@
 # [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-# e.g. stlarch lives here
-xset +fp /usr/share/fonts/local/ &
+# e.g. terminus-font lives here
+xset +fp /usr/share/fonts/local
+xset fp rehash
 
 # disable turning screen off automatically
 xset -dpms &
 xset s off &
 
 xset m 1 1 &
+synclient PalmDetect=1 MaxSpeed=3 TouchpadOff=1 &
 #xflux -l 0
 #redshift -l 0:0 &
 VBoxClient-all &
@@ -36,7 +38,7 @@ unclutter -idle 3 &
 #xrandr --output LVDS1 --set "scaling mode" Full &
 
 #exec xmonad
-exec ~/src/i3/i3
+exec i3
 #exec bspwm
 
 # SLiM session selector
