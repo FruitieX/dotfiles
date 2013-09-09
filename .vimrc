@@ -25,6 +25,8 @@ let g:EasyMotion_leader_key = '<Leader>'
 let g:easytags_on_cursorhold = 0
 let g:easytags_auto_highlight = 0
 
+let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
+
 """"""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""
