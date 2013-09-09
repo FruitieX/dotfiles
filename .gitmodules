@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/vim-syntastic.git"]
 	path = .vim/bundle/vim-syntastic.git
 	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/neocomplcache.vim"]
+	path = .vim/bundle/neocomplcache.vim
+	url = https://github.com/Shougo/neocomplcache.vim
