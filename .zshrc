@@ -40,7 +40,8 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ant archlinux history-substring-search rsync tmux nyan vi-mode)
+plugins=(git ant archlinux history-substring-search rsync nyan vi-mode)
+~/bin/tmx
 
 # colors
 PROMPT_HOST_COLOR_BG=148
