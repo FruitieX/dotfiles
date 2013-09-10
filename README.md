@@ -35,7 +35,7 @@ Dependencies for arch linux users:
 	i3 i3status dmenu i3lock unclutter dunst
 
 * **misc cli:**
-	openssh sudo tmux cmus sshfs ntp terminus-font weechat
+	openssh sudo tmux cmus sshfs ntp terminus-font weechat htop
 
 * **misc gui:**
 	rxvt-unicode numlockx redshift feh dwb synergy
@@ -44,4 +44,4 @@ Dependencies for arch linux users:
 	xorg-server xorg-xset xorg-xsetroot xorg-xmodmap xorg-xinit slim archlinux-themes-slim
 
 * **misc**
-	pulseaudio
+	pulseaudio pavucontrol mosh
