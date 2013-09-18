@@ -34,9 +34,9 @@ dwb &
 cd
 numlockx &
 
-if [[ $HOST == "mba" ]]; then
+if [[ $HOSTNAME == "mba" ]]; then
 	synergyc lappy &
-elif [[ $HOST == "lappy" ]]; then
+elif [[ $HOSTNAME == "lappy" ]]; then
 	synergys -c ~/.synergy.conf &
 fi
 
