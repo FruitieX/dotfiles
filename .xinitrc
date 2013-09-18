@@ -33,7 +33,13 @@ cd ~/.config/dwb
 dwb &
 cd
 numlockx &
-synergyc lappy &
+
+if [[ $HOST == "mba" ]]; then
+	synergyc lappy &
+elif [[ $HOST == "lappy" ]]; then
+	synergys -c ~/.synergy.conf &
+fi
+
 dunst &
 
 unclutter -idle 3 &
