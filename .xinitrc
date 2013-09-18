@@ -4,6 +4,8 @@
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
+xrandr --output HDMI1 --right-of eDP1 --mode 1920x1080
+
 # disable turning screen off automatically
 xset -dpms &
 xset s off &
@@ -31,7 +33,7 @@ cd ~/.config/dwb
 dwb &
 cd
 numlockx &
-synergys -c ~/.synergy.conf &
+synergyc lappy &
 dunst &
 
 unclutter -idle 3 &
