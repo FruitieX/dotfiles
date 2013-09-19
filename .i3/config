@@ -159,10 +159,10 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- -2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-bindsym XF86AudioPlay exec /usr/bin/cmus-remote --pause
-bindsym XF86AudioStop exec /usr/bin/cmus-remote --stop
-bindsym XF86AudioPrev exec /usr/bin/cmus-remote --prev
-bindsym XF86AudioNext exec /usr/bin/cmus-remote --next
+bindsym XF86AudioPlay exec /usr/bin/ncmpcpp toggle
+bindsym XF86AudioStop exec /usr/bin/ncmpcpp stop
+bindsym XF86AudioPrev exec /usr/bin/ncmpcpp prev
+bindsym XF86AudioNext exec /usr/bin/ncmpcpp next
 
 bindsym XF86MonBrightnessUp exec sudo /usr/bin/brightness.sh mon \*2
 bindsym XF86MonBrightnessDown exec sudo /usr/bin/brightness.sh mon /2
