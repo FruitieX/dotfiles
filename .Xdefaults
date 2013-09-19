@@ -22,7 +22,7 @@ Xcursor.size: 48
 !colors:
 !A tango-esque light theme
 *foreground: #A0A0A0
-*background: #1B1D1E
+*background: #000000
 !black
 *color0: #000000
 *color8: #555753

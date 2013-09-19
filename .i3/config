@@ -14,38 +14,12 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+#font -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
-
-assign [title="tmux"] 1: main
-
-assign [class="Chromium"] 2: www
-assign [class="Firefox"] 2: www
-assign [class="Dwb"] 2: www
-assign [class="luakit"] 2: www
-
-assign [class="Xchat"] 3: irc
-assign [title="irc"] 3: irc
-
-assign [class="Gimp"] 4: gui
-assign [class="Vlc"] 4: gui
-assign [class="Evince"] 4: gui
-assign [class="Wireshark"] 4: gui
-assign [class="Mixxx"] 4: gui
-assign [class="Wine"] 4: gui
-assign [class="Radiant.x86"] 4: gui
-assign [class="Mumble"] 4: gui
-assign [class="Deluge"] 4: gui
-assign [title="Renoise (x86_64)"] 4: gui
-assign [title="LibreOffice"] 4: gui
-
-assign [class="Steam"] 5: games
-assign [title="Steam"] 5: games
-assign [title="Updating Steam..."] 5: games
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -166,7 +140,7 @@ bindsym XF86AudioNext exec /usr/bin/cmus-remote --next
 
 bindsym $mod+Shift+x exec /usr/bin/i3lock -u -c 111111 -d 0
 
-new_window normal 0
+new_window none
 
 # colors				border	backgr.	text	indicator
 client.focused			#5AAE24	#599C2D	#FFFFFF #9ED779

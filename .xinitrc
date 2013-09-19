@@ -1,11 +1,17 @@
+###function defer {
+	#sleep 2
+	#xsetroot -cursor ~/none.xbm ~/none.xbm
+###}
+
 # [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # e.g. stlarch lives here
-xset +fp /usr/share/fonts/local/ &
+#xset +fp /usr/share/fonts/local/ &
 
 # disable turning screen off automatically
 xset -dpms &
 xset s off &
+start-pulseaudio-x11
 
 #xset m 1 1 &
 #xflux -l 0
@@ -16,31 +22,19 @@ xset s off &
 #urxvtd &
 xmodmap .Xmodmap &
 #nvidia-settings -l &
-xsetroot -cursor_name left_ptr &
+#xsetroot -cursor_name /dev/null &
 
 # autostart
 #~/bin/wallpaper.sh &
 #~/bin/steam.sh &
-urxvt -title tmux -e tmux &
-urxvt -title irc -e weechat-curses &
 #dwb &
-numlockx &
-synergys -c ~/.synergy.conf &
+#numlockx &
+#synergys -c ~/.synergy.conf &
 
 #xrandr --output LVDS1 --set "scaling mode" Full &
-
-#exec xmonad
-exec ~/src/i3/i3
-#exec bspwm
-
-# SLiM session selector
-#DEFAULT_SESSION=/home/rasse/bin/startdwm
-#case $1 in
-#kde)
-#	exec startkde
-#	;;
-#*)
-#	exec $DEFAULT_SESSION
-#	;;
-#esac
-
+xrandr --output DVI-0 --rotate left &
+#defer &
+unset TMUX
+urxvt -e tmux &
+unclutter -idle 3 &
+exec i3
