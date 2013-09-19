@@ -129,16 +129,22 @@ bindsym $mod+r mode "resize"
 bindsym $mod+shift+period move workspace to output right
 bindsym $mod+shift+comma move workspace to output left
 
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 1+
-bindsym XF86AudioLowerVolume exec amixer -q set Master 1-
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- -2%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 bindsym XF86AudioPlay exec /usr/bin/cmus-remote --pause
 bindsym XF86AudioStop exec /usr/bin/cmus-remote --stop
 bindsym XF86AudioPrev exec /usr/bin/cmus-remote --prev
 bindsym XF86AudioNext exec /usr/bin/cmus-remote --next
 
-bindsym $mod+Shift+x exec /usr/bin/i3lock -u -c 111111 -d 0
+bindsym XF86MonBrightnessUp exec sudo /usr/bin/brightness.sh mon \*2
+bindsym XF86MonBrightnessDown exec sudo /usr/bin/brightness.sh mon /2
+bindsym XF86KbdBrightnessUp exec sudo /usr/bin/brightness.sh kbd +50
+bindsym XF86KbdBrightnessDown exec sudo /usr/bin/brightness.sh kbd -50
+bindsym XF86LaunchA exec touchpadtoggle
+
+bindsym $mod+Shift+x exec /usr/bin/i3lock -u -c 5AAE24
 
 new_window none
 

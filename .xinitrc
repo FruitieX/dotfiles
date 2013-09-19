@@ -1,40 +1,59 @@
-###function defer {
-	#sleep 2
-	#xsetroot -cursor ~/none.xbm ~/none.xbm
-###}
-
-# [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-
-# e.g. stlarch lives here
-#xset +fp /usr/share/fonts/local/ &
+# e.g. terminus-font lives here
+xset +fp /usr/share/fonts/local
+xset fp rehash
 
 # disable turning screen off automatically
 xset -dpms &
 xset s off &
-start-pulseaudio-x11
+xset m 1 1 &
 
-#xset m 1 1 &
 #xflux -l 0
 #redshift -l 0:0 &
-#VBoxClient-all &
+VBoxClient-all &
+start-pulseaudio-x11
 
 # configs
-#urxvtd &
 xmodmap .Xmodmap &
-#nvidia-settings -l &
-#xsetroot -cursor_name /dev/null &
 
 # autostart
-#~/bin/wallpaper.sh &
-#~/bin/steam.sh &
-#dwb &
-#numlockx &
-#synergys -c ~/.synergy.conf &
+# host-specific
+if [[ $HOSTNAME == "mba" ]]; then
+	xrandr --output HDMI1 --right-of eDP1 --mode 1920x1080
+	synclient PalmDetect=1 MaxSpeed=3 TouchpadOff=1 &
+	synergyc lappy &
+elif [[ $HOSTNAME == "lappy" ]]; then
+	synergys -c ~/.synergy.conf &
+	#nvidia-settings -l &
+fi
 
-#xrandr --output LVDS1 --set "scaling mode" Full &
-xrandr --output DVI-0 --rotate left &
-#defer &
-unset TMUX
-urxvt -e tmux &
+if [[ $HOSTNAME == "servy" ]]; then
+	xrandr --output DVI-0 --rotate left
+	unset TMUX
+	urxvt -e tmux &
+else
+	~/bin/wallpaper.sh &
+	~/bin/steam.sh &
+	urxvt -title tmux -e tmux &
+	urxvt -title irc -e weechat-curses &
+	cd ~/.config/dwb
+	dwb &
+	cd
+	numlockx &
+	pasystray &
+fi
+
+dunst &
 unclutter -idle 3 &
+
 exec i3
+
+# SLiM session selector
+#DEFAULT_SESSION=/home/rasse/bin/startdwm
+#case $1 in
+#kde)
+#	exec startkde
+#	;;
+#*)
+#	exec $DEFAULT_SESSION
+#	;;
+#esac
