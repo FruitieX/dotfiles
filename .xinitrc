@@ -8,7 +8,7 @@ xset s off &
 xset m 1 1 &
 
 #xflux -l 0
-#redshift -l 0:0 &
+redshift -l 0:0 &
 VBoxClient-all &
 start-pulseaudio-x11
 
