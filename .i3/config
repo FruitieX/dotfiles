@@ -169,6 +169,7 @@ bindsym XF86MonBrightnessDown exec sudo /usr/bin/brightness.sh mon /2
 bindsym XF86KbdBrightnessUp exec sudo /usr/bin/brightness.sh kbd +50
 bindsym XF86KbdBrightnessDown exec sudo /usr/bin/brightness.sh kbd -50
 bindsym XF86LaunchA exec touchpadtoggle
+bindsym $mod+shift+s exec ssh s bash ~/bin/speakertoggle.sh
 
 bindsym $mod+Shift+x exec /usr/bin/i3lock -u -c 5AAE24
 
