@@ -48,6 +48,6 @@ Xcursor.size: 48
 *color7: #d3d7cf
 *color15: #eeeeec
 
-*shading: 7
+*shading: 10
 *transparent: true
 *inheritPixmap: true
