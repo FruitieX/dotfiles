@@ -2,7 +2,7 @@
 !use powerline font as secondary
 !*font: xft:Terminus:Regular:pixelsize=12:antialias=false:hinting=false:autohint=false, xft:Terminus (TTF) for Powerline:pixelsize=16:antialias=false:hinting=false:autohint=false
 !*font: xft:Droid Sans Mono for Powerline:pixelsize=14:hinting=true:autohint=true, xft:PowerlineSymbols:pixelsize=14
-*font: xft:Terminus:pixelsize=14:hinting=true:autohint=true
+*font: xft:Terminus:pixelsize=12:hinting=true:autohint=true
 !, xft:PowerlineSymbols:pixelsize=14
 !*font: xft:Menlo for Powerline:pixelsize=16:hinting=true:autohint=true
 *urgentOnBell: true
