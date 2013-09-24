@@ -28,9 +28,11 @@ fi
 
 if [[ $HOSTNAME == "servy" ]]; then
 	xrandr --output DVI-0 --rotate left
+	~/bin/wallpaper.sh &
 	unset TMUX
 	urxvt -e ~/bin/tmx &
 else
+	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
 	urxvt -title tmux -e tmux &
 	urxvt -title irc -e weechat-curses &
@@ -41,7 +43,6 @@ else
 	pasystray &
 fi
 
-~/bin/wallpaper.sh &
 dunst &
 unclutter -idle 3 &
 
