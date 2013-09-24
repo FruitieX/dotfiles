@@ -34,9 +34,8 @@ else
 	~/bin/steam.sh &
 	urxvt -title tmux -e tmux &
 	urxvt -title irc -e weechat-curses &
-	cd ~/.config/dwb
-	dwb &
-	cd
+	firefox-nightly &
+	connman-ui-gtk &
 	numlockx &
 	pasystray &
 fi
