@@ -1,0 +1,15 @@
+"1.0b7.2 "(created 2011/08/05 11:03:59)"
+
+loadplugins '\.(js|penta)$'
+group user
+
+map -modes=n,v j -builtin 10j
+map -modes=n,v k -builtin 10k
+map -modes=n,v <C-j> -builtin 30j
+map -modes=n,v <C-k> -builtin 30k
+set hintkeys=aoeuidhtnspyfgcrlqjkxbmwvz1234567890
+set defsearch=google
+hi -a Hint font-size: 12pt !important
+
+"highlight -a Hint text-transform: uppercase
+" vim: set ft=pentadactyl:

@@ -64,7 +64,7 @@ alias l="ll"
 alias netmenu="sudo wifi-menu -o"
 alias gx="git annex"
 
-export BROWSER="luakit"
+export BROWSER="firefox-nightly"
 export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="vimpager"
