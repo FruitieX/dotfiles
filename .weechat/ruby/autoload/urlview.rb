@@ -16,7 +16,7 @@ require "shellwords"
 
 def weechat_init
     # Check that urlview is in PATH.
-    if ! system("which urlscan > /dev/null 2>&1")
+    if ! system("which urlview > /dev/null 2>&1")
         return Weechat::WEECHAT_RC_ERROR
     end
 
@@ -36,7 +36,7 @@ def passBuffer(data, buffer, args)
     end
     Weechat.infolist_free(infolist)
 
-    system("echo #{Shellwords.escape(lines)} | urlscan -bc")
+    system("echo #{Shellwords.escape(lines)} | ~/bin/urlview-fruit")
     if $? != 0
         Weechat.print(buffer, "No URLs found.")
     end
