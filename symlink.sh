@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # recursively symlink all files from paths in this array
-FILES=( bin .config .i3 .oh-my-zsh .synergy.conf .tmux.conf .urlview .vim* .weechat .Xdefaults .xinitrc .Xmodmap .zshrc )
+FILES=( bin .config .i3 .oh-my-zsh .synergy.conf .tmux.conf .urlview .vim* .weechat .Xdefaults .xinitrc .Xmodmap .zshrc _pentadactylrc )
 
 # cd to root of git repo
 cd "$(dirname $0)"
