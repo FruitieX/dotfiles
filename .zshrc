@@ -90,3 +90,8 @@ bindkey -M vicmd 'k' up-line-or-search
 bindkey -M vicmd 'j' down-line-or-search
 
 export TERM=screen-256color
+
+~/bin/tmx
+if [[ -z "$TMUX" ]]; then
+	exit
+fi
