@@ -90,4 +90,7 @@ bindkey -M vicmd 'j' down-line-or-search
 
 export TERM=screen-256color
 
-~/bin/tmx
+if [[ $HOST != "servy" ]]; then
+	~/bin/tmx
+	exit
+fi
