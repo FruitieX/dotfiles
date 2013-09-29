@@ -17,21 +17,23 @@ else
 	DRYRUN=
 fi
 
-echo "WARNING! this script will backup the following files/dirs and put symlinks in their place:"
-echo files:
-echo ------
-find "${FILES[@]}" -type f -printf "$HOME/%p\n"
+if [[ $1 != '-y' ]]; then
+	echo "WARNING! this script will backup the following files/dirs and put symlinks in their place:"
+	echo files:
+	echo ------
+	find "${FILES[@]}" -type f -printf "$HOME/%p\n"
 
-echo
-echo dirs:
-echo -----
-for DIR in $DIRS; do echo $HOME/$DIR; done
+	echo
+	echo dirs:
+	echo -----
+	for DIR in $DIRS; do echo $HOME/$DIR; done
 
-echo -e "\nare you sure you want to continue? (y/n)"
-read answer
-if [[ "$answer" != "y" ]]; then
-	echo "aborting."
-	exit
+	echo -e "\nare you sure you want to continue? (y/n)"
+	read answer
+	if [[ "$answer" != "y" ]]; then
+		echo "aborting."
+		exit
+	fi
 fi
 
 # symlink files
