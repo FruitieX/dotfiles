@@ -8,7 +8,7 @@ xset s off &
 xset m 1 1 &
 
 #xflux -l 0
-#redshift -l 0:0 &
+redshift -l 0:0 &
 VBoxClient-all &
 start-pulseaudio-x11
 
@@ -28,20 +28,20 @@ fi
 
 if [[ $HOSTNAME == "servy" ]]; then
 	xrandr --output DVI-0 --rotate left
+	~/bin/wallpaper.sh &
 	unset TMUX
 	urxvt -e ~/bin/tmx &
 else
+	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
 	urxvt -title tmux -e tmux &
 	urxvt -title irc -e weechat-curses &
-	cd ~/.config/dwb
-	dwb &
-	cd
+	firefox &
+	connman-ui-gtk &
 	numlockx &
 	pasystray &
 fi
 
-~/bin/wallpaper.sh &
 dunst &
 unclutter -idle 3 &
 

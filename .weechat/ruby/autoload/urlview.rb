@@ -36,7 +36,7 @@ def passBuffer(data, buffer, args)
     end
     Weechat.infolist_free(infolist)
 
-    system("echo #{Shellwords.escape(lines)} | urlview")
+    system("echo #{Shellwords.escape(lines)} | ~/bin/urlview-fruit")
     if $? != 0
         Weechat.print(buffer, "No URLs found.")
     end

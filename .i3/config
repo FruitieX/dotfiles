@@ -14,12 +14,38 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#font -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+font -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
+
+assign [title="tmux"] 1: main
+
+assign [class="Chromium"] 2: www
+assign [class="Firefox"] 2: www
+assign [class="Dwb"] 2: www
+assign [class="luakit"] 2: www
+
+assign [class="Xchat"] 3: irc
+assign [title="irc"] 3: irc
+
+assign [class="Gimp"] 4: gui
+assign [class="Vlc"] 4: gui
+assign [class="Evince"] 4: gui
+assign [class="Wireshark"] 4: gui
+assign [class="Mixxx"] 4: gui
+assign [class="Wine"] 4: gui
+assign [class="Radiant.x86"] 4: gui
+assign [class="Mumble"] 4: gui
+assign [class="Deluge"] 4: gui
+assign [title="Renoise (x86_64)"] 4: gui
+assign [title="LibreOffice"] 4: gui
+
+assign [class="Steam"] 5: games
+assign [title="Steam"] 5: games
+assign [title="Updating Steam..."] 5: games
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -133,20 +159,21 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- -2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-bindsym XF86AudioPlay exec /usr/bin/cmus-remote --pause
-bindsym XF86AudioStop exec /usr/bin/cmus-remote --stop
-bindsym XF86AudioPrev exec /usr/bin/cmus-remote --prev
-bindsym XF86AudioNext exec /usr/bin/cmus-remote --next
+bindsym XF86AudioPlay exec /usr/bin/ncmpcpp toggle
+bindsym XF86AudioStop exec /usr/bin/ncmpcpp stop
+bindsym XF86AudioPrev exec /usr/bin/ncmpcpp prev
+bindsym XF86AudioNext exec /usr/bin/ncmpcpp next
 
 bindsym XF86MonBrightnessUp exec sudo /usr/bin/brightness.sh mon \*2
 bindsym XF86MonBrightnessDown exec sudo /usr/bin/brightness.sh mon /2
 bindsym XF86KbdBrightnessUp exec sudo /usr/bin/brightness.sh kbd +50
 bindsym XF86KbdBrightnessDown exec sudo /usr/bin/brightness.sh kbd -50
 bindsym XF86LaunchA exec touchpadtoggle
+bindsym $mod+shift+s exec ssh s bash ~/bin/speakertoggle.sh
 
 bindsym $mod+Shift+x exec /usr/bin/i3lock -u -c 5AAE24
 
-new_window none
+new_window normal 5
 
 # colors				border	backgr.	text	indicator
 client.focused			#5AAE24	#599C2D	#FFFFFF #9ED779
@@ -156,3 +183,24 @@ client.urgent			#B52549	#A22F4C	#FFFFFF #DA7B93
 
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	position top
+
+	colors {
+		background #121511
+		statusline #DDDDDD
+		separator #888888
+
+		# colors				border	backgr.	text
+		focused_workspace		#599C2D	#5AAE24	#FFFFFF
+		active_workspace		#B28233	#C68A29	#FFFFFF
+		inactive_workspace		#294A75	#244D82	#FFFFFF
+		urgent_workspace		#A22F4C	#B52549	#FFFFFF
+	}
+
+	#status_command i3pystatus
+	status_command i3status --config ~/.i3/i3status.conf
+}
