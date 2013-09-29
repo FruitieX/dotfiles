@@ -41,6 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git ant archlinux history-substring-search rsync nyan vi-mode)
+~/bin/tmx
 
 # colors
 PROMPT_HOST_COLOR_BG=148
@@ -63,7 +64,7 @@ alias l="ll"
 alias netmenu="sudo wifi-menu -o"
 alias gx="git annex"
 
-export BROWSER="luakit"
+export BROWSER="firefox"
 export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="vimpager"
@@ -89,8 +90,3 @@ bindkey -M vicmd 'k' up-line-or-search
 bindkey -M vicmd 'j' down-line-or-search
 
 export TERM=screen-256color
-
-if [[ $HOST != "servy" ]]; then
-	~/bin/tmx
-	exit
-fi
