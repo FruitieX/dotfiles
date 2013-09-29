@@ -41,6 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git ant archlinux history-substring-search rsync nyan vi-mode)
+~/bin/tmx
 
 # colors
 PROMPT_HOST_COLOR_BG=148
@@ -91,4 +92,6 @@ bindkey -M vicmd 'j' down-line-or-search
 export TERM=screen-256color
 
 ~/bin/tmx
-exit
+if [[ -z "$TMUX" ]]; then
+	exit
+fi
