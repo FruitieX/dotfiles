@@ -75,6 +75,6 @@ for DIR in $DIRS; do
 
 	echo "$DIR => $HOME/$DIR"
 	$DRYRUN ln -sr "$DIR" "$HOME/$DIR"
-
+done
 
 echo "all done!"
