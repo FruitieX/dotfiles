@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # recursively symlink all files from paths in this array
-FILES=( bin .config .i3 .oh-my-zsh .synergy.conf .tmux.conf .urlview .vimrc .vim/autoload/pathogen.vim .weechat .Xdefaults .xinitrc .Xmodmap .zshrc _pentadactylrc .pentadactyl )
+FILES=( bin .apvlvrc .config .i3 .oh-my-zsh .synergy.conf .tmux.conf .urlview .vimrc .vim/autoload/pathogen.vim .weechat .Xdefaults .xinitrc .Xmodmap .zshrc _pentadactylrc .pentadactyl )
 
 # symlink these directories
 DIRS=( .vim/bundle )
