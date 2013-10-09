@@ -1,0 +1,2 @@
+map <C-j> <PageDown>
+map <C-k> <PageUp>

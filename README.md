@@ -20,8 +20,7 @@ Install:
 Update:
 -------
 
-	git pull
-	./symlink.sh
+	./update.sh
 
 Dependencies for arch linux users:
 ----------------------------------
