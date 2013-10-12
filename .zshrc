@@ -72,6 +72,8 @@ export PAGER="vimpager"
 export PATH="${PATH}:${HOME}/bin:${HOME}/dev/sh:${HOME}/android/sdk/android-sdk-linux/tools:${HOME}/android/sdk/android-sdk-linux/platform-tools:${HOME}/android/ndk/android-ndk-r8d"
 export ANDROID_HOME="~/android/sdk/android-sdk-linux"
 
+unset SSH_ASKPASS
+
 # Disable ctrl-s sending XOFF
 stty ixany
 stty ixoff -ixon
