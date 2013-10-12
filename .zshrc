@@ -62,6 +62,7 @@ alias vmx="startx -- -config xorg.vm"
 alias l="ll"
 alias netmenu="sudo wifi-menu -o"
 alias gx="git annex"
+alias slp="systemctl suspend"
 
 export BROWSER="firefox"
 export EDITOR="vim"
