@@ -155,9 +155,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+shift+period move workspace to output right
 bindsym $mod+shift+comma move workspace to output left
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- +2%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- -2%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- +2% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- -2% && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 
 bindsym XF86AudioPlay exec /usr/bin/ncmpcpp toggle
 bindsym XF86AudioStop exec /usr/bin/ncmpcpp stop
