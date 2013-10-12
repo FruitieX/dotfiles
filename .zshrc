@@ -62,6 +62,7 @@ alias vmx="startx -- -config xorg.vm"
 alias l="ll"
 alias netmenu="sudo wifi-menu -o"
 alias gx="git annex"
+alias slp="systemctl suspend"
 
 export BROWSER="firefox"
 export EDITOR="vim"
@@ -70,6 +71,8 @@ export PAGER="vimpager"
 
 export PATH="${PATH}:${HOME}/bin:${HOME}/dev/sh:${HOME}/android/sdk/android-sdk-linux/tools:${HOME}/android/sdk/android-sdk-linux/platform-tools:${HOME}/android/ndk/android-ndk-r8d"
 export ANDROID_HOME="~/android/sdk/android-sdk-linux"
+
+unset SSH_ASKPASS
 
 # Disable ctrl-s sending XOFF
 stty ixany

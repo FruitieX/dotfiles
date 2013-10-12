@@ -10,7 +10,6 @@ xset m 1 1 &
 #xflux -l 0
 redshift -l 0:0 &
 VBoxClient-all &
-start-pulseaudio-x11
 
 # configs
 xmodmap .Xmodmap &
@@ -30,8 +29,9 @@ if [[ $HOSTNAME == "servy" ]]; then
 	xrandr --output DVI-0 --rotate left
 	~/bin/wallpaper.sh &
 	unset TMUX
-	urxvt -e ~/bin/tmx &
+	urxvt -title tmux -e ~/bin/tmx &
 else
+	start-pulseaudio-x11
 	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
 	urxvt -title tmux -e tmux &
