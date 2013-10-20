@@ -64,7 +64,7 @@ alias netmenu="sudo wifi-menu -o"
 alias gx="git annex"
 alias slp="systemctl suspend"
 
-export BROWSER="firefox"
+export BROWSER="firefox-nightly"
 export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="vimpager"

@@ -164,6 +164,9 @@ nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 " open NERDTree
 nmap <silent> <Leader><Leader>T :NERDTree<Enter>
 
+" make
+map <leader>m :make<CR>
+
 " quick grepping
 nnoremap gr :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
 nnoremap gR :execute "vimgrep / " . expand("<cword>") . " /gj **" <Bar> cw<CR>
