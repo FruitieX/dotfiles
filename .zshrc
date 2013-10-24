@@ -63,6 +63,7 @@ alias l="ll"
 alias netmenu="sudo wifi-menu -o"
 alias gx="git annex"
 alias slp="systemctl suspend"
+alias ds="dirs -v"
 
 export BROWSER="firefox"
 export EDITOR="vim"
