@@ -65,7 +65,7 @@ alias gx="git annex"
 alias slp="systemctl suspend"
 alias ds="dirs -v"
 
-export BROWSER="firefox"
+export BROWSER="firefox-nightly"
 export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="vimpager"
