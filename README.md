@@ -31,7 +31,7 @@ Dependencies for arch linux users:
 	gvim vim-colorsamplerpack vimpager ctags
 
 * **wm stuff:**
-	bspwm sxhkd
+	bspwm sxhkd compton
 
 * **misc cli:**
 	openssh sudo tmux cmus sshfs ntp terminus-font weechat htop
