@@ -9,7 +9,7 @@ xset m 1 1 &
 
 #xflux -l 0
 redshift -l 0:0 &
-compton --config ~/.config/compton/compton.conf &
+compton --config ~/.compton.conf &
 VBoxClient-all &
 xsetroot -cursor_name left_ptr &
 
