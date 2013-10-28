@@ -1,6 +1,6 @@
 !Rasmus Eskola vim:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
 
-urxvt*background: #181512
+urxvt*background: rgba:0500/0800/0600/f000
 urxvt*foreground: #D6C3B6
 !!urxvt*foreground: #ffdcc4
 urxvt*cursorColor: #93a1a1

@@ -13,7 +13,6 @@
 !*keysym.M-u:			perl:url-select:select_next
 !*url-select.launcher:	/usr/bin/firefox
 !*url-select.underline: true
-*colorUL: #4682B4
 
 Xcursor.theme: Human
 Xcursor.size: 48
@@ -24,7 +23,6 @@ Xcursor.size: 48
 !A tango-esque light theme
 !*foreground: #A0A0A0
 urxvt*depth: 32
-urxvt*background: rgba:0000/0000/0200/e800
 
 !*shading: 10
 !*transparent: true

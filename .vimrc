@@ -8,6 +8,7 @@ execute pathogen#infect()
 " powerline config
 set laststatus=2
 set noshowmode
+let g:Powerline_colorscheme = "solarized"
 
 " ctrlp config
 let g:ctrlp_max_height = 30
@@ -31,7 +32,7 @@ let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
 " Appearance
 """"""""""""""""""""""""""""""""
 
-colorscheme desert "awesome color scheme
+"colorscheme desert "awesome color scheme
 set t_Co=256
 "colorscheme jellybeans
 hi Comment ctermfg=12
@@ -66,7 +67,7 @@ hi CursorColumn ctermfg=none ctermbg=0
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertLeave * match ExtraWhitespace /\s\+$/
+"au InsertLeave * match ExtraWhitespace /\s\+$/
 
 "use :set list! to toggle visible whitespace on/off
 set listchars=tab:>-,trail:.,extends:>
