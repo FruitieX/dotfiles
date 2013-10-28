@@ -9,7 +9,6 @@ xset m 1 1 &
 
 #xflux -l 0
 redshift -l 0:0 &
-compton --config ~/.compton.conf &
 VBoxClient-all &
 xsetroot -cursor_name left_ptr &
 
@@ -50,7 +49,6 @@ export PANEL_FIFO=/tmp/panel-fifo
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
 #panel &
-sxhkd -c ~/.config/bspwm/sxhkdrc &
 ~/bin/bspwm.sh
 
 # SLiM session selector

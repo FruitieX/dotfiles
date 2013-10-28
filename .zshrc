@@ -65,14 +65,6 @@ export ANDROID_HOME="~/android/sdk/android-sdk-linux"
 
 unset SSH_ASKPASS
 
-# bspwm stuff
-export BSPWM_TREE=/tmp/bspwm.tree
-export BSPWM_HISTORY=/tmp/bspwm.history
-export BSPWM_STACK=/tmp/bspwm.stack
-export PANEL_FIFO=/tmp/panel-fifo
-export BSPWM_SOCKET=/tmp/bspwm-socket
-export PANEL_HEIGHT=16
-
 # Disable ctrl-s sending XOFF
 stty ixany
 stty ixoff -ixon

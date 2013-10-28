@@ -2,13 +2,10 @@
 # bspwm hotkeys
 #
 
-super + alt + {_,shift + }Escape
-	{bspc query -T > "$BSPWM_TREE"; \
+super + alt + Escape
+	bspc query -T > "$BSPWM_TREE"; \
 		bspc query -H > "$BSPWM_HISTORY"; \
-			bspc quit,\
-	 bspc quit 1} \
-	 pkill -x panel; \
-	 pkill -x sxhkd;
+			bspc quit
 
 super + w
     bspc window -c
@@ -67,7 +64,7 @@ super + ctrl + {1-9}
     bspc window -r 0.{1-9}
 
 super + {_,shift + }{1-9,0}
-    bspc {desktop -f,window -d} ^{1-9,10}
+    bspc {desktop -f,window -d} {1-9,10}
 
 ~button1
     bspc pointer -g focus
@@ -85,9 +82,9 @@ super + {comma,period}
 	bspc desktop -f {prev,next}
 
 super + shift + {comma,period}
-	{desk=$(bspc query -D -d focused); \
-	bspc desktop focused -m {prev,next}; \
-	bspc desktop -f $desk }
+	bspc desktop focused -m {prev,next}
+	#{desk=$(bspc query -D -d focused); \
+	#bspc desktop -f $desk }
 
 super + r
 	bspc desktop focused -R 90
@@ -106,9 +103,6 @@ super + space
     dmenu_run
 
 # make sxhkd reload its configuration files:
-super + Escape
-    pkill -USR1 -x sxhkd
-
 
 XF86AudioRaiseVolume
 	pactl set-sink-volume @DEFAULT_SINK@ -- +2%; \
