@@ -50,7 +50,7 @@ export PANEL_FIFO=/tmp/panel-fifo
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
 #panel &
-sxhkd ~/.config/bspwm/sxhkdrc &
+sxhkd -c ~/.config/bspwm/sxhkdrc &
 ~/bin/bspwm.sh
 
 # SLiM session selector
