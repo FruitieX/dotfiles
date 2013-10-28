@@ -37,7 +37,8 @@ else
 	~/bin/steam.sh &
 	urxvt -title tmux -e ~/bin/tmx &
 	firefox-nightly &
-	connman-ui-gtk &
+	#connman-ui-gtk &
+	nm-applet &
 	numlockx &
 	pasystray &
 fi
