@@ -1,3 +1,4 @@
+#include "/home/rasse/.colors/erosionedit"
 *scrollBar: false
 !use powerline font as secondary
 !*font: xft:Terminus:Regular:pixelsize=12:antialias=false:hinting=false:autohint=false, xft:Terminus (TTF) for Powerline:pixelsize=16:antialias=false:hinting=false:autohint=false
@@ -21,33 +22,10 @@ Xcursor.size: 48
 
 !colors:
 !A tango-esque light theme
-*foreground: #A0A0A0
-*background: #000000
-!black
-*color0: #000000
-*color8: #555753
-!red
-*color1: #cc0000
-*color9: #ef2929
-!green
-*color2: #4e9a06
-*color10: #8ae234
-!yellow
-*color3: #c4a000
-*color11: #fce94f
-!blue
-*color4: #3465a4
-*color12: #739fcf
-!magenta
-*color5: #75507b
-*color13: #ad7fa8
-!cyan
-*color6: #06989a
-*color14: #34e2e2
-!white
-*color7: #d3d7cf
-*color15: #eeeeec
+!*foreground: #A0A0A0
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/e800
 
-*shading: 10
-*transparent: true
-*inheritPixmap: true
+!*shading: 10
+!*transparent: true
+!*inheritPixmap: true

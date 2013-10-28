@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerline"
+ZSH_THEME="fruitmini"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -42,16 +42,6 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git ant archlinux history-substring-search rsync nyan vi-mode)
 
-# colors
-PROMPT_HOST_COLOR_BG=148
-PROMPT_HOST_COLOR_FG=22
-PROMPT_CWD_COLOR_BG=240
-PROMPT_CWD_COLOR_FG=252
-PROMPT_GIT_BG=236
-PROMPT_GIT_FG=247
-PROMPT_GIT_DIRTY_BG=252
-PROMPT_GIT_DIRTY_FG=236
-
 if [ -f ~/.zshrc.local ]; then
 	source ~/.zshrc.local
 fi
@@ -74,6 +64,14 @@ export PATH="${PATH}:${HOME}/bin:${HOME}/dev/sh:${HOME}/android/sdk/android-sdk-
 export ANDROID_HOME="~/android/sdk/android-sdk-linux"
 
 unset SSH_ASKPASS
+
+# bspwm stuff
+export BSPWM_TREE=/tmp/bspwm.tree
+export BSPWM_HISTORY=/tmp/bspwm.history
+export BSPWM_STACK=/tmp/bspwm.stack
+export PANEL_FIFO=/tmp/panel-fifo
+export BSPWM_SOCKET=/tmp/bspwm-socket
+export PANEL_HEIGHT=16
 
 # Disable ctrl-s sending XOFF
 stty ixany

@@ -9,7 +9,9 @@ xset m 1 1 &
 
 #xflux -l 0
 redshift -l 0:0 &
+compton --config ~/.config/compton/compton.conf &
 VBoxClient-all &
+xsetroot -cursor_name left_ptr &
 
 # configs
 xmodmap .Xmodmap &
@@ -34,8 +36,7 @@ else
 	start-pulseaudio-x11
 	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
-	urxvt -title tmux -e tmux &
-	urxvt -title irc -e weechat-curses &
+	urxvt -title tmux -e ~/bin/tmx &
 	firefox-nightly &
 	connman-ui-gtk &
 	numlockx &
@@ -45,7 +46,12 @@ fi
 dunst &
 unclutter -idle 3 &
 
-exec i3
+export PANEL_FIFO=/tmp/panel-fifo
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+#panel &
+sxhkd ~/.config/bspwm/sxhkdrc &
+~/bin/bspwm.sh
 
 # SLiM session selector
 #DEFAULT_SESSION=/home/rasse/bin/startdwm
