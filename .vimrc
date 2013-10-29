@@ -327,6 +327,10 @@ filetype plugin indent on
 set autoindent
 set smartindent
 
+" syntastic stuff
+let g:syntastic_cpp_checkers=['gcc']
+let g:syntastic_c_checkers=['gcc']
+
 " Show relative numbers in command mode, absolute in insert mode
 set relativenumber
 autocmd InsertEnter * :set norelativenumber

@@ -16,9 +16,9 @@ return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 PROMPT='[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)${return_code}$(git_prompt_status)%{$reset_color%}]%# '
 
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} +"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} *"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} -"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} r"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} u"

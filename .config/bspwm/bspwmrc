@@ -13,12 +13,13 @@ compton --config ~/.compton.conf &
 i=1
 NUM_DESKTOPS=6
 for monitor in $(bspc query -M); do
-	bspc monitor $monitor -d $i
+	bspc monitor "$monitor" -d $i
 	i=$((i+1))
 done
 
 for desktop in $(seq $i $NUM_DESKTOPS); do
-	bspc monitor primary -a $desktop
+	#bspc monitor primary -a $desktop # THIS SEGFAULTS on one monitor!
+	bspc monitor focused -a $desktop
 done
 
 bspc rule -a Steam -d 5
