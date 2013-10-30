@@ -11,15 +11,16 @@ sxhkd -c ~/.config/bspwm/sxhkdrc &
 compton --config ~/.compton.conf &
 
 i=1
-NUM_DESKTOPS=6
+DESKTOPS=( I II III IV V VI VII VIII IX X )
 for monitor in $(bspc query -M); do
-	bspc monitor "$monitor" -d $i
+	bspc monitor "$monitor" -d ${DESKTOPS[$i]}
+	bspc configure "$monitor" top_padding
 	i=$((i+1))
 done
 
-for desktop in $(seq $i $NUM_DESKTOPS); do
+for desktop in $(seq $i ${#DESKTOPS[@]}); do
 	#bspc monitor primary -a $desktop # THIS SEGFAULTS on one monitor!
-	bspc monitor focused -a $desktop
+	bspc monitor focused -a ${DESKTOPS[$desktop]}
 done
 
 bspc rule -a Steam -d 5
@@ -29,12 +30,13 @@ bspc rule -a Firefox -d 2
 #bspc rule -a BSPWM_FRAME --frame
 #bspc config normal_frame_opacity 0
 
+bspc config top_padding				14
 bspc config split_ratio             0.50
 bspc config border_width            1
 bspc config window_gap              30
 bspc config borderless_monocle      true
 bspc config gapless_monocle         true
-bspc config auto_cancel 			true
+bspc config auto_cancel				true
 bspc config normal_border_color     "#181512"
 bspc config focused_border_color    "#88ada9"
 bspc config presel_border_color     "#d87d79"
