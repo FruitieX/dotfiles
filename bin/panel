@@ -7,4 +7,4 @@ bspc control --put-status
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 #date +%T > "$PANEL_FIFO" &
 
-cat "$PANEL_FIFO" | ~/bin/panel_bar | bar
+cat "$PANEL_FIFO" | ~/bin/panel_bar | ~/bin/bar

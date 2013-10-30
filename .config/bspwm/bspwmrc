@@ -23,8 +23,20 @@ for desktop in $(seq $i ${#DESKTOPS[@]}); do
 	bspc monitor focused -a ${DESKTOPS[$desktop]}
 done
 
-bspc rule -a Steam -d 5
-bspc rule -a Firefox -d 2
+bspc rule -a tmux -d ^1
+bspc rule -a Firefox -d ^2
+bspc rule -a Chromium -d ^2
+bspc rule -a irc -d ^3
+bspc rule -a Gimp -d ^4
+bspc rule -a Vlc -d ^4
+bspc rule -a Evince -d ^4
+bspc rule -a Wine -d ^4
+bspc rule -a Mumble -d ^4
+bspc rule -a Deluge -d ^4
+bspc rule -a LibreOffice -d ^4
+bspc rule -a "Renoise (x86_64)" -d ^4
+bspc rule -a Steam -d ^5
+bspc rule -a "Updating Steam..." -d ^5
 #--follow
 #
 #bspc rule -a BSPWM_FRAME --frame

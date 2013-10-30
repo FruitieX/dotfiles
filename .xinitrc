@@ -50,7 +50,6 @@ unclutter -idle 3 &
 export PANEL_FIFO=/tmp/panel-fifo
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
-#panel &
 ~/bin/bspwm.sh
 
 # SLiM session selector
