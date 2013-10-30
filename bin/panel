@@ -5,6 +5,6 @@ BSPWM_SOCKET=/tmp/bspwm-socket
 
 bspc control --put-status
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-#date +%T > "$PANEL_FIFO" &
+clock -i 1 -sf 'S%Y-%m-%d %H:%M:%S' > "$PANEL_FIFO" &
 
 cat "$PANEL_FIFO" | ~/bin/panel_bar | ~/bin/bar

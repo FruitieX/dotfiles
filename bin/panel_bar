@@ -46,5 +46,5 @@ while read -r line ; do
             done
             ;;
     esac
-    printf "%s\n" "$wm_infos $title $sys_infos"
+    printf "%s\n" "\\sr$wm_infos $title $sys_infos"
 done
