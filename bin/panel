@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+PANEL_FIFO=/tmp/panel-fifo
+BSPWM_SOCKET=/tmp/bspwm-socket
+
+bspc control --put-status
+xtitle -sf 'T%s' > "$PANEL_FIFO" &
+#date +%T > "$PANEL_FIFO" &
+
+cat "$PANEL_FIFO" | ~/bin/panel_bar | bar

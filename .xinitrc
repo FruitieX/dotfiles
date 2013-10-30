@@ -38,6 +38,7 @@ else
 	urxvt -title tmux -e ~/bin/tmx &
 	firefox-nightly &
 	#connman-ui-gtk &
+	xfce4-panel --disable-wm-check &
 	nm-applet &
 	numlockx &
 	pasystray &
