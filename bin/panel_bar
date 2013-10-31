@@ -1,14 +1,17 @@
-#! /bin/sh
+#! /bin/bash
 #
 # Example panel for LemonBoy's bar
 
+cur_monitor=""
 while read -r line ; do
+	echo "IN: $line" 1>&2
     case $line in
         S*)
-            sys_infos="\\r\\f5${line#?}\\fr"
+            sys_infos="\\s0\\r\\f5${line#?}\\fr"
+			sys_infos="$sys_infos\\s1\\r\\f5${line#?}\\fr"
             ;;
         T*)
-            title="\\c${line#?}"
+            title="$title\\c${line#?}"
 #            title=""
             ;;
         W*)
@@ -19,6 +22,33 @@ while read -r line ; do
                 item=$1
                 name=${item#?}
                 case $item in
+					M*)
+						case $name in
+							# TODO: autodetect?
+							*LVDS*)
+								cur_monitor="\\s0"
+								;;
+							*HDMI*)
+								cur_monitor="\\s1"
+								;;
+							*VGA*)
+								cur_monitor="\\s0"
+								;;
+						esac
+						;;
+					[Mm]*)
+						case $name in
+							*LVDS*)
+								wm_infos="$wm_infos\\s0"
+								;;
+							*HDMI*)
+								wm_infos="$wm_infos\\s1"
+								;;
+							*VGA*)
+								wm_infos="$wm_infos\\s0"
+								;;
+						esac
+						;;
                     [OFU]*)
                         # active desktop
                         wm_infos="$wm_infos\\u9\\f1 ${name} \\fr\\br\\ur"
@@ -37,14 +67,14 @@ while read -r line ; do
                         ;;
                     L*)
                         # layout
-#                        layout=$(printf "%s" "${name}" | sed 's/\(.\).*/\U\1/')
-			layout=""
-                        wm_infos="$wm_infos \\b4\\f0$layout\\br\\fr"
+                        #layout=$(printf "%s" "${name}" | sed 's/\(.\).*/\U\1/')
+                        #wm_infos="$wm_infos \\b4\\f0$layout\\br\\fr"
                         ;;
                 esac
                 shift
             done
             ;;
     esac
-    printf "%s\n" "\\sr$wm_infos $title $sys_infos"
+    printf "%s\n" "$wm_infos$cur_monitor$title$sys_infos"
+	echo "$wm_infos$cur_monitor$title$sys_infos" 1>&2
 done

@@ -11,7 +11,7 @@ sxhkd -c ~/.config/bspwm/sxhkdrc &
 compton --config ~/.compton.conf &
 
 i=1
-DESKTOPS=( I II III IV V VI VII VIII IX X )
+DESKTOPS=( I II III IV V VI )
 for monitor in $(bspc query -M); do
 	bspc monitor "$monitor" -d ${DESKTOPS[$i]}
 	bspc configure "$monitor" top_padding
