@@ -8,6 +8,7 @@ execute pathogen#infect()
 " powerline config
 set laststatus=2
 set noshowmode
+let g:Powerline_colorscheme = "solarized"
 
 " ctrlp config
 let g:ctrlp_max_height = 30
@@ -33,13 +34,40 @@ let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
 
 "colorscheme desert "awesome color scheme
 set t_Co=256
-colorscheme jellybeans
+"colorscheme jellybeans
+hi Comment ctermfg=12
+hi Constant ctermfg=15
+hi Identifier ctermfg=4
+hi Statement ctermfg=2
+hi PreProc ctermfg=6
+hi Type ctermfg=1
+hi Special ctermfg=3
+hi Underlined ctermfg=7
+hi Ignore ctermfg=9
+hi Error ctermfg=11
+hi Todo ctermfg=1
+hi Normal ctermfg=none ctermbg=none
+hi NonText ctermfg=0 ctermbg=none
+hi Directory        ctermfg=12
+
+hi VertSplit        ctermfg=black
+hi StatusLine        ctermfg=green
+hi StatusLineNC        ctermfg=0
+
+hi Folded ctermbg=0 ctermfg=8
+
+hi Pmenu ctermfg=10 ctermbg=0
+hi PmenuSel ctermfg=0 ctermbg=14
+hi LineNr ctermfg=0 ctermbg=none
+hi CursorLine ctermfg=none ctermbg=none cterm=none
+hi CursorLineNr ctermfg=none ctermbg=0
+hi CursorColumn ctermfg=none ctermbg=0
 
 " flag problematic whitespace
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertLeave * match ExtraWhitespace /\s\+$/
+"au InsertLeave * match ExtraWhitespace /\s\+$/
 
 "use :set list! to toggle visible whitespace on/off
 set listchars=tab:>-,trail:.,extends:>
@@ -163,6 +191,9 @@ nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 
 " open NERDTree
 nmap <silent> <Leader><Leader>T :NERDTree<Enter>
+
+" make
+map <leader>m :make<CR>
 
 " quick grepping
 nnoremap gr :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
@@ -295,6 +326,10 @@ filetype plugin indent on
 " Default to autoindenting of C like languages
 set autoindent
 set smartindent
+
+" syntastic stuff
+let g:syntastic_cpp_checkers=['gcc']
+let g:syntastic_c_checkers=['gcc']
 
 " Show relative numbers in command mode, absolute in insert mode
 set relativenumber

@@ -31,7 +31,7 @@ Dependencies for arch linux users:
 	gvim vim-colorsamplerpack vimpager ctags
 
 * **wm stuff:**
-	i3 i3status dmenu i3lock unclutter dunst
+	bspwm sxhkd compton clock-git xtitle xfce4-panel sutils-git (clock)
 
 * **misc cli:**
 	openssh sudo tmux cmus sshfs ntp terminus-font weechat htop
