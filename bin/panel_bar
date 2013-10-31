@@ -7,12 +7,12 @@ while read -r line ; do
 	echo "IN: $line" 1>&2
     case $line in
         S*)
-            sys_infos="\\s0\\r\\f5${line#?}\\fr"
-			sys_infos="$sys_infos\\s1\\r\\f5${line#?}\\fr"
+            sys_infos="\\r\\f5${line#?}\\fr"
+			#sys_infos="$sys_infos\\s1\\r\\f5${line#?}\\fr"
             ;;
         T*)
+			title=""
             title="$title\\c${line#?}"
-#            title=""
             ;;
         W*)
             wm_infos=""
@@ -75,6 +75,6 @@ while read -r line ; do
             done
             ;;
     esac
-    printf "%s\n" "$wm_infos$cur_monitor$title$sys_infos"
+    printf "%s\n" "$wm_infos$title$sys_infos"
 	echo "$wm_infos$cur_monitor$title$sys_infos" 1>&2
 done
