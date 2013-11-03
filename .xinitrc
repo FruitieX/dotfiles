@@ -32,6 +32,7 @@ if [[ $HOSTNAME == "servy" ]]; then
 	~/bin/wallpaper.sh &
 	unset TMUX
 	urxvt -title tmux -e ~/bin/tmx &
+	killall mpd
 	mpd
 else
 	~/bin/wallpaper.sh &
