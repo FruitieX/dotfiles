@@ -32,6 +32,7 @@ if [[ $HOSTNAME == "servy" ]]; then
 	~/bin/wallpaper.sh &
 	unset TMUX
 	urxvt -title tmux -e ~/bin/tmx &
+	mpd
 else
 	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
@@ -47,10 +48,14 @@ fi
 dunst &
 unclutter -idle 3 &
 
-export PANEL_FIFO=/tmp/panel-fifo
-[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-mkfifo "$PANEL_FIFO"
-~/bin/bspwm.sh
+if [[ $HOSTNAME == "servy" ]]; then
+	exec i3
+else
+	export PANEL_FIFO=/tmp/panel-fifo
+	[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+	mkfifo "$PANEL_FIFO"
+	~/bin/bspwm.sh
+fi
 
 # SLiM session selector
 #DEFAULT_SESSION=/home/rasse/bin/startdwm
