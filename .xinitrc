@@ -11,6 +11,7 @@ xset m 1 1 &
 redshift -l 0:0 &
 VBoxClient-all &
 xsetroot -cursor_name left_ptr &
+start-pulseaudio-x11
 
 # configs
 xmodmap .Xmodmap &
@@ -32,7 +33,6 @@ if [[ $HOSTNAME == "servy" ]]; then
 	unset TMUX
 	urxvt -title tmux -e ~/bin/tmx &
 else
-	start-pulseaudio-x11
 	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
 	urxvt -title tmux -e ~/bin/tmx &
