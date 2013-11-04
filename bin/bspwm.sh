@@ -3,5 +3,9 @@
 while true ; do
 	export PANEL_FIFO=/tmp/panel-fifo
 	export BSPWM_SOCKET=/tmp/bspwm-socket
-	bspwm -c ~/.config/bspwm/bspwmrc -s "$PANEL_FIFO" -p W || break
+	if [[ $HOSTNAME == "servy" ]]; then
+		bspwm -c ~/.config/bspwm/bspwmrc || break
+	else
+		bspwm -c ~/.config/bspwm/bspwmrc -s "$PANEL_FIFO" -p W || break
+	fi
 done
