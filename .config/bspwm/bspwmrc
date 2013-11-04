@@ -52,14 +52,13 @@ bspc config normal_border_color     "#181512"
 bspc config focused_border_color    "#88ada9"
 bspc config presel_border_color     "#d87d79"
 
-if [ -e "$BSPWM_TREE" -a $HOST -ne "servy" ] ; then
-	bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
-	rm "$BSPWM_TREE" "$BSPWM_HISTORY" "$BSPWM_STACK"
-fi
-
 if [[ $HOST == "servy" ]]; then
 	bspc config top_padding				0
 else
+	if [ -e "$BSPWM_TREE" ] ; then
+		bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
+		rm "$BSPWM_TREE" "$BSPWM_HISTORY" "$BSPWM_STACK"
+	fi
 	bspc config top_padding				18
 	~/bin/panel &
 fi
