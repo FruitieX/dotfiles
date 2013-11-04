@@ -10,6 +10,8 @@ xset m 1 1 &
 #xflux -l 0
 redshift -l 0:0 &
 VBoxClient-all &
+xsetroot -cursor_name left_ptr &
+start-pulseaudio-x11
 
 # configs
 xmodmap .Xmodmap &
@@ -29,15 +31,17 @@ if [[ $HOSTNAME == "servy" ]]; then
 	xrandr --output DVI-0 --rotate left
 	~/bin/wallpaper.sh &
 	unset TMUX
-	urxvt -e ~/bin/tmx &
+	urxvt -title tmux -e ~/bin/tmx &
+	killall mpd
+	mpd
 else
-	start-pulseaudio-x11
 	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
-	urxvt -title tmux -e tmux &
-	urxvt -title irc -e weechat-curses &
-	firefox &
-	connman-ui-gtk &
+	urxvt -title tmux -e ~/bin/tmx &
+	firefox-nightly &
+	#connman-ui-gtk &
+	xfce4-panel --disable-wm-check &
+	nm-applet &
 	numlockx &
 	pasystray &
 fi
@@ -45,7 +49,14 @@ fi
 dunst &
 unclutter -idle 3 &
 
-exec i3
+if [[ $HOSTNAME == "servy" ]]; then
+	exec i3
+else
+	export PANEL_FIFO=/tmp/panel-fifo
+	[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+	mkfifo "$PANEL_FIFO"
+	~/bin/bspwm.sh
+fi
 
 # SLiM session selector
 #DEFAULT_SESSION=/home/rasse/bin/startdwm

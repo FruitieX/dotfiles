@@ -63,7 +63,7 @@ prompt_context() {
   local user=`whoami`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment $PROMPT_HOST_COLOR_BG $PROMPT_HOST_COLOR_FG "%(!.%{%F{yellow}%}.)$user@%m"
+    prompt_segment $PROMPT_HOST_COLOR_BG $PROMPT_HOST_COLOR_FG "%(!.%{%F{yellow}%}.)$user@%m "
   fi
 }
 

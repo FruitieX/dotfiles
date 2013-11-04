@@ -1,0 +1,61 @@
+#! /bin/zsh
+#unset DBUS_SESSION_BUS_ADDRESS
+#
+export BSPWM_TREE=/tmp/bspwm.tree
+export BSPWM_HISTORY=/tmp/bspwm.history
+export BSPWM_STACK=/tmp/bspwm.stack
+
+killall -9 sxhkd compton
+export BSPWM_SOCKET=/tmp/bspwm-socket
+sxhkd -c ~/.config/bspwm/sxhkdrc &
+compton --config ~/.compton.conf &
+
+i=1
+DESKTOPS=( I II III IV V VI )
+for monitor in $(bspc query -M); do
+	bspc monitor "$monitor" -d ${DESKTOPS[$i]}
+	bspc configure "$monitor" top_padding
+	i=$((i+1))
+done
+
+for desktop in $(seq $i ${#DESKTOPS[@]}); do
+	#bspc monitor primary -a $desktop # THIS SEGFAULTS on one monitor!
+	bspc monitor focused -a ${DESKTOPS[$desktop]}
+done
+
+bspc rule -a tmux -d ^1
+bspc rule -a Firefox -d ^2
+bspc rule -a Chromium -d ^2
+bspc rule -a irc -d ^3
+bspc rule -a Gimp -d ^4
+bspc rule -a Vlc -d ^4
+bspc rule -a Evince -d ^4
+bspc rule -a Wine -d ^4
+bspc rule -a Mumble -d ^4
+bspc rule -a Deluge -d ^4
+bspc rule -a LibreOffice -d ^4
+bspc rule -a "Renoise (x86_64)" -d ^4
+bspc rule -a Steam -d ^5
+bspc rule -a "Updating Steam..." -d ^5
+#--follow
+#
+#bspc rule -a BSPWM_FRAME --frame
+#bspc config normal_frame_opacity 0
+
+bspc config top_padding				18
+bspc config split_ratio             0.50
+bspc config border_width            1
+bspc config window_gap              30
+bspc config borderless_monocle      true
+bspc config gapless_monocle         true
+bspc config auto_cancel				true
+bspc config normal_border_color     "#181512"
+bspc config focused_border_color    "#88ada9"
+bspc config presel_border_color     "#d87d79"
+
+if [ -e "$BSPWM_TREE" ] ; then
+	bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
+	rm "$BSPWM_TREE" "$BSPWM_HISTORY" "$BSPWM_STACK"
+fi
+
+~/bin/panel &
