@@ -1,6 +1,6 @@
 source-file ~/.tmux.conf
-new -s ircscreen -n main irssi
-splitw -v -p 10 -t 0 ncmpcpp
+respawn-window -k irssi
+splitw -v -p 20 -t 0 ncmpcpp
 selectp -t 1
 splitw -h -p 50 -t 1
 clock-mode

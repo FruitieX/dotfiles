@@ -55,8 +55,8 @@ bspc config presel_border_color     "#d87d79"
 if [[ $HOST == "servy" ]]; then
 	bspc config top_padding				0
 	unset TMUX
-	tmux -c /bin/bash -f .tmux.servy
-	urxvt -title tmux a &
+	urxvt -title tmux -e ~/bin/tmx &
+	tmux source-file ~/.tmux.servy
 else
 	if [ -e "$BSPWM_TREE" ] ; then
 		bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
