@@ -5,19 +5,17 @@ xset fp rehash
 # disable turning screen off automatically
 xset -dpms &
 xset s off &
+# disable mouse accel
 xset m 1 1 &
 
-#xflux -l 0
+# autostart, all hosts
 redshift -l 0:0 &
 VBoxClient-all &
 xsetroot -cursor_name left_ptr &
+xmodmap .Xmodmap &
 start-pulseaudio-x11
 
-# configs
-xmodmap .Xmodmap &
-
-# autostart
-# host-specific
+# autostart, host-specific
 if [[ $HOSTNAME == "mba" ]]; then
 	xrandr --output HDMI1 --right-of eDP1 --mode 1920x1080
 	synclient PalmDetect=1 MaxSpeed=3 TouchpadOff=1 &
@@ -39,7 +37,6 @@ else
 	~/bin/steam.sh &
 	urxvt -title tmux -e ~/bin/tmx &
 	firefox-nightly &
-	#connman-ui-gtk &
 	xfce4-panel --disable-wm-check &
 	nm-applet &
 	numlockx &
@@ -49,22 +46,7 @@ fi
 dunst &
 unclutter -idle 3 &
 
-if [[ $HOSTNAME == "servy" ]]; then
-	exec i3
-else
-	export PANEL_FIFO=/tmp/panel-fifo
-	[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-	mkfifo "$PANEL_FIFO"
-	~/bin/bspwm.sh
-fi
-
-# SLiM session selector
-#DEFAULT_SESSION=/home/rasse/bin/startdwm
-#case $1 in
-#kde)
-#	exec startkde
-#	;;
-#*)
-#	exec $DEFAULT_SESSION
-#	;;
-#esac
+export PANEL_FIFO=/tmp/panel-fifo
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+~/bin/bspwm.sh
