@@ -28,8 +28,6 @@ fi
 if [[ $HOSTNAME == "servy" ]]; then
 	xrandr --output DVI-0 --rotate left
 	~/bin/wallpaper.sh &
-	unset TMUX
-	urxvt -title tmux -e ~/bin/tmx &
 	killall mpd
 	mpd
 else

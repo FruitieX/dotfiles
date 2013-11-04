@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /usr/bin/zsh
 #unset DBUS_SESSION_BUS_ADDRESS
 #
 export BSPWM_TREE=/tmp/bspwm.tree
@@ -54,6 +54,8 @@ bspc config presel_border_color     "#d87d79"
 
 if [[ $HOST == "servy" ]]; then
 	bspc config top_padding				0
+	unset TMUX
+	urxvt -title tmux -e ~/bin/tmx &
 else
 	if [ -e "$BSPWM_TREE" ] ; then
 		bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
