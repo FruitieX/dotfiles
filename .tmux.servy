@@ -1,4 +1,6 @@
 source-file ~/.tmux.conf
+set -g pane-active-border-fg white
+set -g pane-active-border-bg default
 new -s ircscreen -n main irssi
 splitw -v -p 10 -t 0 ncmpcpp
 selectp -t 1
