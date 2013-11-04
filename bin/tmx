@@ -27,7 +27,11 @@ fi
 tmux_nb=$(trim `tmux ls | grep "^$base_session" | wc -l`)
 if [[ "$tmux_nb" == "0" ]]; then
     echo "Launching tmux base session $base_session ..."
-    tmux new-session -s $base_session
+	if [[ $HOSTNAME == "servy" ]]; then
+		tmux new-session -s $base_session -f ~/.tmux.servy
+	else
+		tmux new-session -s $base_session
+	fi
 else
     # Make sure we are not already in a tmux session
     if [[ -z "$TMUX" ]]; then
