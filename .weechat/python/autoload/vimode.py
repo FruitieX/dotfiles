@@ -257,9 +257,9 @@ def cmd_text_cb(data, item, window):
 def mode_indicator_cb(data, item, window):
 	"""Return the current mode (INSERT/COMMAND)."""
 	if mode == "NORMAL":
-		return "%s>" % weechat.color("lightred, default")
+		return "%sc" % weechat.color("lightcyan, default")
 	else:
-		return "%sI" % weechat.color("lightcyan, default")
+		return "%s>" % weechat.color("lightred, default")
 
 def exec_cmd(data, remaining_calls):
 	"""Translate and execute our custom commands to WeeChat command, with
