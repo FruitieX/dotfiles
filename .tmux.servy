@@ -2,7 +2,7 @@ source-file ~/.tmux.conf
 set -g pane-active-border-fg white
 set -g pane-active-border-bg default
 set status off
-respawn-window -k weechat -r "/layout apply servy"
+respawn-window -k 'weechat -r "/layout apply servy"'
 splitw -v -p 20 -t 0 ncmpcpp
 selectp -t 1
 splitw -h -p 50 -t 1
