@@ -56,6 +56,7 @@ if [[ $HOST == "servy" ]]; then
 	bspc config top_padding				0
 	unset TMUX
 	urxvt -title tmux -e ~/bin/tmx &
+	sleep 3
 	tmux source-file ~/.tmux.servy
 else
 	if [ -e "$BSPWM_TREE" ] ; then
