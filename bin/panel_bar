@@ -61,6 +61,7 @@ while read -r line ; do
 	i=0
 	output=""
 	for monitor in "${mon_order[@]}"; do # loop over keys (monitors)
+		echo ${wm_infos[$monitor]} 1>&2
 		output=$output\\s$i${wm_infos[$monitor]}\\s$i$title$sys_infos
 		i=$(($i+1))
 	done
