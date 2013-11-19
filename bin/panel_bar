@@ -6,7 +6,7 @@ PANEL_FIFO=/tmp/panel-fifo
 BSPWM_SOCKET=/tmp/bspwm-socket
 
 while read -r line ; do
-	echo "IN: $line" 1>&2
+	#echo "IN: $line" 1>&2
     case $line in
         S*)
             sys_infos="\\r\\f5${line#?}\\fr"
@@ -19,6 +19,8 @@ while read -r line ; do
         W*)
 			unset wm_infos
 			declare -A wm_infos
+			unset mon_order
+			declare -a mon_order
             IFS=':'
             set -- ${line#?}
             while [ $# -gt 0 ] ; do
@@ -27,6 +29,7 @@ while read -r line ; do
                 case $item in
 					[Mm]*)
 						cur_monitor=$name
+						mon_order=("${mon_order[@]}" "$cur_monitor")
 						;;
                     [OFU]*)
                         # active desktop
@@ -57,11 +60,10 @@ while read -r line ; do
 
 	i=0
 	output=""
-	for monitor in ${!wm_infos[@]}; do # loop over keys (monitors)
-		echo $monitor 1>&2
+	for monitor in "${mon_order[@]}"; do # loop over keys (monitors)
 		output=$output\\s$i${wm_infos[$monitor]}\\s$i$title$sys_infos
 		i=$(($i+1))
 	done
 	printf "%s\n" "$output"
-	echo $output 1>&2
+	#echo $output 1>&2
 done
