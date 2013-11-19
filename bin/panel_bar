@@ -2,7 +2,9 @@
 #
 # Example panel for LemonBoy's bar
 
-cur_monitor=""
+PANEL_FIFO=/tmp/panel-fifo
+BSPWM_SOCKET=/tmp/bspwm-socket
+
 while read -r line ; do
 	echo "IN: $line" 1>&2
     case $line in
@@ -15,66 +17,51 @@ while read -r line ; do
             title="$title\\c${line#?}"
             ;;
         W*)
-            wm_infos=""
+			unset wm_infos
+			declare -A wm_infos
             IFS=':'
             set -- ${line#?}
             while [ $# -gt 0 ] ; do
                 item=$1
                 name=${item#?}
                 case $item in
-					M*)
-						case $name in
-							# TODO: autodetect?
-							*LVDS*)
-								cur_monitor="\\s0"
-								;;
-							*HDMI*)
-								cur_monitor="\\s1"
-								;;
-							*VGA*)
-								cur_monitor="\\s0"
-								;;
-						esac
-						;;
 					[Mm]*)
-						case $name in
-							*LVDS*)
-								#wm_infos="$wm_infos\\s0"
-								;;
-							*HDMI*)
-								#wm_infos="$wm_infos\\s1"
-								;;
-							*VGA*)
-								#wm_infos="$wm_infos\\s0"
-								;;
-						esac
+						cur_monitor=$name
 						;;
                     [OFU]*)
                         # active desktop
-                        wm_infos="$wm_infos\\u9\\f1 ${name} \\fr\\br\\ur"
+                        wm_infos[$cur_monitor]="${wm_infos[$cur_monitor]}\\u9\\f1 ${name} \\fr\\br\\ur"
                         ;;
                     o*)
                         # inactive but occupied desktop
-                        wm_infos="$wm_infos\\f6 ${name} \\fr"
+                        wm_infos[$cur_monitor]="${wm_infos[$cur_monitor]}\\f6 ${name} \\fr"
                         ;;
                     f*)
                         # inactive desktop
-                        wm_infos="$wm_infos\\f2 ${name} \\fr"
+                        wm_infos[$cur_monitor]="${wm_infos[$cur_monitor]}\\f2 ${name} \\fr"
                         ;;
                     u*)
                         # urgent desktop
-                        wm_infos="$wm_infos \\u3\\f6${name}\\ur\\fr "
+                        wm_infos[$cur_monitor]="${wm_infos[$cur_monitor]}\\u3\\f6${name}\\ur\\fr "
                         ;;
-                    L*)
+                    #L*)
                         # layout
                         #layout=$(printf "%s" "${name}" | sed 's/\(.\).*/\U\1/')
                         #wm_infos="$wm_infos \\b4\\f0$layout\\br\\fr"
-                        ;;
+                        #;;
                 esac
                 shift
             done
             ;;
     esac
-    printf "%s\n" "$wm_infos$title$sys_infos\\s1$wm_infos$title$sys_infos"
-	echo "$wm_infos$title$sys_infos" 1>&2
+
+	i=0
+	output=""
+	for monitor in ${!wm_infos[@]}; do # loop over keys (monitors)
+		echo $monitor 1>&2
+		output=$output\\s$i${wm_infos[$monitor]}\\s$i$title$sys_infos
+		i=$(($i+1))
+	done
+	printf "%s\n" "$output"
+	echo $output 1>&2
 done

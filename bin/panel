@@ -3,6 +3,7 @@
 PANEL_FIFO=/tmp/panel-fifo
 BSPWM_SOCKET=/tmp/bspwm-socket
 
+killall bspc xtitle clock
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 clock -i 1 -sf 'S%Y-%m-%d %H:%M:%S' > "$PANEL_FIFO" &
