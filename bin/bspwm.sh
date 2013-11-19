@@ -6,6 +6,6 @@ while true ; do
 	if [[ $HOST == "servy" ]]; then
 		bspwm -c ~/.config/bspwm/bspwmrc || break
 	else
-		bspwm -c ~/.config/bspwm/bspwmrc -s "$PANEL_FIFO" -p W || break
+		bspwm -c ~/.config/bspwm/bspwmrc -s "$PANEL_FIFO" || break
 	fi
 done

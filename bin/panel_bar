@@ -39,13 +39,13 @@ while read -r line ; do
 					[Mm]*)
 						case $name in
 							*LVDS*)
-								wm_infos="$wm_infos\\s0"
+								#wm_infos="$wm_infos\\s0"
 								;;
 							*HDMI*)
-								wm_infos="$wm_infos\\s1"
+								#wm_infos="$wm_infos\\s1"
 								;;
 							*VGA*)
-								wm_infos="$wm_infos\\s0"
+								#wm_infos="$wm_infos\\s0"
 								;;
 						esac
 						;;
@@ -75,6 +75,6 @@ while read -r line ; do
             done
             ;;
     esac
-    printf "%s\n" "$wm_infos$title$sys_infos"
-	echo "$wm_infos$cur_monitor$title$sys_infos" 1>&2
+    printf "%s\n" "$wm_infos$title$sys_infos\\s1$wm_infos$title$sys_infos"
+	echo "$wm_infos$title$sys_infos" 1>&2
 done
