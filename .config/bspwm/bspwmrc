@@ -16,7 +16,7 @@ IFS=$'\r\n' DESKTOPS=($(cat ~/.config/bspwm/desktops))
 
 for monitor in $(bspc query -M); do
 	bspc monitor "$monitor" -d ${DESKTOPS[$i]}
-	bspc configure "$monitor" top_padding
+	#bspc configure "$monitor" top_padding
 	i=$((i+1))
 done
 
