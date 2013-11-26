@@ -118,7 +118,7 @@ super + Return
     urxvt
 
 super + space
-    dmenu_run
+    /usr/bin/zsh ~/bin/yeganesh.sh
 
 # make sxhkd reload its configuration files:
 

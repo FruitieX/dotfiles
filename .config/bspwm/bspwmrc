@@ -1,4 +1,4 @@
-#! /usr/bin/zsh
+#!/usr/bin/zsh
 #unset DBUS_SESSION_BUS_ADDRESS
 #
 export BSPWM_TREE=/tmp/bspwm.tree
@@ -25,35 +25,37 @@ for desktop in $(seq $i ${#DESKTOPS[@]}); do
 	bspc monitor focused -a ${DESKTOPS[$desktop]}
 done
 
-bspc rule -a tmux -d ^1
-bspc rule -a Firefox -d ^2
-bspc rule -a Chromium -d ^2
-bspc rule -a irc -d ^3
-bspc rule -a Gimp -d ^4
-bspc rule -a Vlc -d ^4
-bspc rule -a Evince -d ^4
-bspc rule -a Wine -d ^4
-bspc rule -a Mumble -d ^4
-bspc rule -a Deluge -d ^4
-bspc rule -a LibreOffice -d ^4
-bspc rule -a "Renoise (x86_64)" -d ^4
-bspc rule -a Steam -d ^5
-bspc rule -a "Updating Steam..." -d ^5
-#--follow
-#
-#bspc rule -a BSPWM_FRAME --frame
-#bspc config normal_frame_opacity 0
+# main
+bspc rule -a tmux -d ${DESKTOPS[1]}
+# web
+bspc rule -a Firefox -d ${DESKTOPS[2]}
+bspc rule -a Chromium -d ${DESKTOPS[2]}
+# irc
+bspc rule -a irc -d ${DESKTOPS[3]}
+# gui
+bspc rule -a Gimp -d ${DESKTOPS[4]}
+bspc rule -a Vlc -d ${DESKTOPS[4]}
+bspc rule -a Evince -d ${DESKTOPS[4]}
+bspc rule -a Wine -d ${DESKTOPS[4]}
+bspc rule -a Mumble -d ${DESKTOPS[4]}
+bspc rule -a Deluge -d ${DESKTOPS[4]}
+bspc rule -a LibreOffice -d ${DESKTOPS[4]}
+bspc rule -a "Renoise (x86_64)" -d ${DESKTOPS[4]}
+# games
+bspc rule -a Steam -d ${DESKTOPS[5]}
+bspc rule -a "Updating Steam..." -d ${DESKTOPS[5]}
 
 bspc config split_ratio             0.50
-bspc config border_width            2
-bspc config window_gap              30
+bspc config border_width            3
+bspc config window_gap              29
 bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 bspc config auto_cancel				true
 bspc config remove_disabled_monitor	true
 bspc config normal_border_color     "#181512"
-bspc config focused_border_color    "#d6c3b6"
-bspc config presel_border_color     "#d87d79"
+bspc config focused_border_color    "#9a875f"
+#bspc config presel_border_color     "#d87d79"
+bspc config presel_border_color     "#d6c3b6"
 
 if [[ $HOST == "servy" ]]; then
 	bspc config top_padding				0
