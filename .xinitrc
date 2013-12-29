@@ -34,7 +34,6 @@ else
 	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
 	urxvt -title tmux -e ~/bin/tmx &
-	firefox-nightly &
 	xfce4-panel --disable-wm-check &
 	nm-applet &
 	numlockx &
