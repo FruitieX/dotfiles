@@ -22,7 +22,7 @@ hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-w close
 hc keybind $Mod-Return spawn urxvt
-hc keybind $Mod-space spawn yeganesh.sh
+hc keybind $Mod-space spawn ~/bin/yeganesh.sh
 
 # basic movement
 # focusing clients
@@ -50,6 +50,21 @@ hc keybind $Mod-Control-h       resize left +$resizestep
 hc keybind $Mod-Control-j       resize down +$resizestep
 hc keybind $Mod-Control-k       resize up +$resizestep
 hc keybind $Mod-Control-l       resize right +$resizestep
+
+# non-wm related keybinds
+hc keybind XF86AudioRaiseVolume spawn sh -c "pactl set-sink-volume @DEFAULT_SINK@ -- +2%; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+hc keybind XF86AudioLowerVolume spawn sh -c "pactl set-sink-volume @DEFAULT_SINK@ -- -2%; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+hc keybind XF86AudioMute spawn sh -c "pactl set-sink-mute @DEFAULT_SINK@ toggle; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+hc keybind XF86MonBrightnessUp spawn sudo /usr/bin/brightness.sh mon \*2
+hc keybind XF86MonBrightnessDown spawn sudo /usr/bin/brightness.sh mon /2
+hc keybind XF86KbdBrightnessUp spawn sudo /usr/bin/brightness.sh kbd +50
+hc keybind XF86KbdBrightnessDown spawn sudo /usr/bin/brightness.sh kbd -50
+hc keybind XF86LaunchA spawn touchpadtoggle
+hc keybind $Mod-Shift-x spawn /usr/bin/i3lock -u -c 9a875f
+hc keybind XF86AudioPlay spawn /usr/bin/ncmpcpp toggle
+hc keybind XF86AudioStop spawn /usr/bin/ncmpcpp stop
+hc keybind XF86AudioPrev spawn /usr/bin/ncmpcpp prev
+hc keybind XF86AudioNext spawn /usr/bin/ncmpcpp next
 
 # tags
 tag_names=( {1..9} )
