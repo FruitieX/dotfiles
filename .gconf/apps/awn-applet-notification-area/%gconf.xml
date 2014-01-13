@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="background_color" mtime="1389573970" type="string">
+		<stringvalue>#0000000000006363</stringvalue>
+	</entry>
+	<entry name="border_color" mtime="1389573962" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="icon_size" mtime="1389573833" type="int" value="100"/>
+	<entry name="extra_offset" mtime="1389573982" type="int" value="0"/>
+	<entry name="icons_per_cell" mtime="1389573841" type="int" value="1"/>
+</gconf>
