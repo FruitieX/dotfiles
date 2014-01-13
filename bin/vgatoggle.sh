@@ -44,6 +44,5 @@ else
 	fi
 fi
 
-bspc config top_padding				18
-panel &
 ~/bin/wallpaper.sh -o
+herbstclient reload

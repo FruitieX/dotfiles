@@ -1,5 +1,6 @@
 #!/usr/bin/zsh
 
+cd ~
 while true; do
 	wallpaper="$(find annex/images/wallpapers -type l \( -name '*.jpg' -o -name '*.png' -o -name '*.jpeg' -o -name '*.gif' \) -print0 | shuf -n1 -z | xargs -0 echo)"
 	echo $wallpaper
