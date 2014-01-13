@@ -42,7 +42,8 @@ else
 	pasystray &
 fi
 
-dunst &
+dunst -nf "#efefef" -lf "#9a875f" -cf "9a4747" -nb "#000000" -lb "#000000" -cb "#000000" -lto 5 -nto 5 -cto 0 -fn "Terminus 8" -geometry 600x14+172+2 &
+
 unclutter -idle 3 &
 
 exec herbstluftwm --locked
