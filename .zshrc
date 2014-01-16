@@ -54,6 +54,7 @@ alias netmenu="sudo wifi-menu -o"
 alias gx="git annex"
 alias slp="systemctl suspend"
 alias ds="dirs -v"
+alias hc="herbstclient"
 
 export BROWSER="firefox-nightly"
 export EDITOR="vim"

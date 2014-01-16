@@ -11,7 +11,7 @@
 /* Default bar position, overwritten by '-b' switch */
 #define BAR_BOTTOM 0
 /* The fonts used for the bar, comma separated. Only the first 2 will be used. */
-#define BAR_FONT       "-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1","fixed"
+#define BAR_FONT       "-*-terminus-medium-r-normal-*-16-*-*-*-c-*-*-1","fixed"
 /* Some fonts don't set the right width for some chars, pheex it */
 #define BAR_FONT_FALLBACK_WIDTH 6
 /* Define the opacity of the bar (requires a compositor such as compton) */

@@ -119,6 +119,8 @@ map <C-q> :q<Enter>
 set pastetoggle=<F2>
 nmap <silent> <F5> :checktime<Enter>
 nmap <F8> :TagbarToggle<CR>
+" reindent entire file
+map <F7> mzgg=G`z<CR>
 
 " allow moving around in insert mode TODO: this does not work
 inoremap <A-h> <C-o>h
