@@ -1,8 +1,8 @@
-#include ".colors/erosionedit"
+#include "/home/rasse/.colors/erosionedit"
 *scrollBar: false
 !use powerline font as secondary
 !*font: xft:Terminus:Regular:pixelsize=12:antialias=false:hinting=false:autohint=false, xft:Terminus (TTF) for Powerline:pixelsize=16:antialias=false:hinting=false:autohint=false
-!*font: xft:Droid Sans Mono for Powerline:pixelsize=14:hinting=true:autohint=true, xft:PowerlineSymbols:pixelsize=14
+!*font: xft:Droid Sans Mono:pixelsize=14:hinting=true:autohint=true, xft:PowerlineSymbols:pixelsize=14
 *font: xft:Terminus:pixelsize=14:hinting=true:autohint=true
 !, xft:PowerlineSymbols:pixelsize=14
 !*font: xft:Menlo for Powerline:pixelsize=16:hinting=true:autohint=true

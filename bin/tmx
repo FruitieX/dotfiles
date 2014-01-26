@@ -39,7 +39,7 @@ else
         tmux new-session -d -t $base_session -s $session_id
 
 		# Create a new window in that session
-		tmux new-window
+		#tmux new-window
 
         # Attach to the new session & kill it once orphaned
 		tmux attach-session -t $session_id \; set-option destroy-unattached

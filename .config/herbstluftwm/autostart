@@ -8,8 +8,6 @@ hc() {
 
 hc emit_hook reload
 
-#xsetroot -solid '#5A8E3A'
-
 # remove all existing keybindings
 hc keyunbind --all
 
@@ -18,8 +16,9 @@ hc keyunbind --all
 #Mod=Mod1    # Use alt as the main modifier
 Mod=Mod4   # Use the super key as the main modifier
 
-hc keybind $Mod-Shift-q quit
-hc keybind $Mod-Shift-r spawn ~/bin/vgatoggle.sh
+#hc keybind $Mod-Shift-q quit
+#hc keybind $Mod-Shift-r spawn ~/bin/vgatoggle.sh
+hc keybind $Mod-Shift-r reload
 hc keybind $Mod-w close
 hc keybind $Mod-Return spawn urxvt
 hc keybind $Mod-space spawn ~/bin/yeganesh.sh
@@ -61,10 +60,10 @@ hc keybind XF86KbdBrightnessUp spawn sudo /usr/bin/brightness.sh kbd +50
 hc keybind XF86KbdBrightnessDown spawn sudo /usr/bin/brightness.sh kbd -50
 hc keybind XF86LaunchA spawn touchpadtoggle
 hc keybind $Mod-Shift-x spawn /usr/bin/i3lock -u -c 9a875f
-hc keybind XF86AudioPlay spawn /usr/bin/ncmpcpp toggle
-hc keybind XF86AudioStop spawn /usr/bin/ncmpcpp stop
-hc keybind XF86AudioPrev spawn /usr/bin/ncmpcpp prev
-hc keybind XF86AudioNext spawn /usr/bin/ncmpcpp next
+#hc keybind XF86AudioPlay spawn /usr/bin/ncmpcpp toggle
+#hc keybind XF86AudioStop spawn /usr/bin/ncmpcpp stop
+#hc keybind XF86AudioPrev spawn /usr/bin/ncmpcpp prev
+#hc keybind XF86AudioNext spawn /usr/bin/ncmpcpp next
 
 # tags
 tag_names=( {1..9} )
@@ -86,7 +85,7 @@ hc keybind $Mod-comma  use_index -1 --skip-visible
 
 # layouting
 hc keybind $Mod-r remove
-hc keybind $Mod-Shift-space cycle_layout 1
+hc keybind $Mod-Shift-space cycle_layout -1
 hc keybind $Mod-s floating toggle
 hc keybind $Mod-f fullscreen toggle
 hc keybind $Mod-p pseudotile toggle
@@ -108,25 +107,28 @@ hc keybind $Mod-i jumpto urgent
 hc set frame_border_active_color '#000000'
 hc set frame_border_normal_color '#000000'
 hc set frame_bg_normal_color '#000000'
-hc set frame_bg_active_color '#555555'
+hc set frame_bg_active_color '#222222'
 hc set frame_border_width 1
-hc set window_border_width 3
+hc set window_border_width 5
 hc set window_border_inner_width 1
 hc set window_border_normal_color '#181512'
-hc set window_border_active_color '#9a875f'
-hc set always_show_frame 0
+hc set window_border_active_color '#c9bda2'
+hc set window_border_urgent_color '#882020'
+hc set always_show_frame 1
 hc set frame_bg_transparent 0
 hc set frame_active_opacity 75
-hc set frame_normal_opacity 25
+hc set frame_normal_opacity 75
 hc set frame_transparent_width 5
 hc set frame_gap 30
+hc set gapless_grid 1
 # add overlapping window borders
-hc set window_gap 5
+hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 0
 hc set mouse_recenter_gap 1
 hc set auto_detect_monitors 1
+hc set default_frame_layout 1
 
 # rules
 hc unrule -F
@@ -134,7 +136,7 @@ hc unrule -F
 hc rule focus=off # normally do not focus new clients
 # give focus to most common terminals
 hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
-hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=off
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
 
@@ -142,10 +144,6 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
 hc unlock
 
 herbstclient set tree_style '╾│ ├└╼─┐'
-
-# do multi monitor setup here, e.g.:
-# hc set_monitors 1280x1024+0+0 1280x1024+1280+0
-# or simply:
 hc detect_monitors
 
 # find the panel

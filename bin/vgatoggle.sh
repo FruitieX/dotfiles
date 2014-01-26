@@ -5,7 +5,13 @@ vga=$?
 xrandr | grep "HDMI-0 connected" > /dev/null
 hdmi=$?
 
-if [[ $vga -eq 0 ]]; then
+if [[ $vga -eq 0 && $hdmi -eq 0 ]]; then
+	# desktop
+	xrandr --output HDMI-0 --mode 1920x1080 --rate 75
+	xrandr --output LVDS-0 --off
+	xrandr --output HDMI-0 --mode 1920x1080 --rate 75
+	xrandr --output VGA-0 --mode 1920x1080 --rate 60 --right-of HDMI-0
+elif [[ $vga -eq 0 ]]; then
 	# projector
 	xrandr --output VGA-0 --mode 1280x720 --rate 120
 	xrandr --output LVDS-0 --off
