@@ -34,7 +34,10 @@ if [[ $HOSTNAME == "servy" ]]; then
 	killall mpd tmux
 	mpd
 else
-	~/bin/wallpaper.sh &
+	if [[ $HOSTNAME == "lappy" ]]; then
+		~/bin/vgatoggle.sh &
+	fi
+
 	~/bin/steam.sh &
 	urxvt -title tmux -e ~/bin/tmx &
 	nm-applet &
