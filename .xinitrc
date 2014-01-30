@@ -35,7 +35,10 @@ if [[ $HOSTNAME == "servy" ]]; then
 	urxvt -title tmux -e ~/bin/tmx &
 	mpd
 else
-	~/bin/wallpaper.sh &
+	if [[ $HOSTNAME == "lappy" ]]; then
+		~/bin/vgatoggle.sh &
+	fi
+
 	~/bin/steam.sh &
 	urxvt -title tmux -e ~/bin/tmx &
 	nm-applet &
