@@ -137,10 +137,23 @@ hc unrule -F
 #hc rule focus=off # normally do not focus new clients
 hc rule focus=on # normally do focus new clients
 # give focus to most common terminals
-hc rule class~'(Steam)' tag="${tag_names[4]}"
+# web
 hc rule class~'(Chromium)' tag="${tag_names[1]}"
+# gui
+hc rule class~'(Soffice|LibreOffice|.*libreoffice.*)' tag="${tag_names[3]}"
+hc rule class~'(Apvlv|Thunderbird|Mumble)' tag="${tag_names[3]}"
+hc rule class~'(Gimp|Inkscape)' tag="${tag_names[3]}"
+# games
+hc rule class~'(Steam)' tag="${tag_names[4]}"
+hc rule class~'(.*(M|m)inecraft.*)' tag="${tag_names[4]}"
+hc rule class~'(Hedgewars|hwengine)' tag="${tag_names[4]}" fullscreen=on
+hc rule class~'(teeworlds)' tag="${tag_names[4]}" fullscreen=on
+hc rule class~'(Dolphin-emu)' tag="${tag_names[4]}" fullscreen=on
+hc rule class~'(.*ioquake.*)' tag="${tag_names[4]}" fullscreen=on
+# misc
+hc rule class~'xbmc\.bin' tag="${tag_names[5]}" fullscreen=on
 #hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=off
-hc rule windowtype~'_NET_WM_WINDOW_TYPE_(UTILITY|SPLASH)' pseudotile=off
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
 
