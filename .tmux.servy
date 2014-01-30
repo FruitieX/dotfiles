@@ -3,7 +3,6 @@ set -g pane-active-border-fg white
 set -g pane-active-border-bg default
 set status off
 respawn-window -k 'weechat -r "/layout apply servy;/bar hide status"'
-splitw -v -p 20 -t 0 ncmpcpp
-selectp -t 1
-splitw -h -p 50 -t 1
-clock-mode
+#splitw -v -p 10 -t 0
+#selectp -t 1
+#clock-mode
