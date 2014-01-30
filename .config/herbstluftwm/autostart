@@ -159,3 +159,8 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
 done
 
 avant-window-navigator &
+
+
+if [[ $HOSTNAME == "servy" ]]; then
+	tmux source-file ~/.tmux.servy
+fi
