@@ -91,7 +91,7 @@ set so=7
 set ruler
 
 " Prettier line wrap
-"set nowrap
+set nowrap
 set showbreak=↪
 
 " Disable backup
