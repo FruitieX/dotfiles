@@ -1,4 +1,4 @@
-#include ".colors/base16-tomorrow.dark.xresources"
+#include ".colors/base16-default.dark.xresources"
 *scrollBar: false
 !use powerline font as secondary
 !*font: xft:Terminus:Regular:pixelsize=12:antialias=false:hinting=false:autohint=false, xft:Terminus (TTF) for Powerline:pixelsize=16:antialias=false:hinting=false:autohint=false
