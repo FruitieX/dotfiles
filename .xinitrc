@@ -1,3 +1,6 @@
+cd
+xrdb ~/.Xdefaults
+eval "$(dircolors .dir_colors)"
 # e.g. terminus-font lives here
 xset +fp /usr/share/fonts/local
 xset fp rehash
