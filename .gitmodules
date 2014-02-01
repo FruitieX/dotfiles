@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
+[submodule ".vim/bundle/base16"]
+	path = .vim/bundle/base16
+	url = git://github.com/chriskempson/base16-vim.git
