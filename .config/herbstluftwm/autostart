@@ -60,6 +60,7 @@ hc keybind XF86KbdBrightnessUp spawn sudo /usr/bin/brightness.sh kbd +50
 hc keybind XF86KbdBrightnessDown spawn sudo /usr/bin/brightness.sh kbd -50
 hc keybind XF86LaunchA spawn touchpadtoggle
 hc keybind $Mod-Shift-x spawn /usr/bin/i3lock -u -c 9a875f
+hc keybind $Mod-Shift-s spawn /usr/bin/systemctl suspend
 #hc keybind XF86AudioPlay spawn /usr/bin/ncmpcpp toggle
 #hc keybind XF86AudioStop spawn /usr/bin/ncmpcpp stop
 #hc keybind XF86AudioPrev spawn /usr/bin/ncmpcpp prev
