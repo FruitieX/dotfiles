@@ -7,24 +7,28 @@ hdmi=$?
 
 if [[ $vga -eq 0 && $hdmi -eq 0 ]]; then
 	# desktop
+	#xrandr --fb 3840x1080
+	xrandr --output HDMI-0 --panning 1920x1080
+	xrandr --output VGA-0 --panning 1920x1080
 	xrandr --output HDMI-0 --mode 1920x1080 --rate 75
 	xrandr --output LVDS-0 --off
 	xrandr --output HDMI-0 --mode 1920x1080 --rate 75
 	xrandr --output VGA-0 --mode 1920x1080 --rate 60 --right-of HDMI-0
 elif [[ $hdmi -eq 0 ]]; then
 	# projector
+	xrandr --output HDMI-0 --panning 1280x720
 	xrandr --output HDMI-0 --mode 1280x720 --rate 120
 	xrandr --output LVDS-0 --off
 	xrandr --output HDMI-0 --mode 1280x720 --rate 120
 	xrandr --output VGA-0 --off
-	xrandr --output HDMI-0 --panning 1280x720
 else
 	# laptop
+	xrandr --output LVDS-0 --panning 1920x1080
 	xrandr --output LVDS-0 --mode 1920x1080 --rate 120
 	xrandr --output HDMI-0 --off
 	xrandr --output LVDS-0 --mode 1920x1080 --rate 120
 	xrandr --output VGA-0 --off
-	xrandr --output VGA-0 --panning 1920x1080
+	#xrandr --fb 1920x1080
 fi
 
 ~/bin/wallpaper.sh -o

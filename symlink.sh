@@ -4,7 +4,7 @@
 FILES=( bin src .apvlvrc .compton.conf .config .colors .gconf .mozilla .oh-my-zsh .synergy.conf .tmux.conf .tmux.servy .urlview .vimrc .vim/autoload/pathogen.vim .Xdefaults .xinitrc .Xmodmap .zshrc _pentadactylrc .pentadactyl .weechat )
 
 # symlink these directories
-DIRS=( .vim/bundle )
+DIRS=( .vim/bundle .vim/colors )
 
 # cd to root of git repo
 cd "$(dirname $0)"

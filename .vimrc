@@ -33,36 +33,36 @@ let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
 """"""""""""""""""""""""""""""""
 
 "colorscheme desert "awesome color scheme
-set t_Co=256
+"set t_Co=16
 set background=dark
 colorscheme base16-default
-hi Comment ctermfg=12
-hi Constant ctermfg=15
-hi Identifier ctermfg=4
-hi Statement ctermfg=2
-hi PreProc ctermfg=6
-hi Type ctermfg=1
-hi Special ctermfg=3
-hi Underlined ctermfg=7
-hi Ignore ctermfg=9
-hi Error ctermfg=11
-hi Todo ctermfg=1
-hi Normal ctermfg=none ctermbg=none
-hi NonText ctermfg=0 ctermbg=none
-hi Directory        ctermfg=12
-
-hi VertSplit        ctermfg=black
-hi StatusLine        ctermfg=green
-hi StatusLineNC        ctermfg=0
-
-hi Folded ctermbg=0 ctermfg=8
-
-hi Pmenu ctermfg=10 ctermbg=0
-hi PmenuSel ctermfg=0 ctermbg=14
-hi LineNr ctermfg=0 ctermbg=none
-hi CursorLine ctermfg=none ctermbg=none cterm=none
-hi CursorLineNr ctermfg=none ctermbg=0
-hi CursorColumn ctermfg=none ctermbg=0
+"hi Comment ctermfg=12
+"hi Constant ctermfg=15
+"hi Identifier ctermfg=4
+"hi Statement ctermfg=2
+"hi PreProc ctermfg=6
+"hi Type ctermfg=1
+"hi Special ctermfg=3
+"hi Underlined ctermfg=7
+"hi Ignore ctermfg=9
+"hi Error ctermfg=11
+"hi Todo ctermfg=1
+"hi Normal ctermfg=none ctermbg=none
+"hi NonText ctermfg=0 ctermbg=none
+"hi Directory        ctermfg=12
+"
+"hi VertSplit        ctermfg=black
+"hi StatusLine        ctermfg=green
+"hi StatusLineNC        ctermfg=0
+"
+"hi Folded ctermbg=0 ctermfg=8
+"
+"hi Pmenu ctermfg=10 ctermbg=0
+"hi PmenuSel ctermfg=0 ctermbg=14
+"hi LineNr ctermfg=0 ctermbg=none
+"hi CursorLine ctermfg=none ctermbg=none cterm=none
+"hi CursorLineNr ctermfg=none ctermbg=0
+"hi CursorColumn ctermfg=none ctermbg=0
 
 " flag problematic whitespace
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
@@ -79,7 +79,7 @@ set number
 syntax enable
 
 set colorcolumn=80 " show column at 80
-highlight ColorColumn ctermbg=234 " in a subtle color pls
+highlight ColorColumn ctermbg=233 " in a subtle color pls
 
 " Show matching braces
 set showmatch
@@ -323,7 +323,7 @@ set wildignore+=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*
 set noexpandtab
 set shiftwidth=4
 set tabstop=4
-set smarttab
+"set smarttab
 filetype plugin indent on
 
 " Default to autoindenting of C like languages
