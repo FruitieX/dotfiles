@@ -36,6 +36,7 @@ let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
 "set t_Co=16
 set background=dark
 colorscheme base16-default
+
 "hi Comment ctermfg=12
 "hi Constant ctermfg=15
 "hi Identifier ctermfg=4
@@ -411,3 +412,7 @@ function! DiffToggle()
 		diffthis
 	endif
 :endfunction
+
+" for some reason matched parens look terrible in default base16...
+" here's a fix
+highlight MatchParen cterm=bold ctermfg=cyan
