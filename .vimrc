@@ -416,3 +416,6 @@ function! DiffToggle()
 " for some reason matched parens look terrible in default base16...
 " here's a fix
 highlight MatchParen cterm=bold ctermfg=cyan
+
+" transparent background always
+hi Normal ctermbg=none
