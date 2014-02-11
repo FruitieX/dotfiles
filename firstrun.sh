@@ -15,3 +15,5 @@ rm ~/.zshrc
 
 git submodule init
 git submodule update
+
+./symlink.sh
