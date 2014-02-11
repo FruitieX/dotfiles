@@ -1,6 +1,8 @@
 source-file ~/.tmux.conf
-set -g pane-active-border-fg white
-set -g pane-active-border-bg default
+set -g pane-border-fg colour239
+set -g pane-border-bg default
+set -g pane-activeborder-fg colour239
+set -g pane-activeborder-bg default
 set status off
 respawn-window -k 'weechat -r "/layout apply servy;/bar hide status"'
 #splitw -v -p 10 -t 0
