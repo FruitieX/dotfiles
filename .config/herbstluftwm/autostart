@@ -178,4 +178,5 @@ avant-window-navigator &
 if [[ $HOSTNAME == "servy" ]]; then
 	tmux source-file ~/.tmux.servy
 	hc set window_border_active_color '#181512'
+	hc set frame_bg_active_color '#000000'
 fi
