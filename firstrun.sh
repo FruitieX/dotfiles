@@ -1,4 +1,8 @@
 #!/bin/zsh
+#
+# cd to root of git repo
+cd "$(dirname $0)"
+CWD=$(pwd)
 
 # fetch oh-my-zsh configs
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
