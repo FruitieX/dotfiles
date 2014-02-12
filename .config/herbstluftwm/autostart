@@ -83,8 +83,8 @@ done
 hc set_layout horizontal
 
 # cycle through tags
-hc keybind $Mod-period use_index +1 --skip-visible
-hc keybind $Mod-comma  use_index -1 --skip-visible
+hc keybind $Mod-BackSpace use_index +1 --skip-visible
+hc keybind $Mod-Shift-BackSpace  use_index -1 --skip-visible
 
 # layouting
 hc keybind $Mod-r remove
@@ -100,9 +100,12 @@ hc mousebind $Mod-Button2 zoom
 hc mousebind $Mod-Button3 resize
 
 # focus
-hc keybind $Mod-BackSpace   cycle_monitor
-hc keybind $Mod-Tab         cycle_all +1
+hc keybind $Mod-comma   cycle_monitor -1
+hc keybind $Mod-period   cycle_monitor +1
+hc keybind $Mod-Shift-comma   spawn ~/bin/swap_monitors.sh -1
+hc keybind $Mod-Shift-period   spawn ~/bin/swap_monitors.sh +1
 hc keybind $Mod-Shift-Tab   cycle_all -1
+hc keybind $Mod-Tab         cycle_all +1
 hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
