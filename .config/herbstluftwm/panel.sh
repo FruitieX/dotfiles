@@ -87,20 +87,20 @@ hc pad $monitor $panel_height
         # draw tags
         for i in "${tags[@]}" ; do
             case ${i:0:1} in
-                '#')
+                '#'|'+') # active on this monitor
                     echo -n "^bg($selbg)^fg($selfg)"
                     ;;
-                '+')
-                    echo -n "^bg(#9CA668)^fg(#141414)"
+				'-'|'%') # active on other monitor
+					echo -n "^bg(#4e4e4e)^fg(#eeeeee)"
+					;;
+                ':') # inactive, but has clients
+                    echo -n "^bg()^fg(#eeeeee)"
                     ;;
-                ':')
-                    echo -n "^bg()^fg(#ffffff)"
-                    ;;
-                '!')
+                '!') # urgent
                     echo -n "^bg(#9a4747)^fg(#141414)"
                     ;;
-                *)
-                    echo -n "^bg()^fg(#ababab)"
+                *) # inactive, no clients
+                    echo -n "^bg()^fg(#4e4e4e)"
                     ;;
             esac
             if [ ! -z "$dzen2_svn" ] ; then
