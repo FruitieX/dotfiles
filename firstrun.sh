@@ -17,3 +17,10 @@ git submodule init
 git submodule update
 
 ./symlink.sh
+
+mkdir -p ~/.oh-my-zsh/custom/plugins
+cd ~/.oh-my-zsh/custom/plugins/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-history-substring-search
+git clone https://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions
+git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell
