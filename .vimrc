@@ -66,13 +66,14 @@ colorscheme base16-default
 "hi CursorColumn ctermfg=none ctermbg=0
 
 " flag problematic whitespace
-highlight RedundantSpaces term=standout ctermbg=red guibg=red
-match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
+"match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace term=standout ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$\| \+\ze\t/
 "au InsertLeave * match ExtraWhitespace /\s\+$/
 
 "use :set list! to toggle visible whitespace on/off
-set listchars=tab:>-,trail:.,extends:>
+"set listchars=tab:>-,trail:.,extends:>
 
 " Show line numbers
 set number
@@ -94,6 +95,11 @@ set ruler
 " Prettier line wrap
 set nowrap
 set showbreak=↪
+
+" Show tabs
+set lcs=tab:│\ 
+set list
+highlight SpecialKey ctermfg=238
 
 " Disable backup
 set nobackup
