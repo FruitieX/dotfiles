@@ -16,6 +16,7 @@ ZSH_THEME="fruitmini"
 
 # Comment this out to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
+DISABLE_UPDATE_PROMPT="true" # don't ask
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -40,7 +41,7 @@ ZSH_THEME="fruitmini"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ant archlinux history-substring-search rsync nyan vi-mode zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(git archlinux rsync vi-mode zsh-syntax-highlighting zsh-history-substring-search)
 
 if [ -f ~/.zshrc.local ]; then
 	source ~/.zshrc.local
@@ -112,21 +113,21 @@ export TERM=screen-256color
 #BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 #[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
-~/bin/tmx
-if [[ -z "$TMUX" ]]; then
-	exit
-fi
-
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
 zstyle ':completion:*' max-errors 3
-zstyle ':completion:*' menu select=long
+#zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle :compinstall filename '/home/rasse/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+~/bin/tmx
+if [[ -z "$TMUX" ]]; then
+	exit
+fi
