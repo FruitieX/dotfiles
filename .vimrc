@@ -137,12 +137,12 @@ inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
 
 " half page up/down with <C-j>, <C-k>
-noremap <C-j> <C-d>
-noremap <C-k> <C-u>
+"noremap <C-j> <C-d>
+"noremap <C-k> <C-u>
 
 " free these
-noremap <C-d> <Nop>
-noremap <C-u> <Nop>
+"noremap <C-d> <Nop>
+"noremap <C-u> <Nop>
 
 " vim hard mode :-)
 " ok fine but DON'T USE THESE!
