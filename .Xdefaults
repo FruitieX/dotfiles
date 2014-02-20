@@ -3,6 +3,12 @@
 ! transparent background
 urxvt*background: rgba:1000/1000/1000/d000
 
+! make ctrl-tab & ctrl-shift-tab work
+URxvt.keysym.Control-Tab: \033[27;5;9~
+URxvt.keysym.Control-Shift-ISO_Left_Tab: \033[27;6;9~
+URxvt.iso14755: False
+URxvt.iso14755_52: False
+
 *scrollBar: false
 !use powerline font as secondary
 !*font: xft:Terminus:Regular:pixelsize=12:antialias=false:hinting=false:autohint=false, xft:Terminus (TTF) for Powerline:pixelsize=16:antialias=false:hinting=false:autohint=false
