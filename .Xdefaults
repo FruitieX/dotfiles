@@ -9,11 +9,17 @@ URxvt.keysym.Control-Shift-ISO_Left_Tab: \033[27;6;9~
 URxvt.iso14755: False
 URxvt.iso14755_52: False
 
+! resize fonts
+urxvt.perl-ext-common: font-size
+urxvt.font-size.step: 2
+urxvt.keysym.C-Up:      perl:font-size:increase
+urxvt.keysym.C-Down:    perl:font-size:decrease
+
 *scrollBar: false
 !use powerline font as secondary
 !*font: xft:Terminus:Regular:pixelsize=12:antialias=false:hinting=false:autohint=false, xft:Terminus (TTF) for Powerline:pixelsize=16:antialias=false:hinting=false:autohint=false
 !*font: xft:Droid Sans Mono:pixelsize=14:hinting=true:autohint=true, xft:PowerlineSymbols:pixelsize=14
-*font: xft:Terminus:pixelsize=14:hinting=true:autohint=true
+*font: xft:Droid Sans mono:pixelsize=16:antialias=true
 !, xft:PowerlineSymbols:pixelsize=14
 !*font: xft:Menlo for Powerline:pixelsize=16:hinting=true:autohint=true
 *urgentOnBell: true
