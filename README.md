@@ -43,4 +43,4 @@ Dependencies for arch linux users:
 	xorg-server xorg-xset xorg-xsetroot xorg-xmodmap xorg-xinit slim archlinux-themes-slim
 
 * **misc**
-	pulseaudio pavucontrol mosh
+	pulseaudio pavucontrol mosh urxvt-font-size-git
