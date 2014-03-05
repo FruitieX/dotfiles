@@ -46,6 +46,7 @@ urxvt*depth: 32
 urxvt*foreground: #eeeeee
 
 *color0:  #2E3436
+/*
 *color1:  #a40000
 *color2:  #4E9A06
 *color3:  #C4A000
@@ -61,3 +62,4 @@ urxvt*foreground: #eeeeee
 *color13: #AD7FA8
 *color14: #fcaf3e
 *color15: #EEEEEC
+*/
