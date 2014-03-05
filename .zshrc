@@ -109,9 +109,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 export TERM=screen-256color
 
-#BASE16_SCHEME="default"
-#BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-#[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+BASE16_SCHEME="default"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # The following lines were added by compinstall
 

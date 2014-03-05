@@ -35,7 +35,7 @@ let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
 "colorscheme desert "awesome color scheme
 "set t_Co=16
 set background=dark
-colorscheme base16-default
+colorscheme tango
 
 "hi Comment ctermfg=12
 "hi Constant ctermfg=15
@@ -420,8 +420,20 @@ function! DiffToggle()
 :endfunction
 
 " for some reason matched parens look terrible in default base16...
-" here's a fix
-highlight MatchParen cterm=bold ctermfg=cyan
-
+" matched parens fix
+hi MatchParen cterm=bold ctermbg=8 ctermfg=15
+" darker comments, they look nice and get ouf ot the way
+hi Comment ctermfg=8
+" don't have ridiculous colors on the menus
+hi Pmenu ctermbg=18 ctermfg=2
 " transparent background always
 hi Normal ctermbg=none
+" prettify searches
+hi Search ctermfg=1 ctermbg=19
+hi IncSearch ctermbg=9 ctermfg=18
+" highlight cursor line number
+hi CursorLineNr ctermbg=19 ctermfg=7
+" darken other line numbers
+hi LineNr ctermfg=8
+" TODOs with red
+hi Todo ctermbg=9
