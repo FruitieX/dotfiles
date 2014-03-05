@@ -43,7 +43,7 @@ urxvt*depth: 32
 !*shading: 10
 !*transparent: true
 !*inheritPixmap: true
-urxvt*foreground: white
+urxvt*foreground: #eeeeee
 
 *color0:  #2E3436
 *color1:  #a40000

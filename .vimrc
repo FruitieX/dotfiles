@@ -437,3 +437,5 @@ hi CursorLineNr ctermbg=19 ctermfg=7
 hi LineNr ctermfg=8
 " TODOs with red
 hi Todo ctermbg=9
+" wtf were they thinking
+hi Visual ctermbg=10 ctermfg=15 term=none cterm=none
