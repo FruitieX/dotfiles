@@ -136,6 +136,8 @@ inoremap <A-j> <C-o>j
 inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
 
+noremap <C-e> <C-d>
+
 " half page up/down with <C-j>, <C-k>
 "noremap <C-j> <C-d>
 "noremap <C-k> <C-u>
