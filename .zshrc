@@ -57,6 +57,8 @@ alias slp="systemctl suspend"
 alias ds="dirs -v"
 alias hc="herbstclient"
 alias startx="ssh-agent startx"
+alias nr="n r"
+alias nu="n u"
 
 export BROWSER="firefox-nightly"
 export EDITOR="vim"
