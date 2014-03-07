@@ -59,6 +59,7 @@ alias hc="herbstclient"
 alias startx="ssh-agent startx"
 alias nr="n r"
 alias nu="n u"
+alias t="~/dev/node/nodifier/plugins/todo/plugin.js"
 
 export BROWSER="firefox-nightly"
 export EDITOR="vim"
