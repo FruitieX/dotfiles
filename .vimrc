@@ -35,7 +35,7 @@ let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
 "colorscheme desert "awesome color scheme
 "set t_Co=16
 set background=dark
-colorscheme tango
+colorscheme base16-default
 
 "hi Comment ctermfg=12
 "hi Constant ctermfg=15

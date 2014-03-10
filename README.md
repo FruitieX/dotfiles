@@ -31,16 +31,16 @@ Dependencies for arch linux users:
 	gvim vim-colorsamplerpack vimpager ctags
 
 * **wm stuff:**
-	herbstluftwm compton clock-git xtitle dunst dzen2 avant-window-navigator
+	herbstluftwm compton clock-git xtitle-git dunst dzen2-git avant-window-navigator
 
 * **misc cli:**
-	openssh sudo tmux cmus sshfs ntp terminus-font weechat htop
+	openssh sudo tmux cmus sshfs ntp ttf-droid weechat htop
 
 * **misc gui:**
-	rxvt-unicode numlockx redshift feh dwb synergy
+	rxvt-unicode numlockx redshift feh synergy chromium
 
 * **xorg:**
-	xorg-server xorg-xset xorg-xsetroot xorg-xmodmap xorg-xinit slim archlinux-themes-slim
+	xorg-server xorg-xset xorg-xsetroot xorg-xmodmap xorg-xinit xorg-xrandr
 
 * **misc**
-	pulseaudio pavucontrol mosh urxvt-font-size-git
+	pulseaudio pavucontrol mosh urxvt-font-size-git yeganesh
