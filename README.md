@@ -31,7 +31,7 @@ Dependencies for arch linux users:
 	gvim vim-colorsamplerpack vimpager ctags
 
 * **wm stuff:**
-	herbstluftwm compton clock-git xtitle-git dunst dzen2-git avant-window-navigator
+	herbstluftwm compton clock-git xtitle-git dunst dzen2-git avant-window-navigator awn-extras-applets
 
 * **misc cli:**
 	openssh sudo tmux cmus sshfs ntp ttf-droid weechat htop
