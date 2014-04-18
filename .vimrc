@@ -79,7 +79,7 @@ set number
 " Enable syntax highlighting
 syntax enable
 
-set colorcolumn=80 " show column at 80
+"set colorcolumn=80 " show column at 80
 highlight ColorColumn ctermbg=233 " in a subtle color pls
 
 " Show matching braces
