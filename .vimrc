@@ -8,7 +8,6 @@ execute pathogen#infect()
 " powerline config
 set laststatus=2
 set noshowmode
-let g:Powerline_colorscheme = "solarized"
 
 " ctrlp config
 let g:ctrlp_max_height = 30
@@ -421,7 +420,7 @@ function! DiffToggle()
 	endif
 :endfunction
 
-" for some reason matched parens look terrible in default base16...
+" fix my broken themes
 " matched parens fix
 hi MatchParen cterm=bold ctermbg=8 ctermfg=15
 " darker comments, they look nice and get ouf ot the way
@@ -434,10 +433,36 @@ hi Normal ctermbg=none
 hi Search ctermfg=1 ctermbg=19
 hi IncSearch ctermbg=9 ctermfg=18
 " highlight cursor line number
-hi CursorLineNr ctermbg=19 ctermfg=7
+hi CursorLineNr ctermbg=none ctermfg=7
 " darken other line numbers
-hi LineNr ctermfg=8
+hi LineNr ctermbg=19 ctermfg=8
 " TODOs with red
 hi Todo ctermbg=9
 " wtf were they thinking
 hi Visual ctermbg=10 ctermfg=15 term=none cterm=none
+" fix ugly splits
+hi VertSplit ctermbg=none ctermfg=8
+" why does gitgutter have a green background by default
+hi GitGutterAdd ctermbg=none
+hi GitGutterChange ctermbg=none
+hi GitGutterDelete ctermbg=none
+hi GitGutterChangeDelete ctermbg=none
+hi GitGutterAddLine ctermbg=none
+hi GitGutterChangeLine ctermbg=none
+hi GitGutterChangeDeleteLine ctermbg=none
+hi GitGutterChangeLine ctermbg=none
+hi SignColumn ctermbg=none
+
+let g:airline_theme="fruit"
+let g:airline_left_sep=""
+let g:airline_right_sep=""
+
+" MiniBufExplorer theme
+hi MBEChanged ctermfg=17
+hi MBEVisibleNormal ctermfg=20
+hi MBEVisibleActiveNormal ctermfg=15
+hi MBEVisibleActiveChanged ctermfg=11
+hi MBEVisibleChanged ctermfg=9
+
+" No extra space in numbers column
+set numberwidth=1

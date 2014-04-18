@@ -67,3 +67,21 @@
 [submodule ".vim/bundle/vim-tmux-navigator"]
 	path = .vim/bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule ".vim/bundle/powerline.git"]
+	path = .vim/bundle/powerline.git
+	url = https://github.com/Lokaltog/powerline
+[submodule ".vim/bundle/.vim/bundle/vim-airline.git"]
+	path = .vim/bundle/.vim/bundle/vim-airline.git
+	url = https://github.com/bling/vim-airline
+[submodule ".vim/bundle/vim-airline.git"]
+	path = .vim/bundle/vim-airline.git
+	url = https://github.com/bling/vim-airline
+[submodule ".vim/bundle/vim-bufferline.git"]
+	path = .vim/bundle/vim-bufferline.git
+	url = https://github.com/bling/vim-bufferline
+[submodule ".vim/bundle/vim-gitgutter.git"]
+	path = .vim/bundle/vim-gitgutter.git
+	url = https://github.com/airblade/vim-gitgutter
+[submodule ".vim/bundle/vim-minibufexpl.git"]
+	path = .vim/bundle/vim-minibufexpl.git
+	url = https://github.com/techlivezheng/vim-plugin-minibufexpl
