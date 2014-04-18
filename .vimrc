@@ -18,6 +18,8 @@ let g:ctrlp_lazy_update = 100
 
 " NERDCommenter needs this
 filetype plugin on
+" get rid of extra junk
+let g:NERDTreeMinimalUI=1
 
 " easymotion config
 let g:EasyMotion_leader_key = '<Leader>'
@@ -435,7 +437,7 @@ hi IncSearch ctermbg=9 ctermfg=18
 " highlight cursor line number
 hi CursorLineNr ctermbg=none ctermfg=7
 " darken other line numbers
-hi LineNr ctermbg=19 ctermfg=8
+hi LineNr ctermbg=none ctermfg=8
 " TODOs with red
 hi Todo ctermbg=9
 " wtf were they thinking
@@ -443,6 +445,9 @@ hi Visual ctermbg=0 term=none cterm=none
 hi CursorLine ctermbg=0
 " fix ugly splits
 hi VertSplit ctermbg=none ctermfg=8
+" i like yellow color on types more
+hi Type ctermfg=3
+
 " why does gitgutter have a green background by default
 hi GitGutterAdd ctermbg=none
 hi GitGutterChange ctermbg=none
@@ -459,7 +464,7 @@ let g:airline_left_sep=""
 let g:airline_right_sep=""
 
 " MiniBufExplorer theme
-hi MBEChanged ctermfg=17
+hi MBEChanged ctermfg=9
 hi MBEVisibleNormal ctermfg=20
 hi MBEVisibleActiveNormal ctermfg=15
 hi MBEVisibleActiveChanged ctermfg=11
@@ -467,3 +472,4 @@ hi MBEVisibleChanged ctermfg=9
 
 " No extra space in numbers column
 set numberwidth=1
+

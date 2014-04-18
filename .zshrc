@@ -61,6 +61,7 @@ alias n="~/dev/node/nodifier/nodifier_cl.js"
 alias nr="n r"
 alias nu="n u"
 alias t="~/dev/node/nodifier/plugins/todo/plugin.js"
+alias v="vim"
 
 export BROWSER="firefox-nightly"
 export EDITOR="vim"
@@ -111,11 +112,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-export TERM=screen-256color
+#export TERM=screen-256color
 
 BASE16_SCHEME="default"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh
 
 # The following lines were added by compinstall
 
