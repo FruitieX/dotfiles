@@ -28,6 +28,7 @@ let g:easytags_on_cursorhold = 0
 let g:easytags_auto_highlight = 0
 
 let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
+let g:ackhighlight=1
 
 """"""""""""""""""""""""""""""""
 " Appearance
@@ -214,11 +215,10 @@ nmap <silent> <Leader><Leader>T :NERDTree<Enter>
 map <leader>m :make<CR>
 
 " quick grepping
-nnoremap gr :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
-nnoremap gR :execute "vimgrep / " . expand("<cword>") . " /gj **" <Bar> cw<CR>
+nnoremap <silent>gr :Ack<CR>
 
 function! GREP( arg )
-	execute "vimgrep /" . expand( a:arg ) . "/gj **"
+	execute "Ack /" . expand( a:arg )
 	cwindow
 endfunction
 
