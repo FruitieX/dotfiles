@@ -125,11 +125,16 @@ imap jj <Esc>
 map <C-s> :w<Enter>
 map <C-q> :q<Enter>
 
+" function keys
 set pastetoggle=<F2>
-nmap <silent> <F5> :checktime<Enter>
-nmap <F8> :TagbarToggle<CR>
+"nmap <silent> <F5> :checktime<Enter>
+" buffers
+map <silent><F5> :bprev<CR>
+map <silent><F6> :bnext<CR>
 " reindent entire file
 map <F7> mzgg=G`z<CR>
+" toggle tagbar
+nmap <silent><F8> :TagbarToggle<CR>
 
 " allow moving around in insert mode TODO: this does not work
 inoremap <A-h> <C-o>h
