@@ -1,7 +1,7 @@
 #include ".colors/base16-default.dark.xresources"
 
 ! transparent background
-urxvt*background: rgba:1000/1000/1000/d000
+urxvt*background: rgba:2000/2000/2000/d000
 
 ! make ctrl-tab & ctrl-shift-tab work
 URxvt.keysym.Control-Tab: \033[27;5;9~

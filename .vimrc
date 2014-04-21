@@ -8,7 +8,6 @@ execute pathogen#infect()
 " powerline config
 set laststatus=2
 set noshowmode
-let g:Powerline_colorscheme = "solarized"
 
 " ctrlp config
 let g:ctrlp_max_height = 30
@@ -19,6 +18,8 @@ let g:ctrlp_lazy_update = 100
 
 " NERDCommenter needs this
 filetype plugin on
+" get rid of extra junk
+let g:NERDTreeMinimalUI=1
 
 " easymotion config
 let g:EasyMotion_leader_key = '<Leader>'
@@ -27,6 +28,7 @@ let g:easytags_on_cursorhold = 0
 let g:easytags_auto_highlight = 0
 
 let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
+let g:ackhighlight=1
 
 """"""""""""""""""""""""""""""""
 " Appearance
@@ -35,7 +37,7 @@ let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
 "colorscheme desert "awesome color scheme
 "set t_Co=16
 set background=dark
-colorscheme tango
+colorscheme base16-default
 
 "hi Comment ctermfg=12
 "hi Constant ctermfg=15
@@ -80,7 +82,7 @@ set number
 " Enable syntax highlighting
 syntax enable
 
-set colorcolumn=80 " show column at 80
+"set colorcolumn=80 " show column at 80
 highlight ColorColumn ctermbg=233 " in a subtle color pls
 
 " Show matching braces
@@ -124,11 +126,16 @@ imap jj <Esc>
 map <C-s> :w<Enter>
 map <C-q> :q<Enter>
 
+" function keys
 set pastetoggle=<F2>
-nmap <silent> <F5> :checktime<Enter>
-nmap <F8> :TagbarToggle<CR>
+"nmap <silent> <F5> :checktime<Enter>
+" buffers
+map <silent><F5> :bprev<CR>
+map <silent><F6> :bnext<CR>
 " reindent entire file
 map <F7> mzgg=G`z<CR>
+" toggle tagbar
+nmap <silent><F8> :TagbarToggle<CR>
 
 " allow moving around in insert mode TODO: this does not work
 inoremap <A-h> <C-o>h
@@ -208,11 +215,10 @@ nmap <silent> <Leader><Leader>T :NERDTree<Enter>
 map <leader>m :make<CR>
 
 " quick grepping
-nnoremap gr :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
-nnoremap gR :execute "vimgrep / " . expand("<cword>") . " /gj **" <Bar> cw<CR>
+nnoremap <silent>gr :Ack<CR>
 
 function! GREP( arg )
-	execute "vimgrep /" . expand( a:arg ) . "/gj **"
+	execute "Ack /" . expand( a:arg )
 	cwindow
 endfunction
 
@@ -245,30 +251,30 @@ vmap <leader><C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <leader><C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
+	exe "menu Foo.Bar :" . a:str
+	emenu Foo.Bar
+	unmenu Foo
 endfunction
 
 function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+	let l:saved_reg = @"
+	execute "normal! vgvy"
 
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+	let l:pattern = escape(@", '\\/.*$^~[]')
+	let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
+	if a:direction == 'b'
+		execute "normal ?" . l:pattern . "^M"
+	elseif a:direction == 'gv'
+		call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+	elseif a:direction == 'replace'
+		call CmdLine("%s" . '/'. l:pattern . '/')
+	elseif a:direction == 'f'
+		execute "normal /" . l:pattern . "^M"
+	endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
+	let @/ = l:pattern
+	let @" = l:saved_reg
 endfunction
 
 " When you press <leader>r you can search and replace the selected text
@@ -370,47 +376,47 @@ set tabpagemax=15
 set showcmd
 
 function! MoveToPrevTab()
-  "there is only one window
-  if tabpagenr('$') == 1 && winnr('$') == 1
-	return
-  endif
-  "preparing new window
-  let l:tab_nr = tabpagenr('$')
-  let l:cur_buf = bufnr('%')
-  if tabpagenr() != 1
-	close!
-	if l:tab_nr == tabpagenr('$')
-	  tabprev
+	"there is only one window
+	if tabpagenr('$') == 1 && winnr('$') == 1
+		return
 	endif
-	sp
-  else
-	close!
-	exe "0tabnew"
-  endif
-  "opening current buffer in new window
-  exe "b".l:cur_buf
+	"preparing new window
+	let l:tab_nr = tabpagenr('$')
+	let l:cur_buf = bufnr('%')
+	if tabpagenr() != 1
+		close!
+		if l:tab_nr == tabpagenr('$')
+			tabprev
+		endif
+		sp
+	else
+		close!
+		exe "0tabnew"
+	endif
+	"opening current buffer in new window
+	exe "b".l:cur_buf
 endfunc
 
 function! MoveToNextTab()
-  "there is only one window
-  if tabpagenr('$') == 1 && winnr('$') == 1
-	return
-  endif
-  "preparing new window
-  let l:tab_nr = tabpagenr('$')
-  let l:cur_buf = bufnr('%')
-  if tabpagenr() < tab_nr
-	close!
-	if l:tab_nr == tabpagenr('$')
-	  tabnext
+	"there is only one window
+	if tabpagenr('$') == 1 && winnr('$') == 1
+		return
 	endif
-	sp
-  else
-	close!
-	tabnew
-  endif
-  "opening current buffer in new window
-  exe "b".l:cur_buf
+	"preparing new window
+	let l:tab_nr = tabpagenr('$')
+	let l:cur_buf = bufnr('%')
+	if tabpagenr() < tab_nr
+		close!
+		if l:tab_nr == tabpagenr('$')
+			tabnext
+		endif
+		sp
+	else
+		close!
+		tabnew
+	endif
+	"opening current buffer in new window
+	exe "b".l:cur_buf
 endfunc
 
 function! DiffToggle()
@@ -419,25 +425,56 @@ function! DiffToggle()
 	else
 		diffthis
 	endif
-:endfunction
+	:endfunction
 
-" for some reason matched parens look terrible in default base16...
-" matched parens fix
-hi MatchParen cterm=bold ctermbg=8 ctermfg=15
-" darker comments, they look nice and get ouf ot the way
-hi Comment ctermfg=8
-" don't have ridiculous colors on the menus
-hi Pmenu ctermbg=18 ctermfg=2
-" transparent background always
-hi Normal ctermbg=none
-" prettify searches
-hi Search ctermfg=1 ctermbg=19
-hi IncSearch ctermbg=9 ctermfg=18
-" highlight cursor line number
-hi CursorLineNr ctermbg=19 ctermfg=7
-" darken other line numbers
-hi LineNr ctermfg=8
-" TODOs with red
-hi Todo ctermbg=9
-" wtf were they thinking
-hi Visual ctermbg=10 ctermfg=15 term=none cterm=none
+	" fix my broken themes
+	" matched parens fix
+	hi MatchParen cterm=bold ctermbg=8 ctermfg=15
+	" darker comments, they look nice and get ouf ot the way
+	hi Comment ctermfg=8
+	" don't have ridiculous colors on the menus
+	hi Pmenu ctermbg=18 ctermfg=2
+	" transparent background always
+	hi Normal ctermbg=none
+	" prettify searches
+	hi Search ctermfg=1 ctermbg=19
+	hi IncSearch ctermbg=9 ctermfg=18
+	" highlight cursor line number
+	hi CursorLineNr ctermbg=none ctermfg=7
+	" darken other line numbers
+	hi LineNr ctermbg=none ctermfg=8
+	" TODOs with red
+	hi Todo ctermbg=9
+	" wtf were they thinking
+	hi Visual ctermbg=0 term=none cterm=none
+	hi CursorLine ctermbg=0
+	" fix ugly splits
+	hi VertSplit ctermbg=none ctermfg=8
+	" i like yellow color on types more
+	hi Type ctermfg=3
+
+	" why does gitgutter have a green background by default
+	hi GitGutterAdd ctermbg=none
+	hi GitGutterChange ctermbg=none
+	hi GitGutterDelete ctermbg=none
+	hi GitGutterChangeDelete ctermbg=none
+	hi GitGutterAddLine ctermbg=none
+	hi GitGutterChangeLine ctermbg=none
+	hi GitGutterChangeDeleteLine ctermbg=none
+	hi GitGutterChangeLine ctermbg=none
+	hi SignColumn ctermbg=none
+
+	let g:airline_theme="fruit"
+	let g:airline_left_sep=""
+	let g:airline_right_sep=""
+
+	" MiniBufExplorer theme
+	hi MBEChanged ctermfg=9
+	hi MBEVisibleNormal ctermfg=20
+	hi MBEVisibleActiveNormal ctermfg=15
+	hi MBEVisibleActiveChanged ctermfg=11
+	hi MBEVisibleChanged ctermfg=9
+
+	" No extra space in numbers column
+	set numberwidth=1
+

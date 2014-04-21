@@ -57,16 +57,18 @@ alias slp="systemctl suspend"
 alias ds="dirs -v"
 alias hc="herbstclient"
 alias startx="ssh-agent startx"
+alias n="~/dev/node/nodifier/nodifier_cl.js"
 alias nr="n r"
 alias nu="n u"
 alias t="~/dev/node/nodifier/plugins/todo/plugin.js"
+alias v="vim"
 
 export BROWSER="firefox-nightly"
 export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="vimpager"
 
-export PATH="${PATH}:${HOME}/bin:${HOME}/dev/sh:${HOME}/android/sdk/android-sdk-linux/tools:${HOME}/android/sdk/android-sdk-linux/platform-tools:${HOME}/android/ndk/android-ndk-r8d"
+export PATH="${HOME}/bin:${HOME}/dev/sh:${HOME}/android/sdk/android-sdk-linux/tools:${HOME}/android/sdk/android-sdk-linux/platform-tools:${HOME}/android/ndk/android-ndk-r8d:${PATH}"
 export ANDROID_HOME="~/android/sdk/android-sdk-linux"
 eval "$(dircolors ~/.dir_colors)"
 
@@ -110,11 +112,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-export TERM=screen-256color
+#export TERM=screen-256color
 
 BASE16_SCHEME="default"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh
 
 # The following lines were added by compinstall
 
