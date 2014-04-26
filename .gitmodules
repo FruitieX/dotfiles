@@ -85,3 +85,6 @@
 [submodule ".vim/bundle/vim-minibufexpl.git"]
 	path = .vim/bundle/vim-minibufexpl.git
 	url = https://github.com/techlivezheng/vim-plugin-minibufexpl
+[submodule ".vim/bundle/vim-airline-fruitiex.git"]
+	path = .vim/bundle/vim-airline-fruitiex.git
+	url = https://github.com/FruitieX/vim-airline
