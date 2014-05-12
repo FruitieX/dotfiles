@@ -62,6 +62,7 @@ alias nr="n r"
 alias nu="n u"
 alias t="~/dev/node/nodifier/plugins/todo/plugin.js"
 alias v="vim"
+alias xf="DISPLAY=:10"
 
 export BROWSER="firefox-nightly"
 export EDITOR="vim"
