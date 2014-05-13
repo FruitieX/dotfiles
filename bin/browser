@@ -1,0 +1,2 @@
+#!/bin/bash
+chromium --ignore-gpu-blacklist --disk-cache-dir=/dev/null
