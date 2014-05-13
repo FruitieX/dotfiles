@@ -40,8 +40,8 @@ hc keybind $Mod-Shift-l     shift right
 # create an empty frame at the specified direction
 hc keybind $Mod-u       split   bottom  0.5
 hc keybind $Mod-o       split   right   0.5
-hc keybind $Mod-Shift-u spawn ~/bin/hlwm_new_frame_move.sh bottom 0.5
-hc keybind $Mod-Shift-o spawn ~/bin/hlwm_new_frame_move.sh right  0.5
+hc keybind $Mod-Shift-u spawn ~/bin/herbstluftwm/hlwm_new_frame_move.sh bottom 0.5
+hc keybind $Mod-Shift-o spawn ~/bin/herbstluftwm/hlwm_new_frame_move.sh right  0.5
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
 
@@ -104,10 +104,10 @@ hc mousebind $Mod-Button3 resize
 # focus
 hc keybind $Mod-comma   cycle_monitor -1
 hc keybind $Mod-period   cycle_monitor +1
-hc keybind $Mod-Shift-comma   spawn ~/bin/swap_monitors.sh -1
-hc keybind $Mod-Shift-period   spawn ~/bin/swap_monitors.sh +1
-hc keybind $Mod-Control-comma   spawn ~/bin/shift_to_monitor.sh -1
-hc keybind $Mod-Control-period   spawn ~/bin/shift_to_monitor.sh +1
+hc keybind $Mod-Shift-comma   spawn ~/bin/herbstluftwm/hlwm_swap_monitors.sh -1
+hc keybind $Mod-Shift-period   spawn ~/bin/herbstluftwm/hlwm_swap_monitors.sh +1
+hc keybind $Mod-Control-comma   spawn ~/bin/herbstluftwm/hlwm_shift_to_monitor.sh -1
+hc keybind $Mod-Control-period   spawn ~/bin/herbstluftwm/hlwm_shift_to_monitor.sh +1
 hc keybind $Mod-Shift-Tab   cycle_all -1
 hc keybind $Mod-Tab         cycle_all +1
 hc keybind $Mod-c cycle
