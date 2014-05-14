@@ -34,7 +34,7 @@
 #	#xrandr --fb 1920x1080
 #fi
 
-xrandr --output HDMI1 --right-of HDMI2
+#xrandr --output HDMI1 --right-of HDMI2
 ~/bin/wallpaper.sh -o
 herbstclient reload
 
