@@ -67,6 +67,9 @@ hc keybind $Mod-Shift-s spawn /usr/bin/systemctl suspend
 #hc keybind XF86AudioStop spawn /usr/bin/ncmpcpp stop
 #hc keybind XF86AudioPrev spawn /usr/bin/ncmpcpp prev
 #hc keybind XF86AudioNext spawn /usr/bin/ncmpcpp next
+hc keybind $Mod-Shift-b spawn xdotool search --onlyvisible "Chromium" windowfocus --sync key XF86AudioPrev
+hc keybind $Mod-Shift-m spawn xdotool search --onlyvisible "Chromium" windowfocus --sync key XF86AudioNext
+hc keybind $Mod-Shift-w spawn xdotool search --onlyvisible "Chromium" windowfocus --sync key XF86AudioPlay
 
 # tags
 tag_names=( 1:main 2:web 3:chat 4:gui 5:games 6:misc )
