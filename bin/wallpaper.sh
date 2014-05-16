@@ -2,9 +2,9 @@
 
 cd ~
 while true; do
-	wallpaper="$(find /btrfs/annex/images/wallpapers -type l \( -name '*.jpg' -o -name '*.png' -o -name '*.jpeg' -o -name '*.gif' \) -print0 | shuf -n1 -z | xargs -0 echo)"
+	wallpaper="$(find ~/media/wallpapers -type f \( -name '*.jpg' -o -name '*.png' -o -name '*.jpeg' -o -name '*.gif' \) -print0 | shuf -n1 -z | xargs -0 echo)"
 	echo $wallpaper
-	if [[ $HOST == "lappy" || $HOST == "bulky" ]]; then
+	if [[ $HOST == "bulky" ]]; then
 		ssh -o ConnectTimeout=10 -o BatchMode=yes ircscreen@fruitiex.org DISPLAY=:0 feh --bg-fill \"$wallpaper\"
 	fi
 
