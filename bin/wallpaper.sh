@@ -3,12 +3,13 @@
 cd ~
 while true; do
 	wallpaper="$(find ~/media/wallpapers/* \( -name '*.jpg' -o -name '*.png' -o -name '*.jpeg' -o -name '*.gif' \) -print0 | shuf -n1 -z | xargs -0 echo)"
+	wallpaper="$(basename $wallpaper)"
 	echo $wallpaper
 	if [[ $HOST == "bulky" ]]; then
-		ssh -o ConnectTimeout=10 -o BatchMode=yes ircscreen@fruitiex.org DISPLAY=:0 feh --bg-fill \"$wallpaper\"
+		ssh -o ConnectTimeout=10 -o BatchMode=yes ircscreen@fruitiex.org DISPLAY=:0 feh --bg-fill \"/home/ircscreen/media/wallpapers/$wallpaper\"
 	fi
 
-	DISPLAY=:0 feh --bg-fill "$wallpaper"
+	DISPLAY=:0 feh --bg-fill "/home/rasse/media/wallpapers/$wallpaper"
 
 	if [[ $1 == "-o" ]]; then
 		exit $?

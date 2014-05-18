@@ -132,6 +132,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+ulimit -c unlimited
+
 ~/bin/tmx
 if [[ -z "$TMUX" ]]; then
 	exit
