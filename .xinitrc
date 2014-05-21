@@ -20,6 +20,9 @@ xmodmap .Xmodmap &
 start-pulseaudio-x11
 compton --config ~/.compton.conf &
 
+BASE16_SCHEME="default"
+~/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh
+
 # autostart, host-specific
 if [[ $HOSTNAME == "mba" ]]; then
 	xrandr --output HDMI1 --right-of eDP1 --mode 1920x1080
