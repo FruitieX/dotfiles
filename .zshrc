@@ -115,10 +115,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 #export TERM=screen-256color
 
-BASE16_SCHEME="default"
-$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh
-
 # The following lines were added by compinstall
+BASE16_SCHEME="default"
+~/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -131,6 +130,8 @@ zstyle :compinstall filename '/home/rasse/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+ulimit -c unlimited
 
 ~/bin/tmx
 if [[ -z "$TMUX" ]]; then
