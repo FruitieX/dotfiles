@@ -18,6 +18,12 @@ git submodule update
 
 ./symlink.sh
 
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+./install.sh --clang-completer
+# TODO: this is dumb to run again
+./symlink.sh
+
 mkdir -p ~/.oh-my-zsh/custom/plugins
 cd ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting
