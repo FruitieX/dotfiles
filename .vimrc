@@ -467,6 +467,7 @@ function! DiffToggle()
 	let g:airline_theme="fruit"
 	let g:airline_left_sep=""
 	let g:airline_right_sep=""
+	let g:airline#extensions#tabline#enabled = 1
 
 	" MiniBufExplorer theme
 	hi MBEChanged ctermfg=9
