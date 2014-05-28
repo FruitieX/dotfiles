@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/vim-airline-fruitiex.git"]
 	path = .vim/bundle/vim-airline-fruitiex.git
 	url = https://github.com/FruitieX/vim-airline
+[submodule ".vim/bundle/undotree"]
+	path = .vim/bundle/undotree
+	url = https://github.com/mbbill/undotree

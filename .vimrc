@@ -128,6 +128,8 @@ map <C-q> :q<Enter>
 
 " function keys
 set pastetoggle=<F2>
+nnoremap <F3> :NERDTreeToggle<cr>
+nnoremap <F4> :UndotreeToggle<cr>
 "nmap <silent> <F5> :checktime<Enter>
 " buffers
 map <silent><F5> :bprev<CR>
@@ -209,7 +211,7 @@ nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 
 " open NERDTree
-nmap <silent> <Leader><Leader>T :NERDTree<Enter>
+nmap <silent> <Leader><Leader>T :NERDTreeToggle<Enter>
 
 " make
 map <leader>m :make<CR>
