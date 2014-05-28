@@ -122,6 +122,8 @@ imap jj <Esc>
 " Bind ; to <C-]> (jump to definition), it's faster and C-] doesn't work oven PuTTY
 "map ; <C-]>
 
+map <C-p> :CtrlPMixed<cr>
+
 " Avoid :w, :q
 map <C-s> :w<Enter>
 map <C-q> :q<Enter>
