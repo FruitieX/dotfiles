@@ -115,12 +115,12 @@ hc pad $monitor $panel_height
 			echo -n " ${i:1} "
 			echo -n "^bg()^fg() "
         done
-        # small adjustments
+
 		if [[ "$windowtitle" != "" ]]; then
-			right="^fg(#f5f5f5)^bg(#4e4e4e) ${windowtitle} ^bg()^fg() $date"
-		else
-			right="^bg()^fg() $date"
+			echo -n "^fg(#f5f5f5)^bg(#4e4e4e) ${windowtitle//^/^^} "
 		fi
+
+		right="^bg()^fg() $date"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only ")
