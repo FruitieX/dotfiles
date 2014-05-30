@@ -72,7 +72,7 @@ hc keybind $Mod-Shift-m spawn xdotool search --onlyvisible "Chromium" windowfocu
 hc keybind $Mod-Shift-w spawn xdotool search --onlyvisible "Chromium" windowfocus --sync key XF86AudioPlay
 
 # tags
-tag_names=( 1:main 2:web 3:chat 4:gui 5:games 6:misc )
+tag_names=( main web chat gui games scratch1 scratch2 scratch3 scratch4 )
 tag_keys=( {1..9} 0 )
 
 hc set default_frame_layout 1

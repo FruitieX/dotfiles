@@ -65,7 +65,8 @@ hc pad $monitor $panel_height
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
-        date +$'date\t^fg(#efefef)%H:%M^fg(#909090), %Y-%m-^fg(#efefef)%d'
+		date +$'date\t^fg(#080808)^bg(#d0d0d0) %Y-%m-%d ^bg()^fg() ^fg(#f5f5f5)^bg(#4e4e4e) %H:%M '
+		echo -n ""
         sleep 1 || break
     done > >(uniq_linebuffered) &
     childpid=$!
@@ -84,43 +85,45 @@ hc pad $monitor $panel_height
 
         bordercolor="#26221C"
         separator="^bg()^fg($selbg)|"
+		id=0
+
         # draw tags
         for i in "${tags[@]}" ; do
+			id=$((id + 1))
+
             case ${i:0:1} in
                 '#'|'+') # active on this monitor
-                    echo -n "^bg($selbg)^fg($selfg)"
+					echo -n "^bg(#f5f5f5)^fg(#080808) $id "
+                    echo -n "^bg(#f5f5f5)^fg(#080808)"
                     ;;
 				'-'|'%') # active on other monitor
-					echo -n "^bg(#4e4e4e)^fg(#eeeeee)"
+					echo -n "^bg(#f5f5f5)^fg(#080808) $id "
+					echo -n "^bg(#d0d0d0)^fg(#080808)"
 					;;
                 ':') # inactive, but has clients
-                    echo -n "^bg()^fg(#eeeeee)"
+					echo -n "^bg(#f5f5f5)^fg(#080808) $id "
+                    echo -n "^bg(#4e4e4e)^fg(#f5f5f5)"
                     ;;
                 '!') # urgent
+					echo -n "^bg(#f5f5f5)^fg(#080808) $id "
                     echo -n "^bg(#9a4747)^fg(#141414)"
                     ;;
                 *) # inactive, no clients
-                    echo -n "^bg()^fg(#4e4e4e)"
+					continue
                     ;;
             esac
-            if [ ! -z "$dzen2_svn" ] ; then
-                # clickable tags if using SVN dzen
-                echo -n "^ca(1,\"${herbstclient_command[@]:-herbstclient}\" "
-                echo -n "focus_monitor \"$monitor\" && "
-                echo -n "\"${herbstclient_command[@]:-herbstclient}\" "
-                echo -n "use \"${i:1}\") ${i:1} ^ca()"
-            else
-                # non-clickable tags if using older dzen
-                echo -n " ${i:1} "
-            fi
+			echo -n " ${i:1} "
+			echo -n "^bg()^fg() "
         done
-        echo -n "$separator"
-        echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
-        right="$separator^bg() $date $separator"
+		if [[ "$windowtitle" != "" ]]; then
+			right="^fg(#f5f5f5)^bg(#4e4e4e) ${windowtitle} ^bg()^fg() $date"
+		else
+			right="^bg()^fg() $date"
+		fi
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
-        width=$($textwidth "$font" "$right_text_only    ")
+        width=$($textwidth "$font" "$right_text_only ")
         echo -n "^pa($(($panel_width - $width)))$right"
         echo
 
@@ -169,6 +172,7 @@ hc pad $monitor $panel_height
                 ;;
             focus_changed|window_title_changed)
                 windowtitle="${cmd[@]:2}"
+				windowtitle="${windowtitle:0:60}"
                 ;;
             #player)
             #    ;;
@@ -181,4 +185,4 @@ hc pad $monitor $panel_height
 
 } 2> /dev/null | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
     -e 'button3=' \
-    -ta l -bg "$bgcolor" -fg '#efefef'
+    -ta c -bg "$bgcolor" -fg '#efefef'
