@@ -180,10 +180,6 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 let mapleader=","
 
 " split related binds
-nmap <Leader>h <C-w>h
-nmap <Leader>j <C-w>j
-nmap <Leader>k <C-w>k
-nmap <Leader>l <C-w>l
 nmap <C-w><C-j> 5<C-w>+
 nmap <C-w><C-k> 5<C-w>-
 nmap <C-w><C-l> 5<C-w>>

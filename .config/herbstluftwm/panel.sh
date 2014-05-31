@@ -13,7 +13,7 @@ y=${geometry[1]}
 panel_width=${geometry[2]}
 panel_height=20
 font="-*-droid sans mono-medium-*-*-*-14-*-*-*-*-*-*-*"
-bgcolor=$(hc get frame_border_normal_color)
+bgcolor='#303030'
 selbg=$(hc get window_border_active_color)
 selfg='#080808'
 
@@ -65,7 +65,7 @@ hc pad $monitor $panel_height
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
-		date +$'date\t^fg(#080808)^bg(#d0d0d0) %Y-%m-%d ^bg()^fg() ^fg(#f5f5f5)^bg(#4e4e4e) %H:%M '
+		date +$'date\t^fg(#080808)^bg(#d0d0d0) %Y-%m-%d ^bg(#303030)^fg() ^fg(#f5f5f5)^bg(#4e4e4e) %H:%M '
 		echo -n ""
         sleep 1 || break
     done > >(uniq_linebuffered) &
@@ -84,7 +84,6 @@ hc pad $monitor $panel_height
         # and then waits for the next event to happen.
 
         bordercolor="#26221C"
-        separator="^bg()^fg($selbg)|"
 		id=0
 
         # draw tags
@@ -113,19 +112,19 @@ hc pad $monitor $panel_height
                     ;;
             esac
 			echo -n " ${i:1} "
-			echo -n "^bg()^fg() "
+			echo -n "^bg(#303030)^fg() "
         done
 
 		if [[ "$windowtitle" != "" ]]; then
 			echo -n "^fg(#f5f5f5)^bg(#4e4e4e) ${windowtitle//^/^^} "
 		fi
 
-		right="^bg()^fg() $date"
+		right="^bg(#303030)^fg() $date"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only ")
         echo -n "^pa($(($panel_width - $width)))$right"
-        echo
+		echo
 
         ### Data handling ###
         # This part handles the events generated in the event loop, and sets
