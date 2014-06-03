@@ -11,8 +11,8 @@ fi
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
-panel_height=20
-font="-*-droid sans mono-medium-*-*-*-14-*-*-*-*-*-*-*"
+panel_height=19
+font="-*-droid sans mono-medium-*-*-*-16-*-*-*-*-*-*-*"
 bgcolor='#303030'
 selbg=$(hc get window_border_active_color)
 selfg='#080808'
