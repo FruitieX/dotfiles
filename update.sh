@@ -7,6 +7,7 @@ cd "$(dirname $0)"
 CWD=$(pwd)
 
 git pull
+git submodule sync
 git submodule init
 git submodule update
 git submodule foreach git pull origin master
