@@ -96,8 +96,8 @@ hc pad $monitor $panel_height
                     echo -n "^bg(#f5f5f5)^fg(#080808)"
                     ;;
 				'-'|'%') # active on other monitor
-					echo -n "^bg(#f5f5f5)^fg(#080808) $id "
-					echo -n "^bg(#d0d0d0)^fg(#080808)"
+					echo -n "^bg(#4e4e4e)^fg(#f5f5f5) $id "
+					echo -n "^bg(#4e4e4e)^fg(#f5f5f5)"
 					;;
                 ':') # inactive, but has clients
 					echo -n "^bg(#f5f5f5)^fg(#080808) $id "
