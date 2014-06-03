@@ -88,8 +88,9 @@ done
 hc set_layout horizontal
 
 # cycle through tags
-hc keybind $Mod-Tab use_index +1 --skip-visible
-hc keybind $Mod-Shift-Tab  use_index -1 --skip-visible
+hc keybind $Mod-Tab spawn ~/bin/herbstluftwm/hlwm_cycle_tags.sh +1
+hc keybind $Mod-Shift-Tab spawn ~/bin/herbstluftwm/hlwm_cycle_tags.sh -1
+hc keybind $Mod-Control-Tab  use_previous
 
 # layouting
 hc keybind $Mod-r remove
