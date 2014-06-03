@@ -88,8 +88,8 @@ done
 hc set_layout horizontal
 
 # cycle through tags
-hc keybind $Mod-BackSpace use_index +1 --skip-visible
-hc keybind $Mod-Shift-BackSpace  use_index -1 --skip-visible
+hc keybind $Mod-Tab use_index +1 --skip-visible
+hc keybind $Mod-Shift-Tab  use_index -1 --skip-visible
 
 # layouting
 hc keybind $Mod-r remove
@@ -111,8 +111,8 @@ hc keybind $Mod-Shift-comma   spawn ~/bin/herbstluftwm/hlwm_swap_monitors.sh -1
 hc keybind $Mod-Shift-period   spawn ~/bin/herbstluftwm/hlwm_swap_monitors.sh +1
 hc keybind $Mod-Control-comma   spawn ~/bin/herbstluftwm/hlwm_shift_to_monitor.sh -1
 hc keybind $Mod-Control-period   spawn ~/bin/herbstluftwm/hlwm_shift_to_monitor.sh +1
-hc keybind $Mod-Shift-Tab   cycle_all -1
-hc keybind $Mod-Tab         cycle_all +1
+hc keybind $Mod-Shift-BackSpace   cycle_all -1
+hc keybind $Mod-BackSpace         cycle_all +1
 hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
