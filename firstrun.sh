@@ -18,10 +18,11 @@ git submodule update
 
 ./symlink.sh
 
-cd ~/.vim/bundle/YouCompleteMe
+cd .vim/bundle/YouCompleteMe
 git submodule update --init --recursive
 ./install.sh --clang-completer
 # TODO: this is dumb to run again
+cd $CWD
 ./symlink.sh
 
 mkdir -p ~/.oh-my-zsh/custom/plugins
