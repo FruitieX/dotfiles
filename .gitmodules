@@ -70,9 +70,6 @@
 [submodule ".vim/bundle/powerline.git"]
 	path = .vim/bundle/powerline.git
 	url = https://github.com/Lokaltog/powerline
-[submodule ".vim/bundle/.vim/bundle/vim-airline.git"]
-	path = .vim/bundle/.vim/bundle/vim-airline.git
-	url = https://github.com/bling/vim-airline
 [submodule ".vim/bundle/vim-airline.git"]
 	path = .vim/bundle/vim-airline.git
 	url = https://github.com/bling/vim-airline
