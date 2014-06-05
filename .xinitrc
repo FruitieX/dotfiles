@@ -52,7 +52,7 @@ else
 	pasystray &
 fi
 
-dunst -nf "#efefef" -lf "#9a875f" -cf "9a4747" -nb "#000000" -lb "#000000" -cb "#000000" -lto 5 -nto 5 -cto 0 -fn "Terminus 8" -geometry 600x14+172+2 &
+dunst -follow keyboard -geometry x400-0+23 -nf '#080808' -nb '#d0d0d0' -fn "Droid Sans Mono 14" &
 
 unclutter -idle 3 &
 
