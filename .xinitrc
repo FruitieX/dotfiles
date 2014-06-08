@@ -45,6 +45,7 @@ else
 	fi
 
 	node ~/dev/node/nodifier/clients/notify-send/notify-send.js &
+	~/bin/irc_connect.sh &
 	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
 	urxvt -title tmux -e ~/bin/tmx &
