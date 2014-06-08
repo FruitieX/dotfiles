@@ -301,6 +301,7 @@ set history=500
 
 " Write persistent undo files
 set undofile
+set undodir=$HOME/.vim/undo
 set undolevels=1000
 set undoreload=1000
 

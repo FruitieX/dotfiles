@@ -18,6 +18,9 @@ git submodule update
 
 ./symlink.sh
 
+# vim undo files will be stored here
+mkdir -p ~/.vim/undo
+
 cd .vim/bundle/YouCompleteMe
 git submodule update --init --recursive
 ./install.sh --clang-completer
