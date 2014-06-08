@@ -1,33 +1,38 @@
 #!/usr/bin/bash
 
-CHANS=$HOME/irc/chans
+IRCPATH=$HOME/irc
+CHANS=$IRCPATH/chans
 
 num_regex='^[0-9]+$'
 num=$(echo $1 | grep -o -E $num_regex)
 if [[ $num != "" ]]; then
-	CHANNEL=$(find $CHANS -regex ".*/${num}_.*"| head -n1 | sed 's#.*/##')
+	CHANNEL=$(find $CHANS -regex ".*/${num}_.*"| head -n1)
 else
-	CHANNEL=$(find $CHANS -regex ".*${1}.*" | head -n1 | sed 's#.*/##')
+	CHANNEL=$(find $CHANS -regex ".*${1}.*" | head -n1)
 fi
 
-if [[ $CHANNEL == "" || $CHANNEL == $(echo $CHANS | sed 's#.*/##') ]]; then
-	echo "Channel matching search criteria not found!"
-	exit 1
+if [[ $CHANNEL == "" || $CHANNEL == $(echo $CHANS) ]]; then
+	CHANNEL=$(find $IRCPATH -regex ".*${1}.*"| head -n1)
+	# if still not found
+	if [[ $CHANNEL == "" || $CHANNEL == $(echo $CHANS) ]]; then
+		echo "Channel matching search criteria not found!"
+		exit 1
+	fi
 fi
 
 if [[ -z "$2" ]]; then
 	# no additional args given, launch reader
-	node ~/src/jsii/jsii.js $CHANS/$CHANNEL
+	node ~/src/jsii/jsii.js $CHANNEL
 elif [[ "$2" == "/u" ]]; then
 	# urlview
-	urlview $CHANS/$CHANNEL/out
+	urlview $CHANNEL/out
 else
 	# args given, send rest of args to channel
 	# parse number from $CHANNEL, we might not have it yet
-	num=$(echo $CHANNEL | sed -e 's/_.*//')
-	shift; echo "$@" >> $CHANS/$CHANNEL/in
+	num=$(echo $CHANNEL | sed -e 's#.*/##' | sed -e 's/_.*//')
+	shift; echo "$@" >> $CHANNEL/in
 
 	# TODO: this is awful, currently looking for a better way to accomplish this...
-	xdotool type "i$num \"\""
+	xdotool type "i $num \"\""
 	xdotool key Left
 fi
