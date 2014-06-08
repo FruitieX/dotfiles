@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+
+CHANS=$HOME/irc/chans
+
+num_regex='^[0-9]+$'
+num=$(echo $1 | grep -o -E $num_regex)
+if [[ $num != "" ]]; then
+	CHANNEL=$(find $CHANS -regex ".*/${num}_.*"| head -n1 | sed 's#.*/##')
+else
+	CHANNEL=$(find $CHANS -regex ".*${1}.*" | head -n1 | sed 's#.*/##')
+fi
+
+if [[ $CHANNEL == "" || $CHANNEL == $(echo $CHANS | sed 's#.*/##') ]]; then
+	echo "Channel matching search criteria not found!"
+	exit 1
+fi
+
+# no additional args given, launch reader
+if [[ -z $2 ]]; then
+	node ~/src/jsii/jsii.js $CHANS/$CHANNEL
+# args given, send rest of args to channel
+else
+	# parse number from $CHANNEL, we might not have it yet
+	num=$(echo $CHANNEL | sed -e 's/_.*//')
+	shift; echo "$@" >> $CHANS/$CHANNEL/in
+
+	# TODO: this is awful, currently looking for a better way to accomplish this...
+	xdotool type "i$num \"\""
+	xdotool key Left
+fi
