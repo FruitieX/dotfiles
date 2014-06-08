@@ -15,11 +15,14 @@ if [[ $CHANNEL == "" || $CHANNEL == $(echo $CHANS | sed 's#.*/##') ]]; then
 	exit 1
 fi
 
-# no additional args given, launch reader
-if [[ -z $2 ]]; then
+if [[ -z "$2" ]]; then
+	# no additional args given, launch reader
 	node ~/src/jsii/jsii.js $CHANS/$CHANNEL
-# args given, send rest of args to channel
+elif [[ "$2" == "/u" ]]; then
+	# urlview
+	urlview $CHANS/$CHANNEL/out
 else
+	# args given, send rest of args to channel
 	# parse number from $CHANNEL, we might not have it yet
 	num=$(echo $CHANNEL | sed -e 's/_.*//')
 	shift; echo "$@" >> $CHANS/$CHANNEL/in
