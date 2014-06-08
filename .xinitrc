@@ -54,7 +54,7 @@ else
 	pasystray &
 fi
 
-dunst -follow keyboard -geometry x400-0+23 -nf '#080808' -nb '#d0d0d0' -fn "Droid Sans Mono 14" &
+dunst -follow keyboard -geometry x400-0+23 -nf '#080808' -nb '#d0d05a' -fn "Droid Sans Mono 14" &
 
 unclutter -idle 3 &
 
