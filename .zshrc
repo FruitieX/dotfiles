@@ -64,6 +64,11 @@ alias t="~/dev/node/nodifier/clients/todo/todo.js"
 alias v="vim"
 alias xf="DISPLAY=:10"
 
+# irc alias
+for ((i = 0; i < 100; i++)); do
+	alias i$i="i $i"
+done
+
 export BROWSER="firefox-nightly"
 export EDITOR="vim"
 export VISUAL="vim"
