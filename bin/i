@@ -26,6 +26,12 @@ if [[ -z "$2" ]]; then
 elif [[ "$2" == "/u" ]]; then
 	# urlview
 	urlview $CHANNEL/out
+elif [[ "$2" == "/bl" ]]; then
+	# backlog requested
+	shift; shift; echo "/privmsg *backlog $(echo $CHANNEL | sed -e 's#.*/##' | sed -e 's/.*_//') $@" >> $CHANNEL/in
+elif [[ "$2" == "/blq" ]]; then
+	# backlog query requested
+	shift; shift; echo "/privmsg *backlog $@" >> $CHANNEL/in
 else
 	# args given, send rest of args to channel
 	# parse number from $CHANNEL, we might not have it yet
