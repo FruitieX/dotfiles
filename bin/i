@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 IRCPATH=$HOME/irc
 CHANS=$IRCPATH/chans
@@ -6,13 +6,13 @@ CHANS=$IRCPATH/chans
 num_regex='^[0-9]+$'
 num=$(echo $1 | grep -o -E $num_regex)
 if [[ $num != "" ]]; then
-	CHANNEL=$(find $CHANS -regex ".*/${num}_.*"| head -n1)
+	CHANNEL=$(find $CHANS -iregex ".*/${num}_.*"| head -n1)
 else
-	CHANNEL=$(find $CHANS -regex ".*${1}.*" | head -n1)
+	CHANNEL=$(find $CHANS -iregex ".*${1}.*" | head -n1)
 fi
 
 if [[ $CHANNEL == "" || $CHANNEL == $(echo $CHANS) ]]; then
-	CHANNEL=$(find $IRCPATH -regex ".*${1}.*"| head -n1)
+	CHANNEL=$(find $IRCPATH -iregex ".*${1}.*"| head -n1)
 	# if still not found
 	if [[ $CHANNEL == "" || $CHANNEL == $(echo $CHANS) ]]; then
 		echo "Channel matching search criteria not found!"
