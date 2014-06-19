@@ -21,7 +21,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<b>%s</b> %b"
 
     # Sort messages by urgency.
     sort = yes
@@ -180,8 +180,8 @@
     timeout = 10
 
 [urgency_normal]
-    background = "#d0d05a"
-    foreground = "#080808"
+    background = "#f5f5f5"
+    foreground = "#151515"
     timeout = 10
 
 [urgency_critical]
