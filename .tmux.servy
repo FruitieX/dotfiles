@@ -5,7 +5,16 @@ set -g pane-active-border-fg colour239
 set -g pane-active-border-bg default
 set status off
 respawn-pane -k '~/dev/node/nodifier/clients/cli/cli.js l'
-splitw -v -p 70 -t 0
-respawn-pane -k 'weechat -r "/layout apply servy;/bar hide status"'
-#selectp -t 1
-#clock-mode
+splitw -v -p 80 -t 0
+splitw -h -p 50 -t 1
+splitw -v -p 66 -t 1
+splitw -v -p 66 -t 2
+splitw -v -p 50 -t 3
+splitw -v -p 50 -t 4
+respawn-pane -t 1 -k '~/bin/i brlogenshfegle'
+respawn-pane -t 2 -k '~/bin/i xonotic.team'
+respawn-pane -t 3 -k '~/bin/i archlinux'
+respawn-pane -t 4 -k '~/bin/i vim'
+respawn-pane -t 5 -k '~/bin/i kychi'
+respawn-pane -t 6 -k '~/bin/i tietokilta'
+selectp -t 0
