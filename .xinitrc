@@ -37,6 +37,7 @@ else
 		xrandr --newmode "1920x1200" 193.16 1920 2048 2256 2592 1200 1201 1204 1242 -HSync +Vsync
 		xrandr --addmode VGA-0 "1920x1200"
 		xrandr --output VGA-0 --mode "1920x1200" --left-of LVDS-0
+		synergys -c ~/.synergy.conf &
 	elif [[ $HOSTNAME == "mba" ]]; then
 		synclient PalmDetect=1 MaxSpeed=3 TouchpadOff=1 &
 		synergyc lappy &
