@@ -1,4 +1,3 @@
-cd
 xrdb ~/.Xdefaults
 # e.g. terminus-font lives here
 xset +fp /usr/share/fonts/local
@@ -19,6 +18,9 @@ xsetroot -cursor_name left_ptr &
 xmodmap .Xmodmap &
 start-pulseaudio-x11
 compton --config ~/.compton.conf &
+~/bin/irc_connect.sh &
+dunst &
+unclutter -idle 3 &
 
 BASE16_SCHEME="default"
 ~/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh
@@ -27,9 +29,8 @@ BASE16_SCHEME="default"
 if [[ $HOSTNAME == "servy" ]]; then
 	xrandr --output DVI-0 --rotate left
 	~/bin/wallpaper.sh -o &
-	killall mpd tmux
+	killall tmux
 	urxvt -title tmux -e ~/bin/tmx &
-	mpd
 else
 	if [[ $HOSTNAME == "lappy" ]]; then
 		# work
@@ -45,7 +46,6 @@ else
 	fi
 
 	node ~/dev/node/nodifier/clients/notify-send/notify-send.js &
-	~/bin/irc_connect.sh &
 	~/bin/wallpaper.sh &
 	~/bin/steam.sh &
 	urxvt -title tmux -e ~/bin/tmx &
@@ -53,9 +53,5 @@ else
 	numlockx &
 	pasystray &
 fi
-
-dunst &
-
-unclutter -idle 3 &
 
 exec herbstluftwm --locked
