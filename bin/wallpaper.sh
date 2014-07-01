@@ -7,6 +7,9 @@ while true; do
 	echo $wallpaper
 	if [[ $HOST == "bulky" ]]; then
 		ssh -o ConnectTimeout=10 -o BatchMode=yes ircscreen@fruitiex.org DISPLAY=:0 feh --bg-fill \"/home/ircscreen/media/wallpapers/$wallpaper\"
+	elif [[ $HOST == "lappy" ]]; then
+		ssh -o ConnectTimeout=10 -o BatchMode=yes mba DISPLAY=:0 killall wallpaper.sh > /dev/null 2>&1
+		ssh -o ConnectTimeout=10 -o BatchMode=yes mba DISPLAY=:0 feh --bg-fill \"/home/rasse/media/wallpapers/$wallpaper\"
 	fi
 
 	DISPLAY=:0 feh --bg-fill "/home/rasse/media/wallpapers/$wallpaper"
