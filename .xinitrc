@@ -23,16 +23,7 @@ compton --config ~/.compton.conf &
 BASE16_SCHEME="default"
 ~/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh
 
-# autostart, host-specific
-if [[ $HOSTNAME == "mba" ]]; then
-	xrandr --output HDMI1 --right-of eDP1 --mode 1920x1080
-	synclient PalmDetect=1 MaxSpeed=3 TouchpadOff=1 &
-	#synergyc lappy &
-#elif [[ $HOSTNAME == "lappy" ]]; then
-	#synergys -c ~/.synergy.conf &
-	#nvidia-settings -l &
-fi
-
+# hostname specific setup
 if [[ $HOSTNAME == "servy" ]]; then
 	xrandr --output DVI-0 --rotate left
 	~/bin/wallpaper.sh -o &
@@ -40,8 +31,17 @@ if [[ $HOSTNAME == "servy" ]]; then
 	urxvt -title tmux -e ~/bin/tmx &
 	mpd
 else
-	if [[ $HOSTNAME == "lappy" || $HOSTNAME == "bulky" ]]; then
-		~/bin/vgatoggle.sh &
+	if [[ $HOSTNAME == "lappy" ]]; then
+		# work
+		xrandr --newmode "1920x1200" 193.16 1920 2048 2256 2592 1200 1201 1204 1242 -HSync +Vsync
+		xrandr --addmode VGA-0 "1920x1200"
+		xrandr --output VGA-0 --mode "1920x1200" --left-of LVDS-0
+	elif [[ $HOSTNAME == "mba" ]]; then
+		synclient PalmDetect=1 MaxSpeed=3 TouchpadOff=1 &
+		synergyc lappy &
+	elif [[ $HOSTNAME == "bulky" ]]; then
+		# home
+		xrandr --output HDMI2 --mode 1920x1080 --rate 75 --left-of HDMI1
 	fi
 
 	node ~/dev/node/nodifier/clients/notify-send/notify-send.js &
