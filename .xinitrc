@@ -18,6 +18,7 @@ xsetroot -cursor_name left_ptr &
 xmodmap .Xmodmap &
 start-pulseaudio-x11
 compton --config ~/.compton.conf &
+~/bin/irc_flush.sh
 ~/bin/irc_connect.sh &
 dunst &
 unclutter -idle 3 &
