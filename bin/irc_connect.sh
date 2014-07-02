@@ -9,6 +9,9 @@ PORT=6667
 RECONNECT_DELAY=3
 NICK="FruitieX"
 
+killall irc_connect.sh
+killall ii
+
 connect() {
 	while true; do
 		IRCPASS="$2" $II -i $IRCPATH/$1 -s $SERVER -p $PORT -k "IRCPASS" -n $NICK
