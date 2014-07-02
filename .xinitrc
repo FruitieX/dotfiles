@@ -19,6 +19,8 @@ xmodmap .Xmodmap &
 start-pulseaudio-x11
 compton --config ~/.compton.conf &
 ~/bin/irc_flush.sh
+killall irc_connect
+killall ii
 ~/bin/irc_connect.sh &
 dunst &
 unclutter -idle 3 &
