@@ -15,7 +15,7 @@ function find_and_replace() {
 	if [[ ! -f compiled/$1 ]]; then
 		cp $1 compiled/$1
 	fi
-	sed -i -e "s/$2/$($HOME/bin/theme.sh $3)/" compiled/$1
+	sed -i -e "s/$2/$($HOME/bin/theme.sh $3)/g" compiled/$1
 }
 
 function symlink() {
@@ -28,3 +28,7 @@ find_and_replace ".Xdefaults" "\$font" "font"
 find_and_replace ".Xdefaults" "\$active_fg" "active_fg"
 find_and_replace ".Xdefaults" "\$active_bg" "active_bg"
 symlink ".Xdefaults"
+
+find_and_replace ".tmux.conf" "\$active_fg" "active_fg"
+find_and_replace ".tmux.conf" "\$inactive_fg" "inactive_fg"
+symlink ".tmux.conf"
