@@ -11,11 +11,12 @@ fi
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
-panel_height=19
-font="-*-droid sans mono-medium-*-*-*-16-*-*-*-*-*-*-*"
-bgcolor='#303030'
-selbg=$(hc get window_border_active_color)
-selfg='#080808'
+panel_height=12
+font=$($HOME/bin/theme.sh font)
+active_bg=$($HOME/bin/theme.sh bg)
+active_fg=$($HOME/bin/theme.sh active_fg)
+inactive_bg=$($HOME/bin/theme.sh bg)
+inactive_fg=$($HOME/bin/theme.sh inactive_fg)
 
 ####
 # Try to find textwidth binary.
@@ -55,6 +56,7 @@ fi
 hc pad $monitor $panel_height
 
 {
+	# TODO: gah :( globals?
     ### Event generator ###
     # based on different input data (mpc, date, hlwm hooks, ...) this generates events, formed like this:
     #   <eventname>\t<data> [...]
@@ -65,7 +67,7 @@ hc pad $monitor $panel_height
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
-		date +$'date\t^fg(#080808)^bg(#d0d0d0) %Y-%m-%d ^bg(#303030)^fg() ^fg(#f5f5f5)^bg(#4e4e4e) %H:%M '
+		date +$'date\t %Y-%m-%d %H:%M'
 		echo -n ""
         sleep 1 || break
     done > >(uniq_linebuffered) &
@@ -83,7 +85,6 @@ hc pad $monitor $panel_height
         # This part prints dzen data based on the _previous_ data handling run,
         # and then waits for the next event to happen.
 
-        bordercolor="#26221C"
 		id=0
 
         # draw tags
@@ -92,34 +93,30 @@ hc pad $monitor $panel_height
 
             case ${i:0:1} in
                 '#'|'+') # active on this monitor
-					echo -n "^bg(#f5f5f5)^fg(#080808) $id "
-                    echo -n "^bg(#f5f5f5)^fg(#080808)"
+					echo -n "^bg($active_bg)^fg($active_fg) $id "
                     ;;
 				'-'|'%') # active on other monitor
-					echo -n "^bg(#4e4e4e)^fg(#f5f5f5) $id "
-					echo -n "^bg(#4e4e4e)^fg(#f5f5f5)"
+					echo -n "^bg($inactive_bg)^fg($inactive_fg) $id "
 					;;
                 ':') # inactive, but has clients
-					echo -n "^bg(#f5f5f5)^fg(#080808) $id "
-                    echo -n "^bg(#4e4e4e)^fg(#f5f5f5)"
+					echo -n "^bg($inactive_bg)^fg($inactive_fg) $id "
                     ;;
                 '!') # urgent
-					echo -n "^bg(#f5f5f5)^fg(#080808) $id "
-                    echo -n "^bg(#9a4747)^fg(#141414)"
+					echo -n "^bg($urgent_bg)^fg($urgent_fg) $id "
                     ;;
                 *) # inactive, no clients
 					continue
                     ;;
             esac
-			echo -n " ${i:1} "
-			echo -n "^bg(#303030)^fg() "
+			echo -n "${i:1} "
+			#echo -n "^bg($active_bg)^fg() "
         done
 
 		if [[ "$windowtitle" != "" ]]; then
-			echo -n "^fg(#f5f5f5)^bg(#4e4e4e) ${windowtitle//^/^^} "
+			echo -n "^fg($active_fg)^bg($active_bg) ${windowtitle//^/^^} "
 		fi
 
-		right="^bg(#303030)^fg() $date"
+		right="^bg($active_bg)^fg($active_fg) $date "
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only ")
@@ -184,4 +181,4 @@ hc pad $monitor $panel_height
 
 } 2> /dev/null | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
     -e 'button3=' \
-    -ta c -bg "$bgcolor" -fg '#efefef'
+    -ta c -bg "$active_bg" -fg '#efefef'
