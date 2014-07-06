@@ -14,7 +14,6 @@ unset TMUX
 
 # autostart, all hosts
 redshift -l 0:0 &
-VBoxClient-all &
 xsetroot -cursor_name left_ptr &
 xmodmap .Xmodmap &
 start-pulseaudio-x11
@@ -25,9 +24,6 @@ killall ii
 ~/bin/irc_connect.sh &
 dunst &
 unclutter -idle 3 &
-
-BASE16_SCHEME="default"
-~/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh
 
 # hostname specific setup
 if [[ $HOSTNAME == "servy" ]]; then
