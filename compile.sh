@@ -24,6 +24,7 @@ function symlink() {
 	ln -s "$DOTFILES/compiled/$1" "$HOME/$1"
 }
 
+find_and_replace ".Xdefaults" "\$HOME" "HOME"
 find_and_replace ".Xdefaults" "\$font" "font"
 find_and_replace ".Xdefaults" "\$active_fg" "active_fg"
 find_and_replace ".Xdefaults" "\$active_bg" "active_bg"

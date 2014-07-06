@@ -1,7 +1,7 @@
-#include ".colors/base16-default.dark.xresources"
+#include "$HOME/.colors/base16-default.dark.xresources"
 
 ! transparent background
-urxvt*background: #20202f
+*background: #20202f
 
 ! make ctrl-tab & ctrl-shift-tab work
 URxvt.keysym.Control-Tab: \033[27;5;9~
@@ -34,7 +34,7 @@ urxvt*depth: 32
 !*shading: 10
 !*transparent: true
 !*inheritPixmap: true
-urxvt*foreground: $active_fg
+*foreground: $active_fg
 
 *color0:  #2E3436
 /*
