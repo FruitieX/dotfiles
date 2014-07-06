@@ -1,4 +1,4 @@
-#include "$HOME/.colors/base16-ocean.dark.xresources"
+#include "$HOME/.colors/base16-$base16_scheme.xresources"
 
 ! make ctrl-tab & ctrl-shift-tab work
 URxvt.keysym.Control-Tab: \033[27;5;9~

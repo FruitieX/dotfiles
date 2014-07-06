@@ -1,31 +1,31 @@
 #!/bin/zsh
 
-# compile colors
-FILES=( .Xdefaults )
-
 # cd to root of git repo
 cd "$(dirname $0)"
 DOTFILES=$(pwd)
 
-rm -r compiled
-mkdir compiled
-touch compiled/DO_NOT_EDIT_FILES_IN_THIS_DIRECTORY
+rm -r .compiled
+mkdir .compiled
+touch .compiled/DO_NOT_EDIT_FILES_IN_THIS_DIRECTORY
 
+# arguments: filename, search string, replace with which variable
 function find_and_replace() {
-	if [[ ! -f compiled/$1 ]]; then
-		cp $1 compiled/$1
+	if [[ ! -f .compiled/$1 ]]; then
+		cp $1 .compiled/$1
 	fi
-	sed -i -e "s/$2/$($HOME/bin/theme.sh $3)/g" compiled/$1
+	sed -i -e "s/$2/$($HOME/bin/theme.sh $3)/g" .compiled/$1
 }
 
+# arguments: filename
 function symlink() {
 	# TODO: prettier solution needed. integration with symlink.sh?
 	rm "$HOME/$1"
-	ln -s "$DOTFILES/compiled/$1" "$HOME/$1"
+	ln -s "$DOTFILES/.compiled/$1" "$HOME/$1"
 }
 
 find_and_replace ".Xdefaults" "\$HOME" "HOME"
 find_and_replace ".Xdefaults" "\$font" "font"
+find_and_replace ".Xdefaults" "\$base16_scheme" "base16_scheme"
 find_and_replace ".Xdefaults" "\$xftfont" "xftfont"
 find_and_replace ".Xdefaults" "\$active_fg" "active_fg"
 find_and_replace ".Xdefaults" "\$active_bg" "active_bg"
