@@ -122,7 +122,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # The following lines were added by compinstall
 BASE16_SCHEME="$($HOME/bin/theme.sh base16_scheme)"
-~/src/base-16-shell/base16-$BASE16_SCHEME.sh
+~/.colors/base16-$BASE16_SCHEME.sh
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

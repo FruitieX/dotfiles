@@ -29,7 +29,7 @@ Xft.lcdfilter:  lcddefault
 
 !colors:
 urxvt*depth: 32
-*foreground: $active_fg
+!*foreground: $active_fg
 *background: $bg
 
 !xcursor
