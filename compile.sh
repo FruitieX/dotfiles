@@ -29,6 +29,7 @@ find_and_replace ".Xdefaults" "\$base16_scheme" "base16_scheme"
 find_and_replace ".Xdefaults" "\$xftfont" "xftfont"
 find_and_replace ".Xdefaults" "\$active_fg" "active_fg"
 find_and_replace ".Xdefaults" "\$active_bg" "active_bg"
+find_and_replace ".Xdefaults" "\$bg" "bg"
 symlink ".Xdefaults"
 
 find_and_replace ".tmux.conf" "\$active_fg" "active_fg"
