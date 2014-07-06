@@ -37,10 +37,10 @@ Dependencies for arch linux users:
 	openssh sudo tmux cmus sshfs ntp ttf-droid weechat htop
 
 * **misc gui:**
-	rxvt-unicode numlockx redshift feh synergy chromium
+	rxvt-unicode numlockx redshift synergy chromium
 
 * **xorg:**
 	xorg-server xorg-xset xorg-xsetroot xorg-xmodmap xorg-xinit xorg-xrandr
 
 * **misc**
-	pulseaudio pavucontrol mosh urxvt-font-size-git yeganesh
+	pulseaudio pavucontrol mosh urxvt-font-size-git yeganesh ttf-google-fonts-git hsetroot

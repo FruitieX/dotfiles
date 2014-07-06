@@ -1,8 +1,8 @@
 xrdb ~/.Xdefaults
 # e.g. terminus-font lives here
 xset +fp /usr/share/fonts/local
-xset +fp ~/.fonts
-xset fp rehash
+#xset +fp ~/.fonts
+#xset fp rehash
 
 # disable turning screen off automatically
 xset -dpms &

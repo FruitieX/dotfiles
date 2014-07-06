@@ -1,7 +1,4 @@
-#include "$HOME/.colors/base16-default.dark.xresources"
-
-! transparent background
-*background: #20202f
+#include "$HOME/.colors/base16-ocean.dark.xresources"
 
 ! make ctrl-tab & ctrl-shift-tab work
 URxvt.keysym.Control-Tab: \033[27;5;9~
@@ -10,47 +7,31 @@ URxvt.iso14755: False
 URxvt.iso14755_52: False
 
 ! resize fonts
-urxvt.perl-ext-common: font-size
-urxvt.font-size.step: 2
-urxvt.keysym.C-Up:      perl:font-size:increase
-urxvt.keysym.C-Down:    perl:font-size:decrease
+URxvt.perl-ext-common: font-size
+URxvt.font-size.step: 2
+URxvt.keysym.C-Up:      perl:font-size:increase
+URxvt.keysym.C-Down:    perl:font-size:decrease
 
-*scrollBar: false
-*font: $font
-*boldFont: $font
-*urgentOnBell: false
-*borderless: 1
+URxvt.letterSpace: 0
+Xft.autohint:	false
+Xft.rgba:		none
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.antialias:  true
+Xft.lcdfilter:  lcddefault
 
-Xcursor.theme: Human
-Xcursor.size: 48
-!Xcursor.theme: whiteglass
-!Xcursor.size: 12
+*font:          xft:$xftfont:style=normal:pixelsize=16:antialias=true
+*boldFont:      xft:$xftfont:style=bold:pixelsize=16:antialias=true
+
+*scrollBar:     false
+*urgentOnBell:  false
+*borderless:    1
 
 !colors:
-!A tango-esque light theme
-!*foreground: #A0A0A0
 urxvt*depth: 32
-
-!*shading: 10
-!*transparent: true
-!*inheritPixmap: true
 *foreground: $active_fg
+*background: #20202f
 
-*color0:  #2E3436
-/*
-*color1:  #a40000
-*color2:  #4E9A06
-*color3:  #C4A000
-*color4:  #3465A4
-*color5:  #75507B
-*color6:  #ce5c00
-*color7:  #babdb9
-*color8:  #555753
-*color9:  #EF2929
-*color10: #8AE234
-*color11: #FCE94F
-*color12: #729FCF
-*color13: #AD7FA8
-*color14: #fcaf3e
-*color15: #EEEEEC
-*/
+!xcursor
+Xcursor.theme: Human
+Xcursor.size: 48

@@ -11,7 +11,7 @@ fi
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
-panel_height=12
+panel_height=16
 font=$($HOME/bin/theme.sh font)
 active_bg=$($HOME/bin/theme.sh bg)
 active_fg=$($HOME/bin/theme.sh active_fg)
@@ -168,7 +168,7 @@ hc pad $monitor $panel_height
                 ;;
             focus_changed|window_title_changed)
                 windowtitle="${cmd[@]:2}"
-				windowtitle="${windowtitle:0:60}"
+				windowtitle="${windowtitle:0:100}"
                 ;;
             #player)
             #    ;;

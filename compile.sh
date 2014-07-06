@@ -26,6 +26,7 @@ function symlink() {
 
 find_and_replace ".Xdefaults" "\$HOME" "HOME"
 find_and_replace ".Xdefaults" "\$font" "font"
+find_and_replace ".Xdefaults" "\$xftfont" "xftfont"
 find_and_replace ".Xdefaults" "\$active_fg" "active_fg"
 find_and_replace ".Xdefaults" "\$active_bg" "active_bg"
 symlink ".Xdefaults"
