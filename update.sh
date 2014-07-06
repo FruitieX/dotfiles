@@ -13,4 +13,8 @@ git submodule sync
 git submodule foreach git checkout master
 git submodule foreach git pull origin master
 
+./compile.sh
 ./symlink.sh -y
+
+xrdb ~/.Xdefaults
+source ~/.zshrc
