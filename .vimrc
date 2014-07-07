@@ -336,9 +336,15 @@ set wildmenu
 set wildignore+=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,~/music*,*~,*.swp
 
 " Indentation
-set noexpandtab
+" Expand tabs to spaces
+set expandtab
+" indent with 4 spaces when tab key is hit
+set softtabstop=4
+" indent with 4 spaces when the indent commands are used
 set shiftwidth=4
+" tab character is represented by 4 spaces
 set tabstop=4
+
 "set smarttab
 filetype plugin indent on
 
