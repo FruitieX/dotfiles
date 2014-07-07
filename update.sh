@@ -13,6 +13,7 @@ git submodule sync
 git submodule foreach git checkout master
 git submodule foreach git pull origin master
 
+./symlink.sh -y
 ./compile.sh
 ./symlink.sh -y
 
