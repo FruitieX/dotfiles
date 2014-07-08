@@ -10,8 +10,9 @@ touch .compiled/DO_NOT_EDIT_FILES_IN_THIS_DIRECTORY
 
 # arguments: filename, search string, replace with which variable
 function find_and_replace() {
-	if [[ ! -f .compiled/$1 ]]; then
-		cp $1 .compiled/$1
+	if [[ ! -f ".compiled/$1" ]]; then
+        mkdir -p $(dirname ".compiled/$1")
+		cp "$1" ".compiled/$1"
 	fi
 	sed -i -e "s/$2/$($HOME/bin/theme.sh $3)/g" .compiled/$1
 }
@@ -35,3 +36,12 @@ symlink ".Xdefaults"
 find_and_replace ".tmux.conf" "\$active_fg" "active_fg"
 find_and_replace ".tmux.conf" "\$inactive_fg" "inactive_fg"
 symlink ".tmux.conf"
+
+find_and_replace ".config/dunst/dunstrc" "\$active_fg" "active_fg"
+find_and_replace ".config/dunst/dunstrc" "\$active_bg" "active_bg"
+find_and_replace ".config/dunst/dunstrc" "\$inactive_fg" "inactive_fg"
+find_and_replace ".config/dunst/dunstrc" "\$inactive_bg" "inactive_bg"
+find_and_replace ".config/dunst/dunstrc" "\$urgent_fg" "urgent_fg"
+find_and_replace ".config/dunst/dunstrc" "\$urgent_bg" "urgent_bg"
+find_and_replace ".config/dunst/dunstrc" "\$xftfont" "xftfont"
+symlink ".config/dunst/dunstrc"
