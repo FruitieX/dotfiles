@@ -2,6 +2,13 @@
 
 # this is a simple config for herbstluftwm
 
+panel_height=$($HOME/bin/theme.sh panel_height)
+xftfont=$($HOME/bin/theme.sh xftfont)
+active_bg=$($HOME/bin/theme.sh bg)
+active_fg=$($HOME/bin/theme.sh active_fg)
+inactive_bg=$($HOME/bin/theme.sh bg)
+inactive_fg=$($HOME/bin/theme.sh inactive_fg)
+
 hc() {
     herbstclient "$@"
 }
@@ -21,7 +28,7 @@ hc keybind $Mod-Shift-r spawn ~/bin/vgatoggle.sh
 #hc keybind $Mod-Shift-r reload
 hc keybind $Mod-w close
 hc keybind $Mod-Return spawn urxvt
-hc keybind $Mod-space spawn ~/bin/yeganesh.sh
+hc keybind $Mod-space spawn dmenu_run -fn "$xftfont" -p run: -nb $inactive_bg -nf $inactive_fg -sb $active_bg -sf $active_fg -hist $HOME/.cache/dmenu_run_hist
 
 # basic movement
 # focusing clients
@@ -61,7 +68,7 @@ hc keybind XF86MonBrightnessDown spawn sudo /usr/bin/brightness.sh mon /2
 hc keybind XF86KbdBrightnessUp spawn sudo /usr/bin/brightness.sh kbd +50
 hc keybind XF86KbdBrightnessDown spawn sudo /usr/bin/brightness.sh kbd -50
 hc keybind XF86LaunchA spawn touchpadtoggle
-hc keybind $Mod-Shift-x spawn /usr/bin/i3lock -u -c 9a875f
+hc keybind $Mod-Shift-x spawn /usr/bin/i3lock -u -c $(echo ${active_bg#?})
 hc keybind $Mod-Shift-s spawn /usr/bin/systemctl suspend
 #hc keybind XF86AudioPlay spawn /usr/bin/ncmpcpp toggle
 #hc keybind XF86AudioStop spawn /usr/bin/ncmpcpp stop
@@ -180,7 +187,6 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
 done
 
 avant-window-navigator &
-
 
 if [[ $HOSTNAME == "servy" ]]; then
 	tmux source-file ~/.tmux.servy
