@@ -62,6 +62,8 @@ alias nr="n r"
 alias nu="n u"
 alias t="~/dev/node/nodifier/clients/todo/todo.js"
 alias v="~/src/v/v"
+#alias z="~/src/z/z.sh"
+. ~/src/z/z.sh
 alias xf="DISPLAY=:10"
 
 # irc alias
