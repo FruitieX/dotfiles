@@ -61,7 +61,7 @@ alias n="~/dev/node/nodifier/clients/cli/cli.js"
 alias nr="n r"
 alias nu="n u"
 alias t="~/dev/node/nodifier/clients/todo/todo.js"
-alias v="vim"
+alias v="~/src/v/v"
 alias xf="DISPLAY=:10"
 
 # irc alias
