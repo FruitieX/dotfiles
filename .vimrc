@@ -218,8 +218,8 @@ map <leader>m :make<CR>
 nnoremap <silent>gr :Ack<CR>
 
 function! GREP( arg )
-	execute "Ack /" . expand( a:arg )
-	cwindow
+    execute "Ack /" . expand( a:arg )
+    cwindow
 endfunction
 
 command! -nargs=* GREP call GREP( '<args>' )
@@ -251,30 +251,30 @@ vmap <leader><C-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <leader><C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 function! CmdLine(str)
-	exe "menu Foo.Bar :" . a:str
-	emenu Foo.Bar
-	unmenu Foo
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
 endfunction
 
 function! VisualSelection(direction) range
-	let l:saved_reg = @"
-	execute "normal! vgvy"
+    let l:saved_reg = @"
+    execute "normal! vgvy"
 
-	let l:pattern = escape(@", '\\/.*$^~[]')
-	let l:pattern = substitute(l:pattern, "\n$", "", "")
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-	if a:direction == 'b'
-		execute "normal ?" . l:pattern . "^M"
-	elseif a:direction == 'gv'
-		call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-	elseif a:direction == 'replace'
-		call CmdLine("%s" . '/'. l:pattern . '/')
-	elseif a:direction == 'f'
-		execute "normal /" . l:pattern . "^M"
-	endif
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
 
-	let @/ = l:pattern
-	let @" = l:saved_reg
+    let @/ = l:pattern
+    let @" = l:saved_reg
 endfunction
 
 " When you press <leader>r you can search and replace the selected text
@@ -363,15 +363,15 @@ autocmd InsertLeave * :set relativenumber
 
 " Restore cursor position
 function! ResCur()
-	if line("'\"") <= line("$")
-		normal! g`"
-		return 1
-	endif
+    if line("'\"") <= line("$")
+        normal! g`"
+        return 1
+    endif
 endfunction
 
 augroup resCur
-	autocmd!
-	autocmd BufWinEnter * call ResCur()
+    autocmd!
+    autocmd BufWinEnter * call ResCur()
 augroup END
 " Remember info about open buffers on close
 set viminfo^=%
@@ -383,106 +383,105 @@ set tabpagemax=15
 set showcmd
 
 function! MoveToPrevTab()
-	"there is only one window
-	if tabpagenr('$') == 1 && winnr('$') == 1
-		return
-	endif
-	"preparing new window
-	let l:tab_nr = tabpagenr('$')
-	let l:cur_buf = bufnr('%')
-	if tabpagenr() != 1
-		close!
-		if l:tab_nr == tabpagenr('$')
-			tabprev
-		endif
-		sp
-	else
-		close!
-		exe "0tabnew"
-	endif
-	"opening current buffer in new window
-	exe "b".l:cur_buf
+    "there is only one window
+    if tabpagenr('$') == 1 && winnr('$') == 1
+        return
+    endif
+    "preparing new window
+    let l:tab_nr = tabpagenr('$')
+    let l:cur_buf = bufnr('%')
+    if tabpagenr() != 1
+        close!
+        if l:tab_nr == tabpagenr('$')
+            tabprev
+        endif
+        sp
+    else
+        close!
+        exe "0tabnew"
+    endif
+    "opening current buffer in new window
+    exe "b".l:cur_buf
 endfunc
 
 function! MoveToNextTab()
-	"there is only one window
-	if tabpagenr('$') == 1 && winnr('$') == 1
-		return
-	endif
-	"preparing new window
-	let l:tab_nr = tabpagenr('$')
-	let l:cur_buf = bufnr('%')
-	if tabpagenr() < tab_nr
-		close!
-		if l:tab_nr == tabpagenr('$')
-			tabnext
-		endif
-		sp
-	else
-		close!
-		tabnew
-	endif
-	"opening current buffer in new window
-	exe "b".l:cur_buf
+    "there is only one window
+    if tabpagenr('$') == 1 && winnr('$') == 1
+        return
+    endif
+    "preparing new window
+    let l:tab_nr = tabpagenr('$')
+    let l:cur_buf = bufnr('%')
+    if tabpagenr() < tab_nr
+        close!
+        if l:tab_nr == tabpagenr('$')
+            tabnext
+        endif
+        sp
+    else
+        close!
+        tabnew
+    endif
+    "opening current buffer in new window
+    exe "b".l:cur_buf
 endfunc
 
 function! DiffToggle()
-	if &diff
-		diffoff
-	else
-		diffthis
-	endif
-	:endfunction
+    if &diff
+        diffoff
+    else
+        diffthis
+    endif
+:endfunction
 
-	" fix my broken themes
-	" matched parens fix
-	hi MatchParen cterm=bold ctermbg=8 ctermfg=15
-	" darker comments, they look nice and get ouf ot the way
-	hi Comment ctermfg=8
-	" don't have ridiculous colors on the menus
-	hi Pmenu ctermbg=18 ctermfg=2
-	" transparent background always
-	hi Normal ctermbg=none
-	" prettify searches
-	hi Search ctermfg=1 ctermbg=19
-	hi IncSearch ctermbg=9 ctermfg=18
-	" highlight cursor line number
-	hi CursorLineNr ctermbg=none ctermfg=7
-	" darken other line numbers
-	hi LineNr ctermbg=none ctermfg=8
-	" TODOs with red
-	hi Todo ctermbg=9
-	" wtf were they thinking
-	hi Visual ctermbg=0 term=none cterm=none
-	hi CursorLine ctermbg=0
-	" fix ugly splits
-	hi VertSplit ctermbg=none ctermfg=8
-	" i like yellow color on types more
-	hi Type ctermfg=3
+" fix my broken themes
+" matched parens fix
+hi MatchParen cterm=bold ctermbg=8 ctermfg=15
+" darker comments, they look nice and get ouf ot the way
+hi Comment ctermfg=8
+" don't have ridiculous colors on the menus
+hi Pmenu ctermbg=18 ctermfg=2
+" transparent background always
+hi Normal ctermbg=none
+" prettify searches
+hi Search ctermfg=1 ctermbg=19
+hi IncSearch ctermbg=9 ctermfg=18
+" highlight cursor line number
+hi CursorLineNr ctermbg=none ctermfg=7
+" darken other line numbers
+hi LineNr ctermbg=none ctermfg=8
+" TODOs with red
+hi Todo ctermbg=9
+" wtf were they thinking
+hi Visual ctermbg=0 term=none cterm=none
+hi CursorLine ctermbg=0
+" fix ugly splits
+hi VertSplit ctermbg=none ctermfg=8
+" i like yellow color on types more
+hi Type ctermfg=3
 
-	" why does gitgutter have a green background by default
-	hi GitGutterAdd ctermbg=none
-	hi GitGutterChange ctermbg=none
-	hi GitGutterDelete ctermbg=none
-	hi GitGutterChangeDelete ctermbg=none
-	hi GitGutterAddLine ctermbg=none
-	hi GitGutterChangeLine ctermbg=none
-	hi GitGutterChangeDeleteLine ctermbg=none
-	hi GitGutterChangeLine ctermbg=none
-	hi SignColumn ctermbg=none
+" why does gitgutter have a green background by default
+hi GitGutterAdd ctermbg=none
+hi GitGutterChange ctermbg=none
+hi GitGutterDelete ctermbg=none
+hi GitGutterChangeDelete ctermbg=none
+hi GitGutterAddLine ctermbg=none
+hi GitGutterChangeLine ctermbg=none
+hi GitGutterChangeDeleteLine ctermbg=none
+hi GitGutterChangeLine ctermbg=none
+hi SignColumn ctermbg=none
 
-	let g:airline_theme="fruit"
-	let g:airline_left_sep=""
-	let g:airline_right_sep=""
-	let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme="fruit"
+let g:airline_left_sep=""
+let g:airline_right_sep=""
+let g:airline#extensions#tabline#enabled = 1
 
-	" MiniBufExplorer theme
-	hi MBEChanged ctermfg=9
-	hi MBEVisibleNormal ctermfg=20
-	hi MBEVisibleActiveNormal ctermfg=15
-	hi MBEVisibleActiveChanged ctermfg=11
-	hi MBEVisibleChanged ctermfg=9
+" MiniBufExplorer theme
+hi MBEChanged ctermfg=9
+hi MBEVisibleNormal ctermfg=20
+hi MBEVisibleActiveNormal ctermfg=15
+hi MBEVisibleActiveChanged ctermfg=11
+hi MBEVisibleChanged ctermfg=9
 
-	" No extra space in numbers column
-	set numberwidth=1
-
+" No extra space in numbers column
+set numberwidth=1
