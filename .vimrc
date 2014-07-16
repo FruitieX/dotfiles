@@ -485,3 +485,5 @@ hi MBEVisibleChanged ctermfg=9
 
 " No extra space in numbers column
 set numberwidth=1
+
+set clipboard=unnamed
