@@ -1,3 +1,8 @@
+~/bin/tmx
+if [[ -z "$TMUX" ]]; then
+    exit
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -41,12 +46,13 @@ DISABLE_UPDATE_PROMPT="true" # don't ask
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git archlinux rsync vi-mode zsh-syntax-highlighting zsh-history-substring-search)
+#plugins=(git archlinux rsync vi-mode zsh-syntax-highlighting zsh-history-substring-search)
 
 if [ -f ~/.zshrc.local ]; then
 	source ~/.zshrc.local
 fi
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
+source $HOME/.zprezto/init.zsh
 
 alias sr="ssh rasse@fruitiex.org"
 alias vmx="startx -- -config xorg.vm"
@@ -83,11 +89,11 @@ stty ixoff -ixon
 setopt DVORAK
 
 # use the vi navigation keys (hjkl) besides cursor keys in menu completion
-bindkey -M menuselect 'h' vi-backward-char        # left
-bindkey -M menuselect 'k' vi-up-line-or-history   # up
-bindkey -M menuselect 'l' vi-forward-char         # right
+#bindkey -M menuselect 'h' vi-backward-char        # left
+#bindkey -M menuselect 'k' vi-up-line-or-history   # up
+#bindkey -M menuselect 'l' vi-forward-char         # right
 #bindkey -M menuselect 'j' vi-down-line-or-history # bottom, unfortunately the command below interferes with this
-bindkey -M viins 'jj' vi-cmd-mode # 'jj' takes you into cmd mode
+#bindkey -M viins 'jj' vi-cmd-mode # 'jj' takes you into cmd mode
 
 # make search up and down work, so partially type and hit up/down to find relevant stuff
 bindkey '^[[A' up-line-or-search
@@ -133,8 +139,3 @@ compinit
 # End of lines added by compinstall
 
 ulimit -c unlimited
-
-~/bin/tmx
-if [[ -z "$TMUX" ]]; then
-	exit
-fi
