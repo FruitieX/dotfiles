@@ -93,7 +93,7 @@ setopt DVORAK
 #bindkey -M menuselect 'k' vi-up-line-or-history   # up
 #bindkey -M menuselect 'l' vi-forward-char         # right
 #bindkey -M menuselect 'j' vi-down-line-or-history # bottom, unfortunately the command below interferes with this
-#bindkey -M viins 'jj' vi-cmd-mode # 'jj' takes you into cmd mode
+bindkey -M viins 'jj' vi-cmd-mode # 'jj' takes you into cmd mode
 
 # make search up and down work, so partially type and hit up/down to find relevant stuff
 bindkey '^[[A' up-line-or-search
