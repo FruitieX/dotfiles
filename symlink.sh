@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # recursively symlink all files from paths in this array
-FILES=( bin src .apvlvrc .compton.conf .config .colors .dir_colors .gconf .mozilla .oh-my-zsh .synergy.conf .tmux.servy .theme.cfg .urlview .vimrc .vim/autoload/pathogen.vim .xinitrc .Xmodmap .zshrc _pentadactylrc .pentadactyl .weechat )
+FILES=( bin src .apvlvrc .compton.conf .config .colors .dir_colors .gconf .mozilla .oh-my-zsh .synergy.conf .tmux.servy .theme.cfg .urlview .vimrc .vim/autoload/pathogen.vim .xinitrc .Xmodmap .zshrc .zprofile )
 
 # symlink these directories
 DIRS=( .vim/bundle .vim/colors )
