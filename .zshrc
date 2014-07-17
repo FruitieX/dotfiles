@@ -71,6 +71,9 @@ for ((i = 0; i < 100; i++)); do
 	alias i$i="i $i"
 done
 
+# because oh-my-zsh overrides this
+export PAGER="vimpager"
+
 unset SSH_ASKPASS
 
 # Disable ctrl-s sending XOFF
