@@ -53,12 +53,14 @@ if [ -f ~/.zshrc.local ]; then
 fi
 #source $ZSH/oh-my-zsh.sh
 source $HOME/.zprezto/init.zsh
+source ~/src/z/z.sh
 
 alias sr="ssh rasse@fruitiex.org"
 alias vmx="startx -- -config xorg.vm"
 alias l="ll"
 alias netmenu="sudo wifi-menu -o"
 alias gx="git annex"
+alias gl="git pull"
 alias slp="systemctl suspend"
 alias ds="dirs -v"
 alias hc="herbstclient"
@@ -68,8 +70,6 @@ alias nr="n r"
 alias nu="n u"
 alias t="~/dev/node/nodifier/clients/todo/todo.js"
 alias v="~/src/v/v"
-#alias z="~/src/z/z.sh"
-. ~/src/z/z.sh
 alias xf="DISPLAY=:10"
 
 # irc alias
