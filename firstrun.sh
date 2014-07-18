@@ -30,7 +30,7 @@ mkdir -p ~/.vim/undo
 
 cd .vim/bundle/YouCompleteMe
 git submodule update --init --recursive
-./install.sh --clang-completer
+./install.sh
 # TODO: this is dumb to run again
 cd $CWD
 
