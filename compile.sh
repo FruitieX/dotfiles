@@ -10,21 +10,30 @@ touch .compiled/DO_NOT_EDIT_FILES_IN_THIS_DIRECTORY
 
 # arguments: filename, search string, replace with which variable
 function find_and_replace() {
-	if [[ ! -f ".compiled/$1" ]]; then
+    if [[ ! -f ".compiled/$1" ]]; then
         mkdir -p $(dirname ".compiled/$1")
-		cp "$1" ".compiled/$1"
-	fi
-	sed -i -e "s/$2/$($HOME/bin/theme.sh $3)/g" .compiled/$1
+        cp "$1" ".compiled/$1"
+    fi
+    # no variable with which to replace, replace with env variable instead
+    if [[ -z $3 ]]; then
+        _tmp_2=$2
+        _tmp_2=${_tmp_2:1}
+        eval _tmp_2=\$$_tmp_2
+        echo $_tmp_2
+        sed -i -e "s|$2|$_tmp_2|g" .compiled/$1
+    else
+        sed -i -e "s|$2|$($HOME/bin/theme.sh $3)|g" .compiled/$1
+    fi
 }
 
 # arguments: filename
 function symlink() {
-	# TODO: prettier solution needed. integration with symlink.sh?
-	rm "$HOME/$1"
-	ln -s "$DOTFILES/.compiled/$1" "$HOME/$1"
+    # TODO: prettier solution needed. integration with symlink.sh?
+    rm "$HOME/$1"
+    ln -s "$DOTFILES/.compiled/$1" "$HOME/$1"
 }
 
-find_and_replace ".Xdefaults" "\$HOME" "HOME"
+find_and_replace ".Xdefaults" "\$HOME"
 find_and_replace ".Xdefaults" "\$font" "font"
 find_and_replace ".Xdefaults" "\$base16_scheme" "base16_scheme"
 find_and_replace ".Xdefaults" "\$xftfont" "xftfont"
