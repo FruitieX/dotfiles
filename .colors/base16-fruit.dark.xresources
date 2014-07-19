@@ -1,22 +1,22 @@
 ! Base16 Fruit
 ! Scheme: FruitieX
 
-#define base00 #1d1f21
-#define base01 #282a2e
-#define base02 #373b41
-#define base03 #969896
-#define base04 #b4b7b4
-#define base05 #c5c8c6
-#define base06 #e0e0e0
-#define base07 #ffffff
-#define base08 #a8492d
-#define base09 #de935f
-#define base0A #f0c674
-#define base0B #b5bd68
-#define base0C #8abeb7
-#define base0D #81a2be
-#define base0E #b294bb
-#define base0F #a3685a
+#define base00 #1e1e1e
+#define base01 #323537
+#define base02 #464b50
+#define base03 #5f5a60
+#define base04 #838184
+#define base05 #a7a7a7
+#define base06 #c3c3c3
+#define base07 #dddddd
+#define base08 #ad7674
+#define base09 #cda869
+#define base0A #c9c9a8
+#define base0B #8fa06a
+#define base0C #afc4db
+#define base0D #7587a6
+#define base0E #9b859d
+#define base0F #9b703f
 
 *.foreground:   base05
 *.background:   base00
