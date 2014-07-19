@@ -120,12 +120,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-#export TERM=screen-256color
-
-# The following lines were added by compinstall
-BASE16_SCHEME="$($HOME/bin/theme.sh base16_scheme)"
-~/.colors/base16-$BASE16_SCHEME.sh
-
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
