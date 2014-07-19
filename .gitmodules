@@ -22,9 +22,6 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround
-[submodule ".vim/bundle/vim-easytags.git"]
-	path = .vim/bundle/vim-easytags.git
-	url = https://github.com/xolox/vim-easytags
 [submodule ".vim/bundle/vim-misc.git"]
 	path = .vim/bundle/vim-misc.git
 	url = git://github.com/xolox/vim-misc.git
