@@ -10,7 +10,7 @@ touch .compiled/DO_NOT_EDIT_FILES_IN_THIS_DIRECTORY
 
 variables=$(cat .theme.cfg | cut -d' ' -f1 | sed '/^$/d')
 
-# arguments: filename, search string, replace with which variable
+# arguments: filename
 function find_and_replace() {
     if [[ ! -f ".compiled/$1" ]]; then
         mkdir -p $(dirname ".compiled/$1")
