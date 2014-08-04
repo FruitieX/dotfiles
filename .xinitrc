@@ -43,7 +43,9 @@ else
 		synergyc lappy &
 	elif [[ $HOSTNAME == "bulky" ]]; then
 		# home
-		xrandr --output HDMI2 --mode 1920x1080 --rate 75 --left-of HDMI1
+        xrandr --output HDMI1 --rotate left
+		xrandr --output HDMI2 --mode 1920x1080 --rate 75 --pos 1080x475
+        xrandr --output VGA1 --mode 1920x1080 --rate 75 --pos 3000x0 --rotate right
 	fi
 
 	node ~/dev/node/nodifier/clients/notify-send/notify-send.js &
