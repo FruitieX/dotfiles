@@ -175,18 +175,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "$inactive_bg"
-    foreground = "$inactive_fg"
+    background = "#$inactive_bg"
+    foreground = "#$inactive_fg"
     timeout = 10
 
 [urgency_normal]
-    background = "$active_bg"
-    foreground = "$active_fg"
+    background = "#$active_bg"
+    foreground = "#$active_fg"
     timeout = 10
 
 [urgency_critical]
-    background = "$urgent_bg"
-    foreground = "$urgent_fg"
+    background = "#$urgent_bg"
+    foreground = "#$urgent_fg"
     timeout = 0
 
 

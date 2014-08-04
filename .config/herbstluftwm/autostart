@@ -4,10 +4,10 @@
 
 panel_height=$($HOME/bin/theme.sh panel_height)
 xftfont=$($HOME/bin/theme.sh xftfont)
-active_bg=$($HOME/bin/theme.sh bg)
-active_fg=$($HOME/bin/theme.sh active_fg)
-inactive_bg=$($HOME/bin/theme.sh bg)
-inactive_fg=$($HOME/bin/theme.sh inactive_fg)
+active_bg=\#$($HOME/bin/theme.sh bg)
+active_fg=\#$($HOME/bin/theme.sh active_fg)
+inactive_bg=\#$($HOME/bin/theme.sh bg)
+inactive_fg=\#$($HOME/bin/theme.sh inactive_fg)
 
 hc() {
     herbstclient "$@"
@@ -127,14 +127,14 @@ hc keybind $Mod-i jumpto urgent
 # colors
 hc set frame_border_active_color '#000000'
 hc set frame_border_normal_color '#000000'
-hc set frame_bg_normal_color $($HOME/bin/theme.sh inactive_bg)
-hc set frame_bg_active_color $($HOME/bin/theme.sh active_bg)
+hc set frame_bg_normal_color \#$($HOME/bin/theme.sh inactive_bg)
+hc set frame_bg_active_color \#$($HOME/bin/theme.sh active_bg)
 hc set frame_border_width 0
 hc set window_border_width 0
 hc set window_border_inner_width 0
-hc set window_border_normal_color $($HOME/bin/theme.sh inactive_bg)
-hc set window_border_active_color $($HOME/bin/theme.sh active_bg)
-hc set window_border_urgent_color $($HOME/bin/theme.sh urgent_fg)
+hc set window_border_normal_color \#$($HOME/bin/theme.sh inactive_bg)
+hc set window_border_active_color \#$($HOME/bin/theme.sh active_bg)
+hc set window_border_urgent_color \#$($HOME/bin/theme.sh urgent_fg)
 hc set always_show_frame 1
 hc set frame_gap 20
 hc set gapless_grid 0

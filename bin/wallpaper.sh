@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-hsetroot -solid $($HOME/bin/theme.sh bg)
+hsetroot -solid \#$($HOME/bin/theme.sh bg)
 
 #cd ~
 #while true; do

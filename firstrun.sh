@@ -20,10 +20,7 @@ set -e # quit on failure
 cd "$(dirname $0)"
 CWD=$(pwd)
 
-git submodule init
-git submodule update
-
-./symlink.sh -y
+./update.sh
 
 # vim undo files will be stored here
 mkdir -p ~/.vim/undo
@@ -39,3 +36,4 @@ cd $CWD
 #git clone https://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions
 
 ./symlink.sh -y
+./compile.sh

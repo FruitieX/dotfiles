@@ -13,10 +13,10 @@ y=${geometry[1]}
 panel_width=${geometry[2]}
 panel_height=$($HOME/bin/theme.sh panel_height)
 font=$($HOME/bin/theme.sh font)
-active_bg=$($HOME/bin/theme.sh bg)
-active_fg=$($HOME/bin/theme.sh active_fg)
-inactive_bg=$($HOME/bin/theme.sh bg)
-inactive_fg=$($HOME/bin/theme.sh inactive_fg)
+active_bg=\#$($HOME/bin/theme.sh bg)
+active_fg=\#$($HOME/bin/theme.sh active_fg)
+inactive_bg=\#$($HOME/bin/theme.sh bg)
+inactive_fg=\#$($HOME/bin/theme.sh inactive_fg)
 
 ####
 # Try to find textwidth binary.
