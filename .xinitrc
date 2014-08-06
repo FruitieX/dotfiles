@@ -16,7 +16,7 @@ unset TMUX
 redshift -l 0:0 &
 xsetroot -cursor_name left_ptr &
 xmodmap .Xmodmap &
-start-pulseaudio-x11
+start-pulseaudio-x11 &
 compton --config ~/.compton.conf &
 ~/bin/irc_flush.sh
 killall irc_connect
@@ -24,6 +24,7 @@ killall ii
 ~/bin/irc_connect.sh &
 dunst &
 unclutter -idle 3 &
+dsjd &
 
 # hostname specific setup
 if [[ $HOSTNAME == "servy" ]]; then
