@@ -25,6 +25,7 @@ killall ii
 dunst &
 unclutter -idle 3 &
 dsjd &
+parcellite &
 
 # hostname specific setup
 if [[ $HOSTNAME == "servy" ]]; then
