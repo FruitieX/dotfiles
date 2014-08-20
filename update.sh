@@ -14,7 +14,6 @@ git submodule foreach --recursive git pull origin master
 
 ./symlink.sh -y
 ./compile.sh
-./symlink.sh -y
 
 xrdb ~/.Xdefaults
 source ~/.zshrc
