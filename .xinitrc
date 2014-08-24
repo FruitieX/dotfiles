@@ -1,4 +1,4 @@
-~/bin/wallpaper.sh &
+feh --bg-tile ~/dotfiles/.compiled/bg.png &
 xrdb ~/.Xdefaults
 # e.g. terminus-font lives here
 xset +fp /usr/share/fonts/local

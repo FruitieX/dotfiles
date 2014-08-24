@@ -39,3 +39,7 @@ symlink ".config/dunst/dunstrc"
 
 find_and_replace ".colors/base16.sh"
 symlink ".colors/base16.sh"
+
+# generate wallpaper for color theme
+convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png"
+convert "$DOTFILES/.compiled/bg.png" -fill "#$($DOTFILES/bin/theme.sh active_bg)" -opaque white "$DOTFILES/.compiled/bg.png"
