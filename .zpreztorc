@@ -131,8 +131,8 @@ zstyle ':prezto:module:prompt' theme 'fruit'
 # Set syntax highlighting styles.
 # https://github.com/zsh-users/zsh-syntax-highlighting/tree/master/highlighters/main
  zstyle ':prezto:module:syntax-highlighting' styles \
-   'command' "fg=$(theme.sh term_active_fg)" \
-   'unknown-token' "fg=$(theme.sh term_inactive_fg)"
+   'command' "fg=$(term_theme.sh active_fg)" \
+   'unknown-token' "fg=$(term_theme.sh inactive_fg)"
    #'builtin' 'bg=blue' \
    #'function' 'bg=blue'
 
