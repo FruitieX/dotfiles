@@ -19,3 +19,4 @@ connect() {
 connect qnet $IRCPASS_QNET &
 connect freenode $IRCPASS_FREENODE &
 connect hut $IRCPASS_HUT &
+connect bitlbee $IRCPASS_BITLBEE &

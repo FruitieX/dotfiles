@@ -180,8 +180,8 @@
     timeout = 10
 
 [urgency_normal]
-    background = "#$active_bg"
-    foreground = "#$active_fg"
+    background = "#$inactive_bg"
+    foreground = "#$inactive_fg"
     timeout = 10
 
 [urgency_critical]

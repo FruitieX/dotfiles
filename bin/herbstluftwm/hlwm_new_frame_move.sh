@@ -12,4 +12,12 @@ else
 	dir="right"
 fi
 
-hc shift $dir
+cur_frame=$(hc layout | grep -n '0x.*FOCUS' | cut -d: -f1)
+if [ -z $cur_frame ]; then
+    #echo "DEBUG: empty frame focused, exiting"
+    exit 1
+fi
+
+while [[ $(hc layout | grep -n '0x.*FOCUS' | cut -d: -f1) == $cur_frame ]]; do
+    hc shift $dir
+done

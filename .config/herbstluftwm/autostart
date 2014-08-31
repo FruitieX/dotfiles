@@ -45,10 +45,8 @@ hc keybind $Mod-Shift-l     shift right
 
 # splitting frames
 # create an empty frame at the specified direction
-hc keybind $Mod-u       split   bottom  0.5
-hc keybind $Mod-o       split   right   0.5
-hc keybind $Mod-Shift-u spawn ~/bin/herbstluftwm/hlwm_new_frame_move.sh bottom 0.5
-hc keybind $Mod-Shift-o spawn ~/bin/herbstluftwm/hlwm_new_frame_move.sh right  0.5
+hc keybind $Mod-u spawn ~/bin/herbstluftwm/hlwm_new_frame_move.sh bottom 0.5
+hc keybind $Mod-o spawn ~/bin/herbstluftwm/hlwm_new_frame_move.sh right  0.5
 # let the current frame explode into subframes
 hc keybind $Mod-Control-space split explode
 
@@ -70,13 +68,13 @@ hc keybind XF86KbdBrightnessDown spawn sudo /usr/bin/brightness.sh kbd -50
 hc keybind XF86LaunchA spawn touchpadtoggle
 hc keybind $Mod-Shift-x spawn /usr/bin/i3lock -u -c $(echo ${active_bg#?})
 hc keybind $Mod-Shift-s spawn /usr/bin/systemctl suspend
-#hc keybind XF86AudioPlay spawn /usr/bin/ncmpcpp toggle
-#hc keybind XF86AudioStop spawn /usr/bin/ncmpcpp stop
-#hc keybind XF86AudioPrev spawn /usr/bin/ncmpcpp prev
-#hc keybind XF86AudioNext spawn /usr/bin/ncmpcpp next
-hc keybind $Mod-Shift-b spawn xdotool search --onlyvisible "Chromium" windowfocus --sync key XF86AudioPrev
-hc keybind $Mod-Shift-m spawn xdotool search --onlyvisible "Chromium" windowfocus --sync key XF86AudioNext
-hc keybind $Mod-Shift-w spawn xdotool search --onlyvisible "Chromium" windowfocus --sync key XF86AudioPlay
+hc keybind XF86AudioPlay spawn /usr/bin/ncmpcpp toggle
+hc keybind XF86AudioStop spawn /usr/bin/ncmpcpp stop
+hc keybind XF86AudioPrev spawn /usr/bin/ncmpcpp prev
+hc keybind XF86AudioNext spawn /usr/bin/ncmpcpp next
+hc keybind $Mod-Shift-b spawn xdotool key XF86AudioPrev
+hc keybind $Mod-Shift-m spawn xdotool key XF86AudioNext
+hc keybind $Mod-Shift-w spawn xdotool key XF86AudioPlay
 
 # tags
 tag_names=( main web chat gui games scratch1 scratch2 scratch3 scratch4 )
@@ -115,10 +113,10 @@ hc mousebind $Mod-Button3 resize
 # focus
 hc keybind $Mod-comma   cycle_monitor -1
 hc keybind $Mod-period   cycle_monitor +1
-hc keybind $Mod-Shift-comma   spawn ~/bin/herbstluftwm/hlwm_swap_monitors.sh -1
-hc keybind $Mod-Shift-period   spawn ~/bin/herbstluftwm/hlwm_swap_monitors.sh +1
-hc keybind $Mod-Control-comma   spawn ~/bin/herbstluftwm/hlwm_shift_to_monitor.sh -1
-hc keybind $Mod-Control-period   spawn ~/bin/herbstluftwm/hlwm_shift_to_monitor.sh +1
+hc keybind $Mod-Control-comma   spawn ~/bin/herbstluftwm/hlwm_swap_monitors.sh -1
+hc keybind $Mod-Control-period   spawn ~/bin/herbstluftwm/hlwm_swap_monitors.sh +1
+hc keybind $Mod-Shift-comma   spawn ~/bin/herbstluftwm/hlwm_shift_to_monitor.sh -1
+hc keybind $Mod-Shift-period   spawn ~/bin/herbstluftwm/hlwm_shift_to_monitor.sh +1
 hc keybind Alt-Shift-Tab   cycle_all -1
 hc keybind Alt-Tab         cycle_all +1
 hc keybind $Mod-c cycle
@@ -130,13 +128,13 @@ hc set frame_border_normal_color '#000000'
 hc set frame_bg_normal_color \#$($HOME/bin/theme.sh inactive_bg)
 hc set frame_bg_active_color \#$($HOME/bin/theme.sh active_bg)
 hc set frame_border_width 0
-hc set window_border_width 0
+hc set window_border_width 4
 hc set window_border_inner_width 0
-hc set window_border_normal_color \#$($HOME/bin/theme.sh inactive_bg)
-hc set window_border_active_color \#$($HOME/bin/theme.sh active_bg)
-hc set window_border_urgent_color \#$($HOME/bin/theme.sh urgent_fg)
+hc set window_border_normal_color \#$($HOME/bin/theme.sh inactive_border)
+hc set window_border_active_color \#$($HOME/bin/theme.sh active_border)
+hc set window_border_urgent_color \#$($HOME/bin/theme.sh urgent_border)
 hc set always_show_frame 1
-hc set frame_gap 20
+hc set frame_gap $($HOME/bin/theme.sh frame_gap)
 hc set gapless_grid 0
 # add overlapping window borders
 hc set window_gap 0
