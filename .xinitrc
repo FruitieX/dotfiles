@@ -30,7 +30,6 @@ parcellite &
 # hostname specific setup
 if [[ $HOSTNAME == "servy" ]]; then
 	xrandr --output DVI-0 --rotate right
-	~/bin/wallpaper.sh -o &
 	killall tmux
 	urxvt -title tmux -e ~/bin/tmx &
 else
