@@ -16,7 +16,6 @@ unset TMUX
 redshift -l 0:0 &
 xsetroot -cursor_name left_ptr &
 xmodmap .Xmodmap &
-start-pulseaudio-x11
 compton --config ~/.compton.conf &
 ~/bin/irc_flush.sh
 killall irc_connect
@@ -52,6 +51,7 @@ else
 	nm-applet &
 	numlockx &
 	pasystray &
+    start-pulseaudio-x11 &
 fi
 
 exec herbstluftwm --locked
