@@ -47,7 +47,6 @@ else
 	fi
 
 	node ~/dev/node/nodifier/clients/notify-send/notify-send.js &
-	urxvt -title tmux -e ~/bin/tmx &
 	nm-applet &
 	numlockx &
 	pasystray &

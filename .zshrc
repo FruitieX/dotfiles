@@ -1,3 +1,7 @@
+if [[ "$XDG_VTNR" == 1 && -z "$DISPLAY" ]]; then
+    exec startx
+fi
+
 ~/bin/tmx
 if [[ -z "$TMUX" ]]; then
     exit
