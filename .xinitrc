@@ -43,7 +43,7 @@ else
         xrandr --output HDMI1 --mode 1920x1080 --rate 75 --rotate left --pos 0x0
 		xrandr --output HDMI2 --mode 1920x1080 --rate 75 --rotate normal --pos 1080x475
         xrandr --output VGA1 --mode 1920x1080 --rate 75 --rotate right --pos 3000x0
-        ~/src/synergy/bin/synergyc --crypto-pass $(cat $HOME/.synergy_pass) -f 10.8.0.51:24800 > /dev/null 2>&1 &
+        #~/src/synergy/bin/synergyc --crypto-pass $(cat $HOME/.synergy_pass) -f 10.8.0.51:24800 > /dev/null 2>&1 &
 	fi
 
 	node ~/dev/node/nodifier/clients/notify-send/notify-send.js &
