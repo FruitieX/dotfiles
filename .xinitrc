@@ -36,7 +36,7 @@ else
 		xrandr --output VGA-0 --mode "1920x1200" --left-of LVDS-0
 		synergys -c ~/.synergy.conf &
 	elif [[ $HOSTNAME == "mba" ]]; then
-		synclient PalmDetect=1 MaxSpeed=3 TouchpadOff=1 &
+		synclient PalmDetect=1 MaxSpeed=3 &
 		synergyc lappy &
 	elif [[ $HOSTNAME == "bulky" ]]; then
 		# home
