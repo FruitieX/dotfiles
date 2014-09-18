@@ -1,4 +1,4 @@
-if [[ "$XDG_VTNR" == 1 && -z "$DISPLAY" ]]; then
+if [[ "$XDG_VTNR" == 1 && -z "$DISPLAY" && -z "$TMUX" ]]; then
     exec startx
 fi
 
