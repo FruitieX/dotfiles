@@ -5,6 +5,9 @@
 """"""""""""""""""""""""""""""""
 execute pathogen#infect()
 
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
+
 " powerline config
 set laststatus=2
 set noshowmode

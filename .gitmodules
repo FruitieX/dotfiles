@@ -94,3 +94,6 @@
 [submodule "src/z"]
 	path = src/z
 	url = https://github.com/rupa/z
+[submodule ".vim/bundle/neocomplete.git"]
+	path = .vim/bundle/neocomplete.git
+	url = https://github.com/Shougo/neocomplete.vim
