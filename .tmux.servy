@@ -11,10 +11,10 @@ splitw -v -p 66 -t 1
 splitw -v -p 66 -t 2
 splitw -v -p 50 -t 3
 splitw -v -p 50 -t 4
-respawn-pane -t 1 -k 'node ~/src/jsii/jsii.js 1'
-respawn-pane -t 2 -k 'node ~/src/jsii/jsii.js 2'
-respawn-pane -t 3 -k 'node ~/src/jsii/jsii.js 3'
-respawn-pane -t 4 -k 'node ~/src/jsii/jsii.js 4'
-respawn-pane -t 5 -k 'node ~/src/jsii/jsii.js 5'
-respawn-pane -t 6 -k 'node ~/src/jsii/jsii.js 6'
+respawn-pane -t 1 -k 'node ~/src/jsii/jsii.js 0'
+respawn-pane -t 2 -k 'node ~/src/jsii/jsii.js 1'
+respawn-pane -t 3 -k 'node ~/src/jsii/jsii.js 2'
+respawn-pane -t 4 -k 'node ~/src/jsii/jsii.js 3'
+respawn-pane -t 5 -k 'node ~/src/jsii/jsii.js 4'
+respawn-pane -t 6 -k 'node ~/src/jsii/jsii.js 5'
 selectp -t 0
