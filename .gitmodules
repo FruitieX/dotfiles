@@ -10,9 +10,6 @@
 [submodule ".vim/bundle/nerdcommenter.git"]
 	path = .vim/bundle/nerdcommenter.git
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule ".vim/bundle/syntastic.git"]
-	path = .vim/bundle/syntastic.git
-	url = git://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/tagbar"]
 	path = .vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
