@@ -1,7 +1,5 @@
 gap_x 0
-gap_y 370
-minimum_size 1910 12
-maximum_width 1870
+gap_y 5
 alignment bottom_middle
 
 border_width 1

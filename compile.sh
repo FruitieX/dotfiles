@@ -46,6 +46,11 @@ symlink ".colors/base16.sh"
 
 find_and_replace ".conkyrc"
 symlink ".conkyrc"
+screen_width=$(xrandr | head -n1 | cut -d' ' -f8)
+echo "\
+minimum_size $(($screen_width - 50))
+maximum_width $(($screen_width - 50))
+$(cat ~/.conkyrc)" > ~/.conkyrc
 
 # generate wallpaper for color theme
 convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png"

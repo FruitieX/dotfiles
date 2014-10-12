@@ -147,7 +147,7 @@ hc unrule -F
 #hc rule class=XTerm tag=3 # move all xterms to tag 3
 #hc rule focus=off # normally do not focus new clients
 hc rule focus=on # normally do focus new clients
-#hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
 
 # unlock, just to be sure
 hc unlock
