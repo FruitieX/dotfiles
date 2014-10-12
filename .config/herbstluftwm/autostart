@@ -1,17 +1,16 @@
 #!/bin/bash
 
-# this is a simple config for herbstluftwm
+# herbstluftwm config
 
-#panel_height=$($HOME/bin/theme.sh panel_height)
+hc() {
+    herbstclient "$@"
+}
+
 xftfont=$($HOME/bin/theme.sh xftfont)
 active_bg=\#$($HOME/bin/theme.sh bg)
 active_fg=\#$($HOME/bin/theme.sh active_fg)
 inactive_bg=\#$($HOME/bin/theme.sh bg)
 inactive_fg=\#$($HOME/bin/theme.sh inactive_fg)
-
-hc() {
-    herbstclient "$@"
-}
 
 hc emit_hook reload
 
@@ -19,13 +18,9 @@ hc emit_hook reload
 hc keyunbind --all
 
 # keybindings
-# if you have a super key you will be much happier with Mod set to Mod4
-#Mod=Mod1    # Use alt as the main modifier
 Mod=Mod4   # Use the super key as the main modifier
 
-#hc keybind $Mod-Shift-q quit
-hc keybind $Mod-Shift-r spawn ~/bin/vgatoggle.sh
-#hc keybind $Mod-Shift-r reload
+hc keybind $Mod-Shift-r reload
 hc keybind $Mod-w close
 hc keybind $Mod-Return spawn urxvt
 hc keybind $Mod-space spawn dmenu_run -fn "$xftfont" -p run: -nb $inactive_bg -nf $inactive_fg -sb $active_bg -sf $active_fg -hist $HOME/.cache/dmenu_run_hist
@@ -77,8 +72,8 @@ hc keybind $Mod-Shift-m spawn xdotool key XF86AudioNext
 hc keybind $Mod-Shift-w spawn xdotool key XF86AudioPlay
 
 # tags
-tag_names=( main web chat gui games scratch1 scratch2 scratch3 scratch4 )
-tag_keys=( {1..9} 0 )
+tag_names=( {1..9} )
+tag_keys=( {1..9} )
 
 hc set default_frame_layout 1
 hc rename default "${tag_names[0]}" || true
@@ -86,11 +81,11 @@ for i in ${!tag_names[@]} ; do
     hc add "${tag_names[$i]}"
     key="${tag_keys[$i]}"
     if ! [ -z "$key" ] ; then
-        hc keybind "$Mod-$key" use_index "$i"
-        hc keybind "$Mod-Shift-$key" move_index "$i"
+        hc keybind "$Mod-$key" spawn ~/bin/herbstluftwm/hlwm_go_mtag.sh "$key"
+        hc keybind "$Mod-Shift-$key" spawn ~/bin/herbstluftwm/hlwm_mv_mtag.sh "$key"
     fi
 done
-hc set_layout horizontal
+hc set_layout vertical
 
 # cycle through tags
 hc keybind $Mod-Tab spawn ~/bin/herbstluftwm/hlwm_cycle_tags.sh +1
@@ -149,40 +144,25 @@ hc unrule -F
 #hc rule class=XTerm tag=3 # move all xterms to tag 3
 #hc rule focus=off # normally do not focus new clients
 hc rule focus=on # normally do focus new clients
-# give focus to most common terminals
-# web
-# hc rule class~'(Chromium)' tag="${tag_names[1]}"
-# gui
-# hc rule class~'(Soffice|LibreOffice|.*libreoffice.*)' tag="${tag_names[3]}"
-# hc rule class~'(Apvlv|Thunderbird|Mumble)' tag="${tag_names[3]}"
-# hc rule class~'(Gimp|Inkscape)' tag="${tag_names[3]}"
-# games
-# hc rule class~'(Steam)' tag="${tag_names[4]}"
-# hc rule class~'(.*(M|m)inecraft.*)' tag="${tag_names[4]}"
-# hc rule class~'(Hedgewars|hwengine)' tag="${tag_names[4]}" fullscreen=on
-# hc rule class~'(teeworlds)' tag="${tag_names[4]}" fullscreen=on
-# hc rule class~'(Dolphin-emu)' tag="${tag_names[4]}" fullscreen=on
-# hc rule class~'(.*ioquake.*)' tag="${tag_names[4]}" fullscreen=on
-# misc
-# hc rule class~'xbmc\.bin' tag="${tag_names[5]}" fullscreen=on
-#hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=off
-# hc rule windowtype~'_NET_WM_WINDOW_TYPE_(UTILITY|SPLASH)' pseudotile=on
-# hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
-hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
+#hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off
 
 # unlock, just to be sure
 hc unlock
 
-herbstclient set tree_style '╾│ ├└╼─┐'
+# monitors
+# give monitors a name from monitor{1..9}
 hc detect_monitors
+if [[ $HOSTNAME == "bulky" ]]; then
+    hc rename_monitor 1 monitor1
+    hc rename_monitor 2 monitor2
+    hc rename_monitor 0 monitor3
+else
+    for i in $(hc list_monitors | cut -d':' -f1); do
+        hc rename_monitor $i monitor$((i+1))
+    done
+fi
 
-# find the panel
-#panel=~/.config/herbstluftwm/panel.sh
-#[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-#for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    #"$panel" $monitor &
-#done
+herbstclient set tree_style '╾│ ├└╼─┐'
 
 if [[ $HOSTNAME == "servy" ]]; then
 	tmux source-file ~/.tmux.servy
