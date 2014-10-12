@@ -29,4 +29,3 @@ mkdir -p ~/.vim/undo
 #git clone https://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions
 
 ./symlink.sh -y
-./compile.sh

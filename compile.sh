@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+# compiles configuration files by swapping out variables with values from
+# .theme.cfg
+#
+# also generate a wallpaper from bg.png with colors from .theme.cfg
+
 # cd to root of git repo
 cd "$(dirname $0)"
 DOTFILES=$(pwd)
@@ -23,7 +28,6 @@ function find_and_replace() {
 
 # arguments: filename
 function symlink() {
-    # TODO: prettier solution needed. integration with symlink.sh?
     rm "$HOME/$1"
     ln -s "$DOTFILES/.compiled/$1" "$HOME/$1"
 }
