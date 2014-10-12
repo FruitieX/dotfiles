@@ -85,6 +85,8 @@ for i in ${!tag_names[@]} ; do
         hc keybind "$Mod-Shift-$key" spawn ~/bin/herbstluftwm/hlwm_mv_mtag.sh "$key"
     fi
 done
+hc keybind "$Mod-n" spawn ~/bin/herbstluftwm/hlwm_new_tag.sh
+
 hc set_layout vertical
 
 # cycle through tags
