@@ -1,3 +1,5 @@
+# find next empty (no clients) tag and switch to it
+
 hc() {
 	herbstclient "$@"
 }

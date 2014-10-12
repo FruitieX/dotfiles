@@ -1,3 +1,5 @@
+# cycles to next invisible (not visible on any monitor) tag
+
 hc() {
 	herbstclient "$@"
 }

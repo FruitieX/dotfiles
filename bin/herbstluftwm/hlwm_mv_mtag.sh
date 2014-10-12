@@ -1,3 +1,5 @@
+# move client to tag on monitor${1}
+
 hc() {
 	herbstclient "$@"
 }

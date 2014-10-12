@@ -1,3 +1,5 @@
+# make a new frame in dir and move active client into it
+
 hc() {
 	herbstclient "$@"
 }
