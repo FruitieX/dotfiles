@@ -52,7 +52,6 @@ else
 	numlockx &
 	pasystray &
     start-pulseaudio-x11 &
-    conky &
 fi
 
 exec herbstluftwm --locked

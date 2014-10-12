@@ -172,3 +172,6 @@ if [[ $HOSTNAME == "servy" ]]; then
 	hc set window_border_active_color '#181512'
 	hc set frame_bg_active_color '#000000'
 fi
+
+killall conky
+conky &
