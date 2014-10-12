@@ -18,8 +18,8 @@ Xft.hintstyle:  hintslight
 Xft.antialias:  true
 Xft.lcdfilter:  lcddefault
 
-*font:          xft:$xftfont:style=normal:pixelsize=16:antialias=true
-*boldFont:      xft:$xftfont:style=bold:pixelsize=16:antialias=true
+*font:          xft:$xftfont:style=normal:antialias=true
+*boldFont:      xft:$xftfont:style=bold:antialias=true
 
 *scrollBar:     false
 *urgentOnBell:  false
