@@ -22,6 +22,7 @@ own_window_type panel
 own_window_transparent yes
 own_window_hints undecorated,sticky,skip_taskbar,skip_pager
 own_window_argb_visual yes
+override_utf8_locale yes
 stippled_borders 0
 update_interval 1.0
 uppercase no
@@ -36,10 +37,25 @@ default_outline_color $base05
 default_bar_size 50 5
 
 TEXT
-Up: ${upspeed br0} - Down: ${downspeed br0} | \
-${if_match ${battery_percent} > 0}Battery: ${battery_percent}% | ${endif}\
-CPU: ${cpu}% ${cpubar cpu0} | \
+CPU: ${cpu}% ${cpubar cpu0} \
+| \
+\
 RAM: ${memperc}% ${membar} \
+| \
+\
+Disk R/W: ${diskio_read}/${diskio_write} \
 \
 ${alignr} \
+\
+${if_up br0}Net d/u: ${downspeed br0}/${upspeed br0} \
+| ${endif}\
+\
+${if_up wlp2s0}SSID: ${wireless_essid wlp2s0} | \
+Net d/u: ${downspeed wlp2s0}/${upspeed wlp2s0} \
+| ${endif}\
+\
+${if_match ${battery_percent} > 0}\
+Battery: ${battery_percent}% \
+| ${endif}\
+\
 ${time %Y-%m-%d | %H:%M:%S}
