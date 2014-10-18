@@ -75,7 +75,8 @@ hc keybind $Mod-Shift-w spawn xdotool key XF86AudioPlay
 tag_names=( {1..9} )
 tag_keys=( {1..9} )
 
-hc set default_frame_layout 1
+hc set default_frame_layout 2
+hc set_layout max
 hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
     hc add "${tag_names[$i]}"
@@ -88,8 +89,6 @@ for i in ${!tag_names[@]} ; do
 done
 hc keybind "$Mod-n" spawn ~/bin/herbstluftwm/hlwm_new_tag.sh
 hc keybind "$Mod-Shift-n" spawn ~/bin/herbstluftwm/hlwm_new_tag_move.sh
-
-hc set_layout vertical
 
 # cycle through tags
 hc keybind $Mod-Tab spawn ~/bin/herbstluftwm/hlwm_cycle_tags.sh +1
