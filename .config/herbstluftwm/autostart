@@ -87,6 +87,7 @@ for i in ${!tag_names[@]} ; do
     fi
 done
 hc keybind "$Mod-n" spawn ~/bin/herbstluftwm/hlwm_new_tag.sh
+hc keybind "$Mod-Shift-n" spawn ~/bin/herbstluftwm/hlwm_new_tag_move.sh
 
 hc set_layout vertical
 
