@@ -44,3 +44,6 @@ Dependencies for arch linux users:
 
 * **misc**
 	pulseaudio pavucontrol mosh urxvt-font-size-git dmenu-history-xrdb-xft ttf-google-fonts-git hsetroot numix-themes parcellite
+
+* gnome-keyring
+    * nm-applet password prompts
