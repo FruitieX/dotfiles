@@ -75,6 +75,8 @@ alias nu="n u"
 alias t="~/dev/node/nodifier/clients/todo/todo.js"
 alias v="~/src/v/v"
 alias xf="DISPLAY=:10"
+alias sctl="systemctl"
+alias jctl="journalctl"
 
 # irc alias
 for ((i = 0; i < 100; i++)); do
