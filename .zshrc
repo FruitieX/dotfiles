@@ -52,6 +52,11 @@ DISABLE_UPDATE_PROMPT="true" # don't ask
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git archlinux rsync vi-mode zsh-syntax-highlighting zsh-history-substring-search)
 
+function md2pdf() {
+    infile="$1"
+    pandoc -f markdown -t latex $infile -o ${infile%.md}.pdf
+}
+
 if [ -f ~/.zshrc.local ]; then
 	source ~/.zshrc.local
 fi
