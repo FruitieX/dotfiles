@@ -82,7 +82,7 @@ alias v="~/src/v/v"
 alias xf="DISPLAY=:10"
 alias sctl="systemctl"
 alias jctl="journalctl"
-alias s="ssh"
+alias s="mosh"
 
 # irc alias
 for ((i = 0; i < 100; i++)); do
