@@ -456,7 +456,7 @@ hi LineNr ctermbg=none ctermfg=8
 " TODOs with red
 hi Todo ctermbg=9
 " wtf were they thinking
-hi Visual ctermbg=0 term=none cterm=none
+hi Visual ctermbg=18 term=none cterm=none
 hi CursorLine ctermbg=0
 " fix ugly splits
 hi VertSplit ctermbg=none ctermfg=8
