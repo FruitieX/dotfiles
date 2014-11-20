@@ -55,3 +55,8 @@ $(cat ~/.conkyrc)" > ~/.conkyrc
 # generate wallpaper for color theme
 convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png"
 convert "$DOTFILES/.compiled/bg.png" -fill "#$($DOTFILES/bin/theme.sh active_bg)" -opaque white "$DOTFILES/.compiled/bg.png"
+
+xrdb ~/.Xdefaults
+source ~/.zshrc
+herbstclient reload
+feh --bg-tile ~/dotfiles/.compiled/bg.png

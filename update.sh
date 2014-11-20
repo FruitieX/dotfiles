@@ -13,8 +13,3 @@ git submodule foreach --recursive git checkout master
 git submodule foreach --recursive git pull origin master
 
 ./symlink.sh -y
-
-xrdb ~/.Xdefaults
-source ~/.zshrc
-herbstclient reload
-feh --bg-tile ~/dotfiles/.compiled/bg.png
