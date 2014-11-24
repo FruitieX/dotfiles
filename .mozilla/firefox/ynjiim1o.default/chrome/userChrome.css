@@ -3,7 +3,7 @@
 /* hide scrollbar */
 #content browser {
     margin-right: -14px !important;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
