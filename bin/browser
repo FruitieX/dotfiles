@@ -1,2 +1,2 @@
 #!/bin/bash
-chromium --ignore-gpu-blacklist --disk-cache-dir=/dev/null
+PULSE_SERVER=10.8.0.1 chromium --ignore-gpu-blacklist --disk-cache-dir=/dev/null

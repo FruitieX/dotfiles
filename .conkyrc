@@ -31,8 +31,8 @@ show_graph_scale no
 show_graph_range no
 format_human_readable yes
 
-default_color $base05
-default_outline_color $base05
+default_color $fg
+default_outline_color $fg
 
 default_bar_size 50 5
 

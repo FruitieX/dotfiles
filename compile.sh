@@ -29,6 +29,12 @@ function find_and_replace() {
 # arguments: filename
 function symlink() {
     rm "$HOME/$1"
+
+    # create parent directies if they do not exist
+    if [ ! -d "$(dirname "$HOME/$1")" ]; then
+        mkdir -p $(dirname "$HOME/$1")
+    fi
+
     ln -s "$DOTFILES/.compiled/$1" "$HOME/$1"
 }
 
@@ -51,6 +57,9 @@ echo "\
 minimum_size $(($screen_width - 50))
 maximum_width $(($screen_width - 50))
 $(cat ~/.conkyrc)" > ~/.conkyrc
+
+find_and_replace ".mozilla/firefox/ynjiim1o.default/chrome/userChrome.css"
+symlink ".mozilla/firefox/ynjiim1o.default/chrome/userChrome.css"
 
 # generate wallpaper for color theme
 convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png"
