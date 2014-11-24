@@ -10,7 +10,7 @@
 :root {
     /* TAB VARIABLES */
     --bg-light: #$active_bg; --bg-dark: #$inactive_bg;
-    --fg-light: #$active_fg; --fg-dark: #$inactive_fg;
+    --fg-light: #$active_fg; --fg-dark: #$active_fg;
     --tab-height: 17px; --tab-triangle-correction: -1px; --tab-strip-margin: -12px;
     --tab-fonts: "tewi",monospace,"Dejavu Sans"; --tab-font-size: 8pt;
     --tab-triangle: none; /* block | none */

@@ -1,6 +1,5 @@
-" FileName: zenburn.penta
-" Author: zouyang
-" Last Updated: Sat 08 Jan 2011 09:46:19 PM CST
+" FileName: fruit.penta
+" Author: FruitieX
 hi Cmd background-color:#$inactive_bg; font-size:9pt;
 hi -a StatusLineNormal      color:#$active_fg; background-color:#$inactive_bg !important; margin-bottom:-2px; font-size:9pt;
 
