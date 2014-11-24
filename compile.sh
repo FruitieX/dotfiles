@@ -61,6 +61,9 @@ $(cat ~/.conkyrc)" > ~/.conkyrc
 find_and_replace ".mozilla/firefox/ynjiim1o.default/chrome/userChrome.css"
 symlink ".mozilla/firefox/ynjiim1o.default/chrome/userChrome.css"
 
+find_and_replace ".pentadactyl/colors/zenburn.penta"
+symlink ".pentadactyl/colors/zenburn.penta"
+
 # generate wallpaper for color theme
 convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png"
 convert "$DOTFILES/.compiled/bg.png" -fill "#$($DOTFILES/bin/theme.sh active_bg)" -opaque white "$DOTFILES/.compiled/bg.png"
