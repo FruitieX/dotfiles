@@ -38,7 +38,6 @@ else
 	elif [[ $HOSTNAME == "mba" ]]; then
 		synclient PalmDetect=1 MaxSpeed=3 &
 		synergyc lappy &
-        avant-window-navigator &
 	elif [[ $HOSTNAME == "bulky" ]]; then
 		# home
         xrandr --output HDMI1 --mode 1920x1080 --rate 75 --rotate left --pos 0x0
