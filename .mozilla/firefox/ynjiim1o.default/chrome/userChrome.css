@@ -12,16 +12,16 @@
     --bg-light: #$active_bg; --bg-dark: #$inactive_bg;
     --fg-light: #$active_fg; --fg-dark: #$active_fg;
     --tab-height: 17px; --tab-triangle-correction: -1px; --tab-strip-margin: -12px;
-    --tab-fonts: "tewi",monospace,"Dejavu Sans"; --tab-font-size: 8pt;
+    --tab-fonts: "Dejavu Sans"; --tab-font-size: 8pt;
     --tab-triangle: none; /* block | none */
         --tab-height: 24px; --tab-icon-size: 16px; --tab-strip-margin: -12px;
-    --tab-fonts: "tewi", "Lemon",monospace,"Dejavu Sans"; --tab-font-size: 10pt;
+    --tab-fonts: "Dejavu Sans"; --tab-font-size: 10pt;
     --tab-triangle: none; /* block | none */
 
     /* URL VARIABLES */
     --url-background: var(--bg-light); --url-color: var(--fg-dark);
     --url-height: 24px; --url-right-margin: 5px;
-    --url-fonts: "tewi", "Lemon",monospace,"Dejavu Sans"; --url-font-size: 10pt;
+    --url-fonts: "Dejavu Sans"; --url-font-size: 10pt;
     --url-text-align: center; /* left | center | right */
     --url-position: absolute; /* absolute == top (under tabs) || fixed == bottom of browser */
 }
