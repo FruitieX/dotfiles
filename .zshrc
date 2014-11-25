@@ -83,6 +83,10 @@ alias xf="DISPLAY=:10"
 alias sctl="systemctl"
 alias jctl="journalctl"
 alias s="mosh"
+alias sys="systemctl"
+alias jrn="journalctl"
+alias sudo="sudo " # fix running aliases as sudo
+alias fuck='sudo $(fc -ln -1)'
 
 # irc alias
 for ((i = 0; i < 100; i++)); do
