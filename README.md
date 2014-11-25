@@ -15,7 +15,6 @@ Install:
 	git clone https://github.com/FruitieX/dotfiles
 	cd dotfiles
 	./firstrun.sh
-	./symlink.sh
 
 Update:
 -------
