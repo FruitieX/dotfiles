@@ -7,8 +7,8 @@ cd "$(dirname $0)"
 CWD=$(pwd)
 
 cd .zprezto
-git git checkout master
-git git pull upstream master
+git checkout master
+git pull upstream master
 cd "$CWD"
 
 git pull
