@@ -6,6 +6,11 @@ set -e # quit if merge fails
 cd "$(dirname $0)"
 CWD=$(pwd)
 
+cd .zprezto
+git git checkout master
+git git pull upstream master
+cd "$CWD"
+
 git pull
 git submodule sync
 git submodule update --init --recursive
