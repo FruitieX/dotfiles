@@ -9,8 +9,8 @@
 
 :root {
     /* TAB VARIABLES */
-    --bg-light: #$active_bg; --bg-dark: #$inactive_bg;
-    --fg-light: #$active_fg; --fg-dark: #$active_fg;
+    --bg-light: #$active_fg; --bg-dark: #$inactive_bg;
+    --fg-light: #$active_bg; --fg-dark: #$active_fg;
     --tab-height: 17px; --tab-triangle-correction: -1px; --tab-strip-margin: -12px;
     --tab-fonts: "Dejavu Sans"; --tab-font-size: 8pt;
     --tab-triangle: none; /* block | none */
