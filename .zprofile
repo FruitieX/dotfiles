@@ -1,6 +1,6 @@
 export BROWSER="firefox-nightly"
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export PAGER="vimpager"
 
 if [[ -z "$LANG" ]]; then
