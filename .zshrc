@@ -79,6 +79,7 @@ alias sys="systemctl"
 alias jrn="journalctl"
 alias sudo="sudo " # fix running aliases as sudo
 alias fuck='sudo $(fc -ln -1)'
+alias vim="nvim"
 
 # irc alias
 for ((i = 0; i < 100; i++)); do
