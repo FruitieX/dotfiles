@@ -1,10 +1,10 @@
 #!/bin/zsh
 
 # recursively symlink all files from paths in this array
-FILES=( _pentadactylrc bin src .apvlvrc .compton.conf .config .colors .conkyrc .dir_colors .gconf .synergy.conf .tmux.conf .tmux.servy .theme.cfg .urlview .vimrc .vim/autoload/pathogen.vim .xinitrc .Xdefaults .Xmodmap .zshrc .zprofile .zpreztorc )
+FILES=( _pentadactylrc bin src .apvlvrc .compton.conf .config .colors .conkyrc .dir_colors .gconf .synergy.conf .tmux.conf .tmux.servy .theme.cfg .urlview .nvimrc .xinitrc .Xdefaults .Xmodmap .zshrc .zprofile .zpreztorc )
 
 # symlink these directories
-DIRS=( .vim/bundle .vim/colors .vim/ftdetect .zprezto )
+DIRS=( .nvim/autoload .nvim/colors .nvim/ftdetect .zprezto )
 
 # cd to root of git repo
 cd "$(dirname $0)"
