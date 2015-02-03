@@ -4,3 +4,6 @@
 [submodule "src/z"]
 	path = src/z
 	url = https://github.com/rupa/z
+[submodule ".zprezto"]
+	path = .zprezto
+	url = git@github.com:sorin-ionescu/prezto.git
