@@ -4,7 +4,7 @@
 FILES=( _pentadactylrc bin src .apvlvrc .compton.conf .config .colors .conkyrc .dir_colors .gconf .synergy.conf .tmux.conf .tmux.servy .theme.cfg .urlview .nvimrc .xinitrc .Xdefaults .Xmodmap .zshrc .zprofile .zpreztorc .zprezto )
 
 # symlink these directories
-DIRS=( .nvim/autoload .nvim/colors .nvim/ftdetect .zprezto )
+DIRS=( .nvim/autoload .nvim/colors .nvim/ftdetect )
 
 # cd to root of git repo
 cd "$(dirname $0)"
