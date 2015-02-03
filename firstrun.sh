@@ -14,8 +14,6 @@ if [[ "$answer" != "y" ]]; then
 	exit
 fi
 
-set -e # quit on failure
-
 # clone .zprezto repo
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
@@ -28,12 +26,3 @@ git clone https://github.com/rupa/z "$HOME/src/z"
 cd "$(dirname $0)"
 
 ./update.sh
-
-# vim undo files will be stored here
-#mkdir -p ~/.vim/undo
-
-#git clone https://github.com/zsh-users/zsh-syntax-highlighting
-#git clone https://github.com/zsh-users/zsh-history-substring-search
-#git clone https://github.com/tarruda/zsh-autosuggestions ~/.zsh-autosuggestions
-
-./symlink.sh -y
