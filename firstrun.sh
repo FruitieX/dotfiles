@@ -16,13 +16,16 @@ fi
 
 set -e # quit on failure
 
+# clone .zprezto repo
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
 # cd to root of git repo
 cd "$(dirname $0)"
 
 ./update.sh
 
 # vim undo files will be stored here
-mkdir -p ~/.vim/undo
+#mkdir -p ~/.vim/undo
 
 #git clone https://github.com/zsh-users/zsh-syntax-highlighting
 #git clone https://github.com/zsh-users/zsh-history-substring-search
