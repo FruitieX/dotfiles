@@ -6,12 +6,6 @@ set -e # quit if merge fails
 cd "$(dirname $0)"
 CWD=$(pwd)
 
-cd .zprezto
-git remote add upstream https://github.com/sorin-ionescu/prezto || true 2>/dev/null
-git pull upstream master
-git checkout master
-cd "$CWD"
-
 git pull
 git submodule sync
 git submodule update --init --recursive
