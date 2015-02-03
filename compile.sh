@@ -50,14 +50,6 @@ symlink ".config/dunst/dunstrc"
 find_and_replace ".colors/base16.sh"
 symlink ".colors/base16.sh"
 
-find_and_replace ".conkyrc"
-symlink ".conkyrc"
-screen_width=$(xrandr | head -n1 | cut -d' ' -f8)
-echo "\
-minimum_size $(($screen_width - 50))
-maximum_width $(($screen_width - 50))
-$(cat ~/.conkyrc)" > ~/.conkyrc
-
 find_and_replace ".mozilla/firefox/ynjiim1o.default/chrome/userChrome.css"
 symlink ".mozilla/firefox/ynjiim1o.default/chrome/userChrome.css"
 
@@ -68,7 +60,9 @@ symlink ".pentadactyl/colors/fruit.penta"
 convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png"
 convert "$DOTFILES/.compiled/bg.png" -fill "#$($DOTFILES/bin/theme.sh active_bg)" -opaque white "$DOTFILES/.compiled/bg.png"
 
-xrdb ~/.Xdefaults
-source ~/.zshrc
-herbstclient reload
-feh --bg-tile ~/dotfiles/.compiled/bg.png
+if [[ $DISPLAY == ":0" ]]; then
+    xrdb ~/.Xdefaults
+    source ~/.zshrc
+    herbstclient reload
+    feh --bg-tile ~/dotfiles/.compiled/bg.png
+fi

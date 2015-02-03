@@ -6,21 +6,24 @@ set -e # quit if anything fails
 cd "$(dirname $0)"
 CWD=$(pwd)
 
+echo "Updating $HOME/dotfiles"
 git pull
+echo
 
 # ~/.zprezto
 cd $HOME/.zprezto
+    echo "Updating $HOME/.zprezto"
     git pull && git submodule update --init --recursive
+    echo
 cd $CWD
 
-# ~/src/v
-cd $HOME/src/v
+for repo in "$HOME/src/v" "$HOME/src/z"; do
+    echo Updating $repo
+    cd $repo
     git pull
-cd $CWD
+    echo
+done
 
-# ~/src/z
-cd $HOME/src/z
-    git pull
 cd $CWD
 
 ./symlink.sh -y
