@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # recursively symlink all files from paths in this array
-FILES=( _pentadactylrc bin src .apvlvrc .compton.conf .config .colors .conkyrc .dir_colors .gconf .synergy.conf .tmux.conf .tmux.servy .theme.cfg .urlview .nvimrc .xinitrc .Xdefaults .Xmodmap .zshrc .zprofile .zpreztorc .zprezto )
+FILES=( _pentadactylrc bin .apvlvrc .compton.conf .config .colors .conkyrc .dir_colors .gconf .synergy.conf .tmux.conf .tmux.servy .theme.cfg .urlview .nvimrc .xinitrc .Xdefaults .Xmodmap .zshrc .zprofile .zpreztorc .zprezto )
 
 # symlink these directories
 DIRS=( .nvim/autoload .nvim/colors .nvim/ftdetect )

@@ -1,15 +1,26 @@
 #!/bin/zsh
 
-set -e # quit if merge fails
+set -e # quit if anything fails
 
 # cd to root of git repo
 cd "$(dirname $0)"
 CWD=$(pwd)
 
 git pull
-git submodule sync
-git submodule update --init --recursive
-git submodule foreach --recursive git pull origin master
-git submodule foreach --recursive git checkout master
+
+# ~/.zprezto
+cd $HOME/.zprezto
+    git pull && git submodule update --init --recursive
+cd $CWD
+
+# ~/src/v
+cd $HOME/src/v
+    git pull
+cd $CWD
+
+# ~/src/z
+cd $HOME/src/z
+    git pull
+cd $CWD
 
 ./symlink.sh -y

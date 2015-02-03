@@ -1,6 +1,0 @@
-[submodule "src/v"]
-	path = src/v
-	url = https://github.com/rupa/v
-[submodule "src/z"]
-	path = src/z
-	url = https://github.com/rupa/z

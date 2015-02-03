@@ -19,6 +19,11 @@ set -e # quit on failure
 # clone .zprezto repo
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
+# clone various tools into ~/src
+mkdir "$HOME/src"
+git clone https://github.com/rupa/v "$HOME/src/v"
+git clone https://github.com/rupa/z "$HOME/src/z"
+
 # cd to root of git repo
 cd "$(dirname $0)"
 
