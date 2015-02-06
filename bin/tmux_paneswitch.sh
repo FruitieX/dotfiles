@@ -18,12 +18,12 @@ D)
 	;;
 \\)
 	(echo $COMMAND | grep -iq 'vim' && tmux send-keys 'C-\') ||
-	(echo $COMMAND | grep -iq 'ssh' && tmux send-keys 'C-\' && tmux select-pane -l) ||
+        (echo $COMMAND | grep -iqE '(ssh|mosh-client)' && tmux send-keys 'C-\' && tmux select-pane -l) ||
 	tmux select-pane -l
 	exit
 	;;
 esac
 
 (echo $COMMAND | grep -iq 'vim' && tmux send-keys C-$KEY) ||
-	(echo $COMMAND | grep -iq 'ssh' && tmux send-keys C-$KEY && tmux select-pane -$1) ||
+    (echo $COMMAND | grep -iqE '(ssh|mosh-client)' && tmux send-keys C-$KEY && tmux select-pane -$1) ||
 	tmux select-pane -$1
