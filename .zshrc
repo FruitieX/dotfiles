@@ -85,7 +85,9 @@ alias v="~/src/v/v"
 alias xf="DISPLAY=:10"
 alias s="mosh"
 alias sys="systemctl"
+alias sysu="systemctl --user"
 alias jrn="journalctl"
+alias jrnu="journalctl --user"
 alias sudo="sudo " # fix running aliases as sudo
 alias fuck='sudo $(fc -ln -1)'
 alias vim="nvim"
