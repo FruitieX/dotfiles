@@ -14,20 +14,20 @@ Getting up and running with a bare minimum setup (tmux, zsh and vim):
 
 1. First install dependencies:
 
-*  Ubuntu: `sudo apt-get install tmux zsh git`
-*  Arch: `sudo pacman -S tmux zsh git`
+        Ubuntu: sudo apt-get install tmux zsh git
+        Arch: sudo pacman -S tmux zsh git
 
 2. Clone the repo and run the install script:
 
-    git clone https://github.com/FruitieX/dotfiles
-    cd dotfiles
-    ./firstrun.sh
+        git clone https://github.com/FruitieX/dotfiles
+        cd dotfiles
+        ./firstrun.sh
 
 3. (Optional) If you wish to use `vim` instead of `neovim` you can:
 
-    echo "alias nvim=\"vim\" >> ~/.zshrc"
-    ln -s ~/.nvim ~/.vim
-    ln -s ~/.nvimrc ~/.vimrc
+        echo "alias nvim=\"vim\" >> ~/.zshrc"
+        ln -s ~/.nvim ~/.vim
+        ln -s ~/.nvimrc ~/.vimrc
 
 Update:
 -------
@@ -51,8 +51,5 @@ Optional dependencies for arch linux users:
 * **xorg:**
     xorg-server xorg-xset xorg-xsetroot xorg-xmodmap xorg-xinit xorg-xrandr
 
-* **misc**
+* **misc:**
     pulseaudio pavucontrol mosh urxvt-font-size-git dmenu-history-xrdb-xft ttf-google-fonts-git hsetroot numix-themes parcellite
-
-* gnome-keyring
-    nm-applet password prompts
