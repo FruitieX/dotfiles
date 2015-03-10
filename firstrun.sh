@@ -30,6 +30,7 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 mkdir "$HOME/src"
 git clone https://github.com/rupa/v "$HOME/src/v"
 git clone https://github.com/rupa/z "$HOME/src/z"
+touch "$HOME/.z"
 
 # cd to root of git repo
 cd "$(dirname $0)"
