@@ -25,9 +25,16 @@ Getting up and running with a bare minimum setup (tmux, zsh and vim):
 
 3. (Optional) If you wish to use `vim` instead of `neovim` you can:
 
-        echo "alias nvim=\"vim\" >> ~/.zshrc"
+        echo "alias nvim=\"vim\"" >> ~/.zshrc
         ln -s ~/.nvim ~/.vim
         ln -s ~/.nvimrc ~/.vimrc
+
+4. Install vim plugins by:
+
+        vim
+        :PlugInstall
+        
+5. Enjoy! Suggestions are welcome. :)
 
 Update:
 -------
