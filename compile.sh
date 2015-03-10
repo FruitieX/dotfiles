@@ -9,7 +9,7 @@
 cd "$(dirname $0)"
 DOTFILES=$(pwd)
 
-rm -r .compiled
+rm -r .compiled 2> /dev/null
 mkdir .compiled
 touch .compiled/DO_NOT_EDIT_FILES_IN_THIS_DIRECTORY
 
