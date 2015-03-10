@@ -29,6 +29,13 @@ Getting up and running with a bare minimum setup (tmux, zsh and vim):
         ln -s ~/.nvim ~/.vim
         ln -s ~/.nvimrc ~/.vimrc
 
+4. Install vim plugins by:
+
+        vim
+        :PlugInstall
+        
+5. Enjoy! Suggestions are welcome. :)
+
 Update:
 -------
 
