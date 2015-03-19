@@ -37,7 +37,12 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
-export PATH="${HOME}/bin:${HOME}/dev/sh:${HOME}/apps/android-sdk/sdk/tools:${HOME}/apps/android-sdk/sdk/platform-tools:${HOME}/apps/android-sdk/ndk/android-ndk-r8d:${HOME}/.gem/ruby/2.2.0/bin:${PATH}"
 export ANDROID_HOME="${HOME}/apps/android-sdk/sdk"
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export PATH="${HOME}/bin:${HOME}/dev/sh:${HOME}/apps/android-sdk/sdk/tools:${HOME}/apps/android-sdk/sdk/platform-tools:${HOME}/apps/android-sdk/ndk/android-ndk-r8d:${HOME}/.gem/ruby/2.2.0/bin:${NPM_PACKAGES}/bin:${PATH}"
+
+unset MANPATH
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 eval "$(dircolors ~/.dir_colors)"
