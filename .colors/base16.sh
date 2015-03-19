@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 color00="$base00" # Base 00 - Black
 color01="$base08" # Base 08 - Red

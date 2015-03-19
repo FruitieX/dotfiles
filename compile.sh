@@ -9,7 +9,7 @@
 cd "$(dirname $0)"
 DOTFILES=$(pwd)
 
-rm -r .compiled
+rm -r .compiled 2> /dev/null
 mkdir .compiled
 touch .compiled/DO_NOT_EDIT_FILES_IN_THIS_DIRECTORY
 
@@ -28,7 +28,10 @@ function find_and_replace() {
 
 # arguments: filename
 function symlink() {
-    rm "$HOME/$1"
+    # remove old symlink
+    if [ -L "$HOME/$1" ]; then
+        rm "$HOME/$1"
+    fi
 
     # create parent directies if they do not exist
     if [ ! -d "$(dirname "$HOME/$1")" ]; then
@@ -57,8 +60,8 @@ find_and_replace ".pentadactyl/colors/fruit.penta"
 symlink ".pentadactyl/colors/fruit.penta"
 
 # generate wallpaper for color theme
-convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png"
-convert "$DOTFILES/.compiled/bg.png" -fill "#$($DOTFILES/bin/theme.sh active_bg)" -opaque white "$DOTFILES/.compiled/bg.png"
+convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png" 2> /dev/null
+convert "$DOTFILES/.compiled/bg.png" -fill "#$($DOTFILES/bin/theme.sh active_bg)" -opaque white "$DOTFILES/.compiled/bg.png" 2> /dev/null
 
 if [[ $DISPLAY == ":0" ]]; then
     xrdb ~/.Xdefaults
