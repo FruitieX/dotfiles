@@ -91,6 +91,7 @@ alias jrnu="journalctl --user"
 alias sudo="sudo " # fix running aliases as sudo
 alias fuck='sudo $(fc -ln -1)'
 alias vim="nvim"
+alias chromium="chromium --proxy-server=localhost:8118"
 
 # irc alias
 for ((i = 0; i < 100; i++)); do
