@@ -11,6 +11,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/syntastic'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 call plug#end()
 
