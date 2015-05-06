@@ -38,6 +38,7 @@ if [[ ! -d "$TMPPREFIX" ]]; then
 fi
 
 export ANDROID_HOME="${HOME}/apps/android-sdk"
+export ANDROID_SDK_ROOT="${HOME}/apps/android-sdk"
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export PATH="${HOME}/bin:${HOME}/dev/sh:${HOME}/apps/android-sdk/sdk/tools:${HOME}/apps/android-sdk/sdk/platform-tools:${HOME}/apps/android-sdk/ndk/android-ndk-r8d:${HOME}/.gem/ruby/2.2.0/bin:${NPM_PACKAGES}/bin:${PATH}"
