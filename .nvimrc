@@ -148,6 +148,11 @@ map <C-q> :q<Enter>
 " newline while neocomplete dialog up closes it and starts newline
 "inoremap <silent> <CR> <C-r>=neocomplete#close_popup()<CR><CR>
 
+" terminals suck
+if has('nvim')
+    nmap <silent><bs> :<c-u>TmuxNavigateLeft<CR>
+endif
+
 " function keys
 set pastetoggle=<F2>
 nnoremap <F3> :NERDTreeToggle<cr>
