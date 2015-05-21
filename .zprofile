@@ -47,3 +47,4 @@ unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 eval "$(dircolors ~/.dir_colors)"
+PATH="/usr/local/heroku/bin:$PATH"

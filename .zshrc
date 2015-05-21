@@ -154,3 +154,6 @@ compinit
 # End of lines added by compinstall
 
 ulimit -c unlimited
+
+# added by travis gem
+[ -f /home/rasse/.travis/travis.sh ] && source /home/rasse/.travis/travis.sh
