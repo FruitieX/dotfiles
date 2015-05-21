@@ -1,0 +1,4 @@
+#!/bin/bash
+
+import -window root bmp:- | convert - -scale 25% -blur 0x1 -fill black -colorize 25% -scale 400% /tmp/screenshotblur.png
+i3lock -e -i /tmp/screenshotblur.png

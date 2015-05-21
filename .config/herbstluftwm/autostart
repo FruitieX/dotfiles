@@ -61,7 +61,7 @@ hc keybind XF86MonBrightnessDown spawn sudo /usr/bin/brightness.sh mon /2
 hc keybind XF86KbdBrightnessUp spawn sudo /usr/bin/brightness.sh kbd +50
 hc keybind XF86KbdBrightnessDown spawn sudo /usr/bin/brightness.sh kbd -50
 hc keybind XF86LaunchA spawn touchpadtoggle
-hc keybind $Mod-Shift-x spawn /usr/bin/i3lock -u -c $(echo ${active_bg#?})
+hc keybind $Mod-Shift-x spawn /home/rasse/bin/lock
 hc keybind $Mod-Shift-s spawn /usr/bin/systemctl suspend
 hc keybind XF86AudioPlay spawn /home/rasse/src/nodeplayer-client/index.js -k
 hc keybind XF86AudioStop spawn /home/rasse/src/nodeplayer-client/index.js -u
