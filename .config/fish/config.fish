@@ -5,10 +5,20 @@ function jj_vim
 end
 set -g fish_key_bindings jj_vim
 
-set fish_greeting ""
-set EDITOR nvim
-set VISUAL nvim
-set BROWSER chromium
+if status --is-login
+    set fish_greeting ""
+    set EDITOR nvim
+    set VISUAL nvim
+    set BROWSER chromium
+
+    set ANDROID_HOME $HOME/apps/android-sdk
+    set ANDROID_SDK_ROOT $HOME/apps/android-sdk
+    set NPM_PACKAGES $HOME/.npm-packages
+    set NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
+    set PATH $HOME/bin $HOME/apps/android-sdk/tools $NPM_PACKAGES/bin $PATH
+
+    set MANPATH $NPM_PACKAGES/share/man (manpath | sed 's/:/ /g')
+end
 
 if begin [ $XDG_VTNR = 1 ]; and not [ $DISPLAY ]; and not [ $TMUX ]; end
     exec startx -- -keeptty
