@@ -92,6 +92,7 @@ alias sudo="sudo " # fix running aliases as sudo
 alias fuck='sudo $(fc -ln -1)'
 alias vim="nvim"
 alias chromium="chromium --proxy-server=localhost:8118 > /dev/null 2>&1 &"
+alias pingg="ping google.com"
 
 # irc alias
 for ((i = 0; i < 100; i++)); do
