@@ -15,7 +15,7 @@ if status --is-login
     set ANDROID_SDK_ROOT $HOME/apps/android-sdk
     set NPM_PACKAGES $HOME/.npm-packages
     set NODE_PATH $NPM_PACKAGES/lib/node_modules $NODE_PATH
-    set PATH $HOME/bin $HOME/apps/android-sdk/tools $NPM_PACKAGES/bin $PATH
+    set PATH $PATH $HOME/bin $HOME/apps/android-sdk/tools $NPM_PACKAGES/bin $HOME/.gem/ruby/2.2.0/bin /usr/bin/vendor_perl
 
     set MANPATH $NPM_PACKAGES/share/man (manpath | sed 's/:/ /g')
 end
