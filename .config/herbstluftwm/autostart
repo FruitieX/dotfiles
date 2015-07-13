@@ -23,7 +23,8 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-w close
 hc keybind $Mod-Return spawn urxvt
-hc keybind $Mod-space spawn dmenu_run -fn "$xftfont" -p run: -nb $inactive_bg -nf $inactive_fg -sb $active_bg -sf $active_fg -hist $HOME/.cache/dmenu_run_hist
+#hc keybind $Mod-space spawn dmenu_run -fn "$xftfont" -p run: -nb $inactive_bg -nf $inactive_fg -sb $active_bg -sf $active_fg -hist $HOME/.cache/dmenu_run_hist
+hc keybind $Mod-space spawn rofi -show run -font "Droid Sans 10"
 
 # basic movement
 # focusing clients

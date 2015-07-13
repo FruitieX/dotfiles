@@ -15,7 +15,7 @@ if begin [ $XDG_VTNR = 1 ]; and not [ $DISPLAY ]; and not [ $TMUX ]; end
 end
 
 if not [ $TMUX ]
-    ~/bin/tmx
+    exec ~/bin/tmx
 end
 
 function l; ll $argv; end
@@ -126,7 +126,7 @@ function gix; git rm -r --cached $argv; end
 function giX; git rm -rf --cached $argv; end
 
 # Log (l)
-function gl; git log --topo-order --pretty=format:"$_git_log_medium_format" $argv; end
+#function gl; git log --topo-order --pretty=format:"$_git_log_medium_format" $argv; end
 function gls; git log --topo-order --stat --pretty=format:"$_git_log_medium_format" $argv; end
 function gld; git log --topo-order --stat --patch --full-diff --pretty=format:"$_git_log_medium_format" $argv; end
 function glo; git log --topo-order --pretty=format:"$_git_log_oneline_format" $argv; end
