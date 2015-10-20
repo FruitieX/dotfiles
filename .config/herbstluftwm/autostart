@@ -57,10 +57,10 @@ hc keybind $Mod-Control-l       resize right +$resizestep
 hc keybind XF86AudioRaiseVolume spawn sh -c "pactl set-sink-volume @DEFAULT_SINK@ +4%; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 hc keybind XF86AudioLowerVolume spawn sh -c "pactl set-sink-volume @DEFAULT_SINK@ -4%; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 hc keybind XF86AudioMute spawn sh -c "pactl set-sink-mute @DEFAULT_SINK@ toggle; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
-hc keybind XF86MonBrightnessUp spawn sudo /usr/bin/brightness.sh mon \*2
-hc keybind XF86MonBrightnessDown spawn sudo /usr/bin/brightness.sh mon /2
-hc keybind XF86KbdBrightnessUp spawn sudo /usr/bin/brightness.sh kbd +50
-hc keybind XF86KbdBrightnessDown spawn sudo /usr/bin/brightness.sh kbd -50
+hc keybind XF86MonBrightnessUp spawn xbacklight -inc 5 -time 10
+hc keybind XF86MonBrightnessDown spawn xbacklight -dec 5 -time 10
+hc keybind XF86KbdBrightnessUp spawn sudo /usr/bin/brightness.sh 16
+hc keybind XF86KbdBrightnessDown spawn sudo /usr/bin/brightness.sh -16
 hc keybind XF86LaunchA spawn touchpadtoggle
 hc keybind $Mod-Shift-x spawn /home/rasse/bin/lock
 hc keybind $Mod-Shift-s spawn /usr/bin/systemctl suspend
