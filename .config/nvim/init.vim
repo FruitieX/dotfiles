@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'mbbill/undotree'
 Plug 'FruitieX/vim-airline'
