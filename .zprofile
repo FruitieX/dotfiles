@@ -2,6 +2,7 @@ export BROWSER="firefox-nightly"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="vimpager"
+export GDK_DPI_SCALE=1.5
 
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'

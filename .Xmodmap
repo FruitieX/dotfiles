@@ -17,7 +17,7 @@
 ! after 30 seconds.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-keycode  49 = grave             asciitilde          dead_tilde              dead_caron
+keycode  94 = grave             asciitilde          dead_tilde              dead_caron
 
 keycode  10 = 1                 exclam              onesuperior             exclamdown
 keycode  11 = 2                 at                  twosuperior             enfilledcircbullet
@@ -58,7 +58,7 @@ keycode  47 = s                 S                   scaron                  scir
 keycode  48 = minus             underscore          endash                  emdash
 keycode  51 = backslash         bar                 guillemotright          dead_macron
 
-keycode  94 = adiaeresis        odiaeresis          aring                   Aring
+keycode  49 = adiaeresis        odiaeresis          aring                   Aring
 keycode  52 = semicolon         colon               dead_diaeresis          U2200
 keycode  53 = q                 Q                   Greek_omega             Greek_OMEGA
 keycode  54 = j                 J                   Greek_epsilon           U2203
@@ -87,4 +87,6 @@ add mod3 = Mode_switch
 
 keycode 122 = XF86AudioLowerVolume
 keycode 123 = XF86AudioRaiseVolume
-keycode 121 = XF86AudioMute
+
+!keycode  49 = less greater less greater bar brokenbar
+!keycode  94 = section degree section degree notsign notsign

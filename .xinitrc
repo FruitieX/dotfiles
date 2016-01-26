@@ -35,9 +35,8 @@ else
 		xrandr --addmode VGA-0 "1920x1200"
 		xrandr --output VGA-0 --mode "1920x1200" --left-of LVDS-0
 		synergys -c ~/.synergy.conf &
-	elif [[ $HOSTNAME == "mba" ]]; then
-		synclient PalmDetect=1 MaxSpeed=3 &
-		synergyc lappy &
+	elif [[ $HOSTNAME == "mbp" ]]; then
+        ~/bin/battery_checker.sh &
 	elif [[ $HOSTNAME == "bulky" ]]; then
 		# home
         xrandr --output HDMI1 --mode 1920x1080 --rate 75 --rotate left --pos 0x0
