@@ -67,5 +67,5 @@ if [[ $DISPLAY == ":0" ]]; then
     xrdb ~/.Xdefaults
     source ~/.zshrc
     herbstclient reload
-    feh --bg-tile ~/dotfiles/.compiled/bg.png
+    feh --bg-fill ~/sdotfiles/wallpapers/blocks.jpg
 fi

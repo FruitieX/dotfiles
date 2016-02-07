@@ -1,4 +1,4 @@
-feh --bg-tile ~/dotfiles/.compiled/bg.png &
+feh --bg-fill ~/sdotfiles/wallpapers/blocks.jpg &
 xrdb ~/.Xdefaults
 # e.g. terminus-font lives here
 xset +fp /usr/share/fonts/local
@@ -17,7 +17,7 @@ unset TMUX
 redshift -l 0:0 &
 xsetroot -cursor_name left_ptr &
 xmodmap ~/.Xmodmap &
-compton --config ~/.compton.conf &
+#compton --config ~/.compton.conf &
 dunst &
 unclutter -idle 3 &
 dsjd &
@@ -49,7 +49,7 @@ else
 	nm-applet &
 	numlockx &
 	pasystray &
-    start-pulseaudio-x11 &
+    # start-pulseaudio-x11 &
 fi
 
 exec herbstluftwm --locked
