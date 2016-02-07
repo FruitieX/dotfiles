@@ -4,7 +4,7 @@
 " Plugins
 """"""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-sensible'
+"Plug 'tpope/vim-sensible'
 Plug 'mbbill/undotree'
 Plug 'FruitieX/vim-airline'
 Plug 'airblade/vim-gitgutter'
@@ -315,7 +315,7 @@ noremap p p`[
 noremap P P`[
 
 " Use utf8
-set encoding=utf8
+"set encoding=utf8
 
 " Reload a file if it changes
 set autoread
@@ -469,7 +469,7 @@ hi Pmenu ctermbg=18 ctermfg=2
 " transparent background always
 hi Normal ctermbg=none
 " prettify searches
-hi Search ctermfg=1 ctermbg=19
+hi Search ctermfg=9 ctermbg=25
 hi IncSearch ctermbg=9 ctermfg=18
 " highlight cursor line number
 hi CursorLineNr ctermbg=none ctermfg=7
@@ -478,7 +478,7 @@ hi LineNr ctermbg=none ctermfg=8
 " TODOs with red
 hi Todo ctermbg=9
 " wtf were they thinking
-hi Visual ctermbg=18 term=none cterm=none
+hi Visual ctermbg=19 term=none cterm=none
 hi CursorLine ctermbg=0
 " fix ugly splits
 hi VertSplit ctermbg=none ctermfg=8
@@ -499,7 +499,7 @@ hi SignColumn ctermbg=none
 let g:airline_theme="fruit"
 let g:airline_left_sep=""
 let g:airline_right_sep=""
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 " MiniBufExplorer theme
 hi MBEChanged ctermfg=9
