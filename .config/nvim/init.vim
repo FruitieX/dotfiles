@@ -4,7 +4,6 @@
 " Plugins
 """"""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
-"Plug 'tpope/vim-sensible'
 Plug 'mbbill/undotree'
 Plug 'FruitieX/vim-airline'
 Plug 'airblade/vim-gitgutter'
@@ -17,6 +16,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -32,8 +32,6 @@ map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 
-let python_host_prog = "python2"
-
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
 
@@ -46,7 +44,7 @@ let g:ctrlp_max_height = 30
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_lazy_update = 100
+"let g:ctrlp_lazy_update = 100
 
 " NERDCommenter needs this
 filetype plugin on
