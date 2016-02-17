@@ -12,6 +12,9 @@ Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/syntastic'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'easymotion/vim-easymotion'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -499,7 +502,7 @@ hi SignColumn ctermbg=none
 let g:airline_theme="fruit"
 let g:airline_left_sep=""
 let g:airline_right_sep=""
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " MiniBufExplorer theme
 hi MBEChanged ctermfg=9
