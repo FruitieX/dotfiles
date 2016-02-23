@@ -1,4 +1,3 @@
-feh --bg-fill ~/sdotfiles/wallpapers/blocks.jpg &
 xrdb ~/.Xdefaults
 # e.g. terminus-font lives here
 xset +fp /usr/share/fonts/local
@@ -52,4 +51,5 @@ else
     # start-pulseaudio-x11 &
 fi
 
+feh --bg-fill ~/sdotfiles/wallpapers/blocks.jpg &
 exec herbstluftwm --locked

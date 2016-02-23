@@ -1,4 +1,4 @@
-export BROWSER="firefox-nightly"
+export BROWSER="chromium"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="vimpager"
