@@ -13,7 +13,7 @@ xset m 1 1 &
 unset TMUX
 
 # autostart, all hosts
-redshift -l 0:0 &
+redshift -t 6500K:2200K -l 0:0 &
 xsetroot -cursor_name left_ptr &
 xmodmap ~/.Xmodmap &
 #compton --config ~/.compton.conf &
