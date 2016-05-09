@@ -46,5 +46,5 @@ export PATH="${HOME}/bin:${HOME}/dev/sh:${HOME}/apps/android-sdk/sdk/tools:${HOM
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-eval "$(dircolors ~/.dir_colors)"
+#eval "$(dircolors ~/.dir_colors)"
 PATH="/usr/local/heroku/bin:$PATH"
