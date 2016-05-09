@@ -55,8 +55,8 @@ find "${FILES[@]}" -type f -print0 | while read -d $'\0' FILE; do
 		echo "backed up $HOME/$FILE => $HOME/$FILE.bak"
 	fi
 
-	echo "$FILE => $HOME/$FILE"
-	$DRYRUN ln -sr "$FILE" "$HOME/$FILE"
+	echo "$HOME/dotfiles/$FILE => $HOME/$FILE"
+	$DRYRUN ln -s "$HOME/dotfiles/$FILE" "$HOME/$FILE"
 done
 
 for DIR in $DIRS; do
@@ -75,8 +75,8 @@ for DIR in $DIRS; do
 		echo "backed up $HOME/$DIR => $HOME/$DIR.bak"
 	fi
 
-	echo "$DIR => $HOME/$DIR"
-	$DRYRUN ln -sr "$DIR" "$HOME/$DIR"
+	echo "$HOME/dotfiles/$DIR => $HOME/$DIR"
+	$DRYRUN ln -s "$HOME/dotfiles/$DIR" "$HOME/$DIR"
 done
 
 echo
