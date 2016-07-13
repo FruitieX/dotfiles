@@ -20,7 +20,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 call plug#end()
 
 " incsearch
@@ -327,3 +330,6 @@ set numberwidth=1
 
 " Use unnamed clipboard by default
 set clipboard=unnamed
+
+" JSX extension not required for JSX files
+let g:jsx_ext_required = 0
