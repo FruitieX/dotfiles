@@ -94,6 +94,13 @@ alias vim="nvim"
 alias chromium="chromium --proxy-server=localhost:8118 > /dev/null 2>&1 &"
 alias pingg="ping google.com"
 
+unamestr=$(uname)
+
+if [[ $unamestr == 'Darwin' ]]; then
+    alias java7="export PATH=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/bin:$PATH"
+    alias java8='export PATH=$(echo ":$PATH" | sed -e "s#:[^:]jdk1.7[^:]##; s#^:##")'
+fi
+
 # irc alias
 for ((i = 0; i < 100; i++)); do
 	alias i$i="i $i"
@@ -158,3 +165,9 @@ ulimit -c unlimited
 
 # added by travis gem
 [ -f /home/rasse/.travis/travis.sh ] && source /home/rasse/.travis/travis.sh
+
+# NVM
+if [[ $unamestr == 'Darwin' ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    . "$(brew --prefix nvm)/nvm.sh"
+fi
