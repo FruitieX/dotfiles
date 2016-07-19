@@ -4,6 +4,14 @@
 " Plugins
 """"""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'bentayloruk/vim-react-es6-snippets'
+Plug 'ervandew/supertab'
+
+Plug 'Valloric/YouCompleteMe'
+"Plug 'Shougo/deoplete.nvim'
+
 Plug 'mbbill/undotree'
 Plug 'FruitieX/vim-airline'
 Plug 'airblade/vim-gitgutter'
@@ -14,8 +22,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'easymotion/vim-easymotion'
+
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
+
 Plug 'scrooloose/nerdcommenter'
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
@@ -24,7 +34,25 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'b4winckler/vim-objc'
 call plug#end()
+
+let g:deoplete#sources#clang#libclang_path="/usr/local/Cellar/llvm/3.8.1/lib/libclang.dylib"
+let g:deoplete#sources#clang#clang_header="/usr/local/Cellar/llvm/3.8.1/lib/clang"
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+let g:UltiSnipsUsePythonVersion = 3
 
 " incsearch
 map /  <Plug>(incsearch-forward)
@@ -37,7 +65,7 @@ map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 
 " neocomplete
-let g:neocomplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 " powerline config
 set laststatus=2
@@ -48,6 +76,7 @@ let g:ctrlp_max_height = 30
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'ra'
 "let g:ctrlp_lazy_update = 100
 
 " NERDCommenter needs this
@@ -234,7 +263,7 @@ set switchbuf=split
 set wildmode=longest,list,full
 set wildmenu
 " Ignore these files when completing names and in Explorer
-set wildignore+=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,~/music*,*~,*.swp
+set wildignore+=*/.svn/*,*/CVS/*,*/.git/*,*/node_modules/*,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*~,*.swp
 
 " Indentation
 " Expand tabs to spaces
