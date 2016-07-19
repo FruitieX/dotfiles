@@ -54,6 +54,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 let g:UltiSnipsUsePythonVersion = 3
 
+let g:ycm_confirm_extra_conf = 0
+
 " incsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
