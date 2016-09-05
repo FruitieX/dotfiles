@@ -107,7 +107,7 @@ for ((i = 0; i < 100; i++)); do
 done
 
 # because oh-my-zsh overrides this
-export PAGER="vimpager"
+export PAGER="less"
 
 unset SSH_ASKPASS
 
