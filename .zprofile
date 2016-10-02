@@ -1,4 +1,4 @@
-export BROWSER="chromium"
+export BROWSER="google-chrome-unstable"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="vimpager"
@@ -43,8 +43,9 @@ if [[ $unamestr == 'Darwin' ]]; then
     export ANDROID_HOME="${HOME}/.android-sdk-macosx"
     export ANDROID_SDK_ROOT="${HOME}/.android-sdk-macosx"
 else
-    export ANDROID_HOME="${HOME}/apps/android-sdk"
-    export ANDROID_SDK_ROOT="${HOME}/apps/android-sdk"
+    export JAVA_HOME="/usr/lib/jvm/default"
+    #export ANDROID_HOME="${HOME}/apps/android-sdk"
+    #export ANDROID_SDK_ROOT="${HOME}/apps/android-sdk"
 fi
 
 export NPM_PACKAGES="${HOME}/.npm-packages"
@@ -60,6 +61,7 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 if [[ $unamestr == 'Darwin' ]]; then
     export PATH="/usr/local/heroku/bin:${HOME}/.android-sdk-macosx/platform-tools:$PATH"
+    export GDK_SCALE=2
 else
     eval "$(dircolors ~/.dir_colors)"
 fi

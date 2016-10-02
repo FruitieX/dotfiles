@@ -1,7 +1,0 @@
-#!/bin/bash
-
-stored_bl=$(xbacklight)
-xbacklight -set 0
-sleep 1
-i3lock -d -I 3 -e -c 000000
-xbacklight -set $stored_bl

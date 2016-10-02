@@ -10,15 +10,19 @@ xset s off &
 # disable mouse accel
 xset m 1 1 &
 
+if [[ $HOSTNAME == "rasse-mbp" ]]; then
+    xrandr --dpi 220
+fi
+
 unset TMUX
 
 # autostart, all hosts
-redshift -t 6500K:2200K -l 0:0 &
+redshift -t 6500K:4000K -l 0:0 &
 xsetroot -cursor_name left_ptr &
 xmodmap ~/.Xmodmap &
 #compton --config ~/.compton.conf &
 dunst &
-unclutter -idle 3 &
+unclutter -noevents -idle 3 &
 dsjd &
 parcellite &
 
@@ -52,5 +56,5 @@ else
     # start-pulseaudio-x11 &
 fi
 
-feh --bg-fill ~/sdotfiles/wallpapers/blocks.jpg &
-exec herbstluftwm --locked
+#feh --bg-fill ~/sdotfiles/wallpapers/blocks.jpg &
+#exec herbstluftwm --locked

@@ -1,7 +1,10 @@
 #!/bin/bash
 #PULSE_SERVER=10.8.0.1 chromium --ignore-gpu-blacklist --disk-cache-dir=/dev/null
-if [[ $HOSTNAME == "mbp" ]]; then
-    chromium --force-device-scale-factor=2 --proxy-server=localhost:8118 > /dev/null 2>&1 &
-else
-    chromium --proxy-server=localhost:8118 > /dev/null 2>&1 &
-fi
+#if [[ $HOSTNAME == "rasse-mbp" ]]; then
+    #chromium --force-device-scale-factor=2 --proxy-server=localhost:8118 > /dev/null 2>&1 &
+    #chromium --force-device-scale-factor=2 > /dev/null 2>&1 &
+#else
+    #chromium --proxy-server=localhost:8118 > /dev/null 2>&1 &
+#fi
+
+google-chrome-unstable

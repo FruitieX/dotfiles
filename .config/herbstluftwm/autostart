@@ -1,10 +1,36 @@
 #!/bin/bash
 
-# herbstluftwm config
+# old xinitrc stuff
+xsetroot -solid black
+xrdb ~/.Xdefaults
+xset m 1 1
 
+# host specific
+if [[ $HOSTNAME == "rasse-mbp" ]]; then
+    xrandr --dpi 220
+    xmodmap ~/.Xmodmap.mac
+else
+    xmodmap ~/.Xmodmap
+fi
+
+xsetroot -cursor_name left_ptr
+
+if [ ! "$(pidof dunst)" ]; then
+    dunst &
+fi
+if [ ! "$(pidof unclutter)" ]; then
+    unclutter -noevents -idle 3 &
+fi
+if [ ! "$(pidof redshift)" ]; then
+    redshift -t 6500K:4000K -l 0:0 &
+fi
+
+# herbstluftwm config
 hc() {
     herbstclient "$@"
 }
+
+hc lock
 
 xftfont=$($HOME/bin/theme.sh xftfont)
 active_bg=\#$($HOME/bin/theme.sh bg)
@@ -59,8 +85,6 @@ hc keybind XF86AudioLowerVolume spawn sh -c "pactl set-sink-volume @DEFAULT_SINK
 hc keybind XF86AudioMute spawn sh -c "pactl set-sink-mute @DEFAULT_SINK@ toggle; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 hc keybind XF86MonBrightnessUp spawn xbacklight -inc 5 -time 10
 hc keybind XF86MonBrightnessDown spawn xbacklight -dec 5 -time 10
-hc keybind XF86KbdBrightnessUp spawn sudo /usr/bin/brightness.sh 16
-hc keybind XF86KbdBrightnessDown spawn sudo /usr/bin/brightness.sh -16
 hc keybind XF86LaunchA spawn touchpadtoggle
 hc keybind $Mod-Shift-x spawn /home/rasse/bin/lock
 hc keybind $Mod-Shift-s spawn /usr/bin/systemctl suspend
