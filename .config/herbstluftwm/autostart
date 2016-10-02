@@ -15,16 +15,6 @@ fi
 
 xsetroot -cursor_name left_ptr
 
-if [ ! "$(pidof dunst)" ]; then
-    dunst &
-fi
-if [ ! "$(pidof unclutter)" ]; then
-    unclutter -noevents -idle 3 &
-fi
-if [ ! "$(pidof redshift)" ]; then
-    redshift -t 6500K:4000K -l 0:0 &
-fi
-
 # herbstluftwm config
 hc() {
     herbstclient "$@"
@@ -168,6 +158,7 @@ hc set mouse_recenter_gap 1
 hc set auto_detect_monitors 1
 hc set frame_bg_transparent 1
 hc set frame_transparent_width 0
+hc pad 0 48 0 0
 
 # rules
 hc unrule -F
@@ -198,4 +189,18 @@ if [[ $HOSTNAME == "servy" ]]; then
 	tmux source-file ~/.tmux.servy
 	hc set window_border_active_color '#181512'
 	hc set frame_bg_active_color '#000000'
+fi
+
+# backgrounded programs
+if [ ! "$(pidof dunst)" ]; then
+    dunst &
+fi
+if [ ! "$(pidof unclutter)" ]; then
+    unclutter -noevents -idle 3 &
+fi
+if [ ! "$(pidof redshift)" ]; then
+    redshift -t 6500K:4000K -l 0:0 &
+fi
+if [ ! "$(pidof tint2)" ]; then
+    tint2 &
 fi

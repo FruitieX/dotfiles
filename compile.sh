@@ -60,12 +60,13 @@ find_and_replace ".pentadactyl/colors/fruit.penta"
 symlink ".pentadactyl/colors/fruit.penta"
 
 # generate wallpaper for color theme
-convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png" 2> /dev/null
-convert "$DOTFILES/.compiled/bg.png" -fill "#$($DOTFILES/bin/theme.sh active_bg)" -opaque white "$DOTFILES/.compiled/bg.png" 2> /dev/null
+#convert "$DOTFILES/bg.png" -fill "#$($DOTFILES/bin/theme.sh inactive_bg)" -opaque black "$DOTFILES/.compiled/bg.png" 2> /dev/null
+#convert "$DOTFILES/.compiled/bg.png" -fill "#$($DOTFILES/bin/theme.sh active_bg)" -opaque white "$DOTFILES/.compiled/bg.png" 2> /dev/null
 
 if [[ $DISPLAY == ":0" ]]; then
     xrdb ~/.Xdefaults
     source ~/.zshrc
     herbstclient reload
-    feh --bg-fill ~/sdotfiles/wallpapers/blocks.jpg
+    xsetroot -solid black
+    #feh --bg-fill ~/sdotfiles/wallpapers/blocks.jpg
 fi
