@@ -27,8 +27,8 @@ border_color_pressed = #d1d1d1 40
 
 #-------------------------------------
 # Panel
-panel_items = TCB
-panel_size = 100% 48
+panel_items = TCSB
+panel_size = 100% $bar_pad
 panel_margin = 0 0
 panel_padding = 0 2 5
 panel_background_id = 0
@@ -102,7 +102,7 @@ mouse_scroll_down = iconify
 systray_padding = 6 2 6
 systray_background_id = 1
 systray_sort = ascending
-systray_icon_size = 16
+systray_icon_size = 0
 systray_icon_asb = 100 -100 -15
 systray_monitor = 1
 

@@ -158,7 +158,7 @@ hc set mouse_recenter_gap 1
 hc set auto_detect_monitors 1
 hc set frame_bg_transparent 1
 hc set frame_transparent_width 0
-hc pad 0 48 0 0
+hc pad 0 $($HOME/bin/theme.sh bar_pad) 0 0
 
 # rules
 hc unrule -F
@@ -203,4 +203,10 @@ if [ ! "$(pidof redshift)" ]; then
 fi
 if [ ! "$(pidof tint2)" ]; then
     tint2 &
+fi
+if [ ! "$(pidof pasystray)" ]; then
+    pasystray &
+fi
+if [ ! "$(pidof nm-applet)" ]; then
+    nm-applet &
 fi
