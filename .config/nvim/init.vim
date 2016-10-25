@@ -9,7 +9,8 @@ Plug 'honza/vim-snippets'
 Plug 'bentayloruk/vim-react-es6-snippets'
 Plug 'ervandew/supertab'
 
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'Shougo/deoplete.nvim'
 
 Plug 'mbbill/undotree'
