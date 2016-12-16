@@ -38,6 +38,14 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'b4winckler/vim-objc'
 call plug#end()
 
+let g:ackprg = 'ag --vimgrep --smart-case'
+let g:ackhighlight=1
+
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
 let g:deoplete#sources#clang#libclang_path="/usr/local/Cellar/llvm/3.8.1/lib/libclang.dylib"
 let g:deoplete#sources#clang#clang_header="/usr/local/Cellar/llvm/3.8.1/lib/clang"
 
@@ -90,9 +98,6 @@ let g:NERDTreeMinimalUI=1
 " easymotion config
 let g:EasyMotion_leader_key = '<Leader>'
 
-let g:ackprg="/usr/bin/vendor_perl/ack -H --nocolor --nogroup --column"
-let g:ackhighlight=1
-
 """"""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""
@@ -138,8 +143,6 @@ set noswapfile
 
 " Avoid escape key
 imap jj <Esc>
-
-map <C-p> :CtrlPMixed<cr>
 
 " Faster than :w, :q
 map <C-s> :w<Enter>
@@ -307,7 +310,7 @@ augroup resCur
     autocmd BufWinEnter * call ResCur()
 augroup END
 " Remember info about open buffers on close
-set viminfo^=%
+"set viminfo^=%
 
 " more tabs
 set tabpagemax=15
@@ -355,7 +358,7 @@ hi SignColumn ctermbg=none
 let g:airline_theme="fruit"
 let g:airline_left_sep=""
 let g:airline_right_sep=""
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 
 " No extra space in numbers column
 set numberwidth=1
@@ -365,3 +368,7 @@ set clipboard=unnamed
 
 " JSX extension not required for JSX files
 let g:jsx_ext_required = 0
+
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_working_path_mode = 0
