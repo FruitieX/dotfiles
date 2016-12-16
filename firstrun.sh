@@ -30,6 +30,9 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 mkdir "$HOME/src"
 git clone https://github.com/rupa/v "$HOME/src/v"
 git clone https://github.com/rupa/z "$HOME/src/z"
+git clone https://github.com/supki/x-selection-sync.git "$HOME/src/x-selection-sync"
+git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+
 touch "$HOME/.z"
 
 # cd to root of git repo

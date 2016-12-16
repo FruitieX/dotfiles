@@ -210,3 +210,6 @@ fi
 if [ ! "$(pidof nm-applet)" ]; then
     nm-applet &
 fi
+if [ ! "$(pidof x-selection-sync)" ]; then
+    $HOME/src/x-selection-sync/build/x-selection-sync &
+fi
