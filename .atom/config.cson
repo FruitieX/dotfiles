@@ -1,0 +1,26 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    disabledPackages: []
+    packagesWithKeymapsDisabled: []
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+  "disable-keybindings":
+    prefixKeys: [
+      "ctrl-k"
+    ]
+  editor:
+    fontSize: 15
+    preferredLineLength: 100
+  "exception-reporting":
+    userId: "9071e8b9-6d50-df37-1f04-100d4e7870f5"
+  "vim-mode-plus":
+    highlightSearch: true
+    incrementalSearch: true
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false

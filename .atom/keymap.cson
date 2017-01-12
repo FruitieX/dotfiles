@@ -1,0 +1,32 @@
+'atom-workspace atom-text-editor:not([mini])':
+  # [old habits]
+
+  # move focus between panes
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-k': 'window:focus-pane-above'
+  'ctrl-j': 'window:focus-pane-below'
+
+  # close pane
+  'ctrl-q': 'core:close'
+
+'atom-workspace':
+  # close pane
+  'ctrl-q': 'core:close'
+
+'atom-text-editor.vim-mode-plus.insert-mode':
+  # [leave insert mode with jj]
+  'j j': 'vim-mode-plus:activate-normal-mode'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  # [cursor history]
+  'g ,': 'cursor-history:next'
+  'g ;': 'cursor-history:prev'
+
+  # join lines
+  'J': 'editor:join-lines'
+
+'atom-text-editor.vim-mode-plus.normal-mode':
+  # [vim-mode-plus-ex-mode]
+  ':': 'vim-mode-plus-ex-mode:open'
+  '!': 'vim-mode-plus-ex-mode:toggle-setting'
