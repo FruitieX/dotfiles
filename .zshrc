@@ -94,6 +94,7 @@ alias vim="nvim"
 #alias chromium="chromium --proxy-server=localhost:8118 > /dev/null 2>&1 &"
 alias chromium="chromium > /dev/null 2>&1 &"
 alias pingg="ping google.com"
+alias sshfs="sshfs -o reconnect"
 
 unamestr=$(uname)
 
