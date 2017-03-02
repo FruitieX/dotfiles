@@ -1,8 +1,11 @@
 "*":
-  "bracket-matcher": {}
+  "bracket-matcher":
+    autocompleteBrackets: false
   core:
     autoHideMenuBar: true
-    disabledPackages: []
+    disabledPackages: [
+      "language-javascript-jsx"
+    ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "limited"
     themes: [
@@ -19,6 +22,20 @@
     userId: "9071e8b9-6d50-df37-1f04-100d4e7870f5"
   linter:
     errorPanelHeight: 240
+    showErrorTabLine: true
+  minimap:
+    charHeight: 1
+    plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+      selection: true
+      selectionDecorationsZIndex: 0
   "vim-mode-plus":
     highlightSearch: true
     incrementalSearch: true
@@ -26,3 +43,5 @@
     useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
+  zentabs:
+    neverCloseUnsaved: true

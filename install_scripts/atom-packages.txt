@@ -1,13 +1,22 @@
+autocomplete-modules@1.6.7
 cursor-history@0.9.1
 disable-keybindings@0.6.0
+git-plus@7.3.3
 hidpi@0.12.0
 language-javascript-jsx@0.3.7
 linter@1.11.23
-linter-eslint@8.1.1
+linter-eslint@8.1.2
 linter-flow@5.5.0
-markdown-preview-plus@2.4.2
+markdown-preview-plus@2.4.8
 minimap@4.26.8
+minimap-cursorline@0.2.0
+minimap-linter@1.6.0
+minimap-pigments@0.2.2
+minimap-selection@4.4.0
+pigments@0.39.0
+react@0.16.2
 trailing-spaces@0.4.0
 vim-mode-plus@0.79.0
 vim-mode-plus-ex-mode@0.7.1
+zentabs@0.8.8
 
