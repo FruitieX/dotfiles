@@ -1,4 +1,5 @@
 "*":
+  "bracket-matcher": {}
   core:
     autoHideMenuBar: true
     disabledPackages: []
@@ -13,10 +14,11 @@
       "ctrl-k"
     ]
   editor:
-    fontSize: 15
     preferredLineLength: 100
   "exception-reporting":
     userId: "9071e8b9-6d50-df37-1f04-100d4e7870f5"
+  linter:
+    errorPanelHeight: 240
   "vim-mode-plus":
     highlightSearch: true
     incrementalSearch: true

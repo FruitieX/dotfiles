@@ -1,7 +1,13 @@
-cursor-history@0.7.0
+cursor-history@0.9.1
 disable-keybindings@0.6.0
 hidpi@0.12.0
-trailing-spaces@0.3.2
-vim-mode-plus@0.66.1
+language-javascript-jsx@0.3.7
+linter@1.11.23
+linter-eslint@8.1.1
+linter-flow@5.5.0
+markdown-preview-plus@2.4.2
+minimap@4.26.8
+trailing-spaces@0.4.0
+vim-mode-plus@0.79.0
 vim-mode-plus-ex-mode@0.7.1
 
