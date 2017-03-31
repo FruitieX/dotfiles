@@ -10,7 +10,7 @@ xset s off &
 # disable mouse accel
 xset m 1 1 &
 
-if [[ $HOSTNAME == "fl-807" ]]; then
+if [[ $HOSTNAME == "rasse-mbp" ]]; then
     xrandr --dpi 220
 fi
 
