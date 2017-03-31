@@ -96,6 +96,12 @@ alias chromium="chromium > /dev/null 2>&1 &"
 alias pingg="ping google.com"
 alias sshfs="sshfs -o reconnect"
 
+# react native aliases
+alias ra="react-native run-android"
+alias ri="react-native run-ios"
+alias rr="adb shell input text rr"
+alias rd="adb shell input keyevent 82"
+
 unamestr=$(uname)
 
 if [[ $unamestr == 'Darwin' ]]; then
