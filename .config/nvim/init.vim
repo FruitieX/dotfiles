@@ -125,10 +125,10 @@ set so=7
 set ruler
 
 " Disable line wraps
-set nowrap
+"set nowrap
 
 " Show tabs
-set lcs=tab:│\ 
+set lcs=tab:│\
 set list
 highlight SpecialKey ctermfg=238
 
