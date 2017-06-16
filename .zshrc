@@ -179,3 +179,5 @@ if [[ $unamestr == 'Darwin' ]]; then
     export NVM_DIR="$HOME/.nvm"
     . "$(brew --prefix nvm)/nvm.sh"
 fi
+
+export PATH="$HOME/.yarn/bin:$PATH"
