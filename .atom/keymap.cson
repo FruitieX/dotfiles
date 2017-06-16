@@ -1,22 +1,14 @@
-'atom-workspace atom-text-editor:not([mini])':
-  # [old habits]
+#'atom-workspace':
+   # close pane
+   #'ctrl-q': 'pane:close'
 
-  # move focus between panes
-  'ctrl-h': 'window:focus-pane-on-left'
-  'ctrl-l': 'window:focus-pane-on-right'
-  'ctrl-k': 'window:focus-pane-above'
-  'ctrl-j': 'window:focus-pane-below'
-
-  # close pane
-  'ctrl-q': 'core:close'
-
-'atom-workspace':
-  # close pane
-  'ctrl-q': 'core:close'
+'.tree-view':
+   'ctrl-q': 'tree-view:toggle'
 
 'atom-text-editor.vim-mode-plus.insert-mode':
   # [leave insert mode with jj]
   'j j': 'vim-mode-plus:activate-normal-mode'
+  'ctrl-q': 'core:close'
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   # [cursor history]
@@ -25,14 +17,27 @@
 
   # join lines
   'J': 'editor:join-lines'
+  'ctrl-q': 'core:close'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
   # [vim-mode-plus-ex-mode]
-  ':': 'vim-mode-plus-ex-mode:open'
-  '!': 'vim-mode-plus-ex-mode:toggle-setting'
+  'g f':      'open-this:here'
+  'ctrl-w f': 'open-this:split-down'
+  'ctrl-w F': 'open-this:split-right'
+  'ctrl-j': 'focus-pane-or-panel:focus-below'
+  'ctrl-k': 'focus-pane-or-panel:focus-above'
+  'ctrl-h': 'focus-pane-or-panel:focus-on-left'
+  'ctrl-l': 'focus-pane-or-panel:focus-on-right'
 
 'body':
   'ctrl-tab ^ctrl': 'unset!'
   'ctrl-tab': 'pane:show-next-item'
   'ctrl-shift-tab ^ctrl': 'unset!'
   'ctrl-shift-tab': 'pane:show-previous-item'
+
+  'ctrl-j': 'focus-pane-or-panel:focus-below'
+  'ctrl-k': 'focus-pane-or-panel:focus-above'
+  'ctrl-h': 'focus-pane-or-panel:focus-on-left'
+  'ctrl-l': 'focus-pane-or-panel:focus-on-right'
+
+  'ctrl-q': 'pane:close'
