@@ -5,27 +5,37 @@
     autoHideMenuBar: true
     disabledPackages: [
       "git-plus"
+      "react"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "limited"
     themes: [
-      "one-dark-ui"
-      "base16-tomorrow-dark-theme"
+      "one-light-ui"
+      "base16-tomorrow-light-theme"
     ]
+    warnOnLargeFileLimit: 2
   "disable-keybindings":
     prefixKeys: [
       "ctrl-k"
     ]
   editor:
-    fontSize: 10
-    preferredLineLength: 100
+    fontSize: 12
+    softWrap: true
+  elmjutsu:
+    autocompleteEnabled: true
+    autocompleteSnippetsEnabled: true
+    cacheDirectory: "/tmp/rasse/elmjutsu14905QSuYs3L7QT3M"
+    hyperclickEnabled: true
   "exception-reporting":
     userId: "9071e8b9-6d50-df37-1f04-100d4e7870f5"
   "git-diff":
     showIconsInEditorGutter: true
   "git-plus":
     experimental: {}
+  "ide-purescript": {}
   linter: {}
+  "linter-ui-default":
+    panelHeight: 235
   minimap:
     charHeight: 1
     plugins:
@@ -39,6 +49,12 @@
       pigmentsDecorationsZIndex: 0
       selection: true
       selectionDecorationsZIndex: 0
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+    prettierOptions:
+      singleQuote: true
+      trailingComma: "all"
   "tree-view":
     hideVcsIgnoredFiles: true
   "vim-mode-plus":
@@ -52,3 +68,6 @@
     showOnStartup: false
   zentabs:
     neverCloseUnsaved: true
+".psci.purescript.source":
+  editor:
+    autoIndentOnPaste: true
