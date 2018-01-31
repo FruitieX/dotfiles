@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # compiles configuration files by swapping out variables with values from
 # .theme.cfg
