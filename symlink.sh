@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # recursively symlink all files from paths in this array
 FILES=( _pentadactylrc bin .atom .apvlvrc .compton.conf .config .colors .conkyrc .dir_colors .gconf .gitignore_global .synergy.conf .tmux.conf .tmux-osx.conf .tmux.servy .theme.cfg .urlview .nvimrc .xinitrc .Xdefaults .Xmodmap .Xmodmap.mac .zshrc .zprofile .zpreztorc .zprezto .weechat .tern-config .ycm_extra_conf.py)
