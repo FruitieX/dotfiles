@@ -23,7 +23,7 @@ else
 	base_session="$1"
 fi
 
-$HOME/.colors/base16.sh
+#$HOME/.colors/base16.sh
 
 # This actually works without the trim() on all systems except OSX
 tmux_nb=$(trim `tmux ls | grep "^$base_session" | wc -l`)

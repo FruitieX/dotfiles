@@ -1,123 +1,15 @@
-if [[ "$XDG_VTNR" == 1 && -z "$DISPLAY" && -z "$TMUX" ]]; then
-    exec startx
-fi
+#if [[ "$XDG_VTNR" == 1 && -z "$DISPLAY" && -z "$TMUX" ]]; then
+#    exec startx
+#fi
 
 ~/bin/tmx
 if [[ -z "$TMUX" ]]; then
     exit
 fi
 
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="fruitmini"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-DISABLE_UPDATE_PROMPT="true" # don't ask
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-#COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git archlinux rsync vi-mode zsh-syntax-highlighting zsh-history-substring-search)
-
-function md2pdf() {
-    infile="$1"
-    pandoc -f markdown -t latex $infile -o ${infile%.md}.pdf
-}
-
-if [ -f ~/.zshrc.local ]; then
-	source ~/.zshrc.local
-fi
-#source $ZSH/oh-my-zsh.sh
 source $HOME/.zprezto/init.zsh
-source ~/src/z/z.sh
-
-alias l="ll"
-alias gl="git pull"
-alias ds="dirs -v"
-alias hc="herbstclient"
-alias n="~/src/nodifier/clients/cli/cli.js"
-alias nr="n r"
-alias nu="n u"
-#alias m="~/src/nodeplayer-client/index.js"
-#alias ms="~/src/nodeplayer-client/index.js -s"
-#alias ma="~/src/nodeplayer-client/index.js -a"
-#alias mp="~/src/nodeplayer-client/index.js -p"
-#alias mn="~/src/nodeplayer-client/index.js -n"
-#alias mg="~/src/nodeplayer-client/index.js -g"
-#alias md="~/src/nodeplayer-client/index.js -d"
-#alias mw="~/src/nodeplayer-client/index.js -w"
-#alias mpp="~/src/nodeplayer-player/index.js"
-alias t="~/src/nodifier/clients/todo/todo.js"
-alias v="~/src/v/v"
-alias xf="DISPLAY=:10"
-alias s="mosh"
-alias sys="systemctl"
-alias sysu="systemctl --user"
-alias jrn="journalctl"
-alias jrnu="journalctl --user-unit"
-alias sudo="sudo " # fix running aliases as sudo
-alias fuck='sudo $(fc -ln -1)'
-alias vim="nvim"
-#alias chromium="chromium --proxy-server=localhost:8118 > /dev/null 2>&1 &"
-alias chromium="chromium > /dev/null 2>&1 &"
-alias pingg="ping google.com"
-alias sshfs="sshfs -o reconnect"
-
-# react native aliases
-alias ra="react-native run-android"
-alias ri="react-native run-ios"
-alias rr="adb shell input text rr"
-alias rd="adb shell input keyevent 82"
 
 unamestr=$(uname)
-
-if [[ $unamestr == 'Darwin' ]]; then
-    alias java7="export PATH=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/bin:$PATH"
-    alias java8='export PATH=$(echo ":$PATH" | sed -e "s#:[^:]jdk1.7[^:]##; s#^:##")'
-fi
-
-# irc alias
-for ((i = 0; i < 100; i++)); do
-	alias i$i="i $i"
-done
-
-# because oh-my-zsh overrides this
-export PAGER="less"
-
-unset SSH_ASKPASS
 
 # Disable ctrl-s sending XOFF
 stty ixany
@@ -133,12 +25,12 @@ setopt DVORAK
 bindkey -M viins 'jj' vi-cmd-mode # 'jj' takes you into cmd mode
 
 # make search up and down work, so partially type and hit up/down to find relevant stuff
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-bindkey -M vicmd 'k' up-line-or-search
-bindkey -M vicmd 'j' down-line-or-search
+#bindkey '^[[A' up-line-or-search
+#bindkey '^[[B' down-line-or-search
+#bindkey -M vicmd 'k' up-line-or-search
+#bindkey -M vicmd 'j' down-line-or-search
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+#ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 #source ~/.zsh-autosuggestions/autosuggestions.zsh
 
 # Enable autosuggestions automatically
@@ -154,30 +46,19 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 #bindkey '^f' vi-forward-word
 
 # zsh-history-substring-search keybinds
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
+#bindkey -M vicmd 'k' history-substring-search-up
+#bindkey -M vicmd 'j' history-substring-search-down
 
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
-zstyle ':completion:*' max-errors 3
+#zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
+#zstyle ':completion:*' max-errors 3
 #zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/home/rasse/.zshrc'
+#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+#zstyle :compinstall filename '/home/rasse/.zshrc'
 
-autoload -Uz compinit
-compinit
+#autoload -Uz compinit
+#compinit
 # End of lines added by compinstall
 
-ulimit -c unlimited
-
-# added by travis gem
-[ -f /home/rasse/.travis/travis.sh ] && source /home/rasse/.travis/travis.sh
-
-# NVM
-if [[ $unamestr == 'Darwin' ]]; then
-    export NVM_DIR="$HOME/.nvm"
-    . "$(brew --prefix nvm)/nvm.sh"
-fi
-
-export PATH="$HOME/.yarn/bin:$PATH"
+#ulimit -c unlimited

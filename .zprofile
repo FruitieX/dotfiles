@@ -1,4 +1,4 @@
-export BROWSER="google-chrome-unstable"
+export BROWSER="google-chrome-stable"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="vimpager"
@@ -53,8 +53,17 @@ export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export PATH="${HOME}/bin:${HOME}/dev/sh:${HOME}/apps/android-sdk/sdk/tools:${HOME}/apps/android-sdk/sdk/platform-tools:${HOME}/apps/android-sdk/ndk/android-ndk-r8d:${HOME}/.gem/ruby/2.2.0/bin:${NPM_PACKAGES}/bin:${PATH}"
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# yarn crap
+export PATH="$HOME/.yarn/bin:$PATH"
+
 if [ -f $HOME/.zprofile.secret ]; then
     source $HOME/.zprofile.secret
+fi
+
+# nvm crap
+if [[ $unamestr == 'Darwin' ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    . "$(brew --prefix nvm)/nvm.sh"
 fi
 
 unset MANPATH
@@ -66,3 +75,23 @@ if [[ $unamestr == 'Darwin' ]]; then
 else
     eval "$(dircolors ~/.dir_colors)"
 fi
+
+function md2pdf() {
+    infile="$1"
+    pandoc -f markdown -t latex $infile -o ${infile%.md}.pdf
+}
+
+alias gl="git pull"
+alias sys="systemctl"
+alias sysu="systemctl --user"
+alias jrn="journalctl"
+alias jrnu="journalctl --user-unit"
+alias sudo="sudo " # fix running aliases as sudo
+alias vim="nvim"
+
+# react native aliases
+alias ra="react-native run-android"
+alias ri="react-native run-ios"
+alias rr="adb shell input text rr"
+alias rd="adb shell input keyevent 82"
+
