@@ -4,13 +4,13 @@
 " Plugins
 """"""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'bentayloruk/vim-react-es6-snippets'
 Plug 'ervandew/supertab'
 
 "Plug 'Valloric/YouCompleteMe'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'Shougo/deoplete.nvim'
 
 Plug 'mbbill/undotree'
@@ -61,7 +61,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-let g:UltiSnipsUsePythonVersion = 3
 
 let g:ycm_confirm_extra_conf = 0
 
@@ -274,12 +273,12 @@ set wildignore+=*/.svn/*,*/CVS/*,*/.git/*,*/node_modules/*,*.o,*.a,*.class,*.mo,
 " Indentation
 " Expand tabs to spaces
 set expandtab
-" indent with 4 spaces when tab key is hit
-set softtabstop=4
-" indent with 4 spaces when the indent commands are used
-set shiftwidth=4
-" tab character is represented by 4 spaces
-set tabstop=4
+" indent with 2 spaces when tab key is hit
+set softtabstop=2
+" indent with 2 spaces when the indent commands are used
+set shiftwidth=2
+" tab character is represented by . spaces
+set tabstop=2
 
 "set smarttab
 filetype plugin indent on
@@ -287,6 +286,9 @@ filetype plugin indent on
 " Default to autoindenting of C like languages
 set autoindent
 set smartindent
+
+" Enable mouse support
+set mouse=a
 
 " syntastic stuff
 let g:syntastic_cpp_checkers=['gcc']
