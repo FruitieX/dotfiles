@@ -16,7 +16,7 @@
   'g ;': 'cursor-history:prev'
 
   # join lines
-  'J': 'editor:join-lines'
+  #'J': 'editor:join-lines'
   'ctrl-q': 'core:close'
 
 'atom-text-editor.vim-mode-plus.normal-mode':

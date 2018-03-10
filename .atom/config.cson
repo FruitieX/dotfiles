@@ -6,20 +6,17 @@
     disabledPackages: [
       "git-plus"
       "react"
+      "autosave"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "limited"
-    themes: [
-      "one-light-ui"
-      "base16-tomorrow-light-theme"
-    ]
     warnOnLargeFileLimit: 2
   "disable-keybindings":
     prefixKeys: [
       "ctrl-k"
     ]
   editor:
-    fontSize: 12
+    fontSize: 10
     softWrap: true
   elmjutsu:
     autocompleteEnabled: true
@@ -33,9 +30,12 @@
   "git-plus":
     experimental: {}
   "ide-purescript": {}
+  "language-babel":
+    emmetCSSAutocomplete: true
   linter: {}
   "linter-ui-default":
-    panelHeight: 235
+    panelHeight: 131
+    showPanel: true
   minimap:
     charHeight: 1
     plugins:
@@ -52,9 +52,16 @@
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
+      isDisabledIfNoConfigFile: true
+      showInStatusBar: true
     prettierOptions:
       singleQuote: true
       trailingComma: "all"
+    useEslint: true
+  "spell-check":
+    locales: [
+      "en-US"
+    ]
   "tree-view":
     hideVcsIgnoredFiles: true
   "vim-mode-plus":
