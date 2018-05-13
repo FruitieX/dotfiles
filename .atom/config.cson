@@ -1,11 +1,11 @@
 "*":
+  "atom-ide-ui":
+    use: {}
   "bracket-matcher":
     autocompleteBrackets: false
   core:
     autoHideMenuBar: true
     disabledPackages: [
-      "git-plus"
-      "react"
       "autosave"
     ]
     packagesWithKeymapsDisabled: []
@@ -16,7 +16,7 @@
       "ctrl-k"
     ]
   editor:
-    fontSize: 10
+    fontSize: 13
     softWrap: true
   elmjutsu:
     autocompleteEnabled: true
@@ -32,10 +32,11 @@
   "ide-purescript": {}
   "language-babel":
     emmetCSSAutocomplete: true
+  "language-elm":
+    autocompleteEnabled: false
   linter: {}
   "linter-ui-default":
-    panelHeight: 131
-    showPanel: true
+    panelHeight: 86
   minimap:
     charHeight: 1
     plugins:
@@ -62,8 +63,7 @@
     locales: [
       "en-US"
     ]
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode-plus":
     highlightSearch: true
     incrementalSearch: true

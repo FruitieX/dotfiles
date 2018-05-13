@@ -40,8 +40,8 @@ if [[ ! -d "$TMPPREFIX" ]]; then
 fi
 
 if [[ $unamestr == 'Darwin' ]]; then
-    export ANDROID_HOME="${HOME}/.android-sdk-macosx"
-    export ANDROID_SDK_ROOT="${HOME}/.android-sdk-macosx"
+    export ANDROID_HOME="${HOME}/Library/Android/sdk"
+    export ANDROID_SDK_ROOT="${HOME}/Library/Android/sdk"
 else
     export JAVA_HOME="/usr/lib/jvm/default"
     #export ANDROID_HOME="${HOME}/apps/android-sdk"

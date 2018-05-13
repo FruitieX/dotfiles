@@ -61,4 +61,17 @@ bindkey -M viins 'jj' vi-cmd-mode # 'jj' takes you into cmd mode
 #compinit
 # End of lines added by compinstall
 
-#ulimit -c unlimited
+ulimit -c unlimited
+
+# added by travis gem
+[ -f /home/rasse/.travis/travis.sh ] && source /home/rasse/.travis/travis.sh
+
+# NVM
+if [[ $unamestr == 'Darwin' ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    . "$(brew --prefix nvm)/nvm.sh"
+fi
+
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
