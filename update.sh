@@ -17,12 +17,12 @@ cd $HOME/.zprezto
     echo
 cd $CWD
 
-for repo in "$HOME/src/v" "$HOME/src/z"; do
-    echo Updating $repo
-    cd $repo
-    git pull
-    echo
-done
+#for repo in "$HOME/src/v" "$HOME/src/z"; do
+#    echo Updating $repo
+#    cd $repo
+#    git pull
+#    echo
+#done
 
 cd $CWD
 

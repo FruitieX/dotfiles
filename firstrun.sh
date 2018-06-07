@@ -21,15 +21,15 @@ if [[ "$answer" != "y" ]]; then
 	exit
 fi
 
-sudo chsh -s $(which zsh) $USER
+#sudo chsh -s $(which zsh) $USER
 
 # clone .zprezto repo
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # clone various tools into ~/src
 mkdir "$HOME/src"
-git clone https://github.com/rupa/v "$HOME/src/v"
-git clone https://github.com/rupa/z "$HOME/src/z"
+#git clone https://github.com/rupa/v "$HOME/src/v"
+#git clone https://github.com/rupa/z "$HOME/src/z"
 git clone https://github.com/supki/x-selection-sync.git "$HOME/src/x-selection-sync"
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
