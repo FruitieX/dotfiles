@@ -43,6 +43,7 @@ zstyle ':prezto:load' pmodule \
 
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:editor' ps-context 'yes'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -124,7 +125,6 @@ zstyle ':prezto:module:prompt' theme 'fruit'
    'main' \
    'brackets' \
    'pattern' \
-   'cursor' \
    'root'
 #
 # Set syntax highlighting styles.
