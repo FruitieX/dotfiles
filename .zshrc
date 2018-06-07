@@ -7,6 +7,11 @@ if [[ -z "$TMUX" ]]; then
     exit
 fi
 
+# Tell zsh how to find installed completions
+for p in ''${(z)NIX_PROFILES}; do
+  fpath+=($p/share/zsh/site-functions $p/share/zsh/$ZSH_VERSION/functions $p/share/zsh/vendor-completions)
+done
+
 source $HOME/.zprezto/init.zsh
 
 unamestr=$(uname)
@@ -75,3 +80,4 @@ fi
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PYTHON=/run/current-system/sw/bin/python2

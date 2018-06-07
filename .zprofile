@@ -1,7 +1,7 @@
 export BROWSER="google-chrome-stable"
 export EDITOR="nvim"
 export VISUAL="nvim"
-export PAGER="vimpager"
+#export PAGER="vimpager"
 
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
@@ -43,8 +43,8 @@ if [[ $unamestr == 'Darwin' ]]; then
     export ANDROID_HOME="${HOME}/Library/Android/sdk"
     export ANDROID_SDK_ROOT="${HOME}/Library/Android/sdk"
 else
-    export JAVA_HOME="/usr/lib/jvm/default"
-    #export ANDROID_HOME="${HOME}/apps/android-sdk"
+    #export JAVA_HOME="/usr/lib/jvm/default"
+    export ANDROID_HOME="${HOME}/Android/Sdk"
     #export ANDROID_SDK_ROOT="${HOME}/apps/android-sdk"
 fi
 
@@ -81,6 +81,7 @@ function md2pdf() {
     pandoc -f markdown -t latex $infile -o ${infile%.md}.pdf
 }
 
+alias open="xdg-open"
 alias gl="git pull"
 alias sys="systemctl"
 alias sysu="systemctl --user"
