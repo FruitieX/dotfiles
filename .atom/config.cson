@@ -4,9 +4,9 @@
   "bracket-matcher":
     autocompleteBrackets: false
   core:
-    autoHideMenuBar: true
     disabledPackages: [
       "autosave"
+      "linter"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "limited"
@@ -16,7 +16,6 @@
       "ctrl-k"
     ]
   editor:
-    fontSize: 13
     softWrap: true
   elmjutsu:
     autocompleteEnabled: true
@@ -37,6 +36,7 @@
   linter: {}
   "linter-ui-default":
     panelHeight: 86
+    showPanel: true
   minimap:
     charHeight: 1
     plugins:
